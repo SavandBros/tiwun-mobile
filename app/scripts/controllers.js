@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('tiwun.controllers', [])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
