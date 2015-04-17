@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title></title>
@@ -26,6 +26,8 @@
     <script src="bower_components/ionic/release/js/ionic.js"></script>
     <script src="bower_components/ionic/release/js/ionic-angular.js"></script>
     <script src="bower_components/ngCordova/dist/ng-cordova.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -37,10 +39,17 @@
     <script src="scripts/app.js"></script>
     <script src="scripts/controllers.js"></script>
     <script src="scripts/configuration.js"></script>
+    <script src="scripts/account/module.js"></script>
+    <script src="scripts/account/services/authentication_service.js"></script>
+    <script src="scripts/account/services/user_service.js"></script>
+    <script src="scripts/account/controllers/account_settings_controller.js"></script>
+    <script src="scripts/account/controllers/account_controller.js"></script>
+    <script src="scripts/account/controllers/login_controller.js"></script>
+    <script src="scripts/account/controllers/register_controller.js"></script>
     <!-- endbuild -->
-  </head>
+</head>
 
-  <body ng-app="tiwun">
-    <ion-nav-view></ion-nav-view>
-  </body>
+<body ng-app="tiwun">
+<ion-nav-view></ion-nav-view>
+</body>
 </html>
