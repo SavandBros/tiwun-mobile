@@ -6,7 +6,7 @@
   'use strict';
 
   angular.module('tiwun.account.services')
-    .factore('AuthenticationService', AuthenticationService);
+    .factory('AuthenticationService', AuthenticationService);
 
   AuthenticationService.$inject = ['$cookies', '$http'];
 
@@ -20,7 +20,7 @@
      * @desc The Factory to be returned
      */
     var AuthenticationService = {
-      getAuthenticatedUser: getAuthenticatedAccount,
+      getAuthenticatedUser: getAuthenticatedUser,
       isAuthenticated: isAuthenticated,
       login: login,
       logout: logout,
@@ -166,7 +166,7 @@
      * @memberOf tiwun.account.services.AuthenticationService
      */
     function unAuthenticate() {
-      delete $cookies.authenticateUser;
+      delete $cookies.authenticatedUser;
     }
   }
 })();

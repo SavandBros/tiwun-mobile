@@ -6,7 +6,11 @@
 // 'starter.controllers' is found in controllers.js
 'use strict';
 
-angular.module('tiwun', ['ionic', 'tiwun.controllers'])
+angular.module('tiwun', [
+    'ionic',
+    'tiwun.controllers',
+    'tiwun.account.controllers'
+])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -67,7 +71,16 @@ angular.module('tiwun', ['ionic', 'tiwun.controllers'])
         controller: 'PlaylistCtrl'
       }
     }
-  });
+  })
+      .state('app.register', {
+          url: '/account/register',
+          views: {
+              'menuContent': {
+                  templateUrl: 'templates/account/register.html',
+                  controller: 'RegisterController'
+              }
+          }
+      });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/playlists');
 });

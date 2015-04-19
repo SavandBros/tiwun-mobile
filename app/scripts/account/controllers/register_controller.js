@@ -5,15 +5,17 @@
 (function () {
     'use strict';
 
-    angular.module('tiwun.account.controllers')
+    angular.module('tiwun.account.controllers', [
+        'tiwun.account.services'
+    ])
         .controller('RegisterController', RegisterController);
 
-    RegisterController.$inject = ['$location', '$scope', 'AuthenticationService'];
+    RegisterController.$inject = ['$location', '$scope', '$stateParams', 'AuthenticationService'];
 
     /**
      * @namespace RegisterController
      */
-    function RegisterController($location, $scope, AuthenticationService) {
+    function RegisterController($location, $scope, $stateParams, AuthenticationService) {
         var vm = this;
 
         vm.register = register;

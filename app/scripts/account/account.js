@@ -7,7 +7,6 @@
   ]);
 
   angular.module('tiwun.account.controllers', []);
-  angular.module('tiwun.account.services', []);
   angular.module('tiwun.account.services', ['ngCookies']);
 
 })();
