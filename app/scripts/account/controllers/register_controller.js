@@ -16,14 +16,14 @@
      * @namespace RegisterController
      */
     function RegisterController($location, $scope, $stateParams, AuthenticationService) {
-        activate();
+        constructor();
 
         /**
          * @name activate
          * @desc Actions to be performed when this controller is instantiated
          * @memberOf tiwun.account.controllers.RegisterController
          */
-        function activate() {
+        function constructor() {
             // if the user is authenticated, they should not be here.
             if (AuthenticationService.isAuthenticated()) {
                 $location.url('/');
