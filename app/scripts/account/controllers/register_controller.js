@@ -16,10 +16,6 @@
      * @namespace RegisterController
      */
     function RegisterController($location, $scope, $stateParams, AuthenticationService) {
-        var vm = this;
-
-        vm.register = register;
-
         activate();
 
         /**
@@ -39,8 +35,16 @@
          * @desc Register a new user
          * @memberOf tiwun.account.controllers.RegisterController
          */
-        function register() {
-            Authentication.register(vm.email, vm.password, vm.username);
+        $scope.register = function register(form, user) {
+            if (form) {
+                if (user.password !== user.confirm_password) {
+                    form.confirm_password.$error.not_match = true;
+                    form.$invalid = true;
+                    return;
+                }
+            }
+
+            AuthenticationService.register(user.email, user.password);
         }
     }
 })();
