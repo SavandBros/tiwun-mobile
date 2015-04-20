@@ -1,4 +1,4 @@
-// Generated on 2015-04-17 using generator-ionic 0.7.1
+// Generated on 2015-04-20 using generator-ionic 0.7.3
 'use strict';
 
 var _ = require('lodash');
@@ -31,7 +31,7 @@ module.exports = function (grunt) {
     // Environment Variables for Angular App
     // This creates an Angular Module that can be injected via ENV
     // Add any desired constants to the ENV objects below.
-    // https://github.com/diegonetto/generator-ionic#environment-specific-configuration
+    // https://github.com/diegonetto/generator-ionic/blob/master/docs/FAQ.md#how-do-i-add-constants
     ngconstant: {
       options: {
         space: '  ',
@@ -241,7 +241,7 @@ module.exports = function (grunt) {
       },
       fonts: {
         expand: true,
-        cwd: 'app/lib/ionic/release/fonts/',
+        cwd: 'app/bower_components/ionic/release/fonts/',
         dest: '<%= yeoman.app %>/fonts/',
         src: '*'
       },
