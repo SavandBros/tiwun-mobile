@@ -11,7 +11,9 @@ angular.module('tiwun', [
     'tiwun.controllers',
     'tiwun.account',
     'tiwun.item',
-    'tiwun.basement'
+    'tiwun.basement',
+    'angular.filter',
+    'markdown'
 ])
 
     .run(function($ionicPlatform, $http) {
