@@ -8,6 +8,6 @@
     ]);
 
     angular.module('tiwun.item.controllers', []);
-    angular.module('tiwun.item.directives,' ['ngDialog'])
+    angular.module('tiwun.item.directives', ['ngDialog']);
 })();
 

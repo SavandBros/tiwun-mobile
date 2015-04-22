@@ -16,7 +16,7 @@
     /**
      * @namespace NewItemController
      */
-    function NewItemController($rootScope, $scope, AuthenticationService, Item) {
+    function NewItemController($rootScope, $scope, AuthenticationService, ItemService) {
         /**
          * @name submit
          * @desc Create a new Post

@@ -1,7 +1,7 @@
 (function () {
     "use strict";
 
-    angular('tiwun.basement', [
+    angular.module('tiwun.basement', [
         'tiwun.basement.controllers'
     ]);
 

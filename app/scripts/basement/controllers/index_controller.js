@@ -5,15 +5,18 @@
 (function () {
     "use strict";
 
-    angular('tiwun.basement.controllers')
+    angular.module('tiwun.basement.controllers', [
+        'tiwun.account.services',
+        'tiwun.item.services'
+    ])
         .controller('IndexController', IndexController);
 
-    IndexController.$inject = ['$scope', 'AuthenticationService', 'ItemService', 'Snackbar'];
+    IndexController.$inject = ['$scope', 'AuthenticationService', 'ItemService'];
 
     /**
      * @namespace IndexController
      */
-    function IndexController($scope, AuthenticationService, ItemService, Snackbar) {
+    function IndexController($scope, AuthenticationService, ItemService) {
         $scope.isAuthenticated = AuthenticationService.isAuthenticated();
         $scope.items = [];
 
@@ -40,7 +43,8 @@
              * @desc Update thoughts array on view
              */
             function itemsSuccessFn(data, status, headers, config) {
-                $scope.items = data.data;
+                console.log(data.data['classifies']);
+                $scope.items = data.data['classifies'];
             }
 
             /**
@@ -48,7 +52,8 @@
              * @desc Show snackbar with error
              */
             function itemsErrorFn(data, status, headers, config) {
-                Snackbar.error(data.error);
+                //Snackbar.error(data.error);
+                console.log(data.error);
             }
         }
     }

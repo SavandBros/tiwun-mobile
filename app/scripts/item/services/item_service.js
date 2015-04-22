@@ -5,8 +5,7 @@
 (function () {
     'use strict';
 
-    angular
-        .module('tiwun.item.services')
+    angular.module('tiwun.item.services', [])
         .factory('ItemService', ItemService);
 
     ItemService.$inject = ['$http'];
@@ -32,7 +31,7 @@
          * @memberOf tiwun.item.services.ItemService
          */
         function all() {
-            return $http.get('/api/v1/items/');
+            return $http.get('https://127.0.0.1:8000/api/index/');
         }
 
 

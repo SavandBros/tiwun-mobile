@@ -3,8 +3,9 @@
  */
 (function () {
     'use strict';
+
     angular.module('tiwun.item.directives')
-        .directives('item', item);
+        .directive('item', item);
 
     /**
      * @namespace Item

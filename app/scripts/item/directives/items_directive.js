@@ -5,7 +5,9 @@
 (function () {
     "use strict";
 
-    angular.module('tiwun.item.directives')
+    angular.module('tiwun.item.directives', [
+        'tiwun.item.controllers'
+    ])
         .directive('items', items);
 
     /**
