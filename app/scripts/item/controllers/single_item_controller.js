@@ -10,12 +10,12 @@
     ])
         .controller('SingleItemController', SingleItemController);
 
-    SingleItemController.$inject = ['$scope', '$stateParams', 'ItemService'];
+    SingleItemController.$inject = ['$scope', '$stateParams', '$ionicHistory', 'ItemService'];
 
     /**
      * @namespace SingleItemController
      */
-    function SingleItemController($scope, $stateParams, ItemService) {
+    function SingleItemController($scope, $stateParams, $ionicHistory, ItemService) {
         constructor();
 
         /**
@@ -24,9 +24,17 @@
          * @memberOf tiwun.item.controllers.SingleItemController
          **/
         function constructor () {
-            // TODO: Get the item or go back ;)
+            ItemService.get($stateParams['itemId']).then(
+                function (data, status, headers, config) {
+                    $scope.context = data.data;
+                    $scope.item = $scope.context['item'];
+                },
+                function (data, status, headers, config) {
+                    console.log('Error on receiving item');
+                    console.log(data.error);
+                    $ionicHistory.goBack();
+                }
+            );
         }
-
     }
-
 })();
