@@ -43,7 +43,6 @@
              * @desc Update thoughts array on view
              */
             function itemsSuccessFn(data, status, headers, config) {
-                console.log(data.data['classifies']);
                 $scope.items = data.data['classifies'];
             }
 
