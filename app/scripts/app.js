@@ -92,7 +92,7 @@ angular.module('tiwun', [
             })
 
             .state('app.singleItem', {
-                url: "/items/:itemId",
+                url: "/items/:itemId/",
                 views: {
                     'menuContent': {
                         templateUrl: "templates/item/single_item.html",
