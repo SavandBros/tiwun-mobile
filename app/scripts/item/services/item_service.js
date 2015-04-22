@@ -57,7 +57,7 @@
          * @memberOf tiwun.item.services.ItemService
          */
         function get(id) {
-            return $http.get('/api/v1/users/' + id + '/items/');
+            return $http.get('https://127.0.0.1:8000/api/items/' + id + '/');
         }
     }
 })();
