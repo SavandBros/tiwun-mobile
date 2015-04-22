@@ -89,6 +89,16 @@ angular.module('tiwun', [
                         controller: 'RegisterController'
                     }
                 }
+            })
+
+            .state('app.singleItem', {
+                url: "/items/:itemId",
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/item/single_item.html",
+                        controller: 'SingleItemController'
+                    }
+                }
             });
         // if none of the above states are matched, use this as the fallback
         $urlRouterProvider.otherwise('/app/playlists');
