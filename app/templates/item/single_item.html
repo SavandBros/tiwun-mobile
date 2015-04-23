@@ -9,7 +9,7 @@
             </div>
 
             <div class="item item-body">
-                <img class="full-image" ng-src="{{ item.get_primary_image.standard }}">
+                <img class="full-image" ng-src="{{ item.get_primary_image.standard }}" ng-dblclick="vote('up')">
                 <p>
                     {{ item.description | markdown | stripTags }}
                 </p>

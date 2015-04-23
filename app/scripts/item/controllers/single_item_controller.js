@@ -36,5 +36,14 @@
                 }
             );
         }
+
+        $scope.vote = function(voteType) {
+            //ItemService.vote($scope.item.pk, voteType);
+            // TODO: Some fancy effects to let user know the item has been voted
+            // TODO: Increase item "votes_count"
+            // TODO: Highlight up vote button
+            // TODO: If the it's not a up vote then reverse the above todo list.
+            console.log('Vote!');
+        }
     }
 })();
