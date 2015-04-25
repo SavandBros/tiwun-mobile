@@ -67,7 +67,18 @@
                 }
             )
         }
-        function filterByObject(objectType, ObjectId) {}
 
+        /**
+         * @name filterByObject: Filter comments by given object.
+         * @param {number} objectType: Object type that is being commented on.
+         * @param {string} ObjectId:  Object PK!
+         * @memberOf tiwun.sushial.services.CommentService
+         */
+        function filterByObject(objectType, ObjectId) {
+            return $http.get(
+                'https://127.0.0.1:8000/api/sushial/comment/filter',
+                {object_type: objectType, object_id: ObjectId}
+            )
+        }
     }
 })();
