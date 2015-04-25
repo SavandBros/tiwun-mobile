@@ -21,6 +21,12 @@
             filterByItemId: filterByItemId
         };
 
+        var ObjectTypes = {
+            'item': 1,
+            'comment': 2,
+            'tag': 3
+        };
+
         return filterByItemId;
     }
 })();
