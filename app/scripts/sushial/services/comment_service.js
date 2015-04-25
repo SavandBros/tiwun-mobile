@@ -18,7 +18,7 @@
         var CommentService = {
             create: create,
             remove: remove,
-            filterByItemId: filterByItemId
+            filterByObject: filterByObject
         };
 
         var ObjectTypes = {
