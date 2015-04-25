@@ -49,5 +49,25 @@
                 }
             )
         }
+
+        /**
+         * @name remove: Remove a comment from an object.
+         * @param {number} objectType: Object type that is being commented on.
+         * @param {string} objectId:  Object PK!
+         * @param {string} userId: User Id that commenting on the the object.
+         * @memberOf tiwun.sushial.services.CommentService
+         */
+        function remove(objectType, objectId, userId) {
+            return $http.post(
+                'https://127.0.0.1:8000/api/sushial/comment/remove',
+                {
+                    object_type: objectType,
+                    object_id: objectId,
+                    user_id: userId
+                }
+            )
+        }
+        function filterByObject(objectType, ObjectId) {}
+
     }
 })();
