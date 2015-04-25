@@ -20,14 +20,14 @@
         };
 
         var VoteTypes = {
-            'up': 0,
-            'down': 1
+            'up': 1,
+            'down': 2
         };
 
         var ObjectTypes = {
-            'item': 0,
-            'comment': 1,
-            'tag': 2
+            'item': 1,
+            'comment': 2,
+            'tag': 3
         };
 
         /**
