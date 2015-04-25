@@ -40,7 +40,7 @@
          */
         function create(objectType, objectId, userId, commentText) {
             $http.post(
-                'https://127.0.0.1:8000/api/sushial/comment/',
+                'https://127.0.0.1:8000/api/sushial/comment/create',
                 {
                     object_type: objectType,
                     object_id: objectId,
