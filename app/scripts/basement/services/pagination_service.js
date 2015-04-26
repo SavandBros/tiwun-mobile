@@ -27,6 +27,7 @@
             previousPageNumber: previousPageNumber,
             numPages: numPages,
             nextPage: nextPage,
+            previousPage: previousPage
         };
 
         return PaginationService;
@@ -115,5 +116,14 @@
             }
         }
 
+        /**
+         * @name previousPage
+         * @memberOf tiwun.basement.controllers.PaginationService
+         */
+        function previousPage () {
+            if (hasPrevious()) {
+                $rootScope.$broadcast('pagination:previous', previousPageNumber());
+            }
+        }
     }
 })();
