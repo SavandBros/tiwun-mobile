@@ -25,7 +25,8 @@
             hasNext: hasNext,
             nextPageNumber: nextPageNumber,
             previousPageNumber: previousPageNumber,
-            numPages: numPages
+            numPages: numPages,
+            nextPage: nextPage,
         };
 
         return PaginationService;
@@ -102,5 +103,17 @@
         function numPages() {
             return paginationContext.page_paginator_num_pages;
         }
+
+
+        /**
+         * @name nextPage
+         * @memberOf tiwun.basement.controllers.PaginationService
+         */
+        function nextPage () {
+            if (hasNext()) {
+                $rootScope.$broadcast('pagination:next', nextPageNumber());
+            }
+        }
+
     }
 })();
