@@ -1,4 +1,4 @@
-<ion-view view-title="{{ item.title }}">
+<ion-view>
     <ion-content>
         <div class="list card">
 
@@ -9,7 +9,7 @@
             </div>
 
             <div class="item item-body">
-                <img class="full-image" ng-src="{{ item.get_primary_image.standard }}" ng-dblclick="vote('up')">
+                <img class="full-image" ng-src="{{ item.get_primary_image.standard }}">
                 <p>
                     {{ item.description | markdown | stripTags }}
                 </p>
@@ -29,8 +29,8 @@
                     Comment
                 </a>
                 <a class="tab-item" href="#/app/items/{{ item.pk }}/">
-                    <i class="icon ion-eye"></i>
-                    Details
+                    <i class="icon ion-share"></i>
+                    Share
                 </a>
             </div>
 
