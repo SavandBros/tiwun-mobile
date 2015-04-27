@@ -3,7 +3,7 @@
         <div class="list card">
 
             <div class="item item-avatar">
-                <img src="http://www.gravatar.com/avatar/00000000000000000000000000000000">
+                <img src="http://placehold.it/64x64">
                 <h2><a href="#/app/items/{{ item.pk }}/">{{ item.title }}</a></h2>
                 <p>{{ item.created | date }}</p>
             </div>
@@ -33,6 +33,17 @@
                     Share
                 </a>
             </div>
+
+        </div>
+
+
+        <div class="list card">
+
+          <div class="item item-avatar"  ng-repeat="comment in item.comments">
+            <img src="{{ comment.user_img }}">
+            <a class="bold" href="#">{{ comment.user_name }}</a>
+            <p>{{ comment.content }}</p>
+          </div>
 
         </div>
 
