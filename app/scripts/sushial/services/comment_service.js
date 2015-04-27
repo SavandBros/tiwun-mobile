@@ -27,8 +27,7 @@
             'tag': 3
         };
 
-        return filterByItemId;
-
+        return CommentService;
 
         /**
          * @name create: Creating a comment for an object.
@@ -77,7 +76,7 @@
         function filterByObject(objectType, ObjectId) {
             return $http.get(
                 'https://127.0.0.1:8000/api/sushial/comment/filter',
-                params: {object_type: objectType, object_id: ObjectId}
+                {object_type: objectType, object_id: ObjectId}
             )
         }
     }
