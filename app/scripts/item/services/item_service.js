@@ -36,8 +36,11 @@
          * @returns {Promise}
          * @memberOf tiwun.item.services.ItemService
          */
-        function all() {
-            return $http.get('https://127.0.0.1:8000/api/index/');
+        function all(page_number) {
+            return $http.get(
+                'https://127.0.0.1:8000/api/index/',
+                {params: {page: page_number}}
+            );
         }
 
 
