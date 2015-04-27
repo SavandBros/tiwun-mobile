@@ -2,21 +2,31 @@
     <ion-content>
         <form name="form" ng-submit="register(form, user)">
             <div class="list">
-                <label class="item item-input item-stacked-label">
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Email</span>
                     <input type="email" placeholder="Email" name="email" ng-model="user.email" required/>
                 </label>
-                <label class="item item-input item-stacked-label">
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Password</span>
                     <input type="password" placeholder="Password" name="password" ng-model="user.password" required/>
                 </label>
-                <label class="item item-input item-stacked-label">
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Confirm Password</span>
                     <input type="password" placeholder="Confirm Password" name="confirm_password" ng-model="user.confirm_password" required/>
                 </label>
-                <div ng-show="form.$submitted">
-                      <span ng-show="form.confirm_password.$error.not_match">Password do not match!</span>
+                <div class="item" ng-show="form.$submitted">
+                    <span class="assertive" ng-show="form.confirm_password.$error.not_match">
+                        <i class="ion-information-circled"></i>
+                        Password does not match!
+                    </span>
+                    <span class="balanced" ng-hide="form.confirm_password.$error.not_match">
+                        <i class="ion-information-circled"></i>
+                        Welcome to <strong>Tiwun</strong>
+                    </span>
                 </div>
             </div>
-            <button type="submit" class="button button-full button-positive" ng-disabled="form.$invalid">
-                Create an Account
+            <button type="submit" class="button button-full button-balanced" ng-disabled="form.$invalid">
+                <i class="ion-log-in"></i> Register &amp; Join <strong>Tiwun</strong>
             </button>
         </form>
     </ion-content>
