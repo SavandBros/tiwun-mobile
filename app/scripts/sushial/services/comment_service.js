@@ -60,7 +60,7 @@
         function remove(objectType, objectId, userId) {
             return $http.post(
                 'https://127.0.0.1:8000/api/sushial/comment/remove',
-                params: {
+                {
                     object_type: objectType,
                     object_id: objectId,
                     user_id: userId
