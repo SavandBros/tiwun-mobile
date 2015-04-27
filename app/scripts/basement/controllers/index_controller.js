@@ -50,5 +50,10 @@
                 console.log(data.error);
             }
         }
+
+        $scope.upVote = function(el)
+        {
+            console.log(el);
+        }
     }
 })();

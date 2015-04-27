@@ -6,11 +6,11 @@
     "use strict";
 
     angular.module('tiwun.item.controllers', [
-        'tiwun.item.services'
+        'tiwun.item.services',
     ])
         .controller('SingleItemController', SingleItemController);
 
-    SingleItemController.$inject = ['$scope', '$stateParams', '$ionicHistory', 'ItemService'];
+    SingleItemController.$inject = ['$scope', '$stateParams', '$ionicHistory', 'ItemService', ];
 
     /**
      * @namespace SingleItemController
@@ -28,6 +28,24 @@
                 function (data, status, headers, config) {
                     $scope.context = data.data;
                     $scope.item = $scope.context['item'];
+
+                    $scope.item.comments = [
+                        {user_name: "Amir Mehdi", user_img: "http://goo.gl/sXexCe", content: "This is awesome, I iz verry gut in commenting."},
+                        {user_name: "Alireza", user_img: "http://goo.gl/5nqX1I", content: "Like Like like... <3"},
+                        {user_name: "Hassan", user_img: "http://goo.gl/mQ9r38", content: "Cool :)"},
+                        {user_name: "Mohhamad Ali", user_img: "http://goo.gl/hMUWto", content: "Best product NEVER ! XD LMAO"},
+                        {user_name: "Gholam Reza", user_img: "http://goo.gl/wpb2MF", content: "Here's the last comment you'll ever see stupid fucker!"}
+                    ];
+                    
+                    // CommentService.filterByObject(1, $scope.item.pk).then(
+                    //     function(data, status, headers, config){
+                    //         $scope.item.comments = data.data;
+                    //     },
+                    //     function(data, status, headers, config){
+                    //         console.log("[error] on getting comments!");
+                    //         console.log(data.error);
+                    //     }
+                    // );
                 },
                 function (data, status, headers, config) {
                     console.log('Error on receiving item');
@@ -35,15 +53,6 @@
                     $ionicHistory.goBack();
                 }
             );
-        }
-
-        $scope.vote = function(voteType) {
-            //ItemService.vote($scope.item.pk, voteType);
-            // TODO: Some fancy effects to let user know the item has been voted
-            // TODO: Increase item "votes_count"
-            // TODO: Highlight up vote button
-            // TODO: If the it's not a up vote then reverse the above todo list.
-            console.log('Vote!');
         }
     }
 })();

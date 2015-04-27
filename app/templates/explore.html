@@ -1,22 +1,22 @@
 <ion-view view-title="Explore">
     <ion-content>
-        <h1>Explore</h1>
-
         <div class="list card" ng-repeat="item in items">
 
             <div class="item item-avatar">
-                <img src="http://www.gravatar.com/avatar/00000000000000000000000000000000">
-                <h2><a href="#/app/items/{{ item.pk }}/">{{ item.title }}</a></h2>
-                <p>{{ item.created | date }}</p>
+                <img src="http://placehold.it/64x64">
+                <a href="#/app/items/{{ item.pk }}/">
+                    <h2>{{ item.title }}</h2>
+                    <p>{{ item.created | date }}</p>
+                </a>
             </div>
 
             <div class="item item-body">
-                <img class="full-image" ng-src="{{ item.get_primary_image.standard }}">
+                <img ng-dblclick="upVote(item.pk)" class="full-image" ng-src="{{ item.get_primary_image.standard }}">
                 <p>
                     {{ item.description | markdown | stripTags | truncate: 123: '...' }}
                 </p>
                 <p>
-                    <a href="#" class="subdued">1 Like</a>
+                    <a href="#" class="subdued">{{ item.votes_count }} Like</a>
                     <a href="#" class="subdued">{{ item.comments_count }} Comments</a>
                 </p>
             </div>
@@ -31,8 +31,8 @@
                     Comment
                 </a>
                 <a class="tab-item" href="#/app/items/{{ item.pk }}/">
-                    <i class="icon ion-eye"></i>
-                    Details
+                    <i class="icon ion-share"></i>
+                    Share
                 </a>
             </div>
 
