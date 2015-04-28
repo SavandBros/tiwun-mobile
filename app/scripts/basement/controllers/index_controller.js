@@ -49,7 +49,7 @@
                 //Snackbar.error(data.error);
                 console.log(data.error);
             }
-        }
+        };
 
         $scope.upVote = function(el)
         {
