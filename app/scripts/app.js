@@ -12,6 +12,7 @@ angular.module('tiwun', [
     'tiwun.controllers',
     'tiwun.account',
     'tiwun.item',
+    'tiwun.search',
     'angular.filter',
     'markdown'
 ])
@@ -44,15 +45,6 @@ angular.module('tiwun', [
                 controller: 'AppCtrl'
             })
 
-            .state('app.search', {
-                url: "/search",
-                views: {
-                    'menuContent': {
-                        templateUrl: "templates/search.html"
-                    }
-                }
-            })
-
             .state('app.explore', {
                 url: "/explore",
                 views: {
@@ -62,6 +54,17 @@ angular.module('tiwun', [
                     }
                 }
             })
+
+            .state('app.search', {
+                url: "/search",
+                views: {
+                    'menuContent': {
+                        controller: 'SearchController',
+                        templateUrl: "../templates/search/search.html"
+                    }
+                }
+            })
+
             .state('app.playlists', {
                 url: "/playlists",
                 views: {
