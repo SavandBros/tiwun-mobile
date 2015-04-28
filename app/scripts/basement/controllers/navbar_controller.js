@@ -5,7 +5,9 @@
 (function () {
     'use strict';
 
-    angular.module('tiwun.basement.controllers')
+    angular.module('tiwun.basement.controllers', [
+        'tiwun.account.services'
+    ])
         .controller('NavbarController', NavbarController);
 
     NavbarController.$inject = ['$scope', 'AuthenticationService'];
