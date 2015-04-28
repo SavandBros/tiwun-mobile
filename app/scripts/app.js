@@ -8,10 +8,10 @@
 
 angular.module('tiwun', [
     'ionic',
+    'tiwun.basement',
     'tiwun.controllers',
     'tiwun.account',
     'tiwun.item',
-    'tiwun.basement',
     'angular.filter',
     'markdown'
 ])
