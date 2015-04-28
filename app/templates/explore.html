@@ -38,5 +38,12 @@
 
         </div>
 
+        <ion-infinite-scroll
+            immediate-check="true"
+            on-infinite="loadMore()"
+            ng-if="pageHasNext"
+            distance="5%">
+        </ion-infinite-scroll>
+
     </ion-content>
 </ion-view>
