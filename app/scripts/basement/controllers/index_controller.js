@@ -27,33 +27,19 @@
          * @name loadMore
          */
         $scope.loadMore = function () {
-            ItemService.all(++$scope.pageCounter).then(itemsSuccessFn, itemsErrorFn);
+            ItemService.all(++$scope.pageCounter).then(
+                function (data, status, headers, config) {
+                    $scope.items = $scope.items.concat(data.data['classifies']);
 
-            /**
-             * @name itemsSuccessFn
-             * @desc Update thoughts array on view
-             */
-            function itemsSuccessFn(data, status, headers, config) {
-                $scope.items = $scope.items.concat(data.data['classifies']);
+                    $scope.pageHasNext = data.data.page_has_next;
 
-                $scope.pageHasNext = data.data.page_has_next;
-
-                $scope.$broadcast('scroll.infiniteScrollComplete');
-            }
-
-            /**
-             * @name itemsErrorFn
-             * @desc Show snackbar with error
-             */
-            function itemsErrorFn(data, status, headers, config) {
-                //Snackbar.error(data.error);
-                console.log(data.error);
-            }
+                    $scope.$broadcast('scroll.infiniteScrollComplete');
+                },
+                function (data, status, headers, config) {
+                    //Snackbar.error(data.error);
+                    console.log(data.error);
+                }
+            );
         };
-
-        $scope.upVote = function(el)
-        {
-            console.log(el);
-        }
     }
 })();
