@@ -6,5 +6,7 @@
         'tiwun.basement.services'
     ]);
 
+
     angular.module('tiwun.basement.controllers', []);
+    angular.module('tiwun.basement.services', []);
 })();
