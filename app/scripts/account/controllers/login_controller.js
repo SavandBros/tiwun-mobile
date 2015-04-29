@@ -5,7 +5,9 @@
 (function () {
     'use strict';
 
-    angular.module('tiwun.account.controllers')
+    angular.module('tiwun.account.controllers.LoginController', [
+        'tiwun.account.services.AuthenticationService'
+    ])
         .controller('LoginController', LoginController);
 
     LoginController.$inject = ['$location', '$scope', 'AuthenticationService'];
@@ -14,18 +16,15 @@
      * @namespace LoginController
      */
     function LoginController($location, $scope, AuthenticationService) {
-        var vm = this;
-
-        vm.login = login;
-
-        activate();
+        constructor();
 
         /**
-         * @name activate
+         * @name constructor
          * @desc Actions to be performed when this controller is instantiated
          * @memberOf tiwun.account.controllers.LoginController
          */
-        function activate() {
+        function constructor() {
+            console.log('LoginController');
             // if the use is authenticated, they should not be here.
             if (AuthenticationService.isAuthenticated()) {
                 $location.url('/');
@@ -37,8 +36,9 @@
          * @desc Log the user in
          * @memberOf tiwun.account.controllers.LoginController
          */
-        function login() {
-            AuthenticationService.login(vm.email, vm.password);
-        }
+        $scope.login = function (form, user) {
+            console.log(user);
+            AuthenticationService.login(user.email, user.password);
+        };
     }
 })();
