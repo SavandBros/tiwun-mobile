@@ -16,6 +16,8 @@ angular.module('tiwun', [
     'angular.filter',
     'markdown'
 ])
+        'tiwun.konfig',
+        'tiwun.basement',
 
     .run(function($ionicPlatform, $http) {
         $ionicPlatform.ready(function() {
