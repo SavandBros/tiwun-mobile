@@ -6,14 +6,14 @@
 (function () {
     'use strict';
 
-    angular.module('tiwun.konfig', []);
+    angular.module('tiwun.konfig.Konfig', []);
 
     angular.module('tiwun', [
         'ionic',
         'ngCookies',
         'angular.filter',
         'markdown',
-        'tiwun.konfig',
+        'tiwun.konfig.Konfig',
         'tiwun.basement',
         'tiwun.account',
         'tiwun.item',
@@ -28,8 +28,8 @@
     function RunForrestRun($ionicPlatform, $http, $cookies) {
         $http.defaults.xsrfHeaderName = 'X-CSRFToken';
         $http.defaults.xsrfCookieName = 'csrftoken';
-
-        $http.defaults.headers.post['X-CSRFToken'] = $cookies['csrftoken'];
+        $http.defaults.withCredentials = true;
+        $http.defaults.headers.post['X-CSRFToken'] = $cookies.csrftoken;
 
         $ionicPlatform.ready(function () {
             // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
