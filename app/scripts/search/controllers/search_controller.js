@@ -6,8 +6,8 @@
     "use strict";
 
 
-    angular.module('tiwun.search.controllers', [
-        'tiwun.search.services'
+    angular.module('tiwun.search.controllers.SearchController', [
+        'tiwun.search.services.SearchService'
     ])
         .controller('SearchController', SearchController);
 

@@ -5,7 +5,7 @@
 (function () {
     'use strict';
 
-    angular.module('tiwun.sushial.services', [])
+    angular.module('tiwun.sushial.services.VoteService', [])
         .factory('VoteService', VoteService);
 
     VoteService.$inject = ['$http'];

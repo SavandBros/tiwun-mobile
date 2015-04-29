@@ -4,15 +4,19 @@
 
             <div class="item item-avatar">
                 <img src="http://placehold.it/64x64">
+
                 <h2><a href="#/app/items/{{ item.pk }}/">{{ item.title }}</a></h2>
+
                 <p>{{ item.created | date }}</p>
             </div>
 
             <div class="item item-body">
                 <img class="full-image" ng-src="{{ item.get_primary_image.standard }}">
+
                 <p>
                     {{ item.description | markdown | stripTags }}
                 </p>
+
                 <p>
                     <a href="#" class="subdued">{{ item.votes_count }} Like</a>
                     <a href="#" class="subdued">{{ item.comments_count }} Comments</a>
@@ -39,11 +43,12 @@
 
         <div class="list">
 
-          <div class="item item-avatar"  ng-repeat="comment in item.comments">
-            <img src="{{ comment.user_img }}">
-            <a class="bold" href="#">{{ comment.user_name }}</a>
-            <p>{{ comment.content }}</p>
-          </div>
+            <div class="item item-avatar" ng-repeat="comment in item.comments">
+                <img src="{{ comment.user_img }}">
+                <a class="bold" href="#">{{ comment.user_name }}</a>
+
+                <p>{{ comment.content }}</p>
+            </div>
 
         </div>
 

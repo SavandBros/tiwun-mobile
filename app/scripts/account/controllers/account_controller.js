@@ -5,7 +5,7 @@
 (function () {
     'use strict';
 
-    angular.module('tiwun.account.controllers')
+    angular.module('tiwun.account.controllers.AccountController')
         .controller('AccountController', AccountController);
 
     AccountController.$inject = ['$location', '$routeParams', 'Items', 'Account'];

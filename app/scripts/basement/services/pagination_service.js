@@ -17,7 +17,7 @@
          * @name isPaginated
          * @returns {boolean}
          */
-        this.isPaginated = function() {
+        this.isPaginated = function () {
             return paginationContext.is_paginated;
         };
 
@@ -86,13 +86,13 @@
 
         this.previousPage = function () {
             if (this.hasPrevious()) {
-                $rootScope.$broadcast(controllerName +':pagination:previous', this.previousPageNumber());
+                $rootScope.$broadcast(controllerName + ':pagination:previous', this.previousPageNumber());
             }
         }
     }
 
-    angular.module('tiwun.basement.services', [])
-        .factory('PaginationService', function($rootScope) {
+    angular.module('tiwun.basement.services.PaginationService', [])
+        .factory('PaginationService', function ($rootScope) {
             return {
                 Pagination: function (paginationContext, controllerName) {
                     return new Pagination(paginationContext, controllerName, $rootScope);

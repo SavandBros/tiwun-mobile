@@ -5,7 +5,7 @@
 (function () {
     'use strict';
 
-    angular.module('tiwun.account.services')
+    angular.module('tiwun.account.services.UserService')
         .factory('UserService', UserService);
 
     UserService.$inject = ['$http'];

@@ -2,12 +2,15 @@
     'use strict';
 
     angular.module('tiwun.item', [
-        'tiwun.item.controllers',
-        'tiwun.item.directives',
-        'tiwun.item.services'
+        'tiwun.item.controllers.ItemsControllers',
+        'tiwun.item.controllers.NewItemController',
+        'tiwun.item.controllers.SingleItemController',
+        'tiwun.item.services.ItemService'
     ]);
 
-    angular.module('tiwun.item.controllers', []);
-    angular.module('tiwun.item.directives', ['ngDialog']);
+    angular.module('tiwun.item.controllers.ItemsControllers', []);
+    angular.module('tiwun.item.controllers.NewItemController', []);
+    angular.module('tiwun.item.controllers.SingleItemController', []);
+    angular.module('tiwun.item.services.ItemService', []);
 })();
 

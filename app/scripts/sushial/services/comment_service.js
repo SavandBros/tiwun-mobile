@@ -5,7 +5,7 @@
 (function () {
     'use strict';
 
-    angular.module('tiwun.sushial.services', [])
+    angular.module('tiwun.sushial.services.CommentService', [])
         .factory('CommentService', CommentService);
 
     CommentService.$inject = ['$http'];

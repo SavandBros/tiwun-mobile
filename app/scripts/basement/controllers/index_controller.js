@@ -5,9 +5,9 @@
 (function () {
     "use strict";
 
-    angular.module('tiwun.basement.controllers', [
-        'tiwun.account.services',
-        'tiwun.item.services'
+    angular.module('tiwun.basement.controllers.IndexController', [
+        'tiwun.account.services.AuthenticationService',
+        'tiwun.item.services.ItemService'
     ])
         .controller('IndexController', IndexController);
 

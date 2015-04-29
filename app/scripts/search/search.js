@@ -2,11 +2,11 @@
     "use strict";
 
     angular.module('tiwun.search', [
-        'tiwun.search.controllers',
-        'tiwun.search.services'
+        'tiwun.search.controllers.SearchController',
+        'tiwun.search.services.SearchService'
     ]);
 
 
-    angular.module('tiwun.search.controllers', []);
-    angular.module('tiwun.search.services', []);
+    angular.module('tiwun.search.controllers.SearchController', []);
+    angular.module('tiwun.search.services.SearchService', []);
 })();

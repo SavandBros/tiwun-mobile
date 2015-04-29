@@ -5,7 +5,7 @@
 (function () {
     'use strict';
 
-    angular.module('tiwun.search.services')
+    angular.module('tiwun.search.services.SearchService')
         .factory('SearchService', SearchService);
 
     SearchService.$inject = ['$http'];

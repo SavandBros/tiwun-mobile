@@ -12,8 +12,10 @@
                 </label>
                 <label class="item item-input item-floating-label">
                     <span class="input-label">Confirm Password</span>
-                    <input type="password" placeholder="Confirm Password" name="confirm_password" ng-model="user.confirm_password" required/>
+                    <input type="password" placeholder="Confirm Password" name="confirm_password"
+                           ng-model="user.confirm_password" required/>
                 </label>
+
                 <div class="item" ng-show="form.$submitted">
                     <span class="assertive" ng-show="form.confirm_password.$error.not_match">
                         <i class="ion-information-circled"></i>

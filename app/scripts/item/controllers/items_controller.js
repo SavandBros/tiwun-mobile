@@ -5,7 +5,7 @@
 (function () {
     'use strict';
 
-    angular.module('tiwun.item.controllers')
+    angular.module('tiwun.item.controllers.ItemsController', [])
         .controller('ItemsController', ItemsController);
 
     ItemsController.$inject = ['$scope'];

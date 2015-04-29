@@ -41,15 +41,6 @@
                     }
                 }
             })
-            .state('app.playlists', {
-                url: "/playlists",
-                views: {
-                    'menuContent': {
-                        templateUrl: "templates/playlists.html",
-                        controller: 'PlaylistsCtrl'
-                    }
-                }
-            })
             .state('app.register', {
                 url: '/account/register',
                 views: {

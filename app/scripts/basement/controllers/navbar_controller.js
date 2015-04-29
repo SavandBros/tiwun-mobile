@@ -5,8 +5,8 @@
 (function () {
     'use strict';
 
-    angular.module('tiwun.basement.controllers', [
-        'tiwun.account.services'
+    angular.module('tiwun.basement.controllers.NavbarController', [
+        'tiwun.account.services.AuthenticationService'
     ])
         .controller('NavbarController', NavbarController);
 

@@ -5,7 +5,7 @@
 (function () {
     'use strict';
 
-    angular.module('tiwun.account.controllers')
+    angular.module('tiwun.account.controllers.AccountSettingsController')
         .controller('AccountSettingsController', AccountSettingsController);
 
     AccountSettingsController.$inject = [
