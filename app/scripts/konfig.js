@@ -5,7 +5,7 @@
 (function () {
     'use strict';
 
-    angular.module('tiwun.konfig')
+    angular.module('tiwun.konfig.Konfig')
         .config(Konfig);
 
     Konfig.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider', '$httpProvider'];
@@ -14,8 +14,8 @@
         //$locationProvider.html5Mode(true);
         $locationProvider.hashPrefix('!');
 
-        $httpProvider.defaults.xsrfCookieName = 'csrftoken';
         $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
+        $httpProvider.defaults.xsrfCookieName = 'csrftoken';
 
         $stateProvider
             .state('app', {
