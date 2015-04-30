@@ -32,19 +32,19 @@
         /**
          * @name create: Creating a comment for an object.
          * @param {number} objectType: Object type that is being commented on.
-         * @param {string} objectId:  Object PK!
+         * @param {string} objectPk:  Object PK!
          * @param {string} userId: User Id that commenting on the the object.
          * @param {string} commentText: Comment text that is being posted on the object.
          * @memberOf tiwun.sushial.services.CommentService
          */
-        function create(objectType, objectId, userId, commentText) {
-            $http.post(
+        function create(objectType, objectPk, userId, commentText) {
+            return $http.post(
                 'https://127.0.0.1:8000/api/sushial/comment/add/',
                 {
                     object_type: objectType,
-                    object_id: objectId,
+                    object_pk: objectPk,
                     user_id: userId,
-                    comment_text: commentText
+                    comment: commentText
                 }
             );
         }
