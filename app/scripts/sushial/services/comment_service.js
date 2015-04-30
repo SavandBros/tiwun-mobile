@@ -70,13 +70,13 @@
         /**
          * @name filterByObject: Filter comments by given object.
          * @param {number} objectType: Object type that is being commented on.
-         * @param {string} ObjectId:  Object PK!
+         * @param {string} ObjectPk:  Object PK!
          * @memberOf tiwun.sushial.services.CommentService
          */
-        function filterByObject(objectType, ObjectId) {
+        function filterByObject(objectType, ObjectPk) {
             return $http.get(
-                'https://127.0.0.1:8000/api/sushial/comment/filter',
-                {params:{object_type: objectType, object_id: ObjectId}}
+                'https://127.0.0.1:8000/api/sushial/comment/',
+                {params:{object_type: objectType, object_pk: ObjectPk}}
             );
         }
     }

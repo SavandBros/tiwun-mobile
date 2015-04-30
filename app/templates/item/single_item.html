@@ -53,10 +53,9 @@
         <div class="list">
 
             <div class="item item-avatar" ng-repeat="comment in item.comments">
-                <img src="{{ comment.user_img }}">
+                <img ng-src="http://placehold.it/64x64">
                 <a class="bold" href="#">{{ comment.user_name }}</a>
-
-                <p>{{ comment.content }}</p>
+                <p>{{ comment.comment }}</p>
             </div>
 
         </div>

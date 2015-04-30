@@ -34,35 +34,15 @@
                     $scope.context = data.data;
                     $scope.item = $scope.context['item'];
 
-                    $scope.item.comments = [
-                        {
-                            user_name: "Amir Mehdi",
-                            user_img: "http://goo.gl/sXexCe",
-                            content: "This is awesome, I iz verry gut in commenting."
+                    CommentService.filterByObject(1, $scope.item.pk).then(
+                        function(data, status, headers, config){
+                            $scope.item.comments = data.data;
                         },
-                        {user_name: "Alireza", user_img: "http://goo.gl/5nqX1I", content: "Like Like like... <3"},
-                        {user_name: "Hassan", user_img: "http://goo.gl/mQ9r38", content: "Cool :)"},
-                        {
-                            user_name: "Mohhamad Ali",
-                            user_img: "http://goo.gl/hMUWto",
-                            content: "Best product NEVER ! XD LMAO"
-                        },
-                        {
-                            user_name: "Gholam Reza",
-                            user_img: "http://goo.gl/wpb2MF",
-                            content: "Here's the last comment you'll ever see stupid fucker!"
+                        function(data, status, headers, config){
+                            console.log("[error] on getting comments!");
+                            console.log(data.error);
                         }
-                    ];
-
-                    // CommentService.filterByObject(1, $scope.item.pk).then(
-                    //     function(data, status, headers, config){
-                    //         $scope.item.comments = data.data;
-                    //     },
-                    //     function(data, status, headers, config){
-                    //         console.log("[error] on getting comments!");
-                    //         console.log(data.error);
-                    //     }
-                    // );
+                    );
                 },
                 function (data, status, headers, config) {
                     console.log('Error on receiving item');
@@ -79,7 +59,7 @@
                 console.log(form, comment);
                 CommentService.create(1, $scope.item.pk, user.pk, comment.text).then(
                     function (data, status, headers, config) {
-                        console.log(data.data);
+                        $scope.item.comments = $scope.item.comments.concat(data.data);
                     },
                     function (data, status, headers, config) {
                         console.log('commenting error');
