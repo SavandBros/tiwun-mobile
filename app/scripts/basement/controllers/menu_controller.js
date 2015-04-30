@@ -10,10 +10,14 @@
     ])
         .controller('MenuController', MenuController);
 
-    MenuController.$inject = ['$scope', 'AuthenticationService'];
+    MenuController.$inject = ['$window', '$scope', 'AuthenticationService'];
 
-    function MenuController($scope, AuthenticationService) {
+    function MenuController($window, $scope, AuthenticationService) {
         $scope.auth = AuthenticationService;
+
+        $scope.$on('tiwun.account.service.AuthenticationService:SignedOut', function () {
+            $window.location.reload(true)
+        });
     }
 
 })();

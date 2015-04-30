@@ -8,13 +8,13 @@
     angular.module('tiwun.account.services.AuthenticationService')
         .factory('AuthenticationService', AuthenticationService);
 
-    AuthenticationService.$inject = ['$cookies', '$http'];
+    AuthenticationService.$inject = ['$rootScope', '$cookies', '$http'];
 
     /**
      * @namespace AuthenticationService
      * @returns [Factory]
      */
-    function AuthenticationService($cookies, $http) {
+    function AuthenticationService($rootScope, $cookies, $http) {
         /**
          * @name AuthenticationService
          * @desc The Factory to be returned
@@ -74,11 +74,9 @@
              * @desc Set the authenticated account and redirect to index
              */
             function loginSuccessFn(data, status, headers, config) {
-                console.log(data.data);
-                return;
                 AuthenticationService.setAuthenticatedUser(data.data);
 
-                window.location = '/';
+                $rootScope.$broadcast('tiwun.account.service.AuthenticationService:Authenticated');
             }
 
             /**
@@ -105,9 +103,9 @@
              * @desc UnAuthenticate and redirect to index with page reload
              */
             function logoutSuccessFn(data, status, headers, config) {
-                AuthenticationService.unauthenticate();
+                AuthenticationService.unAuthenticate();
 
-                window.location = '/';
+                $rootScope.$broadcast('tiwun.account.service.AuthenticationService:SignedOut');
             }
 
             /**

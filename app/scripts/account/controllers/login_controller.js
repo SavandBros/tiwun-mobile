@@ -10,14 +10,13 @@
     ])
         .controller('LoginController', LoginController);
 
-    LoginController.$inject = ['$location', '$scope', 'AuthenticationService'];
+    LoginController.$inject = ['$window', '$state', '$scope', 'AuthenticationService'];
 
     /**
      * @namespace LoginController
      */
-    function LoginController($location, $scope, AuthenticationService) {
+    function LoginController($window, $state, $scope, AuthenticationService) {
         constructor();
-
         /**
          * @name constructor
          * @desc Actions to be performed when this controller is instantiated
@@ -27,9 +26,14 @@
             console.log('LoginController');
             // if the use is authenticated, they should not be here.
             if (AuthenticationService.isAuthenticated()) {
-                $location.url('/');
+                $state.go('app.explore');
             }
         }
+
+        $scope.$on('tiwun.account.service.AuthenticationService:Authenticated', function () {
+            $state.go('app.explore', {}, {reload: true});
+            $window.location.reload(true)
+        });
 
         /**
          * @name login
@@ -37,7 +41,6 @@
          * @memberOf tiwun.account.controllers.LoginController
          */
         $scope.login = function (form, user) {
-            console.log(user);
             AuthenticationService.login(user.email, user.password);
         };
     }
