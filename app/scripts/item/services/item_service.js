@@ -19,12 +19,7 @@
             all: all,
             get: get,
             create: create,
-            vote: vote
-        };
-
-        var VoteTypes = {
-            'up': 0,
-            'down': 1
+            update: update
         };
 
         return ItemService;
@@ -32,7 +27,8 @@
 
         /**
          * @name all
-         * @desc Get all ItemService
+         * @desc Get all Items
+         * @param {number} page_number
          * @returns {Promise}
          * @memberOf tiwun.item.services.ItemService
          */
@@ -47,16 +43,32 @@
         /**
          * @name create
          * @desc Create a new Post
-         * @param {string} content The content of the new Post
+         * @param {string} item The content of the new Post
          * @returns {Promise}
          * @memberOf tiwun.item.services.ItemService
          */
-        function create(content) {
-            return $http.post('/api/v1/items/', {
-                content: content
+        function create(item) {
+            return $http.post('https://127.0.0.1:8000/api/items/', {
+                title: item.title,
+                description: item.description,
+                tags: item.tags
             });
         }
 
+        /**
+         * @name Update
+         * @desc Update a single item
+         * @param {string} item The content of the item to be updated.
+         * @returns {Promise}
+         * @memberOf tiwun.item.services.ItemService
+         */
+        function update(item) {
+            return $http.put('https://127.0.0.1:8000/api/items/', {
+                title: item.title,
+                description: item.description,
+                tags: item.tags
+            });
+        }
 
         /**
          * @name get
@@ -69,20 +81,5 @@
             return $http.get('https://127.0.0.1:8000/api/items/' + id + '/');
         }
 
-
-        /**
-         * @name vote
-         * @desc Vote up/down for the given item.
-         * @param {string} id Item's ID.
-         * @param {VoteTypes} voteType: The type of Vote.
-         * @returns {Promise}
-         * @memberOf tiwun.item.services.ItemService
-         */
-        function vote(id, voteType) {
-            return $http.post(
-                'https://127.0.0.1:8000/api/sushial/like/',
-                {item_id: id, vote_type: VoteTypes[voteType]}
-            );
-        }
     }
 })();

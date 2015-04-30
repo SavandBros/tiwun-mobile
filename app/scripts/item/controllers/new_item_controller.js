@@ -18,38 +18,12 @@
      */
     function NewItemController($rootScope, $scope, AuthenticationService, ItemService) {
         /**
-         * @name submit
-         * @desc Create a new Post
+         * @name create
+         * @desc Create a new Item
          * @memberOf tiwun.item.controllers.NewItemController
          */
-        $scope.submit = function submit() {
-            $rootScope.broadcast('item.created', {
-                content: $scope.content,
-                author: {
-                    username: AuthenticationService.getAuthenticatedUser().username
-                }
-            });
-
-            $scope.closeThisDialog();
-            ItemService.create($scope.content).then(createItemSuccessFn, createItemErrorFn);
-
-            /**
-             * @name createItemSuccessFn
-             * @desc Show with success message
-             */
-            function createItemSuccessFn(data, status, headers, config) {
-                console.log('Success! Item created.');
-            }
-
-            /**
-             * @name createItemErrorFn
-             * @desc Propogate error event and show messageBar with error message
-             */
-            function createItemErrorFn(data, status, headers, config) {
-                $rootScope.$broadcast('item.created.error');
-                //Snackbar.error(data.error);
-                console.log(data.error);
-            }
+        $scope.create = function () {
+            // TODO: send item to ItemService.create() ;)
         }
     }
 })();
