@@ -33,11 +33,11 @@
                 <div class="item item-divider"> Account
                 </div>
 
-                <ion-item nav-clear menu-close href="#!/app/account/login">
+                <ion-item nav-clear menu-close href="#!/app/account/login" ng-hide="{{ auth.isAuthenticated() }}">
                     <i class="icon ion-log-in"></i> Sign in
                 </ion-item>
 
-                <ion-item nav-clear menu-close href="#!/app/account/register">
+                <ion-item nav-clear menu-close href="#!/app/account/register" ng-hide="{{ auth.isAuthenticated() }}">
                     <i class="icon ion-log-in"></i> Create An Account
                 </ion-item>
 
