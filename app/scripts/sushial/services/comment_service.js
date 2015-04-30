@@ -39,14 +39,14 @@
          */
         function create(objectType, objectId, userId, commentText) {
             $http.post(
-                'https://127.0.0.1:8000/api/sushial/comment/create',
+                'https://127.0.0.1:8000/api/sushial/comment/add/',
                 {
                     object_type: objectType,
                     object_id: objectId,
                     user_id: userId,
                     comment_text: commentText
                 }
-            )
+            );
         }
 
         /**
@@ -64,7 +64,7 @@
                     object_id: objectId,
                     user_id: userId
                 }
-            )
+            );
         }
 
         /**
@@ -76,8 +76,8 @@
         function filterByObject(objectType, ObjectId) {
             return $http.get(
                 'https://127.0.0.1:8000/api/sushial/comment/filter',
-                {object_type: objectType, object_id: ObjectId}
-            )
+                {params:{object_type: objectType, object_id: ObjectId}}
+            );
         }
     }
 })();

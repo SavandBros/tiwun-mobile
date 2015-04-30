@@ -6,16 +6,18 @@
     "use strict";
 
     angular.module('tiwun.item.controllers.SingleItemController', [
-        'tiwun.item.services.ItemService'
+        'tiwun.item.services.ItemService',
+        'tiwun.sushial.services.CommentService',
+        'tiwun.account.services.AuthenticationService'
     ])
         .controller('SingleItemController', SingleItemController);
 
-    SingleItemController.$inject = ['$scope', '$stateParams', '$ionicHistory', 'ItemService'];
+    SingleItemController.$inject = ['$scope', '$stateParams', '$ionicHistory', 'ItemService', 'CommentService', 'AuthenticationService'];
 
     /**
      * @namespace SingleItemController
      */
-    function SingleItemController($scope, $stateParams, $ionicHistory, ItemService) {
+    function SingleItemController($scope, $stateParams, $ionicHistory, ItemService, CommentService, AuthenticationService) {
         constructor();
 
         /**
@@ -65,6 +67,16 @@
                     $ionicHistory.goBack();
                 }
             );
+        }
+        $scope.addComment = function(form, comment) {
+            $scope.auth = AuthenticationService;
+            var user = $scope.auth.getAuthenticatedUser();
+            
+            if (user.isAuthenticated())
+            {
+                console.log(form, comment);
+                CommentService.create(1, $scope.item.pk, user.pk, comment);
+            }
         }
     }
 })();
