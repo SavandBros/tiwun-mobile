@@ -1,5 +1,7 @@
 /**
  * SingleItemController
+ *
+ * @module SingleItemController
  * @namespace tiwun.item.controllers
  **/
 (function () {
@@ -15,6 +17,7 @@
     SingleItemController.$inject = ['$scope', '$stateParams', '$ionicHistory', 'ItemService', 'CommentService', 'AuthenticationService'];
 
     /**
+     * @class SingleItemController
      * @namespace SingleItemController
      */
     function SingleItemController($scope, $stateParams, $ionicHistory, ItemService, CommentService, AuthenticationService) {
