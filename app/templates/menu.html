@@ -41,6 +41,12 @@
                     <i class="icon ion-log-in"></i> Create An Account
                 </ion-item>
 
+                <div ng-show="{{ auth.isAuthenticated() }}">
+                    <ion-item nav-clear menu-close href="#!" ng-click="auth.logout()">
+                        <i class="icon ion-log-out"></i> Sign out
+                    </ion-item>
+                </div>
+
                 <div class="item item-divider">
                     Other
                 </div>
