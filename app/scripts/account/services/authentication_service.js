@@ -87,7 +87,6 @@
              */
             function loginErrorFn(data, status, headers, config) {
                 console.log(data.error);
-                console.log('Epic failure!');
             }
         }
 
