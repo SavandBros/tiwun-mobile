@@ -11,12 +11,22 @@
     ])
         .controller('NewItemController', NewItemController);
 
-    NewItemController.$inject = ['$rootScope', '$scope', 'AuthenticationService', 'ItemService'];
+    NewItemController.$inject = ['$rootScope', '$scope', '$state', 'AuthenticationService', 'ItemService'];
 
     /**
      * @namespace NewItemController
      */
-    function NewItemController($rootScope, $scope, AuthenticationService, ItemService) {
+    function NewItemController($rootScope, $scope, $state,  AuthenticationService, ItemService) {
+        constructor();
+
+        $scope.auth = AuthenticationService;
+
+        function constructor() {
+            if (!AuthenticationService.isAuthenticated()) {
+                $state.go('app.login');
+            }
+        }
+
         /**
          * @name create
          * @desc Create a new Item
