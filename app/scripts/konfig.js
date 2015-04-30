@@ -21,6 +21,7 @@
             .state('app', {
                 url: "/app",
                 abstract: true,
+                controller: 'MenuController',
                 templateUrl: "templates/menu.html"
             })
             .state('app.explore', {
