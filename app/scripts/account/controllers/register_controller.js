@@ -10,12 +10,12 @@
     ])
         .controller('RegisterController', RegisterController);
 
-    RegisterController.$inject = ['$location', '$scope', '$stateParams', 'AuthenticationService'];
+    RegisterController.$inject = ['$window', '$ionicHistory', '$state', '$scope', '$stateParams', 'AuthenticationService'];
 
     /**
      * @namespace RegisterController
      */
-    function RegisterController($location, $scope, $stateParams, AuthenticationService) {
+    function RegisterController($window, $ionicHistory, $state, $scope, $stateParams, AuthenticationService) {
         constructor();
 
         /**
@@ -26,9 +26,15 @@
         function constructor() {
             // if the user is authenticated, they should not be here.
             if (AuthenticationService.isAuthenticated()) {
-                $location.url('/');
+                $ionicHistory.goBack();
             }
         }
+
+        $scope.$on('tiwun.account.service.AuthenticationService:Registered', function() {
+            console.log('registered');
+            $state.go('app.explore', {}, {reload: true});
+            $window.location.reload(true)
+        });
 
         /**
          * @name register

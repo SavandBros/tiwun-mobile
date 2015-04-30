@@ -126,7 +126,7 @@
          * @memberOf tiwun.account.services.AuthenticationService
          */
         function register(email, password) {
-            return $http.post('/api/v1/users/', {
+            return $http.post('https://127.0.0.1:8000/api/users/', {
                 email: email,
                 password: password
             }).then(registerSuccessFn, registerErrorFn);
@@ -136,7 +136,9 @@
              * @desc Log the new user in
              */
             function registerSuccessFn(data, status, headers, config) {
-                Authentication.login(email, password);
+                $rootScope.$broadcast('tiwun.account.service.AuthenticationService:Registered');
+
+                AuthenticationService.login(email, password);
             }
 
             /**
