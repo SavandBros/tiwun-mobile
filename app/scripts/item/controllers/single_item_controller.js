@@ -71,11 +71,18 @@
         $scope.addComment = function(form, comment) {
             $scope.auth = AuthenticationService;
             var user = $scope.auth.getAuthenticatedUser();
-            
-            if (user.isAuthenticated())
-            {
+
+            if ($scope.auth.isAuthenticated()) {
                 console.log(form, comment);
-                CommentService.create(1, $scope.item.pk, user.pk, comment);
+                CommentService.create(1, $scope.item.pk, user.pk, comment.text).then(
+                    function (data, status, headers, config) {
+                        console.log(data.data);
+                    },
+                    function (data, status, headers, config) {
+                        console.log('commenting error');
+                        console.log(data.error)
+                    }
+                );
             }
         }
     }
