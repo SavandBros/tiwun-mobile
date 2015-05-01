@@ -4,6 +4,10 @@ a {
 
 .icon-bg {
 	font-size: 6em !important;
-	z-index: -1 !important;
-	color: #DDD;
+	z-index: -1;
+	color: #ddd;
+}
+
+.gray {
+	color: #bbb;
 }
