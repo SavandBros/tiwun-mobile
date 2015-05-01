@@ -43,7 +43,7 @@
         /**
          * @name create
          * @desc Create a new Post
-         * @param {string} item The content of the new Post
+         * @param {{}} item The content of the new Post
          * @returns {Promise}
          * @memberOf tiwun.item.services.ItemService
          */
