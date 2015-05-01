@@ -15,3 +15,9 @@ a {
 .faded {
 	opacity: 0.5;
 }
+
+.item-tiny {
+	padding: 6px;
+	font-size: 0.9em;
+	box-shadow: 0 0 10px #ddd;
+}
