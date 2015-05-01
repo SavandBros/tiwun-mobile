@@ -15,9 +15,19 @@
                         ng-minlength="5"
                         ng-maxlength="155">
                 </label>
-                <p ng-show="form.title.$invalid && !form.title.$pristine && formSubmitted" class="balanced">Title is required.</p>
-                <p ng-show="form.title.$error.minlength && formSubmitted" class="balanced">Title is too short.</p>
-                <p ng-show="form.title.$error.maxlength && formSubmitted" class="balanced">Title is too long.</p>
+
+                <div class="bar bar-assertive" ng-show="form.title.$invalid && !form.title.$pristine && formSubmitted">
+                    Title is required.
+                </div>
+
+                <div class="bar bar-assertive" ng-show="form.title.$error.minlength && formSubmitted">
+                    Title is too short.
+                </div>
+
+                <div class="bar bar-assertive" ng-show="form.title.$error.maxlength && formSubmitted">
+                    Title is too long.
+                </div>
+                
                 <label class="item item-input item-floating-label"
                        ng-class="{ 'has-error' : form.description.$invalid && !form.description.$pristine && formSubmitted  }">
                     <span class="input-label">Description</span>
@@ -32,8 +42,15 @@
                         required>
                     </textarea>
                 </label>
-                <p ng-show="form.description.$invalid && !form.description.$pristine && formSubmitted" class="balanced">Description is required.</p>
-                <p ng-show="form.description.$error.minlength && formSubmitted" class="balanced">Description is too short.</p>
+                
+                <div class="bar bar-assertive" ng-show="form.description.$invalid && !form.description.$pristine && formSubmitted">
+                    Description is required.
+                </div>
+                
+                <div class="bar bar-assertive" ng-show="form.description.$error.minlength && formSubmitted">
+                    Description is too short.
+                </div>
+
                 <label class="item item-input item-floating-label"
                        ng-class="{ 'has-error' : form.tags.$invalid && !form.tags.$pristine && formSubmitted }">
                     <span class="input-label">Tags</span>
@@ -47,9 +64,15 @@
                         ng-maxlength="50"
                         required>
                 </label>
-                <p ng-show="form.tags.$invalid && !form.tags.$pristine && formSubmitted" class="balanced">Tag are required.</p>
-                <p ng-show="form.tags.$error.minlength && formSubmitted" class="balanced">Tags are too short.</p>
-                <p ng-show="form.tags.$error.maxlength && formSubmitted" class="balanced">Tags are too long.</p>
+                <div ng-show="form.tags.$invalid && !form.tags.$pristine && formSubmitted" class="bar bar-assertive">
+                    Tag are required.
+                </div>
+                <div ng-show="form.tags.$error.minlength && formSubmitted" class="bar bar-assertive">
+                    Tags are too short.
+                </div>
+                <div ng-show="form.tags.$error.maxlength && formSubmitted" class="bar bar-assertive">
+                    Tags are too long.
+                </div>
             </div>
 
         </ion-content>
@@ -57,8 +80,8 @@
 
     <div class="bar bar-footer">
         <div class="button-bar">
-            <button class="button button-large button-assertive"><i class="ion-close"></i> Cancel</button>
-            <button type="submit" class="button button-large button-positive"><i class="ion-compose"></i> Post</button>
+            <button class="button button-large button-default"><i class="ion-close"></i> Cancel</button>
+            <button type="submit" class="button button-large button-balanced"><i class="ion-compose"></i> Post</button>
         </div>
     </div>
 </form>
