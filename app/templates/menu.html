@@ -5,8 +5,11 @@
             </ion-nav-back-button>
 
             <ion-nav-buttons side="left">
-                <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
-                </button>
+                <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+            </ion-nav-buttons>
+
+            <ion-nav-buttons side="right">
+                <a href="#!/app/items/new/" class="button button-icon button-balanced button-clear ion-ios-plus-outline"></a>
             </ion-nav-buttons>
         </ion-nav-bar>
         <ion-nav-view name="menuContent"></ion-nav-view>
@@ -25,15 +28,15 @@
                 </div>
 
                 <a menu-close class="item item-icon-left" href="#!/app/explore">
-                    <i class="icon icon-menu-bg ion-android-apps gray"></i> Explore
+                    <i class="icon icon-menu-bg gray ion-android-apps"></i> Explore
                 </a>
 
                 <a menu-close class="item item-icon-left" href="#!/app/items/new/">
-                    <i class="icon icon-menu-bg ion-ios-plus-outline gray"></i> Post
+                    <i class="icon icon-menu-bg gray ion-ios-plus-outline"></i> Post
                 </a>
 
                 <a menu-close class="item item-icon-left" href="#!/app/search">
-                    <i class="icon icon-menu-bg ion-ios-search-strong gray"></i> Search
+                    <i class="icon icon-menu-bg gray ion-ios-search"></i> Search
                 </a>
 
                 <div class="item item-divider"> Account</div>
