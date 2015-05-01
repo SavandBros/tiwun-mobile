@@ -1,7 +1,64 @@
-<ion-view>
-    <ion-content>
+<form name="form" ng-submit="create(form)">
+    <ion-view>
+        <ion-content>
+            <div class="list">
+                <label class="item item-input item-floating-label"
+                       ng-class="{ 'has-error' : form.title.$invalid && !form.title.$pristine  && formSubmitted }">
+                    <span class="input-label">Title</span>
+                    <input
+                        type="text"
+                        placeholder="Title"
+                        name="title"
+                        ng-model="item.title"
+                        required
+                        ng-required="true"
+                        ng-minlength="5"
+                        ng-maxlength="155">
+                </label>
+                <p ng-show="form.title.$invalid && !form.title.$pristine && formSubmitted" class="balanced">Title is required.</p>
+                <p ng-show="form.title.$error.minlength && formSubmitted" class="balanced">Title is too short.</p>
+                <p ng-show="form.title.$error.maxlength && formSubmitted" class="balanced">Title is too long.</p>
+                <label class="item item-input item-floating-label"
+                       ng-class="{ 'has-error' : form.description.$invalid && !form.description.$pristine && formSubmitted  }">
+                    <span class="input-label">Description</span>
+                    <textarea
+                        placeholder="Description"
+                        name="description"
+                        cols="30"
+                        rows="10"
+                        ng-model="item.description"
+                        ng-required="true"
+                        ng-minlength="15"
+                        required>
+                    </textarea>
+                </label>
+                <p ng-show="form.description.$invalid && !form.description.$pristine && formSubmitted" class="balanced">Description is required.</p>
+                <p ng-show="form.description.$error.minlength && formSubmitted" class="balanced">Description is too short.</p>
+                <label class="item item-input item-floating-label"
+                       ng-class="{ 'has-error' : form.tags.$invalid && !form.tags.$pristine && formSubmitted }">
+                    <span class="input-label">Tags</span>
+                    <input
+                        type="text"
+                        placeholder="Tags separated by space"
+                        name="tags"
+                        ng-model="item.tags"
+                        ng-required="true"
+                        ng-minlength="3"
+                        ng-maxlength="50"
+                        required>
+                </label>
+                <p ng-show="form.tags.$invalid && !form.tags.$pristine && formSubmitted" class="balanced">Tag are required.</p>
+                <p ng-show="form.tags.$error.minlength && formSubmitted" class="balanced">Tags are too short.</p>
+                <p ng-show="form.tags.$error.maxlength && formSubmitted" class="balanced">Tags are too long.</p>
+            </div>
 
-        TEXT
+        </ion-content>
+    </ion-view>
 
-    </ion-content>
-</ion-view>
+    <div class="bar bar-footer">
+        <div class="button-bar">
+            <button class="button button-large button-assertive"><i class="ion-close"></i> Cancel</button>
+            <button type="submit" class="button button-large button-positive"><i class="ion-compose"></i> Post</button>
+        </div>
+    </div>
+</form>
