@@ -17,15 +17,15 @@
                 </label>
 
                 <div class="bar bar-assertive" ng-show="form.title.$invalid && !form.title.$pristine && formSubmitted">
-                    Title is required.
+                    <p>Title is required.</p>
                 </div>
 
                 <div class="bar bar-assertive" ng-show="form.title.$error.minlength && formSubmitted">
-                    Title is too short.
+                    <p>Title is too short.</p>
                 </div>
 
                 <div class="bar bar-assertive" ng-show="form.title.$error.maxlength && formSubmitted">
-                    Title is too long.
+                    <p>Title is too long.</p>
                 </div>
                 
                 <label class="item item-input item-floating-label"
@@ -44,11 +44,11 @@
                 </label>
                 
                 <div class="bar bar-assertive" ng-show="form.description.$invalid && !form.description.$pristine && formSubmitted">
-                    Description is required.
+                    <p>Description is required.</p>
                 </div>
                 
                 <div class="bar bar-assertive" ng-show="form.description.$error.minlength && formSubmitted">
-                    Description is too short.
+                    <p>Description is too short.</p>
                 </div>
 
                 <label class="item item-input item-floating-label"
@@ -65,13 +65,13 @@
                         required>
                 </label>
                 <div ng-show="form.tags.$invalid && !form.tags.$pristine && formSubmitted" class="bar bar-assertive">
-                    Tag are required.
+                    <p>Tag are required.</p>
                 </div>
                 <div ng-show="form.tags.$error.minlength && formSubmitted" class="bar bar-assertive">
-                    Tags are too short.
+                    <p>Tags are too short.</p>
                 </div>
                 <div ng-show="form.tags.$error.maxlength && formSubmitted" class="bar bar-assertive">
-                    Tags are too long.
+                    <p>Tags are too long.</p>
                 </div>
             </div>
 
