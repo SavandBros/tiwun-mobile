@@ -11,3 +11,7 @@ a {
 .gray {
 	color: #bbb;
 }
+
+.faded {
+	opacity: 0.5;
+}
