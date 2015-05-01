@@ -1,3 +1,9 @@
 a {
     text-decoration: none !important;
 }
+
+.icon-bg {
+	font-size: 6em !important;
+	z-index: -1 !important;
+	color: #DDD;
+}
