@@ -1,6 +1,7 @@
-<form name="form" ng-submit="create(form)">
-    <ion-view>
-        <ion-content>
+<ion-view>
+    <ion-content>
+        <form name="form" ng-submit="create(form)">
+
             <div class="list">
                 <label class="item item-input item-floating-label"
                        ng-class="{ 'has-error' : form.title.$invalid && !form.title.$pristine  && formSubmitted }">
@@ -15,7 +16,7 @@
                         ng-minlength="5"
                         ng-maxlength="155">
                 </label>
-                
+
                 <label class="item item-input item-floating-label"
                        ng-class="{ 'has-error' : form.description.$invalid && !form.description.$pristine && formSubmitted  }">
                     <span class="input-label">Description</span>
@@ -50,7 +51,7 @@
                     <br>
                     <!-- TITL ERRORS -->
                     <p class="item item-error bar bar-assertive" ng-show="form.title.$invalid && !form.title.$pristine && formSubmitted">
-                       <i class="icon icon-error-bg ion-information-circled"></i> Title is required.
+                        <i class="icon icon-error-bg ion-information-circled"></i> Title is required.
                     </p>
 
                     <p class="item item-error bar bar-assertive" ng-show="form.title.$error.minlength && formSubmitted">
@@ -65,7 +66,7 @@
                     <p class="item item-error bar bar-assertive" ng-show="form.description.$invalid && !form.description.$pristine && formSubmitted">
                         <i class="icon icon-error-bg ion-information-circled"></i> Description is required.
                     </p>
-                    
+
                     <p class="item item-error bar bar-assertive" ng-show="form.description.$error.minlength && formSubmitted">
                         <i class="icon icon-error-bg ion-information-circled"></i> Description is too short.
                     </p>
@@ -90,6 +91,6 @@
                     Cancel
                 </a>
             </div>
-        </ion-content>
-    </ion-view>
-</form>
+        </form>
+    </ion-content>
+</ion-view>

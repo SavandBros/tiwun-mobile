@@ -17,7 +17,8 @@
         'tiwun.basement',
         'tiwun.account',
         'tiwun.item',
-        'tiwun.search'
+        'tiwun.search',
+        'tiwun.tagool'
     ]);
 
     angular.module('tiwun')
