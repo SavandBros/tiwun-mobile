@@ -60,6 +60,15 @@
                     }
                 }
             })
+            .state('app.newItem', {
+                url: "/items/new/",
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/item/item_post.html",
+                        controller: 'NewItemController'
+                    }
+                }
+            })
             .state('app.singleItem', {
                 url: "/items/:itemId/",
                 views: {
