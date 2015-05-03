@@ -86,6 +86,15 @@
                         controller: 'TagsController'
                     }
                 }
+            })
+            .state('app.tagDetail', {
+                url: "/tags/:tagId/",
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/tagool/tag_detail.html",
+                        controller: 'TagsDetailController'
+                    }
+                }
             });
         // if none of the above states are matched, use this as the fallback
         $urlRouterProvider.otherwise('/app/explore');
