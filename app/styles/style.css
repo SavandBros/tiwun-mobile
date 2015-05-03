@@ -2,10 +2,6 @@ a {
     text-decoration: none !important;
 }
 
-.scroll-content {
-	background-color: #ddd !important;
-}
-
 .icon-bg {
 	font-size: 6em !important;
 	z-index: -1;
