@@ -14,9 +14,7 @@
             <div class="item item-body">
                 <img ng-dblclick="upVote(item.pk)" class="full-image" ng-src="{{ item.get_primary_image.standard }}">
 
-                <p>
-                    {{ item.description | markdown | stripTags | truncate: 123: '...' }}
-                </p>
+                <p>{{ item.description | markdown | stripTags | truncate: 123: '...' }}</p>
 
                 <p>
                     <a href="#" class="subdued">{{ item.votes_count }} Like</a>
@@ -24,14 +22,15 @@
                 </p>
             </div>
 
-            <div class="item tabs tabs-secondary tabs-icon-left">
+            <div class="item tabs tabs-secondary tabs-icon-left bg-e">
                 <a class="tab-item" href="#!/app/items/{{ item.pk }}/">
-                    <i class="icon ion-thumbsup"></i>
-                    Like
+                    <i class="icon ion-chevron-up"></i>
                 </a>
                 <a class="tab-item" href="#!/app/items/{{ item.pk }}/">
-                    <i class="icon ion-share"></i>
-                    Share
+                    <i class="icon ion-chevron-down"></i>
+                </a>
+                <a class="tab-item" href="#!/app/items/{{ item.pk }}/">
+                    <i class="icon ion-android-share-alt"></i>
                 </a>
             </div>
 
