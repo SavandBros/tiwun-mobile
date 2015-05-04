@@ -24,6 +24,13 @@
                         {params: {page: page_number}}
                 );
             }
+
+            function tagDetail(page_number, tagSlug) {
+                return $http.get(
+                        'https://127.0.0.1:8000/api/tags/'+tagSlug+'/',
+                        {params: {page: page_number}}
+                );
+            }
         }
 
 })();

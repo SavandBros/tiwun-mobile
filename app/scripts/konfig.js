@@ -88,7 +88,7 @@
                 }
             })
             .state('app.tagDetail', {
-                url: "/tags/:tagId/",
+                url: "/tags/:tagSlug/",
                 views: {
                     'menuContent': {
                         templateUrl: "templates/tagool/tag_detail.html",
