@@ -13,7 +13,8 @@
 
         function TagService($http) {
                 var TagService = {
-                    all: all
+                    all: all,
+                    tagDetail: tagDetail
                 };
 
                 return TagService;

@@ -11,9 +11,10 @@
     ])
         .controller('TagsDetailController', TagsDetailController);
 
-    TagsDetailController.$inject = ['$scope', 'stateParams', 'TagService',];
+    TagsDetailController.$inject = ['$scope', '$stateParams', 'TagService'];
 
-    function TagsDetailController($scope, stateParams, TagService) {
+    function TagsDetailController($scope, $stateParams, TagService) {
+        console.log($stateParams['tagSlug']);
         $scope.items = [];
         $scope.pageHasNext = true;
         $scope.pageCounter = 0;
@@ -23,7 +24,7 @@
          * @name loadMore
          */
         $scope.loadMore = function () {
-            TagService.tagDetail(++$scope.pageCounter, $stateParams[tagSlug]).then(
+            TagService.tagDetail(++$scope.pageCounter, $stateParams['tagSlug']).then(
                 function (data, status, headers, config) {
                     $scope.items = $scope.items.concat(data.data['tagged_classifies']);
 

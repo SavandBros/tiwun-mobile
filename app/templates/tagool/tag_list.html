@@ -2,7 +2,7 @@
     <ion-content>
 
         <div class="list card" ng-repeat="tag in tags">
-            <a class="item item-icon-left" href="#!/tags/{{ tag.slug }}">
+            <a class="item item-icon-left" href="#!/app/tags/{{ tag.slug }}/">
               <i class="icon icon-bg ion-pricetags"></i>
                 {{ tag.slug }}
               <span class="badge badge-assertive">x{{ tag.tagged_items_count }}</span>
