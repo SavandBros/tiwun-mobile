@@ -1,5 +1,6 @@
 /**
  * UserProfileController
+ *
  * @class UserProfileController
  * @namespace tiwun.account.controllers
  */
@@ -15,8 +16,9 @@
         constructor();
 
         /**
-         * @name constructor
-         * @desc Actions to be performed when this controller is instantiated
+         * Actions to be performed when this controller is instantiated
+         *
+         * @method constructor
          * @memberOf UserProfileController
          */
         function constructor() {
