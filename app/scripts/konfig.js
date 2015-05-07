@@ -69,6 +69,15 @@
                     }
                 }
             })
+            .state('app.userSettings', {
+                url: '/account/user-profile/settings/:userId/',
+                views: {
+                    'menuContent': {
+                        templateUrl: 'templates/account/user_settings.html',
+                        controller: 'UserSettingsController'
+                    }
+                }
+            })
             .state('app.newItem', {
                 url: "/items/new/",
                 views: {
