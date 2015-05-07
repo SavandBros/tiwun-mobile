@@ -2,7 +2,7 @@
  * Authentication Service
  *
  * @class AuthenticationService
- * @namespace tiwun.account.services
+ * @namespace tiwun.account.services.AuthenticationService
  */
 (function () {
     'use strict';

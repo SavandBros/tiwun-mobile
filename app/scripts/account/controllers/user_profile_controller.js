@@ -2,7 +2,7 @@
  * User Profile Controller
  *
  * @class UserProfileController
- * @namespace tiwun.account.controllers
+ * @namespace tiwun.account.controllers.UserProfileController
  */
 (function () {
     'use strict';

@@ -2,7 +2,7 @@
  * Login Controller
  *
  * @class LoginController
- * @namespace tiwun.account.controllers
+ * @namespace tiwun.account.controllers.LoginController
  */
 (function () {
     'use strict';

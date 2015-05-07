@@ -2,7 +2,7 @@
  * User Service
  *
  * @class UserService
- * @namespace tiwun.accounts.services
+ * @namespace tiwun.account.services.UserService
  */
 (function () {
     'use strict';
@@ -33,7 +33,7 @@
          * @method get
          * @param {string} user_id The user's ID to get.
          * @returns {Promise}
-         * @memberOf tiwun.accounts.services.UserService
+         * @memberOf tiwun.account.services.UserService
          */
         function get(user_id) {
             return $http.get('https://127.0.0.1:8000/api/users/' + user_id + '/');
@@ -44,13 +44,12 @@
          * Update the account with username `username`
          *
          * @method update
-         * @param {string} username The username of the account to be updated
-         * @param {Object} account The updated account model
+         * @param {Object} user The updated account model
          * @returns {Promise}
-         * @memberOf tiwun.accounts.services.UserService
+         * @memberOf tiwun.account.services.UserService
          */
-        function update(username, account) {
-            return $http.put('/api/v1/users/' + username + '/', account);
+        function update(user) {
+            return $http.put('https://127.0.0.1:8000/api/users/' + user.pk + '/', user);
         }
     }
 })();

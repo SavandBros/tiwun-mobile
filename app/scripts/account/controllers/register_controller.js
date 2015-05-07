@@ -2,7 +2,7 @@
  * Register Controller
  *
  * @class RegisterController
- * @namespace tiwun.account.controllers
+ * @namespace tiwun.account.controllers.RegisterController
  */
 (function () {
     'use strict';
