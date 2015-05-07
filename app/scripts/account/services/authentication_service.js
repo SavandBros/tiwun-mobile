@@ -1,5 +1,7 @@
 /**
- * AuthenticationService
+ * Authentication Service
+ *
+ * @class AuthenticationService
  * @namespace tiwun.account.services
  */
 (function () {
@@ -32,8 +34,9 @@
         return AuthenticationService;
 
         /**
-         * @name getAuthenticatedUser
-         * @des Return the currently authenticated user
+         * Return the currently authenticated user
+         *
+         * @method getAuthenticatedUser
          * @returns {object|undefined} Account if authenticated, else `undefined`
          * @memberOf tiwun.account.services.AuthenticationService
          */
@@ -46,8 +49,9 @@
         }
 
         /**
-         * @name isAuthenticated
-         * @desc Check if the current user is authenticated
+         * Check if the current user is authenticated
+         *
+         * @method isAuthenticated
          * @returns {boolean} True is user is authenticated, else false.
          * @memberOf tiwun.account.services.AuthenticationService
          */
@@ -56,10 +60,11 @@
         }
 
         /**
-         * @name login
-         * @desc Try to log in with email `email` and password `password`
-         * @param {string} email The email entered by the user
-         * @param {string} password The password entered by the user
+         * Try to log in with email `email` and password `password`
+         *
+         * @method login
+         * @param {String} email The email entered by the user
+         * @param {String} password The password entered by the user
          * @returns {Promise}
          * @memberOf tiwun.account.services.AuthenticationService
          */
@@ -70,8 +75,9 @@
             }).then(loginSuccessFn, loginErrorFn);
 
             /**
-             * @name loginSuccessFn
-             * @desc Set the authenticated account and redirect to index
+             * Set the authenticated account and redirect to index
+             *
+             * @method loginSuccessFn
              */
             function loginSuccessFn(data, status, headers, config) {
                 AuthenticationService.setAuthenticatedUser(data.data);
@@ -80,8 +86,9 @@
             }
 
             /**
-             * @name loginErrorFn
-             * @desc Log "Epic failure!" to the console
+             * Log "Epic failure!" to the console
+             *
+             * @method loginErrorFn
              */
             function loginErrorFn(data, status, headers, config) {
                 console.log(data.error);
@@ -89,8 +96,9 @@
         }
 
         /**
-         * @name logout
-         * @desc Try to log the user out
+         * Try to log the user out
+         *
+         * @method logout
          * @returns {Promise}
          * @memberOf tiwun.account.services.AuthenticationService
          */
@@ -99,8 +107,9 @@
                 .then(logoutSuccessFn, logoutErrorFn);
 
             /**
-             * @name logoutSuccessFn
-             * @desc UnAuthenticate and redirect to index with page reload
+             * UnAuthenticate and redirect to index with page reload
+             *
+             * @method logoutSuccessFn
              */
             function logoutSuccessFn(data, status, headers, config) {
                 AuthenticationService.unAuthenticate();
@@ -109,8 +118,9 @@
             }
 
             /**
-             * @name logoutErrorFn
-             * @desc Log "Epic failure!" to the console
+             * Log "Epic failure!" to the console.
+             *
+             * @method logoutErrorFn
              */
             function logoutErrorFn(data, status, headers, config) {
                 console.error('Epic failure!');
@@ -118,10 +128,11 @@
         }
 
         /**
-         * @name register
-         * @desc Try to register a new user
-         * @param {string} email The email entered by the user
-         * @param {string} password The password entered by the user
+         * Try to register a new user
+         *
+         * @method register
+         * @param {String} email The email entered by the user
+         * @param {String} password The password entered by the user
          * @returns {Promise}
          * @memberOf tiwun.account.services.AuthenticationService
          */
@@ -132,8 +143,9 @@
             }).then(registerSuccessFn, registerErrorFn);
 
             /**
-             * @name registerSuccessFn
-             * @desc Log the new user in
+             * Log the new user in.
+             *
+             * @method registerSuccessFn
              */
             function registerSuccessFn(data, status, headers, config) {
                 $rootScope.$broadcast('tiwun.account.service.AuthenticationService:Registered');
@@ -142,8 +154,9 @@
             }
 
             /**
-             * @name registerErrorFn
-             * @desc Log "Epic failure!" to the console
+             * Log "Epic failure!" to the console
+             *
+             * @method registerErrorFn
              */
             function registerErrorFn(data, status, headers, config) {
                 console.error('Epic failure!');
@@ -151,9 +164,10 @@
         }
 
         /**
-         * @name setAuthenticatedUser
-         * @desc Stringify the account object and store it in a cookie
-         * @param {Object} account The acount object to be stored
+         * Stringify the account object and store it in a cookie
+         *
+         * @method setAuthenticatedUser
+         * @param {Object} account The account object to be stored
          * @returns {undefined}
          * @memberOf tiwun.account.services.AuthenticationService
          */
@@ -162,8 +176,9 @@
         }
 
         /**
-         * @name unAuthenticate
-         * @desc Delete the cookie where the account object is stored
+         * Delete the cookie where the account object is stored
+         *
+         * @method unAuthenticate
          * @returns {undefined}
          * @memberOf tiwun.account.services.AuthenticationService
          */

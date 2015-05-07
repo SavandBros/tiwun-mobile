@@ -1,7 +1,6 @@
 /**
  * SingleItemController
  *
- * @module SingleItemController
  * @namespace tiwun.item.controllers
  **/
 (function () {

@@ -1,3 +1,8 @@
+/**
+ * `tiwun.account` module.
+ *
+ * @module tiwun.account
+ */
 (function () {
     'use strict';
 

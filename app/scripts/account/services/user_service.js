@@ -1,5 +1,7 @@
 /**
- * UserService
+ * User Service
+ *
+ * @class UserService
  * @namespace tiwun.accounts.services
  */
 (function () {
@@ -10,14 +12,13 @@
 
     UserService.$inject = ['$http'];
 
-    /**
-     * @namespace UserService
-     */
+
     function UserService($http) {
         /**
-         * @name UserService
-         * @desc The factory to be returned
-         * @memberOf tiwun.accounts.services.UserService
+         * Keeps all the method available on the User Service.
+         *
+         * @property UserService
+         * @type {{destroy: destroy, get: get, update: update}}
          */
         var UserService = {
             destroy: destroy,
@@ -28,8 +29,9 @@
         return UserService;
 
         /**
-         * @name destroy
-         * @desc Destroys the account with username `username`
+         * Destroys the account with username `username`
+         *
+         * @method destroy
          * @param {string} username The username of the account to be destroyed
          * @returns {Promise}
          * @memberOf tiwun.accounts.services.UserService
@@ -40,8 +42,9 @@
 
 
         /**
-         * @name get
-         * @desc Gets the account with username `username`
+         * Gets the account with username `username`
+         *
+         * @method get
          * @param {string} username The username of the account to get
          * @returns {Promise}
          * @memberOf tiwun.accounts.services.UserService
@@ -52,8 +55,9 @@
 
 
         /**
-         * @name update
-         * @desc Update the account with username `username`
+         * Update the account with username `username`
+         *
+         * @method update
          * @param {string} username The username of the account to be updated
          * @param {Object} account The updated account model
          * @returns {Promise}

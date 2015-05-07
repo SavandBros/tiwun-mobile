@@ -1,5 +1,5 @@
 /**
- * UserProfileController
+ * User Profile Controller
  *
  * @class UserProfileController
  * @namespace tiwun.account.controllers

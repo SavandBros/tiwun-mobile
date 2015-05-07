@@ -1,5 +1,7 @@
 /**
- * LoginController
+ * Login Controller
+ *
+ * @class LoginController
  * @namespace tiwun.account.controllers
  */
 (function () {
@@ -12,14 +14,12 @@
 
     LoginController.$inject = ['$window', '$state', '$scope', 'AuthenticationService'];
 
-    /**
-     * @namespace LoginController
-     */
     function LoginController($window, $state, $scope, AuthenticationService) {
         constructor();
         /**
-         * @name constructor
-         * @desc Actions to be performed when this controller is instantiated
+         * Actions to be performed when this controller is instantiated
+         *
+         * @method constructor
          * @memberOf tiwun.account.controllers.LoginController
          */
         function constructor() {
@@ -36,8 +36,9 @@
         });
 
         /**
-         * @name login
-         * @desc Log the user in
+         * Log the user in
+         *
+         * @method login
          * @memberOf tiwun.account.controllers.LoginController
          */
         $scope.login = function (form, user) {
