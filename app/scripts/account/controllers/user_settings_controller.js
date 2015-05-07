@@ -33,7 +33,7 @@
                         /**
                          * Current user that is logged and is trying to update settings.
                          *
-                         * @property {Object} user 
+                         * @property {Object} user
                          */
                         $scope.user = data.data;
                     },
