@@ -7,12 +7,14 @@
 (function () {
     'use strict';
 
-    angular.module('tiwun.account.controllers.UserProfileController', [])
+    angular.module('tiwun.account.controllers.UserProfileController', [
+        'tiwun.account.services.UserService'
+    ])
         .controller('UserProfileController', UserProfileController);
 
-    UserProfileController.$inject = [];
+    UserProfileController.$inject = ['$scope', '$stateParams', 'UserService'];
 
-    function UserProfileController() {
+    function UserProfileController($scope, $stateParams, UserService) {
         constructor();
 
         /**
@@ -22,8 +24,14 @@
          * @memberOf UserProfileController
          */
         function constructor() {
-
+            UserService.get($stateParams['userId']).then(
+                function (data, status, headers, config) {
+                    $scope.user = data.data;
+                },
+                function (data, status, headers, config) {
+                    console.log('Error in getting user: ' + data.error);
+                }
+            );
         }
     }
-
 })();

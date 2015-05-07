@@ -21,7 +21,6 @@
          * @type {{destroy: destroy, get: get, update: update}}
          */
         var UserService = {
-            destroy: destroy,
             get: get,
             update: update
         };
@@ -29,28 +28,15 @@
         return UserService;
 
         /**
-         * Destroys the account with username `username`
-         *
-         * @method destroy
-         * @param {string} username The username of the account to be destroyed
-         * @returns {Promise}
-         * @memberOf tiwun.accounts.services.UserService
-         */
-        function destroy(username) {
-            return $http.delete('/api/v1/users/' + username + '/');
-        }
-
-
-        /**
          * Gets the account with username `username`
          *
          * @method get
-         * @param {string} username The username of the account to get
+         * @param {string} user_id The user's ID to get.
          * @returns {Promise}
          * @memberOf tiwun.accounts.services.UserService
          */
-        function get(username) {
-            return $http.get('/api/v1/users/' + username + '/');
+        function get(user_id) {
+            return $http.get('https://127.0.0.1:8000/api/users/' + user_id + '/');
         }
 
 

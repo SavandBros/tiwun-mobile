@@ -60,6 +60,15 @@
                     }
                 }
             })
+            .state('app.userProfile', {
+                url: '/account/user-profile/:userId/',
+                views: {
+                    'menuContent': {
+                        templateUrl: 'templates/account/user_profile.html',
+                        controller: 'UserProfileController'
+                    }
+                }
+            })
             .state('app.newItem', {
                 url: "/items/new/",
                 views: {
