@@ -30,6 +30,11 @@
             } else {
                 UserService.get($stateParams['userId']).then(
                     function (data, status, headers, config) {
+                        /**
+                         * Current user that is logged and is trying to update settings.
+                         *
+                         * @property {Object} user 
+                         */
                         $scope.user = data.data;
                     },
                     function (data, status, headers, config) {
