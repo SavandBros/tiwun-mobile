@@ -27,6 +27,15 @@
             if (!AuthenticationService.isAuthenticated()) {
                 $state.go('app.login');
                 console.log("You're not authorized to access this page.")
+            } else {
+                UserService.get($stateParams['userId']).then(
+                    function (data, status, headers, config) {
+                        $scope.user = data.data;
+                    },
+                    function (data, status, headers, config) {
+                        console.log('Error in getting user: ' + data.error);
+                    }
+                );
             }
         }
 
