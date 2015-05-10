@@ -6,9 +6,10 @@
  *
  * @class UserService
  * @param $http
+ * @param ENV
  * @namespace tiwun.account.services.UserService
  */
-function UserService($http) {
+function UserService($http, ENV) {
     /**
      * Gets the account with username `username`
      *
@@ -18,7 +19,7 @@ function UserService($http) {
      * @memberOf tiwun.account.services.UserService
      */
     function get(userId) {
-        return $http.get('https://127.0.0.1:8000/api/users/' + userId + '/');
+        return $http.get(ENV.apiEndpoint + 'users/' + userId + '/');
     }
 
     /**
@@ -30,7 +31,7 @@ function UserService($http) {
      * @memberOf tiwun.account.services.UserService
      */
     function update(user) {
-        return $http.put('https://127.0.0.1:8000/api/users/' + user.pk + '/', user);
+        return $http.put(ENV.apiEndpoint + 'users/' + user.pk + '/', user);
     }
 
     return {
@@ -42,4 +43,4 @@ function UserService($http) {
 angular.module('tiwun.account.services.UserService')
     .factory('UserService', UserService);
 
-UserService.$inject = ['$http'];
+UserService.$inject = ['$http', 'ENV'];
