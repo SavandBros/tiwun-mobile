@@ -78,6 +78,7 @@ function VoteService($http, ENV) {
     return {
         upVote: upVote,
         downVote: downVote,
+        isUserLikedObject: isUserLikedObject,
         VoteTypes: VoteTypes,
         ObjectTypes: ObjectTypes
     };
