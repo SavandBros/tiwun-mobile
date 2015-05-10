@@ -1,5 +1,5 @@
 /**
- * IndexController
+ * @class IndexController
  * @namespace tiwun.basement.controllers
  */
 (function () {
