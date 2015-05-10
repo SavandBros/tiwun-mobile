@@ -20,8 +20,9 @@ function VoteService($http, ENV) {
     };
 
     /**
-     * @name upVote
-     * @desc Vote up for the given item.
+     * Vote up for the given item.
+     *
+     * @method upVote
      * @param {number} objectType: Object type that is being voted.
      * @param {string} objectId: Object PK!
      * @param {string} userId: User Id that up voting the object.
@@ -40,8 +41,9 @@ function VoteService($http, ENV) {
     }
 
     /**
-     * @name downVote
-     * @desc Down vote for the given item.
+     * Down vote for the given item.
+     *
+     * @method downVote
      * @param {number} objectType: Object type that is being voted.
      * @param {string} objectId: Object PK!
      * @param {string} userId: User Id that down voting the object.
@@ -57,6 +59,20 @@ function VoteService($http, ENV) {
                 vote_type: VoteTypes.down
             }
         );
+    }
+
+    /**
+     * I user liked the object? Who knows!
+     *
+     * @method isUserLikedObject
+     * @param {Number} objectType
+     * @param {String} objectId
+     * @param {String} userId
+     * @returns {Promise}
+     * @memberOf tiwun.sushial.services.VoteService
+     */
+    function isUserLikedObject(objectType, objectId, userId) {
+        return $http.get(ENV.apiEndpoint + 'sushial/is-user-liked-object/${objectType}/${objectId}/${userId}/');
     }
 
     return {
