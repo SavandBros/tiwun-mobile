@@ -1,6 +1,11 @@
 /*global angular*/
 'use strict';
 
+/**
+ * `tiwun.basement` module.
+ *
+ * @module tiwun.account
+ */
 angular.module('tiwun.basement', [
     'tiwun.basement.services.PaginationService',
     'tiwun.basement.services.ToastService',
