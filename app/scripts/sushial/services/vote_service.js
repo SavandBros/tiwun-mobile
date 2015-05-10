@@ -25,7 +25,7 @@ function VoteService($http, ENV) {
      * @param {number} objectType: Object type that is being voted.
      * @param {string} objectId: Object PK!
      * @param {string} userId: User Id that up voting the object.
-     * @memberOf tiwun.sushial.servicesVoteService
+     * @memberOf tiwun.sushial.services.VoteService
      */
     function upVote(objectType, objectId, userId) {
         return $http.post(
