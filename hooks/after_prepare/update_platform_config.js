@@ -97,7 +97,8 @@ var platformConfig = (function(){
             'android-theme': {target: 'AndroidManifest.xml', parent: 'application/activity[@android:name=\'Tiwun\']', destination: 'android:theme'},
             'android-windowSoftInputMode': {target: 'AndroidManifest.xml', parent: 'application/activity[@android:name=\'Tiwun\']', destination: 'android:windowSoftInputMode'}
         },
-        'ios': {}
+        'ios': {},
+        'browser': {}
     };
     var configXmlData, preferencesData;
 

@@ -20,7 +20,8 @@ var Orchestrator = require('orchestrator');
 
 var BASES = {
   android: 'res',
-  ios: 'Tiwun/Resources'
+  ios: 'Tiwun/Resources',
+  browser: 'www/images'
 };
 var RESOURCE_DIR = 'resources';
 
