@@ -19,26 +19,26 @@
 
         $stateProvider
             .state('app', {
-                url: "/app",
+                url: '/app',
                 abstract: true,
                 controller: 'MenuController',
-                templateUrl: "templates/menu.html"
+                templateUrl: 'templates/menu.html'
             })
             .state('app.explore', {
-                url: "/explore",
+                url: '/explore',
                 views: {
                     'menuContent': {
                         controller: 'IndexController',
-                        templateUrl: "templates/explore.html"
+                        templateUrl: 'templates/explore.html'
                     }
                 }
             })
             .state('app.search', {
-                url: "/search",
+                url: '/search',
                 views: {
                     'menuContent': {
                         controller: 'SearchController',
-                        templateUrl: "../templates/search/search.html"
+                        templateUrl: '../templates/search/search.html'
                     }
                 }
             })
@@ -79,37 +79,37 @@
                 }
             })
             .state('app.newItem', {
-                url: "/items/new/",
+                url: '/items/new/',
                 views: {
                     'menuContent': {
-                        templateUrl: "templates/item/item_post.html",
+                        templateUrl: 'templates/item/item_post.html',
                         controller: 'NewItemController'
                     }
                 }
             })
             .state('app.singleItem', {
-                url: "/items/:itemId/",
+                url: '/items/:itemId/',
                 views: {
                     'menuContent': {
-                        templateUrl: "templates/item/single_item.html",
+                        templateUrl: 'templates/item/single_item.html',
                         controller: 'SingleItemController'
                     }
                 }
             })
             .state('app.tagList', {
-                url: "/tags/",
+                url: '/tags/',
                 views: {
                     'menuContent': {
-                        templateUrl: "templates/tagool/tag_list.html",
+                        templateUrl: 'templates/tagool/tag_list.html',
                         controller: 'TagsController'
                     }
                 }
             })
             .state('app.tagDetail', {
-                url: "/tags/:tagSlug/",
+                url: '/tags/:tagSlug/',
                 views: {
                     'menuContent': {
-                        templateUrl: "templates/tagool/tag_detail.html",
+                        templateUrl: 'templates/tagool/tag_detail.html',
                         controller: 'TagsDetailController'
                     }
                 }
