@@ -8,12 +8,12 @@
  * @namespace tiwun.sushial.services.VoteService
  */
 function VoteService($http, ENV) {
-    var VoteTypes = {
+    var VoteTypes, ObjectTypes = {};
+    VoteTypes = {
         'up': 1,
         'down': 2
     };
-
-    var ObjectTypes = {
+    ObjectTypes = {
         'item': 1,
         'comment': 2,
         'tag': 3
