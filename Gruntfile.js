@@ -36,7 +36,7 @@ module.exports = function (grunt) {
             options: {
                 space: '  ',
                 wrap: '"use strict";\n\n {%= __ngModule %}',
-                name: 'config',
+                name: 'tiwun.ngkonstant',
                 dest: '<%= yeoman.app %>/<%= yeoman.scripts %>/configuration.js'
             },
             development: {

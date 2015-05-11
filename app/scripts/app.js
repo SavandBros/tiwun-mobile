@@ -13,6 +13,7 @@
         'ngCookies',
         'angular.filter',
         'markdown',
+        'tiwun.ngkonstant',
         'tiwun.konfig.Konfig',
         'tiwun.basement',
         'tiwun.account',
