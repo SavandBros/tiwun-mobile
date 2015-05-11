@@ -2,6 +2,10 @@ a {
     text-decoration: none !important;
 }
 
+b {
+	color: #333;
+}
+
 .icon-bg {
 	font-size: 6em !important;
 	z-index: -1;
@@ -46,4 +50,22 @@ a {
 	padding-left: 25px;
 	font-size: 1.1em;
 	margin-bottom: 5px;
+}
+
+.image-box {
+	max-width: 100%;
+}
+
+.image-circle {
+	-webkit-border-radius: 100%;
+	   -moz-border-radius: 100%;
+			border-radius: 100%;
+}
+
+.right {
+	float: right;
+}
+
+.center {
+	text-align: center;
 }

@@ -1,5 +1,52 @@
 <ion-view view-title="{{ user.get_full_name }}">
     <ion-content>
+    		
+
+    	<div class="row">
+		  	<div class="col col-33">
+				<img ng-src="{{ user.get_gravatar[128] }}" class="padding image-box image-circle">
+  			</div>
+
+		  	<div class="col col-66">
+				<div class="list card">
+					<div class="item" ng-show="user.about.length">
+						{{ user.about }}
+					</div>
+					<div class="item" ng-hide="user.about.length">
+						...
+					</div>
+				</div>
+		  	</div>
+		</div>
+
+		<div class="list card">
+			<div class="item item-divider">
+				<p class="center">{{ user.get_full_name }}</p>
+			</div>
+
+			<div class="item item-text-wrap">
+				<ul>
+					<br>
+					<li ng-show="{{ user.real_name.length }}">
+						<p> Real Name: <b class="right">{{ user.real_name }}</b></p>
+						<br>
+					</li>
+					<li>
+						<p> Website: <a href="{{ user.website }}" class="right">{{ user.get_full_name }}'s Website</a></p>
+						<br>
+					</li>
+					<li ng-show="{{ user.location.length }}">
+						<p>Location: <span class="right">{{ user.location }}</span></p>
+						<br>
+					</li>
+				</ul>
+			</div>
+
+			<div class="item item-divider">
+				<p>Joined Date: <b class="right">{{ user.date_joined | date }}</b></p>
+			</div>
+		</div>
+
 
     </ion-content>
 </ion-view>
