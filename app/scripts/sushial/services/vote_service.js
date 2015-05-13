@@ -8,24 +8,27 @@
  * @namespace tiwun.sushial.services.VoteService
  */
 function VoteService($http, ENV) {
-    var VoteTypes, ObjectTypes = {};
-    VoteTypes = {
+    var voteTypes, objectTypes, voteUtils = {};
+    voteTypes = {
         'up': 1,
         'down': 2
     };
-    ObjectTypes = {
+    objectTypes = {
         'item': 1,
         'comment': 2,
         'tag': 3
+    };
+    voteUtils = {
+        userVotedForObject: 1
     };
 
     /**
      * Vote up for the given item.
      *
      * @method upVote
-     * @param {number} objectType: Object type that is being voted.
-     * @param {string} objectId: Object PK!
-     * @param {string} userId: User Id that up voting the object.
+     * @param {number} objectType Object type that is being voted.
+     * @param {string} objectId Object PK!
+     * @param {string} userId User Id that up voting the object.
      * @memberOf tiwun.sushial.services.VoteService
      */
     function upVote(objectType, objectId, userId) {
@@ -35,7 +38,7 @@ function VoteService($http, ENV) {
                 object_type: objectType,
                 object_id: objectId,
                 user_id: userId,
-                vote_type: VoteTypes.up
+                vote_type: voteTypes.up
             }
         );
     }
@@ -44,9 +47,9 @@ function VoteService($http, ENV) {
      * Down vote for the given item.
      *
      * @method downVote
-     * @param {number} objectType: Object type that is being voted.
-     * @param {string} objectId: Object PK!
-     * @param {string} userId: User Id that down voting the object.
+     * @param {number} objectType Object type that is being voted.
+     * @param {string} objectId Object PK!
+     * @param {string} userId User Id that down voting the object.
      * @memberOf tiwun.sushial.services.VoteService
      */
     function downVote(objectType, objectId, userId) {
@@ -56,31 +59,42 @@ function VoteService($http, ENV) {
                 object_type: objectType,
                 object_id: objectId,
                 user_id: userId,
-                vote_type: VoteTypes.down
+                vote_type: voteTypes.down
             }
         );
     }
 
     /**
-     * I user liked the object? Who knows!
+     * Is user liked the object? Who knows!
      *
-     * @method isUserLikedObject
+     * @method userVotedForObject
      * @param {Number} objectType
      * @param {String} objectId
      * @param {String} userId
      * @returns {Promise}
      * @memberOf tiwun.sushial.services.VoteService
      */
-    function isUserLikedObject(objectType, objectId, userId) {
-        return $http.get(ENV.apiEndpoint + 'sushial/is-user-liked-object/${objectType}/${objectId}/${userId}/');
+    function userVotedForObject(objectType, objectId, userId) {
+        return $http.get(
+            ENV.apiEndpoint + 'sushial/vote/utils/',
+            {
+                params: {
+                    utils_type: voteUtils.userVotedForObject,
+                    object_type: objectType,
+                    object_pk: objectId,
+                    user_id: userId
+                }
+            }
+        );
     }
 
     return {
         upVote: upVote,
         downVote: downVote,
-        isUserLikedObject: isUserLikedObject,
-        VoteTypes: VoteTypes,
-        ObjectTypes: ObjectTypes
+        userVotedForObject: userVotedForObject,
+        voteTypes: voteTypes,
+        objectTypes: objectTypes,
+        voteUtils: voteUtils
     };
 }
 
