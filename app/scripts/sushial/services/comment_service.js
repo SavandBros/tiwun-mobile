@@ -23,7 +23,7 @@ function CommentService($http, ENV) {
      */
     function create(objectType, objectPk, userId, commentText) {
         return $http.post(
-            '$<% ENV.apiEndpoint %>sushial/comment/add/',
+            ENV.apiEndpoint + 'sushial/comment/add/',
             {
                 object_type: objectType,
                 object_pk: objectPk,
@@ -42,7 +42,7 @@ function CommentService($http, ENV) {
      */
     function remove(objectType, objectId, userId) {
         return $http.post(
-            'https://127.0.0.1:8000/api/sushial/comment/remove',
+            ENV.apiEndpoint + 'sushial/comment/remove',
             {
                 object_type: objectType,
                 object_id: objectId,
