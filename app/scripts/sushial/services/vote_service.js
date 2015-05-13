@@ -10,8 +10,8 @@
 function VoteService($http, ENV) {
     var voteTypes, objectTypes, voteUtils = {};
     voteTypes = {
-        'up': 1,
-        'down': 2
+        up: 1,
+        down: 2
     };
     objectTypes = {
         item: 1,
