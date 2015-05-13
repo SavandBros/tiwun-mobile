@@ -54,7 +54,7 @@ function AuthenticationService($rootScope, $cookies, $http) {
         }).then(
             // Set the authenticated account and redirect to index
             function (data, status, headers, config) {
-                AuthenticationService.setAuthenticatedUser(data.data);
+                setAuthenticatedUser(data.data);
 
                 $rootScope.$broadcast('tiwun.account.service.AuthenticationService:Authenticated');
             },
@@ -82,7 +82,7 @@ function AuthenticationService($rootScope, $cookies, $http) {
          * @method logoutSuccessFn
          */
         function logoutSuccessFn(data, status, headers, config) {
-            AuthenticationService.unAuthenticate();
+            unAuthenticate();
 
             $rootScope.$broadcast('tiwun.account.service.AuthenticationService:SignedOut');
         }
@@ -120,7 +120,7 @@ function AuthenticationService($rootScope, $cookies, $http) {
         function registerSuccessFn(data, status, headers, config) {
             $rootScope.$broadcast('tiwun.account.service.AuthenticationService:Registered');
 
-            AuthenticationService.login(email, password);
+            login(email, password);
         }
 
         /**
