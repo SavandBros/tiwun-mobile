@@ -7,7 +7,10 @@
  * @class SingleItemController
  * @namespace tiwun.item.controllers
  **/
-function SingleItemController($scope, $stateParams, $ionicHistory, ItemService, CommentService, AuthenticationService) {
+function SingleItemController($scope, $stateParams, $ionicHistory, ItemService, CommentService, VoteService, AuthenticationService) {
+    $scope.auth = AuthenticationService;
+    $scope.user = $scope.auth.getAuthenticatedUser();
+
     /**
      * Actions to be performed when this controller is instantiated.
      *
@@ -49,12 +52,9 @@ function SingleItemController($scope, $stateParams, $ionicHistory, ItemService, 
      * @memberOf tiwun.item.controllers.SingleItemController
      */
     $scope.addComment = function (form, comment) {
-        $scope.auth = AuthenticationService;
-        var user = $scope.auth.getAuthenticatedUser();
-
         if ($scope.auth.isAuthenticated()) {
             console.log(form, comment);
-            CommentService.create(1, $scope.item.pk, user.pk, comment.text).then(
+            CommentService.create(1, $scope.item.pk, $scope.user.pk, comment.text).then(
                 function (data, status, headers, config) {
                     $scope.item.comments = $scope.item.comments.concat(data.data);
                 },
@@ -65,13 +65,31 @@ function SingleItemController($scope, $stateParams, $ionicHistory, ItemService, 
             );
         }
     };
+
+    /**
+     * Up vote for the current item in the single item page.
+     *
+     * @method upVote
+     * @memberOf tiwun.item.controllers.SingleItemController
+     */
+    $scope.upVote = function () {
+        VoteService.upVote(VoteService.objectTypes.item, $scope.item.pk, $scope.user.pk).then(
+            function (data, status, headers, config) {
+                console.log(data.data);
+            },
+            function (data, status, headers, config) {
+                console.log(data.error);
+            }
+        )
+    }
 }
 
 
 angular.module('tiwun.item.controllers.SingleItemController', [
     'tiwun.item.services.ItemService',
     'tiwun.sushial.services.CommentService',
-    'tiwun.account.services.AuthenticationService'
+    'tiwun.account.services.AuthenticationService',
+    'tiwun.sushial.services.VoteService'
 ])
     .controller('SingleItemController', SingleItemController);
 
@@ -81,6 +99,7 @@ SingleItemController.$inject = [
     '$ionicHistory',
     'ItemService',
     'CommentService',
+    'VoteService',
     'AuthenticationService'
 ];
 

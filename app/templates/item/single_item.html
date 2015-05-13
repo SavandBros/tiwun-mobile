@@ -24,17 +24,17 @@
             </div>
 
             <div class="item tabs tabs-secondary tabs-icon-left">
-                <a class="tab-item" href="#">
+                <div class="tab-item" ng-click="upVote()">
                     <i class="icon ion-thumbsup"></i>
-                    Like
-                </a>
+                    up vote
+                </div>
                 <a class="tab-item" href="#/app/items/{{ item.pk }}/">
                     <i class="icon ion-share"></i>
                     Share
                 </a>
             </div>
 
-            <div class="item", ng-show="{{ auth.isAuthenticated() }}">
+            <div class="item" ng-show="{{ auth.isAuthenticated() }}">
                 <form name="form" ng-submit="addComment(form, comment)">
                     <div class="bar item-input-inset">
                         <label class="item-input-wrap">

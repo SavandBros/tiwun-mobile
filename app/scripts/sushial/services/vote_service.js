@@ -14,9 +14,9 @@ function VoteService($http, ENV) {
         'down': 2
     };
     objectTypes = {
-        'item': 1,
-        'comment': 2,
-        'tag': 3
+        item: 1,
+        comment: 2,
+        tag: 3
     };
     voteUtils = {
         userVotedForObject: 1
@@ -27,16 +27,16 @@ function VoteService($http, ENV) {
      *
      * @method upVote
      * @param {number} objectType Object type that is being voted.
-     * @param {string} objectId Object PK!
+     * @param {string} objectPk Object PK!
      * @param {string} userId User Id that up voting the object.
      * @memberOf tiwun.sushial.services.VoteService
      */
-    function upVote(objectType, objectId, userId) {
+    function upVote(objectType, objectPk, userId) {
         return $http.post(
             ENV.apiEndpoint + 'sushial/vote/',
             {
                 object_type: objectType,
-                object_id: objectId,
+                object_pk: objectPk,
                 user_id: userId,
                 vote_type: voteTypes.up
             }
