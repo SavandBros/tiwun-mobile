@@ -7,7 +7,7 @@
  * @class SingleItemController
  * @namespace tiwun.item.controllers
  **/
-function SingleItemController($scope, $stateParams, $ionicHistory, ItemService, CommentService, VoteService, AuthenticationService) {
+function SingleItemController($scope, $stateParams, $ionicHistory, $state, ItemService, CommentService, VoteService, AuthenticationService) {
     $scope.auth = AuthenticationService;
     $scope.user = $scope.auth.getAuthenticatedUser();
 
@@ -30,6 +30,18 @@ function SingleItemController($scope, $stateParams, $ionicHistory, ItemService, 
                     function (data, status, headers, config) {
                         console.log("[error] on getting comments!");
                         console.log(data.error);
+                    }
+                );
+                VoteService.userVotedForObject(
+                    VoteService.objectTypes.item,
+                    $scope.item.pk,
+                    AuthenticationService.getAuthenticatedUser().pk
+                ).then(
+                    function (data, status, headers, config) {
+                        $scope.item.userVote = data.data;
+                    },
+                    function (data, status, headers, config) {
+                        console.log(data.data.error);
                     }
                 );
             },
@@ -73,6 +85,10 @@ function SingleItemController($scope, $stateParams, $ionicHistory, ItemService, 
      * @memberOf tiwun.item.controllers.SingleItemController
      */
     $scope.upVote = function () {
+        if (!AuthenticationService.isAuthenticated()) {
+            $state.go('app.login');
+        }
+
         VoteService.upVote(VoteService.objectTypes.item, $scope.item.pk, $scope.user.pk).then(
             function (data, status, headers, config) {
                 console.log(data.data);
@@ -97,6 +113,7 @@ SingleItemController.$inject = [
     '$scope',
     '$stateParams',
     '$ionicHistory',
+    '$state',
     'ItemService',
     'CommentService',
     'VoteService',
