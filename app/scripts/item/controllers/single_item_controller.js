@@ -23,27 +23,8 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, ItemS
                 $scope.context = data.data;
                 $scope.item = $scope.context.item;
 
-                CommentService.filterByObject(1, $scope.item.pk).then(
-                    function (data, status, headers, config) {
-                        $scope.item.comments = data.data;
-                    },
-                    function (data, status, headers, config) {
-                        console.log("[error] on getting comments!");
-                        console.log(data.error);
-                    }
-                );
-                VoteService.userVotedForObject(
-                    VoteService.objectTypes.item,
-                    $scope.item.pk,
-                    AuthenticationService.getAuthenticatedUser().pk
-                ).then(
-                    function (data, status, headers, config) {
-                        $scope.item.userVote = data.data;
-                    },
-                    function (data, status, headers, config) {
-                        console.log(data.data.error);
-                    }
-                );
+                $scope.$broadcast('itemLoaded');
+
             },
             function (data, status, headers, config) {
                 console.log('Error on receiving item');
@@ -54,6 +35,44 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, ItemS
     }
 
     constructor();
+
+    /**
+     * Retrieving Comments, vote type on `itemLoaded` $broadcast.
+     */
+    $scope.$on('itemLoaded', function () {
+        // Retrieve item's comment.
+        CommentService.filterByObject(1, $scope.item.pk).then(
+            function (data, status, headers, config) {
+                $scope.item.comments = data.data;
+            },
+            function (data, status, headers, config) {
+                console.log("[error] on getting comments!");
+                console.log(data.error);
+            }
+        );
+
+        if ($scope.user) {
+            // Check if user voted the item.
+            VoteService.userVotedForObject(
+                VoteService.objectTypes.item,
+                $scope.item.pk,
+                AuthenticationService.getAuthenticatedUser().pk
+            ).then(
+                function (data, status, headers, config) {
+                    if (data.data.voted) {
+                        if (data.data.vote_type === VoteService.voteTypes.up) {
+                            $scope.item.userVote = {upVote: true}
+                        } else {
+                            $scope.item.userVote = {downVote: true};
+                        }
+                    }
+                },
+                function (data, status, headers, config) {
+                    console.log(data.data.error);
+                }
+            );
+        }
+    });
 
     /**
      * Add Comment to the item.
