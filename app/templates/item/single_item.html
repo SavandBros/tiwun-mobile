@@ -18,20 +18,21 @@
                 </p>
 
                 <p>
-                    <a href="#" class="subdued">{{ item.votes_count }} Like</a>
+                    <a href="#" class="subdued">{{ item.votes_count }} Score</a>
                     <a href="#" class="subdued">{{ item.comments_count }} Comments</a>
                 </p>
             </div>
 
-            <div class="item tabs tabs-secondary tabs-icon-left">
-                <div class="tab-item" ng-click="upVote()">
-                    <i class="icon ion-thumbsup"></i>
-                    up vote
+            <div class="item tabs tabs-secondary tabs-icon-left bg-e">
+                <div class="tab-item" ng-class="{'assertive': item.userVote.voted}">
+                    <i class="icon ion-chevron-up"></i>
                 </div>
-                <a class="tab-item" href="#/app/items/{{ item.pk }}/">
-                    <i class="icon ion-share"></i>
-                    Share
-                </a>
+                <div class="tab-item">
+                    <i class="icon ion-chevron-down"></i>
+                </div>
+                <div class="tab-item">
+                    <i class="icon ion-android-share-alt"></i>
+                </div>
             </div>
 
             <div class="item" ng-show="{{ auth.isAuthenticated() }}">
