@@ -5,7 +5,7 @@
             <div class="item item-avatar">
                 <img src="http://placehold.it/64x64">
 
-                <h2><a href="#/app/items/{{ item.pk }}/">{{ item.title }}</a></h2>
+                <h2>{{ item.title }}</h2>
 
                 <p>{{ item.created | date }}</p>
             </div>
@@ -18,8 +18,8 @@
                 </p>
 
                 <p>
-                    <a href="#" class="subdued">{{ item.votes_count }} Score</a>
-                    <a href="#" class="subdued">{{ item.comments_count }} Comments</a>
+                    <span class="subdued">{{ item.votes_count }} Score</span>
+                    <span class="subdued">{{ item.comments_count }} Comments</span>
                 </p>
             </div>
 
@@ -27,7 +27,7 @@
                 <div class="tab-item" ng-class="{'assertive': item.userVote.upVote}" ng-click="upVote()">
                     <i class="icon ion-chevron-up"></i>
                 </div>
-                <div class="tab-item" ng-class="{'assertive': item.userVote.downVote}">
+                <div class="tab-item" ng-class="{'assertive': item.userVote.downVote}" ng-click="downVote()">
                     <i class="icon ion-chevron-down"></i>
                 </div>
                 <div class="tab-item">

@@ -117,6 +117,21 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, ItemS
             }
         )
     }
+    // Getting ERROR 403
+    $scope.downVote = function () {
+        if (!AuthenticationService.isAuthenticated()) {
+            $state.go('app.login');
+        }
+
+        VoteService.downVote(VoteService.objectTypes.item, $scope.item.pk, $scope.user.pk).then(
+            function (data, status, headers, config) {
+                console.log(data.data);
+            },
+            function (data, status, headers, config) {
+                console.log(data.error);
+            }
+        )
+    }
 }
 
 
