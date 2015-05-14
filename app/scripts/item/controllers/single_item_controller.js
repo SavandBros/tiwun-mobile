@@ -95,6 +95,9 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, ItemS
                     console.log(data.error)
                 }
             );
+        } else {
+            // TODO: Show login notice!
+            $state.go('app.login');
         }
     };
 
