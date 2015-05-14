@@ -7,7 +7,8 @@
  * @class SingleItemController
  * @namespace tiwun.item.controllers
  **/
-function SingleItemController($scope, $stateParams, $ionicHistory, $state, ItemService, CommentService, VoteService, AuthenticationService) {
+function SingleItemController($scope, $stateParams, $ionicHistory, $state, $ionicScrollDelegate, ItemService,
+                              CommentService, VoteService, AuthenticationService) {
     $scope.auth = AuthenticationService;
     $scope.user = $scope.auth.getAuthenticatedUser();
 
