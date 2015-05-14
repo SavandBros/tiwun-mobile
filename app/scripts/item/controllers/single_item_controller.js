@@ -106,6 +106,7 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, ItemS
     $scope.upVote = function () {
         if (!AuthenticationService.isAuthenticated()) {
             $state.go('app.login');
+            return;
         }
 
         VoteService.upVote(VoteService.objectTypes.item, $scope.item.pk, $scope.user.pk).then(
@@ -129,6 +130,7 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, ItemS
     $scope.downVote = function () {
         if (!AuthenticationService.isAuthenticated()) {
             $state.go('app.login');
+            return;
         }
 
         VoteService.downVote(VoteService.objectTypes.item, $scope.item.pk, $scope.user.pk).then(

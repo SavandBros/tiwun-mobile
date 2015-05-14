@@ -74,6 +74,7 @@ function IndexController($scope, $state, ToastService, AuthenticationService, It
     $scope.upVote = function (item) {
         if (!AuthenticationService.isAuthenticated()) {
             $state.go('app.login');
+            return;
         }
 
         VoteService.upVote(VoteService.objectTypes.item, item.pk, $scope.user.pk).then(
@@ -99,6 +100,7 @@ function IndexController($scope, $state, ToastService, AuthenticationService, It
     $scope.downVote = function (item) {
         if (!AuthenticationService.isAuthenticated()) {
             $state.go('app.login');
+            return;
         }
 
         VoteService.downVote(VoteService.objectTypes.item, item.pk, $scope.user.pk).then(
