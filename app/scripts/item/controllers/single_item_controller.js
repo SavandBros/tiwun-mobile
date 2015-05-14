@@ -84,10 +84,11 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, ItemS
      */
     $scope.addComment = function (form, comment) {
         if ($scope.auth.isAuthenticated()) {
-            console.log(form, comment);
             CommentService.create(1, $scope.item.pk, $scope.user.pk, comment.text).then(
                 function (data, status, headers, config) {
                     $scope.item.comments = $scope.item.comments.concat(data.data);
+                    comment.text = '';
+                    // TODO: Show succesfull message about comment!
                 },
                 function (data, status, headers, config) {
                     console.log('commenting error');
