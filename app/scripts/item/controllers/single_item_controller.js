@@ -89,6 +89,7 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, $ioni
                 function (data, status, headers, config) {
                     $scope.item.comments = $scope.item.comments.concat(data.data);
                     comment.text = '';
+                    $ionicScrollDelegate.scrollBottom(true);
                     // TODO: Show succesfull message about comment!
                 },
                 function (data, status, headers, config) {
@@ -165,6 +166,7 @@ SingleItemController.$inject = [
     '$stateParams',
     '$ionicHistory',
     '$state',
+    '$ionicScrollDelegate',
     'ItemService',
     'CommentService',
     'VoteService',
