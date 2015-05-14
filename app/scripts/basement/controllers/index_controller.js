@@ -5,12 +5,12 @@
  * @class IndexController
  * @namespace tiwun.basement.controllers.IndexController
  */
-function IndexController($scope, ToastService, AuthenticationService, ItemService, VoteService) {
+function IndexController($scope, $state, ToastService, AuthenticationService, ItemService, VoteService) {
     $scope.isAuthenticated = AuthenticationService.isAuthenticated();
     $scope.items = [];
     $scope.pageHasNext = true;
     $scope.pageCounter = 0;
-    $scope.auth = AuthenticationService.getAuthenticatedUser();
+    $scope.user = AuthenticationService.getAuthenticatedUser();
 
 
     /**
@@ -40,7 +40,7 @@ function IndexController($scope, ToastService, AuthenticationService, ItemServic
      * If the user is not logged in, then check will be skipped.
      */
     $scope.$on('scroll.infiniteScrollComplete', function () {
-        if ($scope.auth) {
+        if ($scope.user) {
             angular.forEach($scope.items.slice($scope.items.length - 5), function (item, v) {
                 VoteService.userVotedForObject(
                     VoteService.objectTypes.item,
@@ -57,6 +57,31 @@ function IndexController($scope, ToastService, AuthenticationService, ItemServic
             });
         }
     });
+
+    /**
+     * Up vote for the current item in the single item page.
+     *
+     * @param {Object} item
+     * @method upVote
+     * @memberOf tiwun.item.controllers.IndexController
+     */
+    $scope.upVote = function (item) {
+        if (!AuthenticationService.isAuthenticated()) {
+            $state.go('app.login');
+        }
+
+        VoteService.upVote(VoteService.objectTypes.item, item.pk, $scope.user.pk).then(
+            function (data, status, headers, config) {
+                // TODO: Highlight the up vote button.
+                console.log(data.data);
+            },
+            function (data, status, headers, config) {
+                // TODO: Show the error message
+                console.log(data.error);
+            }
+        )
+
+    };
 }
 
 angular.module('tiwun.basement.controllers.IndexController', [
