@@ -110,12 +110,37 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, ItemS
 
         VoteService.upVote(VoteService.objectTypes.item, $scope.item.pk, $scope.user.pk).then(
             function (data, status, headers, config) {
+                // TODO: Highlight the up vote button.
                 console.log(data.data);
             },
             function (data, status, headers, config) {
+                // TODO: Show the error message
                 console.log(data.error);
             }
         )
+    };
+
+    /**
+     * Down vote for the current item in the single item page.
+     *
+     * @method downVote
+     * @memberOf tiwun.item.controllers.SingleItemController
+     */
+    $scope.downVote = function () {
+        if (!AuthenticationService.isAuthenticated()) {
+            $state.go('app.login');
+        }
+
+        VoteService.downVote(VoteService.objectTypes.item, $scope.item.pk, $scope.user.pk).then(
+            function (data, status, headers, config) {
+                // TODO: Highlight the down vote button.
+                console.log(data.data);
+            },
+            function (data, status, headers, config) {
+                // TODO: Show the error message
+                console.log(data.error);
+            }
+        );
     }
 }
 
