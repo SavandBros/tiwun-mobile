@@ -45,10 +45,16 @@ function IndexController($scope, $state, ToastService, AuthenticationService, It
                 VoteService.userVotedForObject(
                     VoteService.objectTypes.item,
                     item.pk,
-                    AuthenticationService.getAuthenticatedUser().pk
+                    $scope.user.pk
                 ).then(
                     function (data, status, headers, config) {
-                        item.userVote = data.data;
+                        if (data.data.voted) {
+                            if (data.data.vote_type === VoteService.voteTypes.up) {
+                                item.userVote = {upVote: true}
+                            } else {
+                                item.userVote = {downVote: true};
+                            }
+                        }
                     },
                     function (data, status, headers, config) {
                         console.log(data.data.error);
