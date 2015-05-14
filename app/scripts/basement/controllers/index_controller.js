@@ -82,6 +82,30 @@ function IndexController($scope, $state, ToastService, AuthenticationService, It
         )
 
     };
+
+    /**
+     * Down vote for the current item in the single item page.
+     *
+     * @param {Object} item
+     * @method downVote
+     * @memberOf tiwun.item.controllers.IndexController
+     */
+    $scope.downVote = function (item) {
+        if (!AuthenticationService.isAuthenticated()) {
+            $state.go('app.login');
+        }
+
+        VoteService.downVote(VoteService.objectTypes.item, item.pk, $scope.user.pk).then(
+            function (data, status, headers, config) {
+                // TODO: Highlight the down vote button.
+                console.log(data.data);
+            },
+            function (data, status, headers, config) {
+                // TODO: Show the error message
+                console.log(data.error);
+            }
+        );
+    };
 }
 
 angular.module('tiwun.basement.controllers.IndexController', [
@@ -92,4 +116,4 @@ angular.module('tiwun.basement.controllers.IndexController', [
 ])
     .controller('IndexController', IndexController);
 
-IndexController.$inject = ['$scope', 'ToastService', 'AuthenticationService', 'ItemService', 'VoteService'];
+IndexController.$inject = ['$scope', '$state', 'ToastService', 'AuthenticationService', 'ItemService', 'VoteService'];
