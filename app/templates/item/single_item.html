@@ -11,7 +11,7 @@
             </div>
 
             <div class="item item-body">
-                <img class="full-image" ng-src="{{ item.get_primary_image.standard }}">
+                <img on-double-tap="upVote()" class="full-image" ng-src="{{ item.get_primary_image.standard }}">
 
                 <p>
                     {{ item.description | markdown | stripTags }}
