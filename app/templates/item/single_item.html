@@ -11,7 +11,21 @@
             </div>
 
             <div class="item item-body">
-                <img class="full-image" ng-src="{{ item.get_primary_image.standard }}">
+
+<!--
+                //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+
+                //      Can't figure out how to loop in [X] images. 1:40 AM     //
+                
+                //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+-->
+
+                <img class="full-image" ng-src="{{ item.images[0].standard }}">
+                <img class="full-image" ng-src="{{ item.images[1].standard }}">
+                <img class="full-image" ng-src="{{ item.images[2].standard }}">
+                <img class="full-image" ng-src="{{ item.images[3].standard }}">
+                <img class="full-image" ng-src="{{ item.images[4].standard }}">
+                <img class="full-image" ng-src="{{ item.images[5].standard }}">
 
                 <p>
                     {{ item.description | markdown | stripTags }}
