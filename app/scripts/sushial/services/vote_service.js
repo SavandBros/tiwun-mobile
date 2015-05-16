@@ -11,7 +11,7 @@ function VoteService($http, ENV) {
     var voteTypes, objectTypes, voteUtils = {};
     voteTypes = {
         up: 1,
-        down: 2
+        down: -1
     };
     objectTypes = {
         item: 1,
@@ -57,7 +57,7 @@ function VoteService($http, ENV) {
             ENV.apiEndpoint + 'sushial/vote/',
             {
                 object_type: objectType,
-                object_id: objectId,
+                object_pk: objectId,
                 user_id: userId,
                 vote_type: voteTypes.down
             }
