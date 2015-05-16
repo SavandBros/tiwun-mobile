@@ -12,20 +12,11 @@
 
             <div class="item item-body">
 
-<!--
-                //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-
-                //      Can't figure out how to loop in [X] images. 1:40 AM     //
-                
-                //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
--->
-
-                <img class="full-image" ng-src="{{ item.images[0].standard }}">
-                <img class="full-image" ng-src="{{ item.images[1].standard }}">
-                <img class="full-image" ng-src="{{ item.images[2].standard }}">
-                <img class="full-image" ng-src="{{ item.images[3].standard }}">
-                <img class="full-image" ng-src="{{ item.images[4].standard }}">
-                <img class="full-image" ng-src="{{ item.images[5].standard }}">
+                <ion-slide-box on-slide-changed="slideHasChanged($index)">
+                    <ion-slide ng-repeat="img in item.images">
+                        <img class="full-width" ng-src="{{ img.standard }}" />
+                    </ion-slide>
+                </ion-slide-box>
 
                 <p>
                     {{ item.description | markdown | stripTags }}
