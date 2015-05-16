@@ -75,13 +75,7 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, ItemS
                 AuthenticationService.getAuthenticatedUser().pk
             ).then(
                 function (data, status, headers, config) {
-                    if (data.data.voted) {
-                        if (data.data.vote_type === VoteService.voteTypes.up) {
-                            $scope.item.userVote = {upVote: true}
-                        } else {
-                            $scope.item.userVote = {downVote: true};
-                        }
-                    }
+                    updateItemVote(data.data);
                 },
                 function (data, status, headers, config) {
                     console.log(data.data.error);
@@ -126,14 +120,20 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, ItemS
 
         VoteService.upVote(VoteService.objectTypes.item, $scope.item.pk, $scope.user.pk).then(
             function (data, status, headers, config) {
-                console.log(data.data);
+                updateItemVote(data.data.vote);
             },
             function (data, status, headers, config) {
                 console.log(data.error);
             }
         )
-    }
-    // Getting ERROR 403
+    };
+
+    /**
+     * Down vote for the current item in the single item page.
+     *
+     * @method downVote
+     * @memberOf tiwun.item.controllers.SingleItemController
+     */
     $scope.downVote = function () {
         if (!AuthenticationService.isAuthenticated()) {
             $state.go('app.login');
@@ -141,13 +141,13 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, ItemS
 
         VoteService.downVote(VoteService.objectTypes.item, $scope.item.pk, $scope.user.pk).then(
             function (data, status, headers, config) {
-                console.log(data.data);
+                updateItemVote(data.data.vote);
             },
             function (data, status, headers, config) {
                 console.log(data.error);
             }
         )
-    }
+    };
 }
 
 
