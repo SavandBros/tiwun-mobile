@@ -9,7 +9,9 @@
         Tiwun Development Team
     </author>
     <content src="index.html"/>
-    <access origin="*"/>
+    <access origin="https://www.tiwun.com"/>
+    <access origin="https://cdn.shopify.com"/>
+    <access origin="http://placehold.it" />
     <preference name="SplashScreen" value="screen"/>
     <preference name="SplashScreenDelay" value="3000"/>
     <platform name="android">
@@ -32,7 +34,7 @@
         <splash src="resources/android/splash/drawable-port-xxhdpi-screen.png" density="port-xxhdpi"/>
         <splash src="resources/android/splash/drawable-port-xxxhdpi-screen.png" density="port-xxxhdpi"/>
         <feature name="SocialSharing">
-            <param name="android-package" value="nl.xservices.plugins.SocialSharing" />
+            <param name="android-package" value="nl.xservices.plugins.SocialSharing"/>
         </feature>
     </platform>
 </widget>
