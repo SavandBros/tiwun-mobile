@@ -7,7 +7,8 @@
  * @class SingleItemController
  * @namespace tiwun.item.controllers
  **/
-function SingleItemController($scope, $stateParams, $ionicHistory, $state, ItemService, CommentService, VoteService, AuthenticationService) {
+function SingleItemController($scope, $stateParams, $ionicHistory, $state, $ionicScrollDelegate, ToastService,
+                              ItemService, CommentService, VoteService, AuthenticationService) {
     $scope.auth = AuthenticationService;
     $scope.user = $scope.auth.getAuthenticatedUser();
 
@@ -98,6 +99,8 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, ItemS
             CommentService.create(1, $scope.item.pk, $scope.user.pk, comment.text).then(
                 function (data, status, headers, config) {
                     $scope.item.comments = $scope.item.comments.concat(data.data);
+                    comment.text = '';
+                    $ionicScrollDelegate.scrollBottom(true);
                     ToastService.show('Your comment has been posted successfully');
 
                 },
@@ -154,6 +157,7 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, ItemS
 
 
 angular.module('tiwun.item.controllers.SingleItemController', [
+    'tiwun.basement.services.ToastService',
     'tiwun.item.services.ItemService',
     'tiwun.sushial.services.CommentService',
     'tiwun.account.services.AuthenticationService',
@@ -166,6 +170,8 @@ SingleItemController.$inject = [
     '$stateParams',
     '$ionicHistory',
     '$state',
+    '$ionicScrollDelegate',
+    'ToastService',
     'ItemService',
     'CommentService',
     'VoteService',
