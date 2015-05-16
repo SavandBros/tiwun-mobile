@@ -38,7 +38,7 @@
                 views: {
                     'menuContent': {
                         controller: 'SearchController',
-                        templateUrl: '../templates/search/search.html'
+                        templateUrl: 'templates/search/search.html'
                     }
                 }
             })
