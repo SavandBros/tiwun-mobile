@@ -37,6 +37,22 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, ItemS
     constructor();
 
     /**
+     * Update item's vote on the frontend.
+     * Based on the vote type from server, the associated vote button will be highlighted.
+     *
+     * @method updateItemVote
+     * @param {Object} data
+     * @memberOf tiwun.item.controllers.SingleItemController
+     */
+    function updateItemVote (data) {
+        if (data.vote_type === VoteService.voteTypes.up) {
+            $scope.item.userVote = {upVote: true}
+        } else {
+            $scope.item.userVote = {downVote: true};
+        }
+    }
+
+    /**
      * Retrieving Comments, vote type on `itemLoaded` $broadcast.
      */
     $scope.$on('itemLoaded', function () {
