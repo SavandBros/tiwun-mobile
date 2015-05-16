@@ -3,6 +3,9 @@
 angular.module('tiwun.basement.filters.timesinceFilter', [])
     .filter('timesince', function () {
         return function (date) {
+            if (typeof date == 'string') {
+                date = new Date(date);
+            }
             var seconds = Math.floor((new Date() - date) / 1000);
 
             var INTERVALS = {
