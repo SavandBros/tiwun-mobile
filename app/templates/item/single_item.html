@@ -55,9 +55,14 @@
         <div class="list">
 
             <div class="item item-avatar" ng-repeat="comment in item.comments">
-                <img ng-src="http://placehold.it/64x64">
-                <a class="bold" href="#">{{ comment.user_name }}</a>
-                <p>{{ comment.comment }}</p>
+                <img ng-src="{{ comment.user.get_gravatar[64] }}">
+                <h2><a href="#!/app/account/user-profile/{{ comment.user.pk }}/">{{ comment.user.get_short_name }}</a></h2>
+
+                <p>
+                    {{ comment.comment }}
+                    <br/>
+                    {{ comment.created | timesince }} ago
+                </p>
             </div>
 
         </div>
