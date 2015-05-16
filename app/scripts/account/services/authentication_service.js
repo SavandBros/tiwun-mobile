@@ -11,7 +11,7 @@
  * @returns [Factory]
  * @namespace tiwun.account.services.AuthenticationService
  */
-function AuthenticationService($rootScope, $cookies, $http) {
+function AuthenticationService($rootScope, $cookies, $http, ENV) {
     /**
      * Return the currently authenticated user
      *
@@ -48,7 +48,7 @@ function AuthenticationService($rootScope, $cookies, $http) {
      * @memberOf tiwun.account.services.AuthenticationService
      */
     function login(email, password) {
-        return $http.post('https://127.0.0.1:8000/api/users/login/', {
+        return $http.post(ENV.apiEndpoint + 'users/login/', {
             email: email,
             password: password
         }).then(
@@ -73,7 +73,7 @@ function AuthenticationService($rootScope, $cookies, $http) {
      * @memberOf tiwun.account.services.AuthenticationService
      */
     function logout() {
-        return $http.post('https://127.0.0.1:8000/api/users/logout/')
+        return $http.post(ENV.apiEndpoint + 'users/logout/')
             .then(logoutSuccessFn, logoutErrorFn);
 
         /**
@@ -107,7 +107,7 @@ function AuthenticationService($rootScope, $cookies, $http) {
      * @memberOf tiwun.account.services.AuthenticationService
      */
     function register(email, password) {
-        return $http.post('https://127.0.0.1:8000/api/users/', {
+        return $http.post(ENV.apiEndpoint + 'users/', {
             email: email,
             password: password
         }).then(registerSuccessFn, registerErrorFn);
@@ -174,4 +174,4 @@ function AuthenticationService($rootScope, $cookies, $http) {
 angular.module('tiwun.account.services.AuthenticationService')
     .factory('AuthenticationService', AuthenticationService);
 
-AuthenticationService.$inject = ['$rootScope', '$cookies', '$http'];
+AuthenticationService.$inject = ['$rootScope', '$cookies', '$http', 'ENV'];

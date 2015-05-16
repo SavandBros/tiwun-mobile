@@ -8,13 +8,13 @@
     angular.module('tiwun.item.services.ItemService', [])
         .factory('ItemService', ItemService);
 
-    ItemService.$inject = ['$http'];
+    ItemService.$inject = ['$http', 'ENV'];
 
     /**
      * @namespace ItemService
      * @returns {Factory}
      */
-    function ItemService($http) {
+    function ItemService($http, ENV) {
         var ItemService = {
             all: all,
             get: get,
@@ -34,7 +34,7 @@
          */
         function all(page_number) {
             return $http.get(
-                'https://127.0.0.1:8000/api/index/',
+                ENV.apiEndpoint + 'index/',
                 {params: {page: page_number}}
             );
         }
@@ -48,7 +48,7 @@
          * @memberOf tiwun.item.services.ItemService
          */
         function create(item) {
-            return $http.post('https://127.0.0.1:8000/api/items/', {
+            return $http.post(ENV.apiEndpoint + 'items/', {
                 title: item.title,
                 description: item.description,
                 tags: item.tags
@@ -63,7 +63,7 @@
          * @memberOf tiwun.item.services.ItemService
          */
         function update(item) {
-            return $http.put('https://127.0.0.1:8000/api/items/', {
+            return $http.put(ENV.apiEndpoint + 'items/', {
                 title: item.title,
                 description: item.description,
                 tags: item.tags
@@ -78,7 +78,7 @@
          * @memberOf tiwun.item.services.ItemService
          */
         function get(id) {
-            return $http.get('https://127.0.0.1:8000/api/items/' + id + '/');
+            return $http.get(ENV.apiEndpoint + 'items/' + id + '/');
         }
 
     }
