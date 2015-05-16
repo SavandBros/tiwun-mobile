@@ -98,6 +98,8 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, ItemS
             CommentService.create(1, $scope.item.pk, $scope.user.pk, comment.text).then(
                 function (data, status, headers, config) {
                     $scope.item.comments = $scope.item.comments.concat(data.data);
+                    ToastService.show('Your comment has been posted successfully');
+
                 },
                 function (data, status, headers, config) {
                     console.log('commenting error');
