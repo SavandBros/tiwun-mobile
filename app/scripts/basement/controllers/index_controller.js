@@ -5,13 +5,29 @@
  * @class IndexController
  * @namespace tiwun.basement.controllers.IndexController
  */
-function IndexController($scope, ToastService, AuthenticationService, ItemService, VoteService) {
+function IndexController($scope, $state, ToastService, AuthenticationService, ItemService, VoteService) {
     $scope.isAuthenticated = AuthenticationService.isAuthenticated();
     $scope.items = [];
     $scope.pageHasNext = true;
     $scope.pageCounter = 0;
-    $scope.auth = AuthenticationService.getAuthenticatedUser();
+    $scope.user = AuthenticationService.getAuthenticatedUser();
 
+    /**
+     * Update item's vote on the frontend.
+     * Based on the vote type from server, the associated vote button will be highlighted.
+     *
+     * @method updateItemVote
+     * @param {Object} data
+     * @param {Object} item
+     * @memberOf tiwun.item.controllers.SingleItemController
+     */
+    function updateItemVote (data, item) {
+        if (data.vote_type === VoteService.voteTypes.up) {
+            item.userVote = {upVote: true}
+        } else {
+            item.userVote = {downVote: true};
+        }
+    }
 
     /**
      * Load More
@@ -40,7 +56,7 @@ function IndexController($scope, ToastService, AuthenticationService, ItemServic
      * If the user is not logged in, then check will be skipped.
      */
     $scope.$on('scroll.infiniteScrollComplete', function () {
-        if ($scope.auth) {
+        if ($scope.user) {
             angular.forEach($scope.items.slice($scope.items.length - 5), function (item, v) {
                 VoteService.userVotedForObject(
                     VoteService.objectTypes.item,
@@ -48,7 +64,7 @@ function IndexController($scope, ToastService, AuthenticationService, ItemServic
                     AuthenticationService.getAuthenticatedUser().pk
                 ).then(
                     function (data, status, headers, config) {
-                        item.userVote = data.data;
+                        updateItemVote(data.data, item);
                     },
                     function (data, status, headers, config) {
                         console.log(data.data.error);
@@ -57,6 +73,50 @@ function IndexController($scope, ToastService, AuthenticationService, ItemServic
             });
         }
     });
+
+    /**
+     * Up vote for the current item in the single item page.
+     *
+     * @method upVote
+     * @param {Object} item
+     * @memberOf tiwun.item.controllers.SingleItemController
+     */
+    $scope.upVote = function (item) {
+        if (!AuthenticationService.isAuthenticated()) {
+            $state.go('app.login');
+        }
+
+        VoteService.upVote(VoteService.objectTypes.item, item.pk, $scope.user.pk).then(
+            function (data, status, headers, config) {
+                updateItemVote(data.data.vote, item);
+            },
+            function (data, status, headers, config) {
+                console.log(data.error);
+            }
+        )
+    };
+
+    /**
+     * Down vote for the current item in the single item page.
+     *
+     * @method downVote
+     * @param {Object} item
+     * @memberOf tiwun.item.controllers.SingleItemController
+     */
+    $scope.downVote = function (item) {
+        if (!AuthenticationService.isAuthenticated()) {
+            $state.go('app.login');
+        }
+
+        VoteService.downVote(VoteService.objectTypes.item, item.pk, $scope.user.pk).then(
+            function (data, status, headers, config) {
+                updateItemVote(data.data.vote, item);
+            },
+            function (data, status, headers, config) {
+                console.log(data.error);
+            }
+        )
+    };
 }
 
 angular.module('tiwun.basement.controllers.IndexController', [
@@ -67,4 +127,4 @@ angular.module('tiwun.basement.controllers.IndexController', [
 ])
     .controller('IndexController', IndexController);
 
-IndexController.$inject = ['$scope', 'ToastService', 'AuthenticationService', 'ItemService', 'VoteService'];
+IndexController.$inject = ['$scope', '$state', 'ToastService', 'AuthenticationService', 'ItemService', 'VoteService'];

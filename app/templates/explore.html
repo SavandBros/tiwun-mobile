@@ -22,11 +22,11 @@
             </div>
 
             <div class="item tabs tabs-secondary tabs-icon-left bg-e">
-                <div class="tab-item" ng-class="{'assertive': item.userVote.upVote}" ng-click="upVote()">
+                <div class="tab-item" ng-class="{'assertive': item.userVote.upVote}" ng-click="upVote(item)">
                     <i class="icon ion-chevron-up"></i>
                 </div>
                 <div class="tab-item">
-                    <i class="icon ion-chevron-down" ng-class="{'assertive': item.userVote.downVote}" ng-click="downVote()"></i>
+                    <i class="icon ion-chevron-down" ng-class="{'assertive': item.userVote.downVote}" ng-click="downVote(item)"></i>
                 </div>
                 <div class="tab-item">
                     <i class="icon ion-android-share-alt"></i>
