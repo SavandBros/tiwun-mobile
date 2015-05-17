@@ -10,6 +10,12 @@
                 <p>{{ item.created | date }} by: <a href="#!/app/account/user-profile/{{ item.user_id }}/">{{ item.user_name }}</a></p>
             </div>
 
+            <div class="item" style="padding: 8px 15px">
+                <b class="center royal label margin-right">{{ item.discount_percentage }}% <small>OFF</small></b>
+                <s class="small">was {{ item.get_compare_at_price_display }}</s>
+                <b class="right assertive">{{ item.get_price_display }}</b>
+            </div>
+
             <div class="item item-body">
 
                 <ion-slide-box on-slide-changed="slideHasChanged($index)">
