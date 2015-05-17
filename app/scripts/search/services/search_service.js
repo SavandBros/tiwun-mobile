@@ -16,12 +16,18 @@ function SearchService($http, ENV) {
      * Search the tiwun database for items.
      *
      * @param query Search query object.
-     * @returns {HttpPromise}
+     * @param {Number} pageNumber
+     * @returns {Promise}
      * @memberOf tiwun.basement.services.SearchService
      */
-    function search(query) {
+    function search(query, pageNumber) {
         return $http.get(ENV.apiEndpoint + 'search/',
-            {params: {q: query.text}}
+            {
+                params: {
+                    q: query.text,
+                    page: pageNumber
+                }
+            }
         );
     }
 
