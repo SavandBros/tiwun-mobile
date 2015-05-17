@@ -7,7 +7,7 @@
  * @class SingleItemController
  * @namespace tiwun.item.controllers
  **/
-function SingleItemController($scope, $stateParams, $ionicHistory, $state, $ionicScrollDelegate, ToastService,
+function SingleItemController($scope, $stateParams, $ionicHistory, $state, $ionicScrollDelegate, $log, ToastService,
                               ItemService, CommentService, VoteService, AuthenticationService) {
     $scope.auth = AuthenticationService;
     $scope.user = $scope.auth.getAuthenticatedUser();
@@ -28,8 +28,8 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, $ioni
 
             },
             function (data, status, headers, config) {
-                console.log('Error on receiving item');
-                console.log(data.error);
+                $log.error('Error on receiving item');
+                $log.error(data.error);
                 $ionicHistory.goBack();
             }
         );
@@ -63,8 +63,8 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, $ioni
                 $scope.item.comments = data.data;
             },
             function (data, status, headers, config) {
-                console.log("[error] on getting comments!");
-                console.log(data.error);
+                $log.error("[error] on getting comments!");
+                $log.error(data.error);
             }
         );
 
@@ -79,7 +79,7 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, $ioni
                     updateItemVote(data.data);
                 },
                 function (data, status, headers, config) {
-                    console.log(data.data.error);
+                    $log.error(data.data.error);
                 }
             );
         }
@@ -105,8 +105,8 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, $ioni
 
                 },
                 function (data, status, headers, config) {
-                    console.log('commenting error');
-                    console.log(data.error)
+                    $log.error('commenting error');
+                    $log.error(data.error)
                 }
             );
         }
@@ -121,6 +121,7 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, $ioni
     $scope.upVote = function () {
         if (!AuthenticationService.isAuthenticated()) {
             $state.go('app.login');
+            return;
         }
 
         VoteService.upVote(VoteService.objectTypes.item, $scope.item.pk, $scope.user.pk).then(
@@ -128,7 +129,7 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, $ioni
                 updateItemVote(data.data.vote);
             },
             function (data, status, headers, config) {
-                console.log(data.error);
+                $log.error(data.error);
             }
         )
     };
@@ -142,6 +143,7 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, $ioni
     $scope.downVote = function () {
         if (!AuthenticationService.isAuthenticated()) {
             $state.go('app.login');
+            return;
         }
 
         VoteService.downVote(VoteService.objectTypes.item, $scope.item.pk, $scope.user.pk).then(
@@ -149,7 +151,7 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, $ioni
                 updateItemVote(data.data.vote);
             },
             function (data, status, headers, config) {
-                console.log(data.error);
+                $log.error(data.error);
             }
         )
     };
@@ -171,6 +173,7 @@ SingleItemController.$inject = [
     '$ionicHistory',
     '$state',
     '$ionicScrollDelegate',
+    '$log',
     'ToastService',
     'ItemService',
     'CommentService',

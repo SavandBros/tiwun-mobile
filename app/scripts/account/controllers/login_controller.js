@@ -15,7 +15,6 @@ function LoginController($window, $state, $scope, AuthenticationService) {
      * @memberOf tiwun.account.controllers.LoginController
      */
     function constructor() {
-        console.log('LoginController');
         // if the use is authenticated, they should not be here.
         if (AuthenticationService.isAuthenticated()) {
             $state.go('app.explore');

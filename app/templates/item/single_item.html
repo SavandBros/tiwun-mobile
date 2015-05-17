@@ -20,7 +20,7 @@
 
                 <ion-slide-box on-slide-changed="slideHasChanged($index)">
                     <ion-slide ng-repeat="img in item.images">
-                        <img ng-dblclick="upVote()" ng-src="{{ img.standard }}" />
+                        <img ng-dblclick="upVote()" class="full-image" ng-src="{{ img.standard }}" />
                     </ion-slide>
                 </ion-slide-box>
 

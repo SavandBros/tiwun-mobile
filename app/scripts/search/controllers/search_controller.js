@@ -31,7 +31,7 @@
          * @param query Search query
          */
         $scope.search = function (query) {
-            console.log(query.text);
+            // TODO: What happened to search???? WHAAAAAAAAAAAT ?
         }
     }
 })();

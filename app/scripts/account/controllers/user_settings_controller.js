@@ -2,11 +2,12 @@
 'use strict';
 
 /**
- * UserSettingsController
+ * Use rSettings Controller
+ *
  * @class UserSettingsController
  * @namespace tiwun.account.controllers.UserSettingsController
  */
-function UserSettingsController($scope, $state, ToastService, UserService, AuthenticationService) {
+function UserSettingsController($scope, $state, $log, ToastService, UserService, AuthenticationService) {
     /**
      * Actions to be performed when this controller is instantiated
      *
@@ -46,10 +47,9 @@ function UserSettingsController($scope, $state, ToastService, UserService, Authe
     $scope.updateAccount = function(form, user) {
         UserService.update(user).then(
             function (data, status, headers, config) {
-                console.log('Has been updated successfully!')
             },
             function (data, status, headers, config) {
-                console.log('Error in updating user account settings: ' + data.error);
+                $log.error('Error in updating user account settings: ' + data.error);
             }
         );
     };
@@ -63,4 +63,4 @@ angular.module('tiwun.account.controllers.UserSettingsController', [
 ])
     .controller('UserSettingsController', UserSettingsController);
 
-UserSettingsController.$inject = ['$scope', '$state', 'ToastService', 'UserService', 'AuthenticationService'];
+UserSettingsController.$inject = ['$scope', '$state', '$log', 'ToastService', 'UserService', 'AuthenticationService'];

@@ -11,7 +11,7 @@
     ])
         .controller('TagsController', TagsController);
 
-    TagsController.$inject = ['$scope', 'TagService'];
+    TagsController.$inject = ['$scope', '$log', 'TagService'];
 
     function TagsController($scope, TagService) {
         $scope.tags = [];
@@ -20,7 +20,10 @@
 
 
         /**
-         * @name loadMore
+         * Load More
+         *
+         * @method loadMore
+         * @memberOf tiwun.tagool.controllers.TagsController
          */
         $scope.loadMore = function () {
             TagService.all(++$scope.pageCounter).then(
@@ -32,10 +35,9 @@
                     $scope.$broadcast('scroll.infiniteScrollComplete');
                 },
                 function (data, status, headers, config) {
-                    //Snackbar.error(data.error);
-                    console.log(data.error);
+                    $log.error(data.error);
                 }
             );
         };
-    };
+    }
 })();

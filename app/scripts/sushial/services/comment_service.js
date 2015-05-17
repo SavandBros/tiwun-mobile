@@ -15,10 +15,10 @@ function CommentService($http, ENV) {
 
     /**
      * @name create: Creating a comment for an object.
-     * @param {number} objectType: Object type that is being commented on.
-     * @param {string} objectPk:  Object PK!
-     * @param {string} userId: User Id that commenting on the the object.
-     * @param {string} commentText: Comment text that is being posted on the object.
+     * @param {number} objectType Object type that is being commented on.
+     * @param {string} objectPk  Object PK!
+     * @param {string} userId User Id that commenting on the the object.
+     * @param {string} commentText Comment text that is being posted on the object.
      * @memberOf tiwun.sushial.services.CommentService
      */
     function create(objectType, objectPk, userId, commentText) {
@@ -35,9 +35,9 @@ function CommentService($http, ENV) {
 
     /**
      * @name remove: Remove a comment from an object.
-     * @param {number} objectType: Object type that is being commented on.
-     * @param {string} objectId:  Object PK!
-     * @param {string} userId: User Id that commenting on the the object.
+     * @param {number} objectType Object type that is being commented on.
+     * @param {string} objectId  Object PK!
+     * @param {string} userId User Id that commenting on the the object.
      * @memberOf tiwun.sushial.services.CommentService
      */
     function remove(objectType, objectId, userId) {
@@ -53,8 +53,8 @@ function CommentService($http, ENV) {
 
     /**
      * @name filterByObject: Filter comments by given object.
-     * @param {number} objectType: Object type that is being commented on.
-     * @param {string} ObjectPk:  Object PK!
+     * @param {number} objectType Object type that is being commented on.
+     * @param {string} ObjectPk  Object PK!
      * @memberOf tiwun.sushial.services.CommentService
      */
     function filterByObject(objectType, ObjectPk) {

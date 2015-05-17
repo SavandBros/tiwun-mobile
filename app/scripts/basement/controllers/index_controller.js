@@ -5,7 +5,7 @@
  * @class IndexController
  * @namespace tiwun.basement.controllers.IndexController
  */
-function IndexController($scope, $state, ToastService, AuthenticationService, ItemService, VoteService) {
+function IndexController($scope, $state, $log, ToastService, AuthenticationService, ItemService, VoteService) {
     $scope.isAuthenticated = AuthenticationService.isAuthenticated();
     $scope.items = [];
     $scope.pageHasNext = true;
@@ -44,8 +44,7 @@ function IndexController($scope, $state, ToastService, AuthenticationService, It
                 $scope.$broadcast('scroll.infiniteScrollComplete');
             },
             function (data, status, headers, config) {
-                //Snackbar.error(data.error);
-                console.log(data.error);
+                $log.error(data.error);
             }
         );
     };
@@ -67,7 +66,7 @@ function IndexController($scope, $state, ToastService, AuthenticationService, It
                         updateItemVote(data.data, item);
                     },
                     function (data, status, headers, config) {
-                        console.log(data.data.error);
+                        $log.error(data.data.error);
                     }
                 );
             });
@@ -84,6 +83,7 @@ function IndexController($scope, $state, ToastService, AuthenticationService, It
     $scope.upVote = function (item) {
         if (!AuthenticationService.isAuthenticated()) {
             $state.go('app.login');
+            return;
         }
 
         VoteService.upVote(VoteService.objectTypes.item, item.pk, $scope.user.pk).then(
@@ -91,7 +91,7 @@ function IndexController($scope, $state, ToastService, AuthenticationService, It
                 updateItemVote(data.data.vote, item);
             },
             function (data, status, headers, config) {
-                console.log(data.error);
+                $log.error(data.error);
             }
         )
     };
@@ -106,6 +106,7 @@ function IndexController($scope, $state, ToastService, AuthenticationService, It
     $scope.downVote = function (item) {
         if (!AuthenticationService.isAuthenticated()) {
             $state.go('app.login');
+            return;
         }
 
         VoteService.downVote(VoteService.objectTypes.item, item.pk, $scope.user.pk).then(
@@ -113,7 +114,7 @@ function IndexController($scope, $state, ToastService, AuthenticationService, It
                 updateItemVote(data.data.vote, item);
             },
             function (data, status, headers, config) {
-                console.log(data.error);
+                $log.error(data.error);
             }
         )
     };
@@ -127,4 +128,4 @@ angular.module('tiwun.basement.controllers.IndexController', [
 ])
     .controller('IndexController', IndexController);
 
-IndexController.$inject = ['$scope', '$state', 'ToastService', 'AuthenticationService', 'ItemService', 'VoteService'];
+IndexController.$inject = ['$scope', '$state', '$log', 'ToastService', 'AuthenticationService', 'ItemService', 'VoteService'];

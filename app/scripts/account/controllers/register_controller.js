@@ -24,7 +24,6 @@ function RegisterController($window, $ionicHistory, $state, $scope, Authenticati
     }
 
     $scope.$on('tiwun.account.service.AuthenticationService:Registered', function () {
-        console.log('registered');
         $state.go('app.explore', {}, {reload: true});
         $window.location.reload(true);
     });

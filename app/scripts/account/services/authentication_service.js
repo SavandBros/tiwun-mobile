@@ -7,11 +7,13 @@
  * @param $rootScope
  * @param $cookies
  * @param $http
+ * @param $log
+ * @param ENV
  * @class AuthenticationService
  * @returns [Factory]
  * @namespace tiwun.account.services.AuthenticationService
  */
-function AuthenticationService($rootScope, $cookies, $http, ENV) {
+function AuthenticationService($rootScope, $cookies, $http, $log, ENV) {
     /**
      * Return the currently authenticated user
      *
@@ -60,7 +62,7 @@ function AuthenticationService($rootScope, $cookies, $http, ENV) {
             },
             // Log "Epic failure!" to the console
             function (data, status, headers, config) {
-                console.log(data.error);
+                $log.error(data.error);
             }
         );
     }
@@ -93,7 +95,7 @@ function AuthenticationService($rootScope, $cookies, $http, ENV) {
          * @method logoutErrorFn
          */
         function logoutErrorFn(data, status, headers, config) {
-            console.error('Epic failure!');
+            $log.error('Epic failure!');
         }
     }
 
@@ -129,7 +131,7 @@ function AuthenticationService($rootScope, $cookies, $http, ENV) {
          * @method registerErrorFn
          */
         function registerErrorFn(data, status, headers, config) {
-            console.error('Epic failure!');
+            $log.error('Epic failure!');
         }
     }
 
@@ -174,4 +176,4 @@ function AuthenticationService($rootScope, $cookies, $http, ENV) {
 angular.module('tiwun.account.services.AuthenticationService')
     .factory('AuthenticationService', AuthenticationService);
 
-AuthenticationService.$inject = ['$rootScope', '$cookies', '$http', 'ENV'];
+AuthenticationService.$inject = ['$rootScope', '$cookies', '$http', '$log', 'ENV'];

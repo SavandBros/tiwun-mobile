@@ -11,12 +11,12 @@
     ])
         .controller('NewItemController', NewItemController);
 
-    NewItemController.$inject = ['$rootScope', '$scope', '$state', '$ionicHistory', 'AuthenticationService', 'ItemService'];
+    NewItemController.$inject = ['$rootScope', '$scope', '$state', '$ionicHistory', '$log', 'AuthenticationService', 'ItemService'];
 
     /**
      * @namespace NewItemController
      */
-    function NewItemController($rootScope, $scope, $state, $ionicHistory, AuthenticationService, ItemService) {
+    function NewItemController($rootScope, $scope, $state, $ionicHistory, $log, AuthenticationService, ItemService) {
         constructor();
 
         $scope.auth = AuthenticationService;
@@ -44,12 +44,10 @@
 
                 ItemService.create(item).then(
                     function(data, status, headers, config) {
-                        console.log('Item has been created');
-
                         $state.go('app.singleItem', {itemId: data.data.pk});
                     },
                     function(data, status, headers, config) {
-                        console.log('Error happened' + data.error);
+                       $log.error('Error happened on creating new item: ' + data.error);
                     }
                 )
             }

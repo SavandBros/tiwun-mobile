@@ -11,9 +11,9 @@
     ])
         .controller('TagsDetailController', TagsDetailController);
 
-    TagsDetailController.$inject = ['$scope', '$stateParams', 'TagService'];
+    TagsDetailController.$inject = ['$scope', '$stateParams', '$log', 'TagService'];
 
-    function TagsDetailController($scope, $stateParams, TagService) {
+    function TagsDetailController($scope, $stateParams, $log, TagService) {
         console.log($stateParams['tagSlug']);
         $scope.items = [];
         $scope.pageHasNext = true;
@@ -34,9 +34,9 @@
                 },
                 function (data, status, headers, config) {
                     //Snackbar.error(data.error);
-                    console.log(data.error);
+                    $log.error(data.error);
                 }
             );
         };
-    };
+    }
 })();

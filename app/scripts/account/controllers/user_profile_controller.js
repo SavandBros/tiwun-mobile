@@ -7,7 +7,7 @@
  * @class UserProfileController
  * @namespace tiwun.account.controllers.UserProfileController
  */
-function UserProfileController($scope, $stateParams, UserService) {
+function UserProfileController($scope, $stateParams, $log, UserService) {
     /**
      * Actions to be performed when this controller is instantiated
      *
@@ -20,7 +20,7 @@ function UserProfileController($scope, $stateParams, UserService) {
                 $scope.user = data.data;
             },
             function (data, status, headers, config) {
-                console.log('Error in getting user: ' + data.error);
+                $log.error('Error in getting user: ' + data.error);
             }
         );
     }
@@ -34,4 +34,4 @@ angular.module('tiwun.account.controllers.UserProfileController', [
 ])
     .controller('UserProfileController', UserProfileController);
 
-UserProfileController.$inject = ['$scope', '$stateParams', 'UserService'];
+UserProfileController.$inject = ['$scope', '$stateParams', '$log', 'UserService'];
