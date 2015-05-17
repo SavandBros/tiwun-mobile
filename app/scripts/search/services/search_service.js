@@ -1,38 +1,37 @@
+/*global angular*/
+'use strict';
+
 /**
- * SearchService
+ * Search Service
+ *
+ * @class SearchService
+ * @param $http
+ * @param ENV
+ * @returns {{search: tiwun.basement.services.SearchService.search}}
  * @namespace tiwun.sushial.services
  */
-(function () {
-    'use strict';
-
-    angular.module('tiwun.search.services.SearchService')
-        .factory('SearchService', SearchService);
-
-    SearchService.$inject = ['$http', 'ENV'];
+function SearchService($http, ENV) {
 
     /**
+     * Search the tiwun database for items.
      *
-     * @param $http
-     * @returns {{search: tiwun.basement.services.SearchService.search}}
-     * @constructor
+     * @param query Search query object.
+     * @returns {HttpPromise}
+     * @memberOf tiwun.basement.services.SearchService
      */
-    function SearchService($http, ENV) {
-        var SearchService = {
-            search: search
-        };
-
-        return SearchService;
-
-        /**
-         *
-         * @param query
-         * @returns {HttpPromise}
-         * @memberOf tiwun.basement.services.SearchService
-         */
-        function search(query) {
-            return $http.get(ENV.apiEndpoint + 'search/',
-                {params: {q: query.text}}
-            );
-        }
+    function search(query) {
+        return $http.get(ENV.apiEndpoint + 'search/',
+            {params: {q: query.text}}
+        );
     }
-})();
+
+    return {
+        search: search
+    }
+}
+
+
+angular.module('tiwun.search.services.SearchService')
+    .factory('SearchService', SearchService);
+
+SearchService.$inject = ['$http', 'ENV'];
