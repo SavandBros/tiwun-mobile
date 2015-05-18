@@ -11,10 +11,14 @@
     <content src="index.html"/>
     <access origin="https://www.tiwun.com"/>
     <access origin="https://cdn.shopify.com"/>
-    <access origin="http://placehold.it" />
+    <access origin="http://placehold.it"/>
     <preference name="SplashScreen" value="screen"/>
     <preference name="SplashScreenDelay" value="3000"/>
+    <preference name="SplashMaintainAspectRatio" value="true|false"/>
     <platform name="android">
+        <feature name="SocialSharing">
+            <param name="android-package" value="nl.xservices.plugins.SocialSharing"/>
+        </feature>
         <icon src="resources/android/icon/drawable-ldpi-icon.png" density="ldpi"/>
         <icon src="resources/android/icon/drawable-mdpi-icon.png" density="mdpi"/>
         <icon src="resources/android/icon/drawable-hdpi-icon.png" density="hdpi"/>
@@ -33,8 +37,6 @@
         <splash src="resources/android/splash/drawable-port-xhdpi-screen.png" density="port-xhdpi"/>
         <splash src="resources/android/splash/drawable-port-xxhdpi-screen.png" density="port-xxhdpi"/>
         <splash src="resources/android/splash/drawable-port-xxxhdpi-screen.png" density="port-xxxhdpi"/>
-        <feature name="SocialSharing">
-            <param name="android-package" value="nl.xservices.plugins.SocialSharing"/>
-        </feature>
     </platform>
+    <icon src="resources/android/icon/drawable-xhdpi-icon.png"/>
 </widget>
