@@ -44,11 +44,14 @@
                 </div>
             </div>
 
-            <div class="item" ng-show="{{ auth.isAuthenticated() }}">
+            <div class="item">
                 <form name="form" ng-submit="addComment(form, comment)">
                     <div class="bar item-input-inset">
                         <label class="item-input-wrap">
-                            <input type="search" name="search" ng-model="comment.text" placeholder="Comment...">
+                            <input ng-show="{{ auth.isAuthenticated() }}" type="text" name="comment" ng-model="comment.text" placeholder="Comment...">
+                            <a href="#!/app/account/login" ng-hide="{{ auth.isAuthenticated() }}">
+                                <input type="text" name="comment" placeholder="Comment...">
+                            </a>
                         </label>
                     </div>
                 </form>
