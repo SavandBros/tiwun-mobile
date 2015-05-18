@@ -89,3 +89,11 @@ b {
 .margin-right {
 	margin-right: 10px;
 }
+
+.offer {
+  	background: rgb(239, 71, 58);
+  	color: #fff;
+  	padding: 12px;
+  	margin-left: -15px;
+  	margin-right: 12px;
+}
