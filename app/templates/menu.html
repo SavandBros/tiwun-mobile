@@ -23,6 +23,10 @@
 
         <ion-content>
             <ion-list>
+                <div class="item item-banner" menu-close>
+                    <a class="button button-positive button-small col-33" href="#!/app/account/login" ng-hide="{{ auth.isAuthenticated() }}">Sign in</a>
+                </div>
+
                 <div class="item item-divider">
                     Tiwun
                 </div>
