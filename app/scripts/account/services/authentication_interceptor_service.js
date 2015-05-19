@@ -6,11 +6,11 @@
  *
  * @class AuthenticationInterceptorService
  * @namespace tiwun.account.services.AuthenticationInterceptorService
- * @param {Object} Env
+ * @param {Object} ENV
  * @param {tiwun.account.services.AuthenticationService} AuthenticationService
  *
  */
-function AuthenticationInterceptorService(Env, AuthenticationService) {
+function AuthenticationInterceptorService(ENV, AuthenticationService) {
     /**
      * request
      * Automatically attach Authorization header
