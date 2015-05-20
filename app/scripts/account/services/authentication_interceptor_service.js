@@ -6,11 +6,11 @@
  *
  * @class AuthenticationInterceptorService
  * @namespace tiwun.account.services.AuthenticationInterceptorService
+ * @param {Object} $window
  * @param {Object} ENV
- * @param {tiwun.account.services.AuthenticationService} AuthenticationService
  *
  */
-function AuthenticationInterceptorService(ENV, AuthenticationService) {
+function AuthenticationInterceptorService($window, ENV) {
     /**
      * request
      * Automatically attach Authorization header
@@ -21,7 +21,7 @@ function AuthenticationInterceptorService(ENV, AuthenticationService) {
      * @returns {Object}
      */
     function request(config) {
-        var token = AuthenticationService.getToken();
+        var token = $window.localStorage['jwtToken'];
 
         if (config.url.indexOf(ENV.apiEndPoint === 0 && token)) {
             config.headers.Authorization = 'Bearer ' + token;
@@ -30,31 +30,12 @@ function AuthenticationInterceptorService(ENV, AuthenticationService) {
         return config;
     }
 
-    /**
-     * response
-     * If a token was sent back, save it
-     *
-     * @method response
-     * @param {Object} res
-     * @memberOf tiwun.account.services.AuthenticationInterceptorService
-     * @returns {*}
-     */
-    function response(res) {
-        if (res.config.url.indexOf(ENV.apiEndPoint) == 0 && res.data.token) {
-            AuthenticationService.saveToken(res.data.token);
-        }
-
-        return res;
-    }
-
     return {
-        request: request,
-        response: response
+        request: request
     }
 }
 
-angular.module('tiwun.account.service.AuthenticationInterceptorService', [
-    'tiwun.account.services.AuthenticationService'
-]);
+angular.module('tiwun.account.services.AuthenticationInterceptorService')
+    .factory('AuthenticationInterceptorService', AuthenticationInterceptorService);
 
-AuthenticationInterceptorService.$inject = ['ENV', 'AuthenticationInterceptorService'];
+AuthenticationInterceptorService.$inject = ['$window', 'ENV'];

@@ -104,7 +104,8 @@ function AuthenticationService($rootScope, $http, $log, $window, ENV) {
         }).then(
             // Set the authenticated account and redirect to index
             function (data, status, headers, config) {
-                setAuthenticatedUser(data.data);
+                setAuthenticatedUser(data.data.user);
+                setToken(data.data.token);
 
                 $rootScope.$broadcast('tiwun.account.service.AuthenticationService:Authenticated');
             },
