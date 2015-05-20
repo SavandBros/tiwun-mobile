@@ -27,6 +27,11 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
+#: app/templates/item/single_item.html:11
+#: app/templates/item/single_item.html:13
+msgid "Comment..."
+msgstr ""
+
 #: app/templates/account/register.html:14
 #: app/templates/account/register.html:15
 msgid "Confirm Password"

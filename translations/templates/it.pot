@@ -1,10 +1,10 @@
-# 
+# Translators:
 # Translators:
 # Alireza Savand <alireza.savand@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Tiwun Mobile\n"
-"PO-Revision-Date: 2015-05-20 19:13+0000\n"
+"PO-Revision-Date: 2015-05-20 19:29+0000\n"
 "Last-Translator: Alireza Savand <alireza.savand@gmail.com>\n"
 "Language-Team: Italian (http://www.transifex.com/projects/p/tiwun-mobile/language/it/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -27,6 +27,11 @@ msgstr "di"
 #: app/templates/item/item_post.html:91
 msgid "Cancel"
 msgstr "Annulla"
+
+#: app/templates/item/single_item.html:11
+#: app/templates/item/single_item.html:13
+msgid "Comment..."
+msgstr "Commento..."
 
 #: app/templates/account/register.html:14
 #: app/templates/account/register.html:15
