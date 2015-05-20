@@ -14,6 +14,9 @@ module.exports = function (grunt) {
     // Time how long tasks take. Can help when optimizing build times
     require('time-grunt')(grunt);
 
+    // Load Angular Gettext tasks
+    grunt.loadNpmTasks('grunt-angular-gettext');
+
     // Define the configuration for all the tasks
     grunt.initConfig({
 
@@ -26,6 +29,25 @@ module.exports = function (grunt) {
             images: 'images',
             test: 'test',
             dist: 'www'
+        },
+
+        nggettext_extract: {
+            pot: {
+                files: {
+                    'translations/templates/en.pot': ['<%= yeoman.app %>/templates/**/*.html']
+                }
+            }
+        },
+
+        nggettext_compile: {
+            all: {
+                options: {
+                    module: 'tiwun.basement.translations'
+                },
+                files: {
+                    '<%= yeoman.app %>/<%= yeoman.scripts %>/basement/translations.js': ['translations/templates/*.pot']
+                }
+            }
         },
 
         // Environment Variables for Angular App
