@@ -14,8 +14,7 @@
         //$locationProvider.html5Mode(true);
         $locationProvider.hashPrefix('!');
 
-        $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
-        $httpProvider.defaults.xsrfCookieName = 'csrftoken';
+        $httpProvider.interceptors.push('AuthenticationInterceptorService');
 
         $stateProvider
             .state('app', {
