@@ -1,8 +1,13 @@
 msgid ""
 msgstr ""
+"Project-Id-Version: Tiwun Mobile\n"
+"PO-Revision-Date: 2015-05-20 18:55+0000\n"
+"Last-Translator: Alireza Savand <alireza.savand@gmail.com>\n"
+"Language-Team: English (http://www.transifex.com/projects/p/tiwun-mobile/language/en/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Project-Id-Version: \n"
+"Language: en\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: app/scripts/basement/filters/timesince.js:51
 msgid "a"
