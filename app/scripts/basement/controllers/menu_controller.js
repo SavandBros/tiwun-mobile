@@ -14,6 +14,7 @@
 
     function MenuController($window, $scope, AuthenticationService) {
         $scope.auth = AuthenticationService;
+        $scope.user = AuthenticationService.getAuthenticatedUser();
 
         $scope.$on('tiwun.account.service.AuthenticationService:SignedOut', function () {
             $window.location.reload(true)
