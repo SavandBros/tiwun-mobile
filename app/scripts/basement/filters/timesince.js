@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('tiwun.basement.filters.timesinceFilter', [])
-    .filter('timesince', function() {
+    .filter('timesince', function(gettextCatalog) {
         return function(date) {
             if (typeof date == 'string') {
                 date = new Date(date);
@@ -11,28 +11,28 @@ angular.module('tiwun.basement.filters.timesinceFilter', [])
             var INTERVALS = {
                 YEAR: {
                     seconds: 31536000,
-                    tense: 'year',
-                    tense_plural: 'years'
+                    tense: gettextCatalog.getString('year'),
+                    tense_plural: gettextCatalog.getString('years')
                 },
                 MONTH: {
                     seconds: 2592000,
-                    tense: 'month',
-                    tense_plural: 'months'
+                    tense: gettextCatalog.getString('month'),
+                    tense_plural: gettextCatalog.getString('months')
                 },
                 DAY: {
                     seconds: 86400,
-                    tense: 'day',
-                    tense_plural: 'days'
+                    tense: gettextCatalog.getString('day'),
+                    tense_plural: gettextCatalog.getString('days')
                 },
                 HOUR: {
                     seconds: 3600,
-                    tense: 'hour',
-                    tense_plural: 'hours'
+                    tense: gettextCatalog.getString('hour'),
+                    tense_plural: gettextCatalog.getString('hours')
                 },
                 MINUTE: {
                     seconds: 60,
-                    tense: 'minute',
-                    tense_plural: 'minutes'
+                    tense: gettextCatalog.getString('minute'),
+                    tense_plural: gettextCatalog.getString('minutes')
                 }
             };
 
@@ -42,13 +42,13 @@ angular.module('tiwun.basement.filters.timesinceFilter', [])
                 var tensePrefix;
 
                 if (secondsDifference < 1 && secondsDifference > 0) {
-                    tensePrefix = "less than a";
+                    tensePrefix = gettextCatalog.getString('less than a');
 
                     return "tensePrefix TenseType".replace('tensePrefix', tensePrefix)
                         .replace('TenseType', tense);
                 } else if (secondsDifference === 1) {
-                    if (k == 'HOUR') tensePrefix = 'an';
-                    else tensePrefix = 'a';
+                    if (k == 'HOUR') tensePrefix = gettextCatalog.getString('an');
+                    else tensePrefix = gettextCatalog.getString('a');
 
                     return "tensePrefix tense".replace('tensePrefix', tensePrefix)
                         .replace('tense', tense);

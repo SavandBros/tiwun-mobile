@@ -53,7 +53,6 @@ function TagService($http, ENV) {
 
     return {
         all: all,
-
         tagDetail: tagDetail
     }
 }

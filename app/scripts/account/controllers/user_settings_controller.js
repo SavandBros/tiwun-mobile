@@ -4,10 +4,18 @@
 /**
  * Use rSettings Controller
  *
+ * @param {Object} $scope
+ * @param {Object} $state
+ * @param {Object} $log
+ * @param {Object} gettextCatalog
+ * @param {ToastService} ToastService
+ * @param {UserService} UserService
+ * @param {AuthenticationService} AuthenticationService
+ *
  * @class UserSettingsController
  * @namespace tiwun.account.controllers.UserSettingsController
  */
-function UserSettingsController($scope, $state, $log, ToastService, UserService, AuthenticationService) {
+function UserSettingsController($scope, $state, $log, gettextCatalog, ToastService, UserService, AuthenticationService) {
     /**
      * Actions to be performed when this controller is instantiated
      *
@@ -17,7 +25,7 @@ function UserSettingsController($scope, $state, $log, ToastService, UserService,
     function constructor() {
         if (!AuthenticationService.isAuthenticated()) {
             $state.go('app.login');
-            ToastService.show('You\'re not authorized to access this page.');
+            ToastService.show(gettextCatalog.getString('You are not authorized to access this page.'));
         } else {
             UserService.get($stateParams.userId).then(
                 function(data, status, headers, config) {
@@ -62,4 +70,4 @@ angular.module('tiwun.account.controllers.UserSettingsController', [
     ])
     .controller('UserSettingsController', UserSettingsController);
 
-UserSettingsController.$inject = ['$scope', '$state', '$log', 'ToastService', 'UserService', 'AuthenticationService'];
+UserSettingsController.$inject = ['$scope', '$state', '$log', 'gettextCatalog', 'ToastService', 'UserService', 'AuthenticationService'];

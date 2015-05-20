@@ -6,9 +6,23 @@
  *
  * @class SingleItemController
  * @namespace tiwun.item.controllers
+ *
+ * @param {Object} $scope
+ * @param {Object} $stateParams
+ * @param {Object} $ionicHistory
+ * @param {Object} $state
+ * @param {Object} $ionicScrollDelegate
+ * @param {Object} $log
+ * @param {Object} gettextCatalog
+ * @param {ToastService} ToastService
+ * @param {ItemService} ItemService
+ * @param {CommentService} CommentService
+ * @param {VoteService} VoteService
+ * @param {AuthenticationService} AuthenticationService
+ *
  **/
-function SingleItemController($scope, $stateParams, $ionicHistory, $state, $ionicScrollDelegate, $log, ToastService,
-    ItemService, CommentService, VoteService, AuthenticationService) {
+function SingleItemController($scope, $stateParams, $ionicHistory, $state, $ionicScrollDelegate,
+    $log, gettextCatalog, ToastService, ItemService, CommentService, VoteService, AuthenticationService) {
     $scope.auth = AuthenticationService;
     $scope.user = $scope.auth.getAuthenticatedUser();
 
@@ -105,7 +119,7 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, $ioni
                     $scope.item.comments = $scope.item.comments.concat(data.data);
                     comment.text = '';
                     $ionicScrollDelegate.scrollBottom(true);
-                    ToastService.show('Your comment has been posted successfully');
+                    ToastService.show(gettextCatalog.getString('Your comment has been posted successfully.'));
 
                 },
                 function(data, status, headers, config) {
@@ -178,6 +192,7 @@ SingleItemController.$inject = [
     '$state',
     '$ionicScrollDelegate',
     '$log',
+    'gettext',
     'ToastService',
     'ItemService',
     'CommentService',

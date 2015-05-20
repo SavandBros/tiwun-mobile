@@ -13,9 +13,14 @@
  * Differences are that: Ionic Popup ignores position, and doesn't allow doing anything while it shows.
  *
  * @class ToastService
+ * @param {Object} $rootScope
+ * @param {Object} $timeout
+ * @param {Object} $ionicPopup
+ * @param {Object} $cordovaToast
+ * @param {Object} gettextCatalog
  * @namespace tiwun.basement.services.ToastService
  */
-function ToastService($rootScope, $timeout, $ionicPopup, $cordovaToast) {
+function ToastService($rootScope, $timeout, $ionicPopup, $cordovaToast, gettextCatalog) {
     /**
      * Show message
      *
@@ -26,7 +31,7 @@ function ToastService($rootScope, $timeout, $ionicPopup, $cordovaToast) {
      * @memberOf tiwun.basement.services.ToastService
      */
     function show(message, duration, position) {
-        message = message || 'There was a problem...';
+        message = message || gettextCatalog.getString('There was a problem...');
         duration = duration || 'short';
         position = position || 'top';
 
@@ -61,4 +66,4 @@ function ToastService($rootScope, $timeout, $ionicPopup, $cordovaToast) {
 angular.module('tiwun.basement.services.ToastService', ['ngCordova'])
     .factory('ToastService', ToastService);
 
-ToastService.$inject = ['$rootScope', '$timeout', '$ionicPopup', '$cordovaToast'];
+ToastService.$inject = ['$rootScope', '$timeout', '$ionicPopup', '$cordovaToast', 'gettextCatalog'];

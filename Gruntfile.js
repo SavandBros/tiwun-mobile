@@ -37,7 +37,8 @@ module.exports = function(grunt) {
         nggettext_extract: {
             pot: {
                 files: {
-                    'translations/templates/en.pot': ['<%= yeoman.app %>/templates/**/*.html']
+                    'translations/templates/en.pot': ['<%= yeoman.app %>/templates/**/*.html'],
+                    'translations/scripts/en.pot': ['<%= yeoman.app %>/scripts/**/*.js']
                 }
             }
         },
@@ -48,7 +49,7 @@ module.exports = function(grunt) {
                     module: 'tiwun.basement.translations'
                 },
                 files: {
-                    '<%= yeoman.app %>/<%= yeoman.scripts %>/basement/translations.js': ['translations/templates/*.pot']
+                    '<%= yeoman.app %>/<%= yeoman.scripts %>/basement/translations.js': ['translations/**/*.pot']
                 }
             }
         },
