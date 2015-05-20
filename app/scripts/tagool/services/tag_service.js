@@ -1,65 +1,58 @@
+/*global angular*/
+'use strict';
+
 /**
- * TagService
+ * Tag Service
+ *
+ * @name TagService
  * @class TagService
- * @namespace tiwun.tagool.services
+ * @param {Object} $http
+ * @param {Object} ENV
+ * @memberOf: tiwun.tagool.services
+ * @returns {{all: TagService.all, tagDetail: TagService.tagDetail}}
  */
-(function () {
-    'use strict';
-
-    angular.module('tiwun.tagool.services.TagService', [])
-        .factory('TagService', TagService);
-
-    TagService.$inject = ['$http', 'ENV'];
-
+function TagService($http, ENV) {
+    /**
+     * all
+     * Getting All of tags
+     *
+     * @method all
+     * @param {number} page_number
+     * @memberOf TagService
+     * @returns {Promise}
+     */
+    function all(page_number) {
+        return $http.get(
+            ENV.apiEndpoint + 'tags/',
+            {params: {page: page_number}}
+        );
+    }
 
     /**
-     * TagService
-     * @name TagService
-     * @class TagService
-     * @param $http
-     * @memberOf: tiwun.tagool.services
-     * @returns {{all: TagService.all, tagDetail: TagService.tagDetail}}
+     * tagDetail
+     * Getting one single tag detail page, which is full of items ;)
+     *
+     * @method tagDetail
+     * @param {number} page_number
+     * @param {string} tagSlug
+     * @memberOf TagService
+     * @returns {Promise}
      */
-    function TagService($http, ENV) {
-        var TagService = {
-            all: all,
-            tagDetail: tagDetail
-        };
-
-        return TagService;
-
-
-        /**
-         * all
-         * @method all
-         * @name all
-         * @desc List of all tags.
-         * @param {number} page_number
-         * @memberOf TagService
-         * @returns {Promise}
-         */
-        function all(page_number) {
-            return $http.get(
-                ENV.apiEndpoint + 'tags/',
-                {params: {page: page_number}}
-            );
-        }
-
-        /**
-         * tagDetail
-         * @method tagDetail
-         * @name tagDetail
-         * @desc Get given tag associated objects.
-         * @param {number} page_number
-         * @param {string} tagSlug
-         * @memberOf TagService
-         * @returns {Promise}
-         */
-        function tagDetail(page_number, tagSlug) {
-            return $http.get(
-                ENV.apiEndpoint + 'tags/tagSlug/'.replace('tagSlug', tagSlug),
-                {params: {page: page_number}}
-            );
-        }
+    function tagDetail(page_number, tagSlug) {
+        return $http.get(
+            ENV.apiEndpoint + 'tags/tagSlug/'.replace('tagSlug', tagSlug),
+            {params: {page: page_number}}
+        );
     }
-})();
+
+    return {
+        all:all,
+
+        tagDetail: tagDetail
+    }
+}
+
+angular.module('tiwun.tagool.services.TagService', [])
+    .factory('TagService', TagService);
+
+TagService.$inject = ['$http', 'ENV'];
