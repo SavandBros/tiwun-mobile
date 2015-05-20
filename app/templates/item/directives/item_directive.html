@@ -3,11 +3,11 @@
 
     <h2><a href="#!/app/items/{{ item.pk }}/">{{ item.title }}</a></h2>
 
-    <p>{{ item.created | date }} by: <a href="#!/app/account/user-profile/{{ item.user_id }}/">{{ item.user_name }}</a></p>
+    <p>{{ item.created | date }} <translate>by</translate>: <a href="#!/app/account/user-profile/{{ item.user_id }}/">{{ item.user_name }}</a></p>
 </div>
 
 <div class="item" style="padding: 8px 15px">
-    <b class="offer">{{ item.discount_percentage }}% <small>OFF</small></b>
+    <b class="offer">{{ item.discount_percentage }}% <small translate>OFF</small></b>
     <s class="small faded-light">was {{ item.get_compare_at_price_display }}</s>
     <b class="right assertive">{{ item.get_price_display }}</b>
 </div>
@@ -24,10 +24,6 @@
 
     <p>{{ item.description | markdown | stripTags }}</p>
 
-    <p>
-        <span class="subdued">{{ item.votes_count }} Score</span>
-        <span class="subdued">{{ item.comments_count }} Comments</span>
-    </p>
 </div>
 
 <div class="item tabs tabs-secondary tabs-icon-left bg-e">

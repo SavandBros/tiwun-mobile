@@ -3,32 +3,32 @@
         <form name="form" ng-submit="register(form, user)">
             <div class="list">
                 <label class="item item-input item-floating-label">
-                    <span class="input-label">Email</span>
-                    <input type="email" placeholder="Email" name="email" ng-model="user.email" required/>
+                    <span class="input-label" translate>Email</span>
+                    <input type="email" placeholder="{{ 'Email'|translate }}" name="email" ng-model="user.email" required/>
                 </label>
                 <label class="item item-input item-floating-label">
-                    <span class="input-label">Password</span>
-                    <input type="password" placeholder="Password" name="password" ng-model="user.password" required/>
+                    <span class="input-label" translate>Password</span>
+                    <input type="password" placeholder="{{ 'Password'|translate }}" name="password" ng-model="user.password" required/>
                 </label>
                 <label class="item item-input item-floating-label">
-                    <span class="input-label">Confirm Password</span>
-                    <input type="password" placeholder="Confirm Password" name="confirmPassword"
+                    <span class="input-label" translate>Confirm Password</span>
+                    <input type="password" placeholder="{{ 'Confirm Password'|translate }}" name="confirmPassword"
                            ng-model="user.confirmPassword" required/>
                 </label>
 
                 <div class="item" ng-show="form.$submitted">
                     <span class="assertive" ng-show="form.confirmPassword.$error.not_match">
                         <i class="ion-information-circled"></i>
-                        Password does not match!
+                        <translate>Password does not match!</translate>
                     </span>
                     <span class="balanced" ng-hide="form.confirmPassword.$error.not_match">
                         <i class="ion-information-circled"></i>
-                        Welcome to <strong>Tiwun</strong>
+                        <translate>Welcome to Tiwun</translate>
                     </span>
                 </div>
             </div>
             <button type="submit" class="button button-full button-balanced" ng-disabled="form.$invalid">
-                <i class="ion-log-in"></i> Register &amp; Join <strong>Tiwun</strong>
+                <i class="ion-log-in"></i> <translate>Register &amp; Join</translate>
             </button>
         </form>
     </ion-content>

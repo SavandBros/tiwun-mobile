@@ -26,22 +26,22 @@
                 <ul>
                     <br>
                     <li ng-show="{{ user.real_name.length }}">
-                        <p> Real Name: <b class="right">{{ user.real_name }}</b></p>
+                        <p> <translate>Real Name</translate>: <b class="right">{{ user.real_name }}</b></p>
                         <br>
                     </li>
                     <li>
-                        <p> Website: <a href="{{ user.website }}" class="right">{{ user.get_full_name }}'s Website</a></p>
+                        <p> <translate>Website</translate>: <a href="{{ user.website }}" class="right">{{ user.website }}</a></p>
                         <br>
                     </li>
                     <li ng-show="{{ user.location.length }}">
-                        <p>Location: <span class="right">{{ user.location }}</span></p>
+                        <p><translate>Location</translate>: <span class="right">{{ user.location }}</span></p>
                         <br>
                     </li>
                 </ul>
             </div>
 
             <div class="item item-divider">
-                <p>Joined Date: <b class="right">{{ user.date_joined | date }}</b></p>
+                <p><translate>Joined Date</translate>: <b class="right">{{ user.date_joined | date }}</b></p>
             </div>
         </div>
 

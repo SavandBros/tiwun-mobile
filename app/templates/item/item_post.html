@@ -5,10 +5,10 @@
             <div class="list">
                 <label class="item item-input item-floating-label"
                        ng-class="{ 'has-error' : form.title.$invalid && !form.title.$pristine  && formSubmitted }">
-                    <span class="input-label">Title</span>
+                    <span class="input-label"><translate>Title</translate></span>
                     <input
                         type="text"
-                        placeholder="Title"
+                        placeholder="{{ 'Title'|translate }}"
                         name="title"
                         ng-model="item.title"
                         required
@@ -19,9 +19,9 @@
 
                 <label class="item item-input item-floating-label"
                        ng-class="{ 'has-error' : form.description.$invalid && !form.description.$pristine && formSubmitted  }">
-                    <span class="input-label">Description</span>
+                    <span class="input-label"><translate>Description</translate></span>
                     <textarea
-                        placeholder="Description"
+                        placeholder="{{ 'Description'|translate }}"
                         name="description"
                         cols="30"
                         rows="10"
@@ -34,10 +34,10 @@
 
                 <label class="item item-input item-floating-label"
                        ng-class="{ 'has-error' : form.tags.$invalid && !form.tags.$pristine && formSubmitted }">
-                    <span class="input-label">Tags</span>
+                    <span class="input-label"><translate>Tags</translate></span>
                     <input
                         type="text"
-                        placeholder="Tags separated by space"
+                        placeholder="{{ 'Tags separated by space'|translate }}"
                         name="tags"
                         ng-model="item.tags"
                         ng-required="true"
@@ -51,44 +51,44 @@
                     <br>
                     <!-- TITL ERRORS -->
                     <p class="item item-error bar bar-assertive" ng-show="form.title.$invalid && !form.title.$pristine && formSubmitted">
-                        <i class="icon icon-error-bg ion-information-circled"></i> Title is required.
+                        <i class="icon icon-error-bg ion-information-circled"></i> <translate>Title is required.</translate>
                     </p>
 
                     <p class="item item-error bar bar-assertive" ng-show="form.title.$error.minlength && formSubmitted">
-                        <i class="icon icon-error-bg ion-information-circled"></i> Title is too short.
+                        <i class="icon icon-error-bg ion-information-circled"></i> <translate>Title is too short.</translate>
                     </p>
 
                     <p class="item item-error bar bar-assertive" ng-show="form.title.$error.maxlength && formSubmitted">
-                        <i class="icon icon-error-bg ion-information-circled"></i> Title is too long.
+                        <i class="icon icon-error-bg ion-information-circled"></i> <translate>Title is too long.</translate>
                     </p>
 
                     <!-- DESC ERRORS -->
                     <p class="item item-error bar bar-assertive" ng-show="form.description.$invalid && !form.description.$pristine && formSubmitted">
-                        <i class="icon icon-error-bg ion-information-circled"></i> Description is required.
+                        <i class="icon icon-error-bg ion-information-circled"></i> <translate>Description is required.</translate>
                     </p>
 
                     <p class="item item-error bar bar-assertive" ng-show="form.description.$error.minlength && formSubmitted">
-                        <i class="icon icon-error-bg ion-information-circled"></i> Description is too short.
+                        <i class="icon icon-error-bg ion-information-circled"></i> <translate>Description is too short.</translate>
                     </p>
 
                     <!-- TAGS ERRORS -->
                     <p class="item item-error bar bar-assertive" ng-show="form.tags.$invalid && !form.tags.$pristine && formSubmitted">
-                        <i class="icon icon-error-bg ion-information-circled"></i> Tag are required.
+                        <i class="icon icon-error-bg ion-information-circled"></i> <translate>Tags are required.</translate>
                     </p>
                     <p class="item item-error bar bar-assertive"ng-show="form.tags.$error.minlength && formSubmitted">
-                        <i class="icon icon-error-bg ion-information-circled"></i> Tags are too short.
+                        <i class="icon icon-error-bg ion-information-circled"></i> <translate>Tags are too short.</translate>
                     </p>
                     <p class="item item-error bar bar-assertive" ng-show="form.tags.$error.maxlength && formSubmitted">
-                        <i class="icon icon-error-bg ion-information-circled"></i> Tags are too long.
+                        <i class="icon icon-error-bg ion-information-circled"></i> <translate>Tags are too long.</translate>
                     </p>
                 </div>
 
                 <!-- BUTTONS -->
                 <button class="button button-full button-positive" type="submit">
-                    <i class="ion-android-checkmark-circle"></i> Create Post
+                    <i class="ion-android-checkmark-circle"></i> <translate>Create Post</translate>
                 </button>
                 <a href="#!/app/explor" class="button button-full button-small button-assertive button-outline">
-                    Cancel
+                    <translate>Cancel</translate>
                 </a>
             </div>
         </form>

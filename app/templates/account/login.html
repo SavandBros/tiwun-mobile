@@ -3,17 +3,17 @@
         <form name="form" ng-submit="login(form, user)">
             <div class="list">
                 <label class="item item-input item-floating-label">
-                    <span class="input-label">Email</span>
-                    <input type="email" placeholder="Email" name="email" ng-model="user.email" required/>
+                    <span class="input-label" translate>Email</span>
+                    <input type="email" placeholder="{{ 'Email'|translate }}" name="email" ng-model="user.email" required/>
                 </label>
                 <label class="item item-input item-floating-label">
-                    <span class="input-label">Password</span>
-                    <input type="password" placeholder="Password" name="password" ng-model="user.password" required/>
+                    <span class="input-label" translate>Password</span>
+                    <input type="password" placeholder="{{ 'Password'|translate }}" name="password" ng-model="user.password" required/>
                 </label>
 
             </div>
             <button type="submit" class="button button-full button-positive">
-                <i class="ion-log-in"></i> Login
+                <i class="ion-log-in"></i> <translate>Login</translate>
             </button>
         </form>
     </ion-content>
