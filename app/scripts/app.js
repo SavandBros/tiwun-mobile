@@ -26,9 +26,19 @@
     angular.module('tiwun')
         .run(RunForrestRun);
 
+    RunForrestRun.$inject = ['$window', '$ionicPlatform', 'gettextCatalog'];
 
+    function RunForrestRun($window, $ionicPlatform, gettextCatalog) {
         gettextCatalog.debug = true;
-        gettextCatalog.setCurrentLanguage('fa');
+
+        var translation = $window.localStorage.getItem('translation');
+
+        if (!translation) {
+            translation = 'en';
+            $window.localStorage.setItem('translation', translation)
+        }
+
+        gettextCatalog.setCurrentLanguage(translation);
 
         $ionicPlatform.ready(function() {
             // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
