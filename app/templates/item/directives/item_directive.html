@@ -1,7 +1,7 @@
 <div class="item item-avatar">
-    <img ng-src="{{ item.user.get_gravatar[64] }}">
+    <img ng-src="{{ item.get_primary_image.thumbnail }}">
 
-    <h2>{{ item.title }}</h2>
+    <h2><a href="#!/app/items/{{ item.pk }}/">{{ item.title }}</a></h2>
 
     <p>{{ item.created | date }} by: <a href="#!/app/account/user-profile/{{ item.user_id }}/">{{ item.user_name }}</a></p>
 </div>
@@ -14,11 +14,13 @@
 
 <div class="item item-body">
 
-    <ion-slide-box on-slide-changed="slideHasChanged($index)">
+    <ion-slide-box on-slide-changed="slideHasChanged($index)" ng-if="image === 'multi'">
         <ion-slide ng-repeat="img in item.images">
             <img ng-dblclick="upVote()" class="full-image" ng-src="{{ img.standard }}" />
         </ion-slide>
     </ion-slide-box>
+
+    <img class="full-image" ng-src="{{ item.get_primary_image.standard }}" ng-if="image === 'single'">
 
     <p>{{ item.description | markdown | stripTags }}</p>
 

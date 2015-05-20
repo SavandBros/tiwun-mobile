@@ -103,10 +103,11 @@ b {
 	background-image: url('../images/menu.jpg');
 	background-size: 100%;
 	height: 120px;
+    color: white;
+    font-weight: bold;
 }
 
 .item-banner > a {
-	margin-top: 60px;
 	opacity: 0.8;
 	font-weight: bold;
 	display: block;

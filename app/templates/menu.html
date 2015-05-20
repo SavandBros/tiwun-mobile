@@ -25,6 +25,13 @@
             <ion-list>
                 <div class="item item-banner" menu-close>
                     <a class="button button-positive button-small col-33" href="#!/app/account/login" ng-hide="{{ auth.isAuthenticated() }}">Sign in</a>
+
+                    <a class="item item-avatar" href="#!/app/account/user-profile/{{ user.pk }}/" ng-show="auth.isAuthenticated()">
+                      <img ng-src="{{ user.get_gravatar[64] }}">
+                      <h2>{{ user.get_short_name }}</h2>
+                      <p>{{ user.location }}</p>
+                    </a>
+
                 </div>
 
                 <div class="item item-divider">

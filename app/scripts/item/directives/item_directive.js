@@ -10,7 +10,8 @@ function ItemDirective() {
     return {
         restrict: 'E',
         scope: {
-            item: '='
+            item: '=',
+            image: '='
         },
         templateUrl: 'templates/item/directives/item_directive.html'
 
