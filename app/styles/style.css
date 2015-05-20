@@ -1,114 +1,138 @@
+.ng-valid {
+}
+
+.ng-invalid {
+    background: red;
+    color: white;
+}
+
+.ng-pristine {
+}
+
+.ng-dirty {
+}
+
+/* really specific css rules applied by angular */
+.ng-invalid-required {
+}
+
+.ng-invalid-minlength {
+}
+
+.ng-valid-max-length {
+}
+
 a {
     text-decoration: none !important;
 }
 
 b {
-	color: #333;
+    color: #333;
 }
 
 .icon-bg {
-	font-size: 6em !important;
-	z-index: -1;
-	color: #ddd;
+    font-size: 6em !important;
+    z-index: -1;
+    color: #ddd;
 }
 
 .icon-error-bg {
-	font-size: 4em !important;
-	z-index: -1;
-	position: absolute;
-	top: -10px;
-	left: -15px;
-	color: crimson;
+    font-size: 4em !important;
+    z-index: -1;
+    position: absolute;
+    top: -10px;
+    left: -15px;
+    color: crimson;
 }
 
 .gray {
-	color: #bbb !important;
+    color: #bbb !important;
 }
 
 .bg-e {
-	background-color: #eee !important;
+    background-color: #eee !important;
 }
 
 .faded {
-	opacity: 0.5;
+    opacity: 0.5;
 }
 
 .faded-light {
-	opacity: 0.7;
+    opacity: 0.7;
 }
 
 .item-tiny {
-	padding: 6px;
-	font-size: 0.9em;
-	-webkit-box-shadow: 0 0 10px #ddd;
-	   -moz-box-shadow: 0 0 10px #ddd;
-			box-shadow: 0 0 10px #ddd;
+    padding: 6px;
+    font-size: 0.9em;
+    -webkit-box-shadow: 0 0 10px #ddd;
+    -moz-box-shadow: 0 0 10px #ddd;
+    box-shadow: 0 0 10px #ddd;
 }
 
 .item-error {
-	padding: 10px;
-	padding-left: 25px;
-	font-size: 1.1em;
-	margin-bottom: 5px;
+    padding: 10px;
+    padding-left: 25px;
+    font-size: 1.1em;
+    margin-bottom: 5px;
 }
 
 .image-box {
-	max-width: 100%;
+    max-width: 100%;
 }
 
 .image-circle {
-	-webkit-border-radius: 100%;
-	   -moz-border-radius: 100%;
-			border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
 }
 
 .right {
-	float: right;
+    float: right;
 }
 
 .center {
-	text-align: center;
+    text-align: center;
 }
 
 .small {
-	font-size: small;
+    font-size: small;
 }
 
 .label {
-	border-width: 1px;
-	border-style: solid;
-	padding: 4px 10px;
-	-webkit-box-shadow: 0 2px 2px;
-	   -moz-box-shadow: 0 2px 2px;
-			box-shadow: 0 2px 2px;
-	-webkit-border-radius: 2px;
-	   -moz-border-radius: 2px;
-			border-radius: 2px;
+    border-width: 1px;
+    border-style: solid;
+    padding: 4px 10px;
+    -webkit-box-shadow: 0 2px 2px;
+    -moz-box-shadow: 0 2px 2px;
+    box-shadow: 0 2px 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
 }
 
 .margin-right {
-	margin-right: 10px;
+    margin-right: 10px;
 }
 
 .offer {
-  	background: rgb(239, 71, 58);
-  	color: #fff;
-  	padding: 12px;
-  	margin-left: -15px;
-  	margin-right: 12px;
+    background: rgb(239, 71, 58);
+    color: #fff;
+    padding: 12px;
+    margin-left: -15px;
+    margin-right: 12px;
 }
 
 .item-banner {
-	margin-top: -2px;
-	background-image: url('../images/menu.jpg');
-	background-size: 100%;
-	height: 120px;
+    margin-top: -2px;
+    background-image: url('../images/menu.jpg');
+    background-size: 100%;
+    height: 120px;
     color: white;
     font-weight: bold;
 }
 
 .item-banner > a {
-	opacity: 0.8;
-	font-weight: bold;
-	display: block;
+    opacity: 0.8;
+    font-weight: bold;
+    display: block;
 }
