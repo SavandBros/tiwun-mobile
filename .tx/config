@@ -1,0 +1,7 @@
+[main]
+host = https://www.transifex.com
+
+[tiwun-mobile.templates]
+file_filter = translations/templates/<lang>.pot
+source_file = translations/templates/en.pot
+source_lang = en
