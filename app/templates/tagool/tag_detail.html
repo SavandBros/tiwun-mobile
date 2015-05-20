@@ -1,39 +1,7 @@
 <ion-view view-title="{{ page_og_title }}">
     <ion-content>
         <div class="list card" ng-repeat="item in items">
-
-            <div class="item item-avatar">
-                <img src="http://placehold.it/64x64">
-                <a href="#!/app/items/{{ item.pk }}/">
-                    <h2>{{ item.title }}</h2>
-
-                    <p>{{ item.created | date }}</p>
-                </a>
-            </div>
-
-            <div class="item item-body">
-                <img ng-dblclick="upVote(item.pk)" class="full-image" ng-src="{{ item.get_primary_image.standard }}">
-
-                <p>{{ item.description | markdown | stripTags | truncate: 123: '...' }}</p>
-
-                <p>
-                    <a href="#" class="subdued">{{ item.votes_count }} Like</a>
-                    <a href="#" class="subdued">{{ item.comments_count }} Comments</a>
-                </p>
-            </div>
-
-            <div class="item tabs tabs-secondary tabs-icon-left bg-e">
-                <a class="tab-item" href="#!/app/items/{{ item.pk }}/">
-                    <i class="icon ion-chevron-up"></i>
-                </a>
-                <a class="tab-item" href="#!/app/items/{{ item.pk }}/">
-                    <i class="icon ion-chevron-down"></i>
-                </a>
-                <a class="tab-item" href="#!/app/items/{{ item.pk }}/">
-                    <i class="icon ion-android-share-alt"></i>
-                </a>
-            </div>
-
+            <item item="item"></item>
         </div>
 
         <ion-infinite-scroll
