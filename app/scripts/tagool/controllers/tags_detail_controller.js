@@ -14,26 +14,25 @@
     TagsDetailController.$inject = ['$scope', '$stateParams', '$log', 'TagService'];
 
     function TagsDetailController($scope, $stateParams, $log, TagService) {
-        console.log($stateParams['tagSlug']);
         $scope.items = [];
         $scope.pageHasNext = true;
         $scope.pageCounter = 0;
+        $scope.tagName = $stateParams.tagSlug;
 
 
         /**
          * @name loadMore
          */
         $scope.loadMore = function() {
-            TagService.tagDetail(++$scope.pageCounter, $stateParams['tagSlug']).then(
+            TagService.tagDetail(++$scope.pageCounter, $stateParams.tagSlug).then(
                 function(data, status, headers, config) {
-                    $scope.items = $scope.items.concat(data.data['tagged_classifies']);
+                    $scope.items = $scope.items.concat(data.data.tagged_classifies);
 
                     $scope.pageHasNext = data.data.page_has_next;
 
                     $scope.$broadcast('scroll.infiniteScrollComplete');
                 },
                 function(data, status, headers, config) {
-                    //Snackbar.error(data.error);
                     $log.error(data.error);
                 }
             );
