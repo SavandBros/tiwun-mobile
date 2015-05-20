@@ -1,0 +1,161 @@
+# 
+# Translators:
+# Alireza Savand <alireza.savand@gmail.com>, 2015
+msgid ""
+msgstr ""
+"Project-Id-Version: Tiwun Mobile\n"
+"PO-Revision-Date: 2015-05-20 19:13+0000\n"
+"Last-Translator: Alireza Savand <alireza.savand@gmail.com>\n"
+"Language-Team: Italian (http://www.transifex.com/projects/p/tiwun-mobile/language/it/)\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: it\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: app/templates/menu.html:57
+msgid "Account"
+msgstr "Conto"
+
+#: app/templates/item/single_item.html:31
+msgid "ago"
+msgstr "fa"
+
+#: app/templates/item/directives/item_directive.html:6
+msgid "by"
+msgstr "di"
+
+#: app/templates/item/item_post.html:91
+msgid "Cancel"
+msgstr "Annulla"
+
+#: app/templates/account/register.html:14
+#: app/templates/account/register.html:15
+msgid "Confirm Password"
+msgstr "Conferma Password"
+
+#: app/templates/item/item_post.html:88
+msgid "Create Post"
+msgstr "Creare Post"
+
+#: app/templates/item/item_post.html:22 app/templates/item/item_post.html:24
+msgid "Description"
+msgstr "Descrizione"
+
+#: app/templates/item/item_post.html:67
+msgid "Description is required."
+msgstr "Descrizione è necessaria."
+
+#: app/templates/item/item_post.html:71
+msgid "Description is too short."
+msgstr "La descrizione è troppo breve."
+
+#: app/templates/account/login.html:6 app/templates/account/login.html:7
+#: app/templates/account/register.html:6 app/templates/account/register.html:7
+msgid "Email"
+msgstr "Posta elettronica"
+
+#: app/templates/explore.html:1 app/templates/menu.html:42
+msgid "Explore"
+msgstr "Esplorate"
+
+#: app/templates/account/user_profile.html:44
+msgid "Joined Date"
+msgstr "Riunite data"
+
+#: app/templates/account/user_profile.html:37
+msgid "Location"
+msgstr "Posizione"
+
+#: app/templates/account/login.html:16
+msgid "Login"
+msgstr "Login"
+
+#: app/templates/menu.html:21
+msgid "Menu"
+msgstr "Menu"
+
+#: app/templates/item/directives/item_directive.html:10
+msgid "OFF"
+msgstr "FUORI"
+
+#: app/templates/account/login.html:10 app/templates/account/login.html:11
+#: app/templates/account/register.html:10
+#: app/templates/account/register.html:11
+msgid "Password"
+msgstr "Password"
+
+#: app/templates/account/register.html:22
+msgid "Password does not match!"
+msgstr "Password non corrispondono!"
+
+#: app/templates/menu.html:46
+msgid "Post"
+msgstr "Inserisci"
+
+#: app/templates/account/user_profile.html:29
+msgid "Real Name"
+msgstr "Vero nome"
+
+#: app/templates/account/register.html:31 app/templates/menu.html:64
+msgid "Register &amp; Join"
+msgstr "Registrati &amp; Join"
+
+#: app/templates/menu.html:50
+msgid "Search"
+msgstr "Ricerca"
+
+#: app/templates/menu.html:60
+msgid "Sign in"
+msgstr "Accedi"
+
+#: app/templates/menu.html:68
+msgid "Sign out"
+msgstr "Esci"
+
+#: app/templates/item/item_post.html:37 app/templates/menu.html:54
+msgid "Tags"
+msgstr "Tag"
+
+#: app/templates/item/item_post.html:76
+msgid "Tags are required."
+msgstr "I tag sono obbligatori."
+
+#: app/templates/item/item_post.html:82
+msgid "Tags are too long."
+msgstr "I tag sono troppo lunghi."
+
+#: app/templates/item/item_post.html:79
+msgid "Tags are too short."
+msgstr "I tag sono troppo brevi."
+
+#: app/templates/item/item_post.html:40
+msgid "Tags separated by space"
+msgstr "Tag separati da spazio"
+
+#: app/templates/item/item_post.html:11 app/templates/item/item_post.html:8
+msgid "Title"
+msgstr "Titolo"
+
+#: app/templates/item/item_post.html:54
+msgid "Title is required."
+msgstr "Titolo è richiesto."
+
+#: app/templates/item/item_post.html:62
+msgid "Title is too long."
+msgstr "Titolo è troppo lungo."
+
+#: app/templates/item/item_post.html:58
+msgid "Title is too short."
+msgstr "Titolo è troppo breve."
+
+#: app/templates/menu.html:38
+msgid "Tiwun"
+msgstr "Tiwun"
+
+#: app/templates/account/user_profile.html:33
+msgid "Website"
+msgstr "Sito Web"
+
+#: app/templates/account/register.html:26
+msgid "Welcome to Tiwun"
+msgstr "Benvenuti in Tiwun"

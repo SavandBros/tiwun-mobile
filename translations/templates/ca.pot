@@ -1,0 +1,161 @@
+# 
+# Translators:
+# Alireza Savand <alireza.savand@gmail.com>, 2015
+msgid ""
+msgstr ""
+"Project-Id-Version: Tiwun Mobile\n"
+"PO-Revision-Date: 2015-05-20 18:58+0000\n"
+"Last-Translator: Alireza Savand <alireza.savand@gmail.com>\n"
+"Language-Team: Catalan (http://www.transifex.com/projects/p/tiwun-mobile/language/ca/)\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ca\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: app/templates/menu.html:57
+msgid "Account"
+msgstr "Compte"
+
+#: app/templates/item/single_item.html:31
+msgid "ago"
+msgstr "fa"
+
+#: app/templates/item/directives/item_directive.html:6
+msgid "by"
+msgstr "per"
+
+#: app/templates/item/item_post.html:91
+msgid "Cancel"
+msgstr "Cancel·la"
+
+#: app/templates/account/register.html:14
+#: app/templates/account/register.html:15
+msgid "Confirm Password"
+msgstr "Confirmar contrasenya"
+
+#: app/templates/item/item_post.html:88
+msgid "Create Post"
+msgstr "Crear Post"
+
+#: app/templates/item/item_post.html:22 app/templates/item/item_post.html:24
+msgid "Description"
+msgstr "Descripció"
+
+#: app/templates/item/item_post.html:67
+msgid "Description is required."
+msgstr "Descripció s'exigeix."
+
+#: app/templates/item/item_post.html:71
+msgid "Description is too short."
+msgstr "Descripció és massa curt."
+
+#: app/templates/account/login.html:6 app/templates/account/login.html:7
+#: app/templates/account/register.html:6 app/templates/account/register.html:7
+msgid "Email"
+msgstr "Correu electrònic"
+
+#: app/templates/explore.html:1 app/templates/menu.html:42
+msgid "Explore"
+msgstr "Explorar"
+
+#: app/templates/account/user_profile.html:44
+msgid "Joined Date"
+msgstr "Es va unir a data"
+
+#: app/templates/account/user_profile.html:37
+msgid "Location"
+msgstr "Localització"
+
+#: app/templates/account/login.html:16
+msgid "Login"
+msgstr "Connecti's"
+
+#: app/templates/menu.html:21
+msgid "Menu"
+msgstr "Menú"
+
+#: app/templates/item/directives/item_directive.html:10
+msgid "OFF"
+msgstr "FORA"
+
+#: app/templates/account/login.html:10 app/templates/account/login.html:11
+#: app/templates/account/register.html:10
+#: app/templates/account/register.html:11
+msgid "Password"
+msgstr "Contrasenya"
+
+#: app/templates/account/register.html:22
+msgid "Password does not match!"
+msgstr "Contrasenya no coincideix!"
+
+#: app/templates/menu.html:46
+msgid "Post"
+msgstr "Correu"
+
+#: app/templates/account/user_profile.html:29
+msgid "Real Name"
+msgstr "Nom real"
+
+#: app/templates/account/register.html:31 app/templates/menu.html:64
+msgid "Register &amp; Join"
+msgstr "Registre i unir-se a"
+
+#: app/templates/menu.html:50
+msgid "Search"
+msgstr "Cerca"
+
+#: app/templates/menu.html:60
+msgid "Sign in"
+msgstr "Inicia la sessió"
+
+#: app/templates/menu.html:68
+msgid "Sign out"
+msgstr "Tanca la sessió"
+
+#: app/templates/item/item_post.html:37 app/templates/menu.html:54
+msgid "Tags"
+msgstr "Etiquetes"
+
+#: app/templates/item/item_post.html:76
+msgid "Tags are required."
+msgstr "Etiquetes són obligatoris."
+
+#: app/templates/item/item_post.html:82
+msgid "Tags are too long."
+msgstr "Etiquetes són massa llargues."
+
+#: app/templates/item/item_post.html:79
+msgid "Tags are too short."
+msgstr "Etiquetes són massa curtes."
+
+#: app/templates/item/item_post.html:40
+msgid "Tags separated by space"
+msgstr "Etiquetes separades per l'espai"
+
+#: app/templates/item/item_post.html:11 app/templates/item/item_post.html:8
+msgid "Title"
+msgstr "Títol"
+
+#: app/templates/item/item_post.html:54
+msgid "Title is required."
+msgstr "Títol és obligatori."
+
+#: app/templates/item/item_post.html:62
+msgid "Title is too long."
+msgstr "Títol és massa llarga."
+
+#: app/templates/item/item_post.html:58
+msgid "Title is too short."
+msgstr "Títol és massa curt."
+
+#: app/templates/menu.html:38
+msgid "Tiwun"
+msgstr "Tiwun"
+
+#: app/templates/account/user_profile.html:33
+msgid "Website"
+msgstr "Lloc web"
+
+#: app/templates/account/register.html:26
+msgid "Welcome to Tiwun"
+msgstr "Benvinguts a Tiwun"

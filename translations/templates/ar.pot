@@ -1,0 +1,161 @@
+# 
+# Translators:
+# Alireza Savand <alireza.savand@gmail.com>, 2015
+msgid ""
+msgstr ""
+"Project-Id-Version: Tiwun Mobile\n"
+"PO-Revision-Date: 2015-05-20 18:51+0000\n"
+"Last-Translator: Alireza Savand <alireza.savand@gmail.com>\n"
+"Language-Team: Arabic (http://www.transifex.com/projects/p/tiwun-mobile/language/ar/)\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ar\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#: app/templates/menu.html:57
+msgid "Account"
+msgstr "حساب"
+
+#: app/templates/item/single_item.html:31
+msgid "ago"
+msgstr "وقبل"
+
+#: app/templates/item/directives/item_directive.html:6
+msgid "by"
+msgstr "قبل"
+
+#: app/templates/item/item_post.html:91
+msgid "Cancel"
+msgstr "إلغاء الأمر"
+
+#: app/templates/account/register.html:14
+#: app/templates/account/register.html:15
+msgid "Confirm Password"
+msgstr "تأكيد كلمة المرور"
+
+#: app/templates/item/item_post.html:88
+msgid "Create Post"
+msgstr "إنشاء وظيفة"
+
+#: app/templates/item/item_post.html:22 app/templates/item/item_post.html:24
+msgid "Description"
+msgstr "الوصف"
+
+#: app/templates/item/item_post.html:67
+msgid "Description is required."
+msgstr "الوصف المطلوب."
+
+#: app/templates/item/item_post.html:71
+msgid "Description is too short."
+msgstr "وصف قصير للغاية."
+
+#: app/templates/account/login.html:6 app/templates/account/login.html:7
+#: app/templates/account/register.html:6 app/templates/account/register.html:7
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+#: app/templates/explore.html:1 app/templates/menu.html:42
+msgid "Explore"
+msgstr "استكشاف"
+
+#: app/templates/account/user_profile.html:44
+msgid "Joined Date"
+msgstr "انضم حتى الآن"
+
+#: app/templates/account/user_profile.html:37
+msgid "Location"
+msgstr "موقع"
+
+#: app/templates/account/login.html:16
+msgid "Login"
+msgstr "تسجيل الدخول"
+
+#: app/templates/menu.html:21
+msgid "Menu"
+msgstr "القائمة"
+
+#: app/templates/item/directives/item_directive.html:10
+msgid "OFF"
+msgstr "قبالة"
+
+#: app/templates/account/login.html:10 app/templates/account/login.html:11
+#: app/templates/account/register.html:10
+#: app/templates/account/register.html:11
+msgid "Password"
+msgstr "كلمة المرور"
+
+#: app/templates/account/register.html:22
+msgid "Password does not match!"
+msgstr "لا تطابق كلمة المرور!"
+
+#: app/templates/menu.html:46
+msgid "Post"
+msgstr "وظيفة"
+
+#: app/templates/account/user_profile.html:29
+msgid "Real Name"
+msgstr "الاسم الحقيقي"
+
+#: app/templates/account/register.html:31 app/templates/menu.html:64
+msgid "Register &amp; Join"
+msgstr "سجل &amp; التسجيل"
+
+#: app/templates/menu.html:50
+msgid "Search"
+msgstr "البحث"
+
+#: app/templates/menu.html:60
+msgid "Sign in"
+msgstr "تسجيل الدخول"
+
+#: app/templates/menu.html:68
+msgid "Sign out"
+msgstr "قم بتسجيل الخروج"
+
+#: app/templates/item/item_post.html:37 app/templates/menu.html:54
+msgid "Tags"
+msgstr "العلامات"
+
+#: app/templates/item/item_post.html:76
+msgid "Tags are required."
+msgstr "العلامات المطلوبة."
+
+#: app/templates/item/item_post.html:82
+msgid "Tags are too long."
+msgstr "العلامات طويلة جداً."
+
+#: app/templates/item/item_post.html:79
+msgid "Tags are too short."
+msgstr "العلامات قصيرة جداً."
+
+#: app/templates/item/item_post.html:40
+msgid "Tags separated by space"
+msgstr "العلامات مفصولة المساحة"
+
+#: app/templates/item/item_post.html:11 app/templates/item/item_post.html:8
+msgid "Title"
+msgstr "العنوان"
+
+#: app/templates/item/item_post.html:54
+msgid "Title is required."
+msgstr "العنوان المطلوب."
+
+#: app/templates/item/item_post.html:62
+msgid "Title is too long."
+msgstr "العنوان طويل جداً."
+
+#: app/templates/item/item_post.html:58
+msgid "Title is too short."
+msgstr "العنوان قصيرة جداً."
+
+#: app/templates/menu.html:38
+msgid "Tiwun"
+msgstr "تیوون"
+
+#: app/templates/account/user_profile.html:33
+msgid "Website"
+msgstr "موقع على شبكة الإنترنت"
+
+#: app/templates/account/register.html:26
+msgid "Welcome to Tiwun"
+msgstr "مرحبا بكم في تیوون"

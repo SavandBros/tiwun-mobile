@@ -1,0 +1,161 @@
+# 
+# Translators:
+# Alireza Savand <alireza.savand@gmail.com>, 2015
+msgid ""
+msgstr ""
+"Project-Id-Version: Tiwun Mobile\n"
+"PO-Revision-Date: 2015-05-20 18:55+0000\n"
+"Last-Translator: Alireza Savand <alireza.savand@gmail.com>\n"
+"Language-Team: Persian (http://www.transifex.com/projects/p/tiwun-mobile/language/fa/)\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fa\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: app/templates/menu.html:57
+msgid "Account"
+msgstr "حساب"
+
+#: app/templates/item/single_item.html:31
+msgid "ago"
+msgstr "پیش"
+
+#: app/templates/item/directives/item_directive.html:6
+msgid "by"
+msgstr "توسط"
+
+#: app/templates/item/item_post.html:91
+msgid "Cancel"
+msgstr "\"لغو\""
+
+#: app/templates/account/register.html:14
+#: app/templates/account/register.html:15
+msgid "Confirm Password"
+msgstr "تکرار رمز عبور"
+
+#: app/templates/item/item_post.html:88
+msgid "Create Post"
+msgstr "ایجاد پست"
+
+#: app/templates/item/item_post.html:22 app/templates/item/item_post.html:24
+msgid "Description"
+msgstr "شرح"
+
+#: app/templates/item/item_post.html:67
+msgid "Description is required."
+msgstr "توضیحات مورد نیاز است."
+
+#: app/templates/item/item_post.html:71
+msgid "Description is too short."
+msgstr "توضیحات خیلی کوتاه است."
+
+#: app/templates/account/login.html:6 app/templates/account/login.html:7
+#: app/templates/account/register.html:6 app/templates/account/register.html:7
+msgid "Email"
+msgstr "ایمیل"
+
+#: app/templates/explore.html:1 app/templates/menu.html:42
+msgid "Explore"
+msgstr "اکتشاف"
+
+#: app/templates/account/user_profile.html:44
+msgid "Joined Date"
+msgstr "تاریخ پیوست"
+
+#: app/templates/account/user_profile.html:37
+msgid "Location"
+msgstr "محل"
+
+#: app/templates/account/login.html:16
+msgid "Login"
+msgstr "ورود به سیستم"
+
+#: app/templates/menu.html:21
+msgid "Menu"
+msgstr "منو"
+
+#: app/templates/item/directives/item_directive.html:10
+msgid "OFF"
+msgstr "تخفیف"
+
+#: app/templates/account/login.html:10 app/templates/account/login.html:11
+#: app/templates/account/register.html:10
+#: app/templates/account/register.html:11
+msgid "Password"
+msgstr "رمز عبور"
+
+#: app/templates/account/register.html:22
+msgid "Password does not match!"
+msgstr "کلمه عبور مطابقت نمی کند!"
+
+#: app/templates/menu.html:46
+msgid "Post"
+msgstr "پست"
+
+#: app/templates/account/user_profile.html:29
+msgid "Real Name"
+msgstr "نام واقعی"
+
+#: app/templates/account/register.html:31 app/templates/menu.html:64
+msgid "Register &amp; Join"
+msgstr "ثبت نام و عضویت"
+
+#: app/templates/menu.html:50
+msgid "Search"
+msgstr "جستجو"
+
+#: app/templates/menu.html:60
+msgid "Sign in"
+msgstr "ورود به برنامه"
+
+#: app/templates/menu.html:68
+msgid "Sign out"
+msgstr "خروج از سیستم"
+
+#: app/templates/item/item_post.html:37 app/templates/menu.html:54
+msgid "Tags"
+msgstr "برچسب ها"
+
+#: app/templates/item/item_post.html:76
+msgid "Tags are required."
+msgstr "برچسب ها مورد نیاز است."
+
+#: app/templates/item/item_post.html:82
+msgid "Tags are too long."
+msgstr "برچسب ها بیش از حد طولانی است."
+
+#: app/templates/item/item_post.html:79
+msgid "Tags are too short."
+msgstr "برچسب ها بیش از حد کوتاه است."
+
+#: app/templates/item/item_post.html:40
+msgid "Tags separated by space"
+msgstr "برچسب ها توسط فضا از هم جدا"
+
+#: app/templates/item/item_post.html:11 app/templates/item/item_post.html:8
+msgid "Title"
+msgstr "عنوان"
+
+#: app/templates/item/item_post.html:54
+msgid "Title is required."
+msgstr "عنوان مورد نیاز است."
+
+#: app/templates/item/item_post.html:62
+msgid "Title is too long."
+msgstr "عنوان طولانی است."
+
+#: app/templates/item/item_post.html:58
+msgid "Title is too short."
+msgstr "عنوان بیش از حد کوتاه است."
+
+#: app/templates/menu.html:38
+msgid "Tiwun"
+msgstr "تیوون"
+
+#: app/templates/account/user_profile.html:33
+msgid "Website"
+msgstr "وب سایت"
+
+#: app/templates/account/register.html:26
+msgid "Welcome to Tiwun"
+msgstr "به تیوون خوش آمدید"

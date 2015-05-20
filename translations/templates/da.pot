@@ -1,0 +1,161 @@
+# 
+# Translators:
+# Alireza Savand <alireza.savand@gmail.com>, 2015
+msgid ""
+msgstr ""
+"Project-Id-Version: Tiwun Mobile\n"
+"PO-Revision-Date: 2015-05-20 19:11+0000\n"
+"Last-Translator: Alireza Savand <alireza.savand@gmail.com>\n"
+"Language-Team: Danish (http://www.transifex.com/projects/p/tiwun-mobile/language/da/)\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: da\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: app/templates/menu.html:57
+msgid "Account"
+msgstr "Konto"
+
+#: app/templates/item/single_item.html:31
+msgid "ago"
+msgstr "siden"
+
+#: app/templates/item/directives/item_directive.html:6
+msgid "by"
+msgstr "af"
+
+#: app/templates/item/item_post.html:91
+msgid "Cancel"
+msgstr "Annuller"
+
+#: app/templates/account/register.html:14
+#: app/templates/account/register.html:15
+msgid "Confirm Password"
+msgstr "Bekræft adgangskode"
+
+#: app/templates/item/item_post.html:88
+msgid "Create Post"
+msgstr "Oprette indlæg"
+
+#: app/templates/item/item_post.html:22 app/templates/item/item_post.html:24
+msgid "Description"
+msgstr "Beskrivelse"
+
+#: app/templates/item/item_post.html:67
+msgid "Description is required."
+msgstr "Beskrivelse er påkrævet."
+
+#: app/templates/item/item_post.html:71
+msgid "Description is too short."
+msgstr "Beskrivelse er for kort."
+
+#: app/templates/account/login.html:6 app/templates/account/login.html:7
+#: app/templates/account/register.html:6 app/templates/account/register.html:7
+msgid "Email"
+msgstr "E-mail"
+
+#: app/templates/explore.html:1 app/templates/menu.html:42
+msgid "Explore"
+msgstr "Udforske"
+
+#: app/templates/account/user_profile.html:44
+msgid "Joined Date"
+msgstr "Joinforbundne dato"
+
+#: app/templates/account/user_profile.html:37
+msgid "Location"
+msgstr "Beliggenhed"
+
+#: app/templates/account/login.html:16
+msgid "Login"
+msgstr "Login"
+
+#: app/templates/menu.html:21
+msgid "Menu"
+msgstr "Menu"
+
+#: app/templates/item/directives/item_directive.html:10
+msgid "OFF"
+msgstr "OFF"
+
+#: app/templates/account/login.html:10 app/templates/account/login.html:11
+#: app/templates/account/register.html:10
+#: app/templates/account/register.html:11
+msgid "Password"
+msgstr "Adgangskode"
+
+#: app/templates/account/register.html:22
+msgid "Password does not match!"
+msgstr "Adgangskoden stemmer ikke overens!"
+
+#: app/templates/menu.html:46
+msgid "Post"
+msgstr "Indlæg"
+
+#: app/templates/account/user_profile.html:29
+msgid "Real Name"
+msgstr "Rigtige navn"
+
+#: app/templates/account/register.html:31 app/templates/menu.html:64
+msgid "Register &amp; Join"
+msgstr "Registrer &amp; Deltag"
+
+#: app/templates/menu.html:50
+msgid "Search"
+msgstr "Søg"
+
+#: app/templates/menu.html:60
+msgid "Sign in"
+msgstr "Log på"
+
+#: app/templates/menu.html:68
+msgid "Sign out"
+msgstr "Log ud"
+
+#: app/templates/item/item_post.html:37 app/templates/menu.html:54
+msgid "Tags"
+msgstr "Tags"
+
+#: app/templates/item/item_post.html:76
+msgid "Tags are required."
+msgstr "Tags er påkrævet."
+
+#: app/templates/item/item_post.html:82
+msgid "Tags are too long."
+msgstr "Tags er for lange."
+
+#: app/templates/item/item_post.html:79
+msgid "Tags are too short."
+msgstr "Tags er for kort."
+
+#: app/templates/item/item_post.html:40
+msgid "Tags separated by space"
+msgstr "Tags adskilt af mellemrum"
+
+#: app/templates/item/item_post.html:11 app/templates/item/item_post.html:8
+msgid "Title"
+msgstr "Titel"
+
+#: app/templates/item/item_post.html:54
+msgid "Title is required."
+msgstr "Titlen er påkrævet."
+
+#: app/templates/item/item_post.html:62
+msgid "Title is too long."
+msgstr "Titlen er for lang."
+
+#: app/templates/item/item_post.html:58
+msgid "Title is too short."
+msgstr "Titlen er for kort."
+
+#: app/templates/menu.html:38
+msgid "Tiwun"
+msgstr "Tiwun"
+
+#: app/templates/account/user_profile.html:33
+msgid "Website"
+msgstr "Hjemmeside"
+
+#: app/templates/account/register.html:26
+msgid "Welcome to Tiwun"
+msgstr "Velkommen til Tiwun"

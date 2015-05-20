@@ -1,0 +1,161 @@
+# 
+# Translators:
+# Alireza Savand <alireza.savand@gmail.com>, 2015
+msgid ""
+msgstr ""
+"Project-Id-Version: Tiwun Mobile\n"
+"PO-Revision-Date: 2015-05-20 19:12+0000\n"
+"Last-Translator: Alireza Savand <alireza.savand@gmail.com>\n"
+"Language-Team: Hindi (http://www.transifex.com/projects/p/tiwun-mobile/language/hi/)\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: hi\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: app/templates/menu.html:57
+msgid "Account"
+msgstr "खाता"
+
+#: app/templates/item/single_item.html:31
+msgid "ago"
+msgstr "पहले"
+
+#: app/templates/item/directives/item_directive.html:6
+msgid "by"
+msgstr "द्वारा"
+
+#: app/templates/item/item_post.html:91
+msgid "Cancel"
+msgstr "रद्द करें"
+
+#: app/templates/account/register.html:14
+#: app/templates/account/register.html:15
+msgid "Confirm Password"
+msgstr "पासवर्ड की पुष्टि करें"
+
+#: app/templates/item/item_post.html:88
+msgid "Create Post"
+msgstr "पोस्ट बनाएँ"
+
+#: app/templates/item/item_post.html:22 app/templates/item/item_post.html:24
+msgid "Description"
+msgstr "विवरण"
+
+#: app/templates/item/item_post.html:67
+msgid "Description is required."
+msgstr "विवरण की आवश्यकता है।"
+
+#: app/templates/item/item_post.html:71
+msgid "Description is too short."
+msgstr "विवरण भी कम है।"
+
+#: app/templates/account/login.html:6 app/templates/account/login.html:7
+#: app/templates/account/register.html:6 app/templates/account/register.html:7
+msgid "Email"
+msgstr "ईमेल"
+
+#: app/templates/explore.html:1 app/templates/menu.html:42
+msgid "Explore"
+msgstr "का पता लगाने के"
+
+#: app/templates/account/user_profile.html:44
+msgid "Joined Date"
+msgstr "में शामिल हो गए दिनांक"
+
+#: app/templates/account/user_profile.html:37
+msgid "Location"
+msgstr "स्थान"
+
+#: app/templates/account/login.html:16
+msgid "Login"
+msgstr "लॉगिन"
+
+#: app/templates/menu.html:21
+msgid "Menu"
+msgstr "मेनू"
+
+#: app/templates/item/directives/item_directive.html:10
+msgid "OFF"
+msgstr "बंद"
+
+#: app/templates/account/login.html:10 app/templates/account/login.html:11
+#: app/templates/account/register.html:10
+#: app/templates/account/register.html:11
+msgid "Password"
+msgstr "पासवर्ड"
+
+#: app/templates/account/register.html:22
+msgid "Password does not match!"
+msgstr "पासवर्ड मेल नहीं खाता!"
+
+#: app/templates/menu.html:46
+msgid "Post"
+msgstr "पोस्ट"
+
+#: app/templates/account/user_profile.html:29
+msgid "Real Name"
+msgstr "असली नाम"
+
+#: app/templates/account/register.html:31 app/templates/menu.html:64
+msgid "Register &amp; Join"
+msgstr "रजिस्टर और सम्मिलित हों"
+
+#: app/templates/menu.html:50
+msgid "Search"
+msgstr "खोज"
+
+#: app/templates/menu.html:60
+msgid "Sign in"
+msgstr "साइन इन करें"
+
+#: app/templates/menu.html:68
+msgid "Sign out"
+msgstr "साइन आउट करें"
+
+#: app/templates/item/item_post.html:37 app/templates/menu.html:54
+msgid "Tags"
+msgstr "टैग"
+
+#: app/templates/item/item_post.html:76
+msgid "Tags are required."
+msgstr "टैग की आवश्यकता हैं।"
+
+#: app/templates/item/item_post.html:82
+msgid "Tags are too long."
+msgstr "टैग बहुत लंबे होते हैं।"
+
+#: app/templates/item/item_post.html:79
+msgid "Tags are too short."
+msgstr "टैग भी कम कर रहे हैं।"
+
+#: app/templates/item/item_post.html:40
+msgid "Tags separated by space"
+msgstr "रिक्ति से अलग किए गए टैग"
+
+#: app/templates/item/item_post.html:11 app/templates/item/item_post.html:8
+msgid "Title"
+msgstr "शीर्षक"
+
+#: app/templates/item/item_post.html:54
+msgid "Title is required."
+msgstr "शीर्षक की आवश्यकता है।"
+
+#: app/templates/item/item_post.html:62
+msgid "Title is too long."
+msgstr "शीर्षक बहुत लंबा है।"
+
+#: app/templates/item/item_post.html:58
+msgid "Title is too short."
+msgstr "शीर्षक भी कम है।"
+
+#: app/templates/menu.html:38
+msgid "Tiwun"
+msgstr "Tiwun"
+
+#: app/templates/account/user_profile.html:33
+msgid "Website"
+msgstr "वेबसाइट"
+
+#: app/templates/account/register.html:26
+msgid "Welcome to Tiwun"
+msgstr "Tiwun में आपका स्वागत है"

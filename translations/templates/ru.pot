@@ -1,0 +1,161 @@
+# 
+# Translators:
+# Alireza Savand <alireza.savand@gmail.com>, 2015
+msgid ""
+msgstr ""
+"Project-Id-Version: Tiwun Mobile\n"
+"PO-Revision-Date: 2015-05-20 19:00+0000\n"
+"Last-Translator: Alireza Savand <alireza.savand@gmail.com>\n"
+"Language-Team: Russian (http://www.transifex.com/projects/p/tiwun-mobile/language/ru/)\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ru\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: app/templates/menu.html:57
+msgid "Account"
+msgstr "Учетная запись"
+
+#: app/templates/item/single_item.html:31
+msgid "ago"
+msgstr "назад"
+
+#: app/templates/item/directives/item_directive.html:6
+msgid "by"
+msgstr "по"
+
+#: app/templates/item/item_post.html:91
+msgid "Cancel"
+msgstr "Отмена"
+
+#: app/templates/account/register.html:14
+#: app/templates/account/register.html:15
+msgid "Confirm Password"
+msgstr "Подтверждение пароля"
+
+#: app/templates/item/item_post.html:88
+msgid "Create Post"
+msgstr "Создать сообщение"
+
+#: app/templates/item/item_post.html:22 app/templates/item/item_post.html:24
+msgid "Description"
+msgstr "Описание"
+
+#: app/templates/item/item_post.html:67
+msgid "Description is required."
+msgstr "Требуется описание."
+
+#: app/templates/item/item_post.html:71
+msgid "Description is too short."
+msgstr "Описание является слишком коротким."
+
+#: app/templates/account/login.html:6 app/templates/account/login.html:7
+#: app/templates/account/register.html:6 app/templates/account/register.html:7
+msgid "Email"
+msgstr "Отправить по электронной почте"
+
+#: app/templates/explore.html:1 app/templates/menu.html:42
+msgid "Explore"
+msgstr "Исследовать"
+
+#: app/templates/account/user_profile.html:44
+msgid "Joined Date"
+msgstr "Присоединился к Дата"
+
+#: app/templates/account/user_profile.html:37
+msgid "Location"
+msgstr "Местоположение"
+
+#: app/templates/account/login.html:16
+msgid "Login"
+msgstr "Вход"
+
+#: app/templates/menu.html:21
+msgid "Menu"
+msgstr "Меню"
+
+#: app/templates/item/directives/item_directive.html:10
+msgid "OFF"
+msgstr "ВЫКЛ"
+
+#: app/templates/account/login.html:10 app/templates/account/login.html:11
+#: app/templates/account/register.html:10
+#: app/templates/account/register.html:11
+msgid "Password"
+msgstr "Пароль"
+
+#: app/templates/account/register.html:22
+msgid "Password does not match!"
+msgstr "Пароль не совпадает!"
+
+#: app/templates/menu.html:46
+msgid "Post"
+msgstr "Поместить"
+
+#: app/templates/account/user_profile.html:29
+msgid "Real Name"
+msgstr "Настоящее имя"
+
+#: app/templates/account/register.html:31 app/templates/menu.html:64
+msgid "Register &amp; Join"
+msgstr "Зарегистрируйтесь и присоединяйтесь"
+
+#: app/templates/menu.html:50
+msgid "Search"
+msgstr "Поиск"
+
+#: app/templates/menu.html:60
+msgid "Sign in"
+msgstr "Войти"
+
+#: app/templates/menu.html:68
+msgid "Sign out"
+msgstr "Выход"
+
+#: app/templates/item/item_post.html:37 app/templates/menu.html:54
+msgid "Tags"
+msgstr "Теги"
+
+#: app/templates/item/item_post.html:76
+msgid "Tags are required."
+msgstr "Теги не требуется."
+
+#: app/templates/item/item_post.html:82
+msgid "Tags are too long."
+msgstr "Теги слишком долго."
+
+#: app/templates/item/item_post.html:79
+msgid "Tags are too short."
+msgstr "Теги слишком коротким."
+
+#: app/templates/item/item_post.html:40
+msgid "Tags separated by space"
+msgstr "Теги разделены пробелом"
+
+#: app/templates/item/item_post.html:11 app/templates/item/item_post.html:8
+msgid "Title"
+msgstr "Название"
+
+#: app/templates/item/item_post.html:54
+msgid "Title is required."
+msgstr "Название является обязательным."
+
+#: app/templates/item/item_post.html:62
+msgid "Title is too long."
+msgstr "Название слишком длинное."
+
+#: app/templates/item/item_post.html:58
+msgid "Title is too short."
+msgstr "Название является слишком коротким."
+
+#: app/templates/menu.html:38
+msgid "Tiwun"
+msgstr "Tiwun"
+
+#: app/templates/account/user_profile.html:33
+msgid "Website"
+msgstr "Веб-сайт"
+
+#: app/templates/account/register.html:26
+msgid "Welcome to Tiwun"
+msgstr "Добро пожаловать на Tiwun"

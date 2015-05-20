@@ -1,0 +1,161 @@
+# 
+# Translators:
+# Alireza Savand <alireza.savand@gmail.com>, 2015
+msgid ""
+msgstr ""
+"Project-Id-Version: Tiwun Mobile\n"
+"PO-Revision-Date: 2015-05-20 19:17+0000\n"
+"Last-Translator: Alireza Savand <alireza.savand@gmail.com>\n"
+"Language-Team: Turkish (http://www.transifex.com/projects/p/tiwun-mobile/language/tr/)\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: tr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: app/templates/menu.html:57
+msgid "Account"
+msgstr "Hesap"
+
+#: app/templates/item/single_item.html:31
+msgid "ago"
+msgstr "önce"
+
+#: app/templates/item/directives/item_directive.html:6
+msgid "by"
+msgstr "tarafından"
+
+#: app/templates/item/item_post.html:91
+msgid "Cancel"
+msgstr "İptal"
+
+#: app/templates/account/register.html:14
+#: app/templates/account/register.html:15
+msgid "Confirm Password"
+msgstr "Parolayı Onayla"
+
+#: app/templates/item/item_post.html:88
+msgid "Create Post"
+msgstr "Yazı oluşturmak"
+
+#: app/templates/item/item_post.html:22 app/templates/item/item_post.html:24
+msgid "Description"
+msgstr "Açıklama"
+
+#: app/templates/item/item_post.html:67
+msgid "Description is required."
+msgstr "Açıklama gereklidir."
+
+#: app/templates/item/item_post.html:71
+msgid "Description is too short."
+msgstr "Çok kısa bir açıklamasıdır."
+
+#: app/templates/account/login.html:6 app/templates/account/login.html:7
+#: app/templates/account/register.html:6 app/templates/account/register.html:7
+msgid "Email"
+msgstr "E-posta"
+
+#: app/templates/explore.html:1 app/templates/menu.html:42
+msgid "Explore"
+msgstr "Keşfet"
+
+#: app/templates/account/user_profile.html:44
+msgid "Joined Date"
+msgstr "Birleştirilen tarihi"
+
+#: app/templates/account/user_profile.html:37
+msgid "Location"
+msgstr "Konumu"
+
+#: app/templates/account/login.html:16
+msgid "Login"
+msgstr "Oturum açma"
+
+#: app/templates/menu.html:21
+msgid "Menu"
+msgstr "Menü"
+
+#: app/templates/item/directives/item_directive.html:10
+msgid "OFF"
+msgstr "KAPALI"
+
+#: app/templates/account/login.html:10 app/templates/account/login.html:11
+#: app/templates/account/register.html:10
+#: app/templates/account/register.html:11
+msgid "Password"
+msgstr "Şifre"
+
+#: app/templates/account/register.html:22
+msgid "Password does not match!"
+msgstr "Parola eşleşmiyor."
+
+#: app/templates/menu.html:46
+msgid "Post"
+msgstr "Yayınla"
+
+#: app/templates/account/user_profile.html:29
+msgid "Real Name"
+msgstr "Gerçek adı"
+
+#: app/templates/account/register.html:31 app/templates/menu.html:64
+msgid "Register &amp; Join"
+msgstr "Kayıt &amp; birleştirme"
+
+#: app/templates/menu.html:50
+msgid "Search"
+msgstr "Arama"
+
+#: app/templates/menu.html:60
+msgid "Sign in"
+msgstr "Oturum Aç"
+
+#: app/templates/menu.html:68
+msgid "Sign out"
+msgstr "Oturumu Kapat"
+
+#: app/templates/item/item_post.html:37 app/templates/menu.html:54
+msgid "Tags"
+msgstr "Etiketler"
+
+#: app/templates/item/item_post.html:76
+msgid "Tags are required."
+msgstr "Etiketleri gereklidir."
+
+#: app/templates/item/item_post.html:82
+msgid "Tags are too long."
+msgstr "Etiketler çok uzun."
+
+#: app/templates/item/item_post.html:79
+msgid "Tags are too short."
+msgstr "Etiketler çok kısa."
+
+#: app/templates/item/item_post.html:40
+msgid "Tags separated by space"
+msgstr "Boşlukla ayrılmış tags"
+
+#: app/templates/item/item_post.html:11 app/templates/item/item_post.html:8
+msgid "Title"
+msgstr "Başlık"
+
+#: app/templates/item/item_post.html:54
+msgid "Title is required."
+msgstr "Başlık gereklidir."
+
+#: app/templates/item/item_post.html:62
+msgid "Title is too long."
+msgstr "Başlık çok uzun."
+
+#: app/templates/item/item_post.html:58
+msgid "Title is too short."
+msgstr "Başlık çok kısadır."
+
+#: app/templates/menu.html:38
+msgid "Tiwun"
+msgstr "Tiwun"
+
+#: app/templates/account/user_profile.html:33
+msgid "Website"
+msgstr "Web sitesi"
+
+#: app/templates/account/register.html:26
+msgid "Welcome to Tiwun"
+msgstr "Tiwun hoş geldiniz"
