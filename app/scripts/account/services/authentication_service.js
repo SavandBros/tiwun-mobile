@@ -78,14 +78,21 @@ function AuthenticationService($rootScope, $http, $log, $window, ENV) {
     function isAuthenticated() {
         //return !!$cookies.authenticatedUser;
         var token = getToken();
+        var isValid;
 
         if (token) {
             var params = parseJwt(token);
 
-            return Math.round(new Date().getTime() / 1000) <= params.exp;
+            isValid = Math.round(new Date().getTime() / 1000) <= params.exp;
         } else {
-            return false;
+            isValid = false;
         }
+
+        if (!isValid) {
+            unAuthenticate();
+        }
+
+        return isValid;
     }
 
     /**
@@ -181,6 +188,7 @@ function AuthenticationService($rootScope, $http, $log, $window, ENV) {
      */
     function unAuthenticate() {
         $window.localStorage.removeItem('jwtToken');
+        $window.localStorage.removeItem('authenticatedUser');
     }
 
     /**
