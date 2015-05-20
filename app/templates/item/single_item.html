@@ -2,47 +2,7 @@
     <ion-content>
         <div class="list">
 
-            <div class="item item-avatar">
-                <img ng-src="{{ item.user.get_gravatar[64] }}">
-
-                <h2>{{ item.title }}</h2>
-
-                <p>{{ item.created | date }} by: <a href="#!/app/account/user-profile/{{ item.user_id }}/">{{ item.user_name }}</a></p>
-            </div>
-
-            <div class="item" style="padding: 8px 15px">
-                <b class="offer">{{ item.discount_percentage }}% <small>OFF</small></b>
-                <s class="small faded-light">was {{ item.get_compare_at_price_display }}</s>
-                <b class="right assertive">{{ item.get_price_display }}</b>
-            </div>
-
-            <div class="item item-body">
-
-                <ion-slide-box on-slide-changed="slideHasChanged($index)">
-                    <ion-slide ng-repeat="img in item.images">
-                        <img ng-dblclick="upVote()" class="full-image" ng-src="{{ img.standard }}" />
-                    </ion-slide>
-                </ion-slide-box>
-
-                <p>{{ item.description | markdown | stripTags }}</p>
-
-                <p>
-                    <span class="subdued">{{ item.votes_count }} Score</span>
-                    <span class="subdued">{{ item.comments_count }} Comments</span>
-                </p>
-            </div>
-
-            <div class="item tabs tabs-secondary tabs-icon-left bg-e">
-                <div class="tab-item" ng-class="{'assertive': item.userVote.upVote}" ng-click="upVote()">
-                    <i class="icon ion-chevron-up"></i>
-                </div>
-                <div class="tab-item" ng-class="{'assertive': item.userVote.downVote}" ng-click="downVote()">
-                    <i class="icon ion-chevron-down"></i>
-                </div>
-                <div class="tab-item">
-                    <i class="icon ion-android-share-alt"></i>
-                </div>
-            </div>
+            <item item="item"></item>
 
             <div class="item">
                 <form name="form" ng-submit="addComment(form, comment)">
