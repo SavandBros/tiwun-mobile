@@ -2,7 +2,7 @@
  * ItemsController
  * @namespace tiwun.item.controllers
  **/
-(function () {
+(function() {
     'use strict';
 
     angular.module('tiwun.item.controllers.ItemsController', [])
@@ -24,10 +24,10 @@
          * @memberOf tiwun.item.controllers.ItemsControllers
          **/
         function constructor() {
-            $scope.$watchCollection(function () {
+            $scope.$watchCollection(function() {
                 return $scope.items;
             }, render);
-            $scope.$watch(function () {
+            $scope.$watch(function() {
                 return $(window).width()
             }, render);
         }
@@ -69,7 +69,7 @@
              * @returns The approximately normalized height of a given column
              */
             function columnMapFn(column) {
-                var length = column.map(function (element) {
+                var length = column.map(function(element) {
                     return element.content.length;
                 });
 

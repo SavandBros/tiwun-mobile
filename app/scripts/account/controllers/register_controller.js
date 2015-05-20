@@ -23,8 +23,10 @@ function RegisterController($window, $ionicHistory, $state, $scope, Authenticati
         }
     }
 
-    $scope.$on('tiwun.account.service.AuthenticationService:Registered', function () {
-        $state.go('app.explore', {}, {reload: true});
+    $scope.$on('tiwun.account.service.AuthenticationService:Registered', function() {
+        $state.go('app.explore', {}, {
+            reload: true
+        });
         $window.location.reload(true);
     });
 
@@ -48,8 +50,8 @@ function RegisterController($window, $ionicHistory, $state, $scope, Authenticati
 }
 
 angular.module('tiwun.account.controllers.RegisterController', [
-    'tiwun.account.services.AuthenticationService'
-])
+        'tiwun.account.services.AuthenticationService'
+    ])
     .controller('RegisterController', RegisterController);
 
 RegisterController.$inject = ['$window', '$ionicHistory', '$state', '$scope', 'AuthenticationService'];

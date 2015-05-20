@@ -2,7 +2,7 @@
  * ItemService
  * @namespace tiwun.item.services
  */
-(function () {
+(function() {
     'use strict';
 
     angular.module('tiwun.item.services.ItemService', [])
@@ -34,8 +34,11 @@
          */
         function all(page_number) {
             return $http.get(
-                ENV.apiEndpoint + 'index/',
-                {params: {page: page_number}}
+                ENV.apiEndpoint + 'index/', {
+                    params: {
+                        page: page_number
+                    }
+                }
             );
         }
 

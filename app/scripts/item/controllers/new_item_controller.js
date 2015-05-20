@@ -2,13 +2,13 @@
  * NewItemController
  * @namespace tiwun.item.controllers
  */
-(function () {
+(function() {
     'use strict';
 
     angular.module('tiwun.item.controllers.NewItemController', [
-        'tiwun.item.services.ItemService',
-        'tiwun.account.services.AuthenticationService'
-    ])
+            'tiwun.item.services.ItemService',
+            'tiwun.account.services.AuthenticationService'
+        ])
         .controller('NewItemController', NewItemController);
 
     NewItemController.$inject = ['$rootScope', '$scope', '$state', '$ionicHistory', '$log', 'AuthenticationService', 'ItemService'];
@@ -32,7 +32,7 @@
          * @desc Create a new Item
          * @memberOf tiwun.item.controllers.NewItemController
          */
-        $scope.create = function (form) {
+        $scope.create = function(form) {
             $scope.formSubmitted = true;
 
             if (form.$valid) {
@@ -44,10 +44,12 @@
 
                 ItemService.create(item).then(
                     function(data, status, headers, config) {
-                        $state.go('app.singleItem', {itemId: data.data.pk});
+                        $state.go('app.singleItem', {
+                            itemId: data.data.pk
+                        });
                     },
                     function(data, status, headers, config) {
-                       $log.error('Error happened on creating new item: ' + data.error);
+                        $log.error('Error happened on creating new item: ' + data.error);
                     }
                 )
             }
@@ -60,7 +62,7 @@
          * @desc Cancel creation of new item and go back!
          * @memberOf tiwun.item.controllers.NewItemController
          */
-        $scope.cancel = function () {
+        $scope.cancel = function() {
             $ionicHistory.goBack();
         }
     }

@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('tiwun.basement.filters.timesinceFilter', [])
-    .filter('timesince', function () {
-        return function (date) {
+    .filter('timesince', function() {
+        return function(date) {
             if (typeof date == 'string') {
                 date = new Date(date);
             }
@@ -46,15 +46,13 @@ angular.module('tiwun.basement.filters.timesinceFilter', [])
 
                     return "tensePrefix TenseType".replace('tensePrefix', tensePrefix)
                         .replace('TenseType', tense);
-                }
-                else if (secondsDifference === 1) {
-                    if (k == 'HOUR')tensePrefix = 'an';
+                } else if (secondsDifference === 1) {
+                    if (k == 'HOUR') tensePrefix = 'an';
                     else tensePrefix = 'a';
 
                     return "tensePrefix tense".replace('tensePrefix', tensePrefix)
                         .replace('tense', tense);
-                }
-                else if (secondsDifference > 1) {
+                } else if (secondsDifference > 1) {
                     tense = INTERVALS[k].tense_plural;
                     tensePrefix = secondsDifference;
 

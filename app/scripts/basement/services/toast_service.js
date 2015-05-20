@@ -47,7 +47,7 @@ function ToastService($rootScope, $timeout, $ionicPopup, $cordovaToast) {
                 buttons: []
             });
 
-            $timeout(function () {
+            $timeout(function() {
                 toastPopup.close();
             }, duration);
         }

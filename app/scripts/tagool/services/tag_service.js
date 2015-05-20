@@ -23,8 +23,11 @@ function TagService($http, ENV) {
      */
     function all(page_number) {
         return $http.get(
-            ENV.apiEndpoint + 'tags/',
-            {params: {page: page_number}}
+            ENV.apiEndpoint + 'tags/', {
+                params: {
+                    page: page_number
+                }
+            }
         );
     }
 
@@ -40,13 +43,16 @@ function TagService($http, ENV) {
      */
     function tagDetail(page_number, tagSlug) {
         return $http.get(
-            ENV.apiEndpoint + 'tags/tagSlug/'.replace('tagSlug', tagSlug),
-            {params: {page: page_number}}
+            ENV.apiEndpoint + 'tags/tagSlug/'.replace('tagSlug', tagSlug), {
+                params: {
+                    page: page_number
+                }
+            }
         );
     }
 
     return {
-        all:all,
+        all: all,
 
         tagDetail: tagDetail
     }

@@ -3,7 +3,7 @@
  * @name app
  * @namespace tiwun
  */
-(function () {
+(function() {
     'use strict';
 
     angular.module('tiwun.konfig.Konfig', []);
@@ -35,9 +35,9 @@
         $http.defaults.headers.post['X-CSRFToken'] = $cookies.csrftoken;
 
         gettextCatalog.debug = true;
-        gettextCatalog.setCurrentLanguage('fa_IR');
+        gettextCatalog.setCurrentLanguage('fa');
 
-        $ionicPlatform.ready(function () {
+        $ionicPlatform.ready(function() {
             // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
             // for form inputs)
             if (window.cordova && window.cordova.plugins.Keyboard) {

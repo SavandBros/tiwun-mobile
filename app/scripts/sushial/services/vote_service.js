@@ -33,8 +33,7 @@ function VoteService($http, ENV) {
      */
     function upVote(objectType, objectPk, userId) {
         return $http.post(
-            ENV.apiEndpoint + 'sushial/vote/',
-            {
+            ENV.apiEndpoint + 'sushial/vote/', {
                 object_type: objectType,
                 object_pk: objectPk,
                 user_id: userId,
@@ -54,8 +53,7 @@ function VoteService($http, ENV) {
      */
     function downVote(objectType, objectId, userId) {
         return $http.post(
-            ENV.apiEndpoint + 'sushial/vote/',
-            {
+            ENV.apiEndpoint + 'sushial/vote/', {
                 object_type: objectType,
                 object_pk: objectId,
                 user_id: userId,
@@ -76,8 +74,7 @@ function VoteService($http, ENV) {
      */
     function userVotedForObject(objectType, objectId, userId) {
         return $http.get(
-            ENV.apiEndpoint + 'sushial/vote/utils/',
-            {
+            ENV.apiEndpoint + 'sushial/vote/utils/', {
                 params: {
                     utils_type: voteUtils.userVotedForObject,
                     object_type: objectType,

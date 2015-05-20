@@ -110,14 +110,14 @@ function AuthenticationService($rootScope, $http, $log, $window, ENV) {
             password: password
         }).then(
             // Set the authenticated account and redirect to index
-            function (data, status, headers, config) {
+            function(data, status, headers, config) {
                 setAuthenticatedUser(data.data.user);
                 setToken(data.data.token);
 
                 $rootScope.$broadcast('tiwun.account.service.AuthenticationService:Authenticated');
             },
             // Log "Epic failure!" to the console
-            function (data, status, headers, config) {
+            function(data, status, headers, config) {
                 $log.error(data.error);
             }
         );
@@ -132,11 +132,11 @@ function AuthenticationService($rootScope, $http, $log, $window, ENV) {
      */
     function logout() {
         return $http.post(ENV.apiEndpoint + 'users/logout/').then(
-            function (data, status, headers, config) {
+            function(data, status, headers, config) {
                 unAuthenticate();
                 $rootScope.$broadcast('tiwun.account.service.AuthenticationService:SignedOut');
             },
-            function (data, status, headers, config) {
+            function(data, status, headers, config) {
                 $log.error('Epic failure on logout :|');
             }
         );
@@ -156,12 +156,12 @@ function AuthenticationService($rootScope, $http, $log, $window, ENV) {
             email: email,
             password: password
         }).then(
-            function (data, status, headers, config) {
+            function(data, status, headers, config) {
                 $rootScope.$broadcast('tiwun.account.service.AuthenticationService:Registered');
                 login(email, password);
 
             },
-            function (data, status, headers, config) {
+            function(data, status, headers, config) {
                 $log.error('Epic failure in registering user!. Let me just pretend I\'m doing a good job at logging!');
             }
         );

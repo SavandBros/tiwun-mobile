@@ -16,10 +16,10 @@ function UserProfileController($scope, $stateParams, $log, UserService) {
      */
     function constructor() {
         UserService.get($stateParams['userId']).then(
-            function (data, status, headers, config) {
+            function(data, status, headers, config) {
                 $scope.user = data.data;
             },
-            function (data, status, headers, config) {
+            function(data, status, headers, config) {
                 $log.error('Error in getting user: ' + data.error);
             }
         );
@@ -30,8 +30,8 @@ function UserProfileController($scope, $stateParams, $log, UserService) {
 
 
 angular.module('tiwun.account.controllers.UserProfileController', [
-    'tiwun.account.services.UserService'
-])
+        'tiwun.account.services.UserService'
+    ])
     .controller('UserProfileController', UserProfileController);
 
 UserProfileController.$inject = ['$scope', '$stateParams', '$log', 'UserService'];

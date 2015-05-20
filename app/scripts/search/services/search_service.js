@@ -21,14 +21,12 @@ function SearchService($http, ENV) {
      * @memberOf tiwun.basement.services.SearchService
      */
     function search(query, pageNumber) {
-        return $http.get(ENV.apiEndpoint + 'search/',
-            {
-                params: {
-                    q: query.text,
-                    page: pageNumber
-                }
+        return $http.get(ENV.apiEndpoint + 'search/', {
+            params: {
+                q: query.text,
+                page: pageNumber
             }
-        );
+        });
     }
 
     return {

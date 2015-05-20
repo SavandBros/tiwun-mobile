@@ -23,8 +23,10 @@ function LoginController($window, $state, $scope, AuthenticationService) {
 
     constructor();
 
-    $scope.$on('tiwun.account.service.AuthenticationService:Authenticated', function () {
-        $state.go('app.explore', {}, {reload: true});
+    $scope.$on('tiwun.account.service.AuthenticationService:Authenticated', function() {
+        $state.go('app.explore', {}, {
+            reload: true
+        });
         $window.location.reload(true);
     });
 
@@ -34,14 +36,14 @@ function LoginController($window, $state, $scope, AuthenticationService) {
      * @method login
      * @memberOf tiwun.account.controllers.LoginController
      */
-    $scope.login = function (form, user) {
+    $scope.login = function(form, user) {
         AuthenticationService.login(user.email, user.password);
     };
 }
 
 angular.module('tiwun.account.controllers.LoginController', [
-    'tiwun.account.services.AuthenticationService'
-])
+        'tiwun.account.services.AuthenticationService'
+    ])
     .controller('LoginController', LoginController);
 
 LoginController.$inject = ['$window', '$state', '$scope', 'AuthenticationService'];

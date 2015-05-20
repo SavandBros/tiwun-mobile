@@ -2,7 +2,7 @@
  * PaginationService
  * @namespace tiwun.basement.services
  */
-(function () {
+(function() {
     'use strict';
 
     /**
@@ -17,7 +17,7 @@
          * @name isPaginated
          * @returns {boolean}
          */
-        this.isPaginated = function () {
+        this.isPaginated = function() {
             return paginationContext.is_paginated;
         };
 
@@ -25,7 +25,7 @@
          * @name paginatedCount
          * @returns {number}
          */
-        this.paginatedCount = function () {
+        this.paginatedCount = function() {
             return paginationContext.paginated_count;
         };
 
@@ -33,7 +33,7 @@
          * @name pageNumber
          * @returns {number}
          */
-        this.pageNumber = function () {
+        this.pageNumber = function() {
             return paginationContext.page_number;
         };
 
@@ -41,7 +41,7 @@
          * @name hasPrevious
          * @returns {boolean}
          */
-        this.hasPrevious = function () {
+        this.hasPrevious = function() {
             return paginationContext.page_has_previous;
         };
 
@@ -49,7 +49,7 @@
          * @name hasNext
          * @returns {boolean}
          */
-        this.hasNext = function () {
+        this.hasNext = function() {
             return paginationContext.page_has_next;
         };
 
@@ -57,7 +57,7 @@
          * @name nextPageNumber
          * @returns {number}
          */
-        this.nextPageNumber = function () {
+        this.nextPageNumber = function() {
             return paginationContext.page_next_page_number;
         };
 
@@ -65,7 +65,7 @@
          * @name previousPageNumber
          * @returns {number}
          */
-        this.previousPageNumber = function () {
+        this.previousPageNumber = function() {
             return paginationContext.page_previous_page_number;
         };
 
@@ -73,18 +73,18 @@
          * @name numPages
          * @returns {number}
          */
-        this.numPages = function () {
+        this.numPages = function() {
             return paginationContext.page_paginator_num_pages;
         };
 
 
-        this.nextPage = function () {
+        this.nextPage = function() {
             if (this.hasNext()) {
                 $rootScope.$broadcast(controllerName + ':pagination:next', this.nextPageNumber());
             }
         };
 
-        this.previousPage = function () {
+        this.previousPage = function() {
             if (this.hasPrevious()) {
                 $rootScope.$broadcast(controllerName + ':pagination:previous', this.previousPageNumber());
             }
@@ -92,9 +92,9 @@
     }
 
     angular.module('tiwun.basement.services.PaginationService', [])
-        .factory('PaginationService', function ($rootScope) {
+        .factory('PaginationService', function($rootScope) {
             return {
-                Pagination: function (paginationContext, controllerName) {
+                Pagination: function(paginationContext, controllerName) {
                     return new Pagination(paginationContext, controllerName, $rootScope);
                 }
             }

@@ -9,4 +9,3 @@ angular.module('tiwun.search', [
 
 angular.module('tiwun.search.controllers.SearchController', []);
 angular.module('tiwun.search.services.SearchService', []);
-

@@ -20,7 +20,7 @@ function UserSettingsController($scope, $state, $log, ToastService, UserService,
             ToastService.show('You\'re not authorized to access this page.');
         } else {
             UserService.get($stateParams.userId).then(
-                function (data, status, headers, config) {
+                function(data, status, headers, config) {
                     /**
                      * Current user that is logged and is trying to update settings.
                      *
@@ -28,7 +28,7 @@ function UserSettingsController($scope, $state, $log, ToastService, UserService,
                      */
                     $scope.user = data.data;
                 },
-                function (data, status, headers, config) {
+                function(data, status, headers, config) {
                     ToastService.show('Error in getting user: ' + data.data.error);
                 }
             );
@@ -46,9 +46,8 @@ function UserSettingsController($scope, $state, $log, ToastService, UserService,
      */
     $scope.updateAccount = function(form, user) {
         UserService.update(user).then(
-            function (data, status, headers, config) {
-            },
-            function (data, status, headers, config) {
+            function(data, status, headers, config) {},
+            function(data, status, headers, config) {
                 $log.error('Error in updating user account settings: ' + data.error);
             }
         );
@@ -57,10 +56,10 @@ function UserSettingsController($scope, $state, $log, ToastService, UserService,
 
 
 angular.module('tiwun.account.controllers.UserSettingsController', [
-    'tiwun.account.services.UserService',
-    'tiwun.account.services.AuthenticationService',
-    'tiwun.basement.services.ToastService'
-])
+        'tiwun.account.services.UserService',
+        'tiwun.account.services.AuthenticationService',
+        'tiwun.basement.services.ToastService'
+    ])
     .controller('UserSettingsController', UserSettingsController);
 
 UserSettingsController.$inject = ['$scope', '$state', '$log', 'ToastService', 'UserService', 'AuthenticationService'];

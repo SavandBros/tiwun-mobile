@@ -23,8 +23,7 @@ function CommentService($http, ENV) {
      */
     function create(objectType, objectPk, userId, commentText) {
         return $http.post(
-            ENV.apiEndpoint + 'sushial/comment/add/',
-            {
+            ENV.apiEndpoint + 'sushial/comment/add/', {
                 object_type: objectType,
                 object_pk: objectPk,
                 user_id: userId,
@@ -42,8 +41,7 @@ function CommentService($http, ENV) {
      */
     function remove(objectType, objectId, userId) {
         return $http.post(
-            ENV.apiEndpoint + 'sushial/comment/remove',
-            {
+            ENV.apiEndpoint + 'sushial/comment/remove', {
                 object_type: objectType,
                 object_id: objectId,
                 user_id: userId
@@ -59,8 +57,7 @@ function CommentService($http, ENV) {
      */
     function filterByObject(objectType, ObjectPk) {
         return $http.get(
-            ENV.apiEndpoint + 'sushial/comment/',
-            {
+            ENV.apiEndpoint + 'sushial/comment/', {
                 params: {
                     object_type: objectType,
                     object_pk: ObjectPk

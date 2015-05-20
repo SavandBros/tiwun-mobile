@@ -8,7 +8,7 @@
  * @namespace tiwun.item.controllers
  **/
 function SingleItemController($scope, $stateParams, $ionicHistory, $state, $ionicScrollDelegate, $log, ToastService,
-                              ItemService, CommentService, VoteService, AuthenticationService) {
+    ItemService, CommentService, VoteService, AuthenticationService) {
     $scope.auth = AuthenticationService;
     $scope.user = $scope.auth.getAuthenticatedUser();
 
@@ -20,14 +20,14 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, $ioni
      **/
     function constructor() {
         ItemService.get($stateParams.itemId).then(
-            function (data, status, headers, config) {
+            function(data, status, headers, config) {
                 $scope.context = data.data;
                 $scope.item = $scope.context.item;
 
                 $scope.$broadcast('itemLoaded');
 
             },
-            function (data, status, headers, config) {
+            function(data, status, headers, config) {
                 $log.error('Error on receiving item');
                 $log.error(data.error);
                 $ionicHistory.goBack();
@@ -45,24 +45,28 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, $ioni
      * @param {Object} data
      * @memberOf tiwun.item.controllers.SingleItemController
      */
-    function updateItemVote (data) {
+    function updateItemVote(data) {
         if (data.vote_type === VoteService.voteTypes.up) {
-            $scope.item.userVote = {upVote: true}
+            $scope.item.userVote = {
+                upVote: true
+            }
         } else {
-            $scope.item.userVote = {downVote: true};
+            $scope.item.userVote = {
+                downVote: true
+            };
         }
     }
 
     /**
      * Retrieving Comments, vote type on `itemLoaded` $broadcast.
      */
-    $scope.$on('itemLoaded', function () {
+    $scope.$on('itemLoaded', function() {
         // Retrieve item's comment.
         CommentService.filterByObject(1, $scope.item.pk).then(
-            function (data, status, headers, config) {
+            function(data, status, headers, config) {
                 $scope.item.comments = data.data;
             },
-            function (data, status, headers, config) {
+            function(data, status, headers, config) {
                 $log.error("[error] on getting comments!");
                 $log.error(data.error);
             }
@@ -75,10 +79,10 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, $ioni
                 $scope.item.pk,
                 AuthenticationService.getAuthenticatedUser().pk
             ).then(
-                function (data, status, headers, config) {
+                function(data, status, headers, config) {
                     updateItemVote(data.data);
                 },
-                function (data, status, headers, config) {
+                function(data, status, headers, config) {
                     $log.error(data.data.error);
                 }
             );
@@ -93,18 +97,18 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, $ioni
      * @param {Object} comment
      * @memberOf tiwun.item.controllers.SingleItemController
      */
-    $scope.addComment = function (form, comment) {
+    $scope.addComment = function(form, comment) {
         if ($scope.auth.isAuthenticated()) {
             console.log(form, comment);
             CommentService.create(1, $scope.item.pk, $scope.user.pk, comment.text).then(
-                function (data, status, headers, config) {
+                function(data, status, headers, config) {
                     $scope.item.comments = $scope.item.comments.concat(data.data);
                     comment.text = '';
                     $ionicScrollDelegate.scrollBottom(true);
                     ToastService.show('Your comment has been posted successfully');
 
                 },
-                function (data, status, headers, config) {
+                function(data, status, headers, config) {
                     $log.error('commenting error');
                     $log.error(data.error)
                 }
@@ -118,17 +122,17 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, $ioni
      * @method upVote
      * @memberOf tiwun.item.controllers.SingleItemController
      */
-    $scope.upVote = function () {
+    $scope.upVote = function() {
         if (!AuthenticationService.isAuthenticated()) {
             $state.go('app.login');
             return;
         }
 
         VoteService.upVote(VoteService.objectTypes.item, $scope.item.pk, $scope.user.pk).then(
-            function (data, status, headers, config) {
+            function(data, status, headers, config) {
                 updateItemVote(data.data.vote);
             },
-            function (data, status, headers, config) {
+            function(data, status, headers, config) {
                 $log.error(data.error);
             }
         )
@@ -140,17 +144,17 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, $ioni
      * @method downVote
      * @memberOf tiwun.item.controllers.SingleItemController
      */
-    $scope.downVote = function () {
+    $scope.downVote = function() {
         if (!AuthenticationService.isAuthenticated()) {
             $state.go('app.login');
             return;
         }
 
         VoteService.downVote(VoteService.objectTypes.item, $scope.item.pk, $scope.user.pk).then(
-            function (data, status, headers, config) {
+            function(data, status, headers, config) {
                 updateItemVote(data.data.vote);
             },
-            function (data, status, headers, config) {
+            function(data, status, headers, config) {
                 $log.error(data.error);
             }
         )
@@ -159,12 +163,12 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, $ioni
 
 
 angular.module('tiwun.item.controllers.SingleItemController', [
-    'tiwun.basement.services.ToastService',
-    'tiwun.item.services.ItemService',
-    'tiwun.sushial.services.CommentService',
-    'tiwun.account.services.AuthenticationService',
-    'tiwun.sushial.services.VoteService'
-])
+        'tiwun.basement.services.ToastService',
+        'tiwun.item.services.ItemService',
+        'tiwun.sushial.services.CommentService',
+        'tiwun.account.services.AuthenticationService',
+        'tiwun.sushial.services.VoteService'
+    ])
     .controller('SingleItemController', SingleItemController);
 
 SingleItemController.$inject = [
@@ -180,4 +184,3 @@ SingleItemController.$inject = [
     'VoteService',
     'AuthenticationService'
 ];
-

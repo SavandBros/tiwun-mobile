@@ -2,7 +2,7 @@
  * Konfig
  * @namespace tiwun.konfig
  */
-(function () {
+(function() {
     'use strict';
 
     angular.module('tiwun.konfig.Konfig')
