@@ -26,13 +26,6 @@
     angular.module('tiwun')
         .run(RunForrestRun);
 
-    RunForrestRun.$inject = ['$ionicPlatform', '$http', '$cookies', 'gettextCatalog'];
-
-    function RunForrestRun($ionicPlatform, $http, $cookies, gettextCatalog) {
-        $http.defaults.xsrfHeaderName = 'X-CSRFToken';
-        $http.defaults.xsrfCookieName = 'csrftoken';
-        $http.defaults.withCredentials = true;
-        $http.defaults.headers.post['X-CSRFToken'] = $cookies.csrftoken;
 
         gettextCatalog.debug = true;
         gettextCatalog.setCurrentLanguage('fa');
