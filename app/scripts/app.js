@@ -13,6 +13,7 @@
         'ngCookies',
         'angular.filter',
         'markdown',
+        'gettext',
         'tiwun.ngkonstant',
         'tiwun.konfig.Konfig',
         'tiwun.basement',
@@ -25,13 +26,16 @@
     angular.module('tiwun')
         .run(RunForrestRun);
 
-    RunForrestRun.$inject = ['$ionicPlatform', '$http', '$cookies'];
+    RunForrestRun.$inject = ['$ionicPlatform', '$http', '$cookies', 'gettextCatalog'];
 
-    function RunForrestRun($ionicPlatform, $http, $cookies) {
+    function RunForrestRun($ionicPlatform, $http, $cookies, gettextCatalog) {
         $http.defaults.xsrfHeaderName = 'X-CSRFToken';
         $http.defaults.xsrfCookieName = 'csrftoken';
         $http.defaults.withCredentials = true;
         $http.defaults.headers.post['X-CSRFToken'] = $cookies.csrftoken;
+
+        gettextCatalog.debug = true;
+        gettextCatalog.setCurrentLanguage('fa_IR');
 
         $ionicPlatform.ready(function () {
             // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
