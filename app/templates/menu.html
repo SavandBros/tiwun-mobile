@@ -27,9 +27,9 @@
                     <a class="button button-positive button-small col-33" href="#!/app/account/login" ng-hide="{{ auth.isAuthenticated() }}">Sign in</a>
 
                     <a class="item item-avatar" href="#!/app/account/user-profile/{{ user.pk }}/" ng-show="auth.isAuthenticated()">
-                      <img ng-src="{{ user.get_gravatar[64] }}">
-                      <h2>{{ user.get_short_name }}</h2>
-                      <p>{{ user.location }}</p>
+                        <img ng-src="{{ user.get_gravatar[64] }}">
+                        <h2>{{ user.get_short_name }}</h2>
+                        <p>{{ user.location }}</p>
                     </a>
 
                 </div>
@@ -67,6 +67,21 @@
                 <a menu-close class="item item-icon-left" ng-show="{{ auth.isAuthenticated() }}" href="#!" ng-click="auth.logout()">
                     <i class="icon icon-menu-bg ion-log-out assertive faded"></i> <translate>Sign out</translate>
                 </a>
+
+                <div class="item item-divider"></div>
+                <label class="item item-input item-select">
+                    <div class="input-label">
+                        <translate>Language</translate>
+                    </div>
+
+                    <select
+                        ng-model="translation.selected"
+                        ng-change="changeTranslation(translation)"
+                        ng-options="k as v for (k, v) in translations"
+                        ng-init="translation.selected=defaultTranslation">
+                    </select>
+
+                </label>
             </ion-list>
         </ion-content>
 

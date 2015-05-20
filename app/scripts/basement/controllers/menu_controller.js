@@ -1,24 +1,55 @@
+/*global angular*/
+'use strict';
+
 /**
- * @name MenuController
+ * MenuController
+ *
+ * @class MenuController
  * @namespace tiwun.basement.controllers.MenuController
+ * @param {Object} $window
+ * @param {Object} $scope
+ * @param {Object} gettextCatalog
+ * @param {AuthenticationService} AuthenticationService
  */
-(function() {
-    'use strict';
+function MenuController($window, $scope, gettextCatalog, AuthenticationService) {
+    $scope.auth = AuthenticationService;
+    $scope.user = AuthenticationService.getAuthenticatedUser();
+    $scope.defaultTranslation = $window.localStorage.getItem('translation');
 
-    angular.module('tiwun.basement.controllers.MenuController', [
-            'tiwun.account.services.AuthenticationService'
-        ])
-        .controller('MenuController', MenuController);
+    $scope.translations = {
+        ar: gettextCatalog.getString('Arabic'),
+        ca: gettextCatalog.getString('Catalan'),
+        da: gettextCatalog.getString('Danish'),
+        de: gettextCatalog.getString('German'),
+        en: gettextCatalog.getString('English'),
+        fa: gettextCatalog.getString('Persian'),
+        fr: gettextCatalog.getString('French'),
+        hi: gettextCatalog.getString('Hindi'),
+        it: gettextCatalog.getString('Italian'),
+        ja: gettextCatalog.getString('Japanese'),
+        pt: gettextCatalog.getString('Portuguese'),
+        ru: gettextCatalog.getString('Russian'),
+        sv: gettextCatalog.getString('Swedish'),
+        th: gettextCatalog.getString('Thai'),
+        tr: gettextCatalog.getString('Turkish'),
+        ur: gettextCatalog.getString('Urdu')
+    };
 
-    MenuController.$inject = ['$window', '$scope', 'AuthenticationService'];
+    $scope.$on('tiwun.account.service.AuthenticationService:SignedOut', function() {
+        $window.location.reload(true)
+    });
 
-    function MenuController($window, $scope, AuthenticationService) {
-        $scope.auth = AuthenticationService;
-        $scope.user = AuthenticationService.getAuthenticatedUser();
+    $scope.changeTranslation = function(translation) {
+        gettextCatalog.setCurrentLanguage(translation.selected);
+        $window.localStorage.setItem('translation', translation.selected);
+        $scope.defaultTranslation = translation.selected;
 
-        $scope.$on('tiwun.account.service.AuthenticationService:SignedOut', function() {
-            $window.location.reload(true)
-        });
     }
+}
 
-})();
+angular.module('tiwun.basement.controllers.MenuController', [
+        'tiwun.account.services.AuthenticationService'
+    ])
+    .controller('MenuController', MenuController);
+
+MenuController.$inject = ['$window', '$scope', 'gettextCatalog', 'AuthenticationService'];
