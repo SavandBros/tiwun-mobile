@@ -12,6 +12,7 @@
     <access origin="https://www.tiwun.com"/>
     <access origin="https://cdn.shopify.com"/>
     <access origin="http://placehold.it"/>
+    <access origin="https://secure.gravatar.com"/>
     <preference name="SplashScreen" value="screen"/>
     <preference name="SplashScreenDelay" value="3000"/>
     <preference name="SplashMaintainAspectRatio" value="true|false"/>
