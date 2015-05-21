@@ -8,7 +8,9 @@
             </div>
         </form>
 
-        <item item="item" image="'single'"></item>
+        <div class="list card" ng-repeat="item in items">
+            <item item="item" image="'single'"></item>
+        </div>
 
         <ion-infinite-scroll
             immediate-check="true"
