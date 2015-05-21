@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Tiwun Mobile\n"
-"PO-Revision-Date: 2015-05-20 19:28+0000\n"
+"PO-Revision-Date: 2015-05-20 23:39+0000\n"
 "Last-Translator: Alireza Savand <alireza.savand@gmail.com>\n"
 "Language-Team: French (http://www.transifex.com/projects/p/tiwun-mobile/language/fr/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,6 +19,10 @@ msgstr "Compte"
 #: app/templates/item/single_item.html:31
 msgid "ago"
 msgstr "Il y a"
+
+#: app/templates/menu.html:5
+msgid "Back"
+msgstr "Précédent"
 
 #: app/templates/item/directives/item_directive.html:6
 msgid "by"
@@ -67,6 +71,10 @@ msgstr "Explorez"
 msgid "Joined Date"
 msgstr "Date de l'arrivée au"
 
+#: app/templates/menu.html:74
+msgid "Language"
+msgstr "Langue"
+
 #: app/templates/account/user_profile.html:37
 msgid "Location"
 msgstr "Emplacement"
@@ -93,6 +101,10 @@ msgstr "Mot de passe"
 msgid "Password does not match!"
 msgstr "Mot de passe ne correspond pas !"
 
+#: app/templates/tagool/tag_list.html:1
+msgid "Popular Tags"
+msgstr "Tags populaires"
+
 #: app/templates/menu.html:46
 msgid "Post"
 msgstr "Publier"
@@ -105,9 +117,13 @@ msgstr "De son vrai nom"
 msgid "Register &amp; Join"
 msgstr "Registre &amp; Join"
 
-#: app/templates/menu.html:50
+#: app/templates/menu.html:50 app/templates/search/search.html:1
 msgid "Search"
 msgstr "Rechercher"
+
+#: app/templates/search/search.html:6
+msgid "Search..."
+msgstr "Rechercher..."
 
 #: app/templates/menu.html:60
 msgid "Sign in"
@@ -156,6 +172,10 @@ msgstr "Le titre est trop court."
 #: app/templates/menu.html:38
 msgid "Tiwun"
 msgstr "Tiwun"
+
+#: app/templates/item/directives/item_directive.html:11
+msgid "was"
+msgstr "a été"
 
 #: app/templates/account/user_profile.html:33
 msgid "Website"

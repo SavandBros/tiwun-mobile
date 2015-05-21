@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Tiwun Mobile\n"
-"PO-Revision-Date: 2015-05-20 19:28+0000\n"
+"PO-Revision-Date: 2015-05-20 23:41+0000\n"
 "Last-Translator: Alireza Savand <alireza.savand@gmail.com>\n"
 "Language-Team: Urdu (http://www.transifex.com/projects/p/tiwun-mobile/language/ur/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,6 +19,10 @@ msgstr "اکاؤنٹ"
 #: app/templates/item/single_item.html:31
 msgid "ago"
 msgstr "پہلے"
+
+#: app/templates/menu.html:5
+msgid "Back"
+msgstr "پیٹھ"
 
 #: app/templates/item/directives/item_directive.html:6
 msgid "by"
@@ -67,6 +71,10 @@ msgstr "دریافت کریں"
 msgid "Joined Date"
 msgstr "شمولیت اختیار کی تاریخ"
 
+#: app/templates/menu.html:74
+msgid "Language"
+msgstr "زبان"
+
 #: app/templates/account/user_profile.html:37
 msgid "Location"
 msgstr "محل وقوع"
@@ -93,6 +101,10 @@ msgstr "پاس ورڈ"
 msgid "Password does not match!"
 msgstr "پاس ورڈ مشابہ نہیں ۔"
 
+#: app/templates/tagool/tag_list.html:1
+msgid "Popular Tags"
+msgstr "ڈاؤن لوڈ، اتارنا ٹیگ"
+
 #: app/templates/menu.html:46
 msgid "Post"
 msgstr "پوسٹ"
@@ -105,9 +117,13 @@ msgstr "اصلی نام"
 msgid "Register &amp; Join"
 msgstr "رجسٹر &amp; ملاپ کریں"
 
-#: app/templates/menu.html:50
+#: app/templates/menu.html:50 app/templates/search/search.html:1
 msgid "Search"
 msgstr "تلاش کریں"
+
+#: app/templates/search/search.html:6
+msgid "Search..."
+msgstr "تلاش کریں..."
 
 #: app/templates/menu.html:60
 msgid "Sign in"
@@ -156,6 +172,10 @@ msgstr "عنوان بہت چھوٹا ہے ۔"
 #: app/templates/menu.html:38
 msgid "Tiwun"
 msgstr "ٹیوان"
+
+#: app/templates/item/directives/item_directive.html:11
+msgid "was"
+msgstr "تھا ۔"
 
 #: app/templates/account/user_profile.html:33
 msgid "Website"

@@ -1,0 +1,141 @@
+# 
+# Translators:
+# Alireza Savand <alireza.savand@gmail.com>, 2015
+msgid ""
+msgstr ""
+"Project-Id-Version: Tiwun Mobile\n"
+"PO-Revision-Date: 2015-05-20 23:21+0000\n"
+"Last-Translator: Alireza Savand <alireza.savand@gmail.com>\n"
+"Language-Team: Urdu (http://www.transifex.com/projects/p/tiwun-mobile/language/ur/)\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ur\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: app/scripts/basement/filters/timesince.js:51
+msgid "a"
+msgstr "ایک"
+
+#: app/scripts/basement/filters/timesince.js:50
+msgid "an"
+msgstr "ایک"
+
+#: app/scripts/basement/controllers/menu_controller.js:20
+msgid "Arabic"
+msgstr "عربی"
+
+#: app/scripts/basement/controllers/menu_controller.js:21
+msgid "Catalan"
+msgstr "کٹالن"
+
+#: app/scripts/basement/controllers/menu_controller.js:22
+msgid "Danish"
+msgstr "ڈينش"
+
+#: app/scripts/basement/filters/timesince.js:24
+msgid "day"
+msgstr "دن"
+
+#: app/scripts/basement/filters/timesince.js:25
+msgid "days"
+msgstr "ایام"
+
+#: app/scripts/basement/controllers/menu_controller.js:24
+msgid "English"
+msgstr "انگريزی"
+
+#: app/scripts/basement/controllers/menu_controller.js:26
+msgid "French"
+msgstr "فرنچ"
+
+#: app/scripts/basement/controllers/menu_controller.js:23
+msgid "German"
+msgstr "جرمن"
+
+#: app/scripts/basement/controllers/menu_controller.js:27
+msgid "Hindi"
+msgstr "ہندی"
+
+#: app/scripts/basement/filters/timesince.js:29
+msgid "hour"
+msgstr "گھنٹہ"
+
+#: app/scripts/basement/filters/timesince.js:30
+msgid "hours"
+msgstr "گھنٹے"
+
+#: app/scripts/basement/controllers/menu_controller.js:28
+msgid "Italian"
+msgstr "اطالوی"
+
+#: app/scripts/basement/controllers/menu_controller.js:29
+msgid "Japanese"
+msgstr "جاپانی"
+
+#: app/scripts/basement/filters/timesince.js:45
+msgid "less than a"
+msgstr "ایک سے کم"
+
+#: app/scripts/basement/filters/timesince.js:34
+msgid "minute"
+msgstr "منٹ"
+
+#: app/scripts/basement/filters/timesince.js:35
+msgid "minutes"
+msgstr "منٹ"
+
+#: app/scripts/basement/filters/timesince.js:19
+msgid "month"
+msgstr "ماہ"
+
+#: app/scripts/basement/filters/timesince.js:20
+msgid "months"
+msgstr "ماہ"
+
+#: app/scripts/basement/controllers/menu_controller.js:25
+msgid "Persian"
+msgstr "فارسی"
+
+#: app/scripts/basement/controllers/menu_controller.js:30
+msgid "Portuguese"
+msgstr "پرتگال"
+
+#: app/scripts/basement/controllers/menu_controller.js:31
+msgid "Russian"
+msgstr "رشئن"
+
+#: app/scripts/basement/controllers/menu_controller.js:32
+msgid "Swedish"
+msgstr "سؤڈش"
+
+#: app/scripts/basement/controllers/menu_controller.js:33
+msgid "Thai"
+msgstr "تھائ"
+
+#: app/scripts/basement/services/toast_service.js:34
+msgid "There was a problem..."
+msgstr "میں ایک مسئلہ تھا..."
+
+#: app/scripts/basement/controllers/menu_controller.js:34
+msgid "Turkish"
+msgstr "ترکش"
+
+#: app/scripts/basement/controllers/menu_controller.js:35
+msgid "Urdu"
+msgstr "اردو"
+
+#: app/scripts/basement/filters/timesince.js:14
+msgid "year"
+msgstr "سال"
+
+#: app/scripts/basement/filters/timesince.js:15
+msgid "years"
+msgstr "سال"
+
+#: app/scripts/account/controllers/user_settings_controller.js:28
+msgid "You are not authorized to access this page."
+msgstr "آپ اس صفحہ تک رسائی حاصل کرنے کے مجاز نہیں ہیں ۔"
+
+#: app/scripts/item/controllers/single_item_controller.js:122
+msgid "Your comment has been posted successfully."
+msgstr "کامیابی کے ساتھ آپ کا تبصرہ پوسٹ کر دیا گیا ہے ۔"
