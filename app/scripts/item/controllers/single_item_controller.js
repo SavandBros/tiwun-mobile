@@ -174,6 +174,19 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, $ioni
             }
         )
     };
+
+    /**
+     * Check Auth
+     * Check if the user is authenticated when trying to write a comment.
+     *
+     * @method checkAuth
+     * @memberOf tiwun.item.controllers.SingleItemController
+     */
+    $scope.checkAuth = function() {
+        if (!AuthenticationService.isAuthenticated()) {
+            $state.go('app.login');
+        }
+    }
 }
 
 
@@ -193,7 +206,7 @@ SingleItemController.$inject = [
     '$state',
     '$ionicScrollDelegate',
     '$log',
-    'gettext',
+    'gettextCatalog',
     'ToastService',
     'ItemService',
     'CommentService',

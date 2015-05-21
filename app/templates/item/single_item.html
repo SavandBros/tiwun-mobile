@@ -2,16 +2,18 @@
     <ion-content>
         <div class="list">
 
-            <item item="item" image="'multi'" up-vote="upVote(item)" down-vote="downVote(item)"></item>
+            <item item="item" image="'multi'" up-vote="upVote(item)" down-vote="downVote(item)" add-comment="addComment"></item>
 
             <div class="item">
                 <form name="form" ng-submit="addComment(form, comment)">
                     <div class="bar item-input-inset">
                         <label class="item-input-wrap">
-                            <input ng-show="{{ auth.isAuthenticated() }}" type="text" name="comment" ng-model="comment.text" placeholder="{{ 'Comment...'|translate }}">
-                            <a href="#!/app/account/login" ng-hide="{{ auth.isAuthenticated() }}">
-                                <input type="text" name="comment" placeholder="{{ 'Comment...'|translate }}">
-                            </a>
+                            <input
+                                type="text"
+                                name="comment"
+                                ng-model="comment.text"
+                                placeholder="{{ 'Comment...'|translate }}"
+                                ng-change="checkAuth()">
                         </label>
                     </div>
                 </form>
