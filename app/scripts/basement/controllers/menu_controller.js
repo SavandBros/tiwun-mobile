@@ -11,7 +11,7 @@
  * @param {Object} gettextCatalog
  * @param {AuthenticationService} AuthenticationService
  */
-function MenuController($window, $scope, gettext, gettextCatalog, AuthenticationService) {
+function MenuController($window, $scope, gettextCatalog, AuthenticationService) {
     $scope.auth = AuthenticationService;
     $scope.user = AuthenticationService.getAuthenticatedUser();
     $scope.defaultTranslation = $window.localStorage.getItem('translation');
@@ -39,6 +39,14 @@ function MenuController($window, $scope, gettext, gettextCatalog, Authentication
         $window.location.reload(true)
     });
 
+    /**changeTranslation
+     *
+     * Change app translation.
+     *
+     * @method changeTranslation
+     * @param {Object} translation
+     * @memberOf tiwun.basement.controllers.MenuController
+     */
     $scope.changeTranslation = function(translation) {
         gettextCatalog.setCurrentLanguage(translation.selected);
         $window.localStorage.setItem('translation', translation.selected);
@@ -52,4 +60,4 @@ angular.module('tiwun.basement.controllers.MenuController', [
     ])
     .controller('MenuController', MenuController);
 
-MenuController.$inject = ['$window', '$scope', 'gettext', 'gettextCatalog', 'AuthenticationService'];
+MenuController.$inject = ['$window', '$scope', 'gettextCatalog', 'AuthenticationService'];
