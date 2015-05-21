@@ -29,8 +29,6 @@
     RunForrestRun.$inject = ['$window', '$ionicPlatform', 'gettextCatalog'];
 
     function RunForrestRun($window, $ionicPlatform, gettextCatalog) {
-        gettextCatalog.debug = true;
-
         var translation = $window.localStorage.getItem('translation');
 
         if (!translation) {
