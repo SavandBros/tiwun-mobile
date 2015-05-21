@@ -1,10 +1,10 @@
-# Translators:
+# 
 # Translators:
 # Alireza Savand <alireza.savand@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Tiwun Mobile\n"
-"PO-Revision-Date: 2015-05-20 23:40+0000\n"
+"PO-Revision-Date: 2015-05-21 15:57+0000\n"
 "Last-Translator: Alireza Savand <alireza.savand@gmail.com>\n"
 "Language-Team: Persian (http://www.transifex.com/projects/p/tiwun-mobile/language/fa/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -12,17 +12,13 @@ msgstr ""
 "Language: fa\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: app/templates/menu.html:57
+#: app/templates/menu.html:54
 msgid "Account"
 msgstr "حساب"
 
 #: app/templates/item/single_item.html:31
 msgid "ago"
 msgstr "پیش"
-
-#: app/templates/menu.html:5
-msgid "Back"
-msgstr "بازگشت"
 
 #: app/templates/item/directives/item_directive.html:6
 msgid "by"
@@ -63,7 +59,7 @@ msgstr "توضیحات خیلی کوتاه است."
 msgid "Email"
 msgstr "ایمیل"
 
-#: app/templates/explore.html:1 app/templates/menu.html:42
+#: app/templates/explore.html:1 app/templates/menu.html:39
 msgid "Explore"
 msgstr "اکتشاف"
 
@@ -71,7 +67,7 @@ msgstr "اکتشاف"
 msgid "Joined Date"
 msgstr "تاریخ پیوست"
 
-#: app/templates/menu.html:74
+#: app/templates/menu.html:71
 msgid "Language"
 msgstr "زبان"
 
@@ -83,7 +79,7 @@ msgstr "محل"
 msgid "Login"
 msgstr "ورود به سیستم"
 
-#: app/templates/menu.html:21
+#: app/templates/menu.html:18
 msgid "Menu"
 msgstr "منو"
 
@@ -105,7 +101,7 @@ msgstr "کلمه عبور مطابقت نمی کند!"
 msgid "Popular Tags"
 msgstr "تگ های محبوب"
 
-#: app/templates/menu.html:46
+#: app/templates/menu.html:43
 msgid "Post"
 msgstr "پست"
 
@@ -113,11 +109,11 @@ msgstr "پست"
 msgid "Real Name"
 msgstr "نام واقعی"
 
-#: app/templates/account/register.html:31 app/templates/menu.html:64
+#: app/templates/account/register.html:31 app/templates/menu.html:61
 msgid "Register &amp; Join"
 msgstr "ثبت نام و عضویت"
 
-#: app/templates/menu.html:50 app/templates/search/search.html:1
+#: app/templates/menu.html:47 app/templates/search/search.html:1
 msgid "Search"
 msgstr "جستجو"
 
@@ -125,15 +121,15 @@ msgstr "جستجو"
 msgid "Search..."
 msgstr "جستجو..."
 
-#: app/templates/menu.html:60
+#: app/templates/menu.html:24 app/templates/menu.html:57
 msgid "Sign in"
 msgstr "ورود به برنامه"
 
-#: app/templates/menu.html:68
+#: app/templates/menu.html:65
 msgid "Sign out"
 msgstr "خروج از سیستم"
 
-#: app/templates/item/item_post.html:37 app/templates/menu.html:54
+#: app/templates/item/item_post.html:37 app/templates/menu.html:51
 msgid "Tags"
 msgstr "برچسب ها"
 
@@ -169,7 +165,7 @@ msgstr "عنوان طولانی است."
 msgid "Title is too short."
 msgstr "عنوان بیش از حد کوتاه است."
 
-#: app/templates/menu.html:38
+#: app/templates/menu.html:35
 msgid "Tiwun"
 msgstr "تیوون"
 

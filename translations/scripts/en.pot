@@ -17,18 +17,6 @@ msgstr ""
 msgid "an"
 msgstr ""
 
-#: app/scripts/basement/controllers/menu_controller.js:20
-msgid "Arabic"
-msgstr ""
-
-#: app/scripts/basement/controllers/menu_controller.js:21
-msgid "Catalan"
-msgstr ""
-
-#: app/scripts/basement/controllers/menu_controller.js:22
-msgid "Danish"
-msgstr ""
-
 #: app/scripts/basement/filters/timesince.js:24
 msgid "day"
 msgstr ""
@@ -37,36 +25,12 @@ msgstr ""
 msgid "days"
 msgstr ""
 
-#: app/scripts/basement/controllers/menu_controller.js:24
-msgid "English"
-msgstr ""
-
-#: app/scripts/basement/controllers/menu_controller.js:26
-msgid "French"
-msgstr ""
-
-#: app/scripts/basement/controllers/menu_controller.js:23
-msgid "German"
-msgstr ""
-
-#: app/scripts/basement/controllers/menu_controller.js:27
-msgid "Hindi"
-msgstr ""
-
 #: app/scripts/basement/filters/timesince.js:29
 msgid "hour"
 msgstr ""
 
 #: app/scripts/basement/filters/timesince.js:30
 msgid "hours"
-msgstr ""
-
-#: app/scripts/basement/controllers/menu_controller.js:28
-msgid "Italian"
-msgstr ""
-
-#: app/scripts/basement/controllers/menu_controller.js:29
-msgid "Japanese"
 msgstr ""
 
 #: app/scripts/basement/filters/timesince.js:45
@@ -89,36 +53,8 @@ msgstr ""
 msgid "months"
 msgstr ""
 
-#: app/scripts/basement/controllers/menu_controller.js:25
-msgid "Persian"
-msgstr ""
-
-#: app/scripts/basement/controllers/menu_controller.js:30
-msgid "Portuguese"
-msgstr ""
-
-#: app/scripts/basement/controllers/menu_controller.js:31
-msgid "Russian"
-msgstr ""
-
-#: app/scripts/basement/controllers/menu_controller.js:32
-msgid "Swedish"
-msgstr ""
-
-#: app/scripts/basement/controllers/menu_controller.js:33
-msgid "Thai"
-msgstr ""
-
 #: app/scripts/basement/services/toast_service.js:34
 msgid "There was a problem..."
-msgstr ""
-
-#: app/scripts/basement/controllers/menu_controller.js:34
-msgid "Turkish"
-msgstr ""
-
-#: app/scripts/basement/controllers/menu_controller.js:35
-msgid "Urdu"
 msgstr ""
 
 #: app/scripts/basement/filters/timesince.js:14

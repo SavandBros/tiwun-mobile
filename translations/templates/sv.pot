@@ -1,10 +1,10 @@
-# Translators:
+# 
 # Translators:
 # Alireza Savand <alireza.savand@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Tiwun Mobile\n"
-"PO-Revision-Date: 2015-05-20 23:41+0000\n"
+"PO-Revision-Date: 2015-05-21 15:57+0000\n"
 "Last-Translator: Alireza Savand <alireza.savand@gmail.com>\n"
 "Language-Team: Swedish (http://www.transifex.com/projects/p/tiwun-mobile/language/sv/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -12,17 +12,13 @@ msgstr ""
 "Language: sv\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: app/templates/menu.html:57
+#: app/templates/menu.html:54
 msgid "Account"
 msgstr "Konto"
 
 #: app/templates/item/single_item.html:31
 msgid "ago"
 msgstr "sedan"
-
-#: app/templates/menu.html:5
-msgid "Back"
-msgstr "Tillbaka"
 
 #: app/templates/item/directives/item_directive.html:6
 msgid "by"
@@ -63,7 +59,7 @@ msgstr "Beskrivning är för kort."
 msgid "Email"
 msgstr "E-post"
 
-#: app/templates/explore.html:1 app/templates/menu.html:42
+#: app/templates/explore.html:1 app/templates/menu.html:39
 msgid "Explore"
 msgstr "Utforska"
 
@@ -71,7 +67,7 @@ msgstr "Utforska"
 msgid "Joined Date"
 msgstr "Gick med datum"
 
-#: app/templates/menu.html:74
+#: app/templates/menu.html:71
 msgid "Language"
 msgstr "Språk"
 
@@ -83,7 +79,7 @@ msgstr "Läge"
 msgid "Login"
 msgstr "Logga in"
 
-#: app/templates/menu.html:21
+#: app/templates/menu.html:18
 msgid "Menu"
 msgstr "Menyn"
 
@@ -105,7 +101,7 @@ msgstr "Lösenordet matchar inte!"
 msgid "Popular Tags"
 msgstr "Populära Taggar"
 
-#: app/templates/menu.html:46
+#: app/templates/menu.html:43
 msgid "Post"
 msgstr "Inlägg"
 
@@ -113,11 +109,11 @@ msgstr "Inlägg"
 msgid "Real Name"
 msgstr "Riktiga namn"
 
-#: app/templates/account/register.html:31 app/templates/menu.html:64
+#: app/templates/account/register.html:31 app/templates/menu.html:61
 msgid "Register &amp; Join"
 msgstr "Registrera &amp; gå"
 
-#: app/templates/menu.html:50 app/templates/search/search.html:1
+#: app/templates/menu.html:47 app/templates/search/search.html:1
 msgid "Search"
 msgstr "Sök"
 
@@ -125,15 +121,15 @@ msgstr "Sök"
 msgid "Search..."
 msgstr "Sök..."
 
-#: app/templates/menu.html:60
+#: app/templates/menu.html:24 app/templates/menu.html:57
 msgid "Sign in"
 msgstr "Logga in"
 
-#: app/templates/menu.html:68
+#: app/templates/menu.html:65
 msgid "Sign out"
 msgstr "Logga ut"
 
-#: app/templates/item/item_post.html:37 app/templates/menu.html:54
+#: app/templates/item/item_post.html:37 app/templates/menu.html:51
 msgid "Tags"
 msgstr "Taggar"
 
@@ -169,7 +165,7 @@ msgstr "Titeln är för lång."
 msgid "Title is too short."
 msgstr "Titeln är för kort."
 
-#: app/templates/menu.html:38
+#: app/templates/menu.html:35
 msgid "Tiwun"
 msgstr "Tiwun"
 

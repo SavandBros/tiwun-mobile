@@ -1,10 +1,10 @@
-# Translators:
+# 
 # Translators:
 # Alireza Savand <alireza.savand@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Tiwun Mobile\n"
-"PO-Revision-Date: 2015-05-20 23:40+0000\n"
+"PO-Revision-Date: 2015-05-21 15:57+0000\n"
 "Last-Translator: Alireza Savand <alireza.savand@gmail.com>\n"
 "Language-Team: Portuguese (http://www.transifex.com/projects/p/tiwun-mobile/language/pt/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -12,17 +12,13 @@ msgstr ""
 "Language: pt\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: app/templates/menu.html:57
+#: app/templates/menu.html:54
 msgid "Account"
 msgstr "Conta"
 
 #: app/templates/item/single_item.html:31
 msgid "ago"
 msgstr "Há"
-
-#: app/templates/menu.html:5
-msgid "Back"
-msgstr "Voltar"
 
 #: app/templates/item/directives/item_directive.html:6
 msgid "by"
@@ -63,7 +59,7 @@ msgstr "Descrição é demasiado curta."
 msgid "Email"
 msgstr "Email"
 
-#: app/templates/explore.html:1 app/templates/menu.html:42
+#: app/templates/explore.html:1 app/templates/menu.html:39
 msgid "Explore"
 msgstr "Explorar"
 
@@ -71,7 +67,7 @@ msgstr "Explorar"
 msgid "Joined Date"
 msgstr "Juntou-se a data"
 
-#: app/templates/menu.html:74
+#: app/templates/menu.html:71
 msgid "Language"
 msgstr "Língua"
 
@@ -83,7 +79,7 @@ msgstr "Localização"
 msgid "Login"
 msgstr "Login"
 
-#: app/templates/menu.html:21
+#: app/templates/menu.html:18
 msgid "Menu"
 msgstr "Menu"
 
@@ -105,7 +101,7 @@ msgstr "Não corresponde a senha!"
 msgid "Popular Tags"
 msgstr "Tags populares"
 
-#: app/templates/menu.html:46
+#: app/templates/menu.html:43
 msgid "Post"
 msgstr "Postar"
 
@@ -113,11 +109,11 @@ msgstr "Postar"
 msgid "Real Name"
 msgstr "Nome real"
 
-#: app/templates/account/register.html:31 app/templates/menu.html:64
+#: app/templates/account/register.html:31 app/templates/menu.html:61
 msgid "Register &amp; Join"
 msgstr "Registo &amp; junção"
 
-#: app/templates/menu.html:50 app/templates/search/search.html:1
+#: app/templates/menu.html:47 app/templates/search/search.html:1
 msgid "Search"
 msgstr "Pesquisa"
 
@@ -125,15 +121,15 @@ msgstr "Pesquisa"
 msgid "Search..."
 msgstr "Busca..."
 
-#: app/templates/menu.html:60
+#: app/templates/menu.html:24 app/templates/menu.html:57
 msgid "Sign in"
 msgstr "Entrar"
 
-#: app/templates/menu.html:68
+#: app/templates/menu.html:65
 msgid "Sign out"
 msgstr "Cadastre-se para fora"
 
-#: app/templates/item/item_post.html:37 app/templates/menu.html:54
+#: app/templates/item/item_post.html:37 app/templates/menu.html:51
 msgid "Tags"
 msgstr "Tags"
 
@@ -169,7 +165,7 @@ msgstr "Título é muito longo."
 msgid "Title is too short."
 msgstr "Título é muito curto."
 
-#: app/templates/menu.html:38
+#: app/templates/menu.html:35
 msgid "Tiwun"
 msgstr "Tiwun"
 

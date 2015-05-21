@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Tiwun Mobile\n"
-"PO-Revision-Date: 2015-05-20 23:26+0000\n"
+"PO-Revision-Date: 2015-05-21 15:57+0000\n"
 "Last-Translator: Alireza Savand <alireza.savand@gmail.com>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/tiwun-mobile/language/ja/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,18 +20,6 @@ msgstr "、"
 msgid "an"
 msgstr "、"
 
-#: app/scripts/basement/controllers/menu_controller.js:20
-msgid "Arabic"
-msgstr "アラビア語"
-
-#: app/scripts/basement/controllers/menu_controller.js:21
-msgid "Catalan"
-msgstr "カタロニア語"
-
-#: app/scripts/basement/controllers/menu_controller.js:22
-msgid "Danish"
-msgstr "デンマーク語"
-
 #: app/scripts/basement/filters/timesince.js:24
 msgid "day"
 msgstr "日"
@@ -40,22 +28,6 @@ msgstr "日"
 msgid "days"
 msgstr "日"
 
-#: app/scripts/basement/controllers/menu_controller.js:24
-msgid "English"
-msgstr "英語"
-
-#: app/scripts/basement/controllers/menu_controller.js:26
-msgid "French"
-msgstr "フランス語"
-
-#: app/scripts/basement/controllers/menu_controller.js:23
-msgid "German"
-msgstr "ドイツ語"
-
-#: app/scripts/basement/controllers/menu_controller.js:27
-msgid "Hindi"
-msgstr "ヒンディー語"
-
 #: app/scripts/basement/filters/timesince.js:29
 msgid "hour"
 msgstr "時間"
@@ -63,14 +35,6 @@ msgstr "時間"
 #: app/scripts/basement/filters/timesince.js:30
 msgid "hours"
 msgstr "時間"
-
-#: app/scripts/basement/controllers/menu_controller.js:28
-msgid "Italian"
-msgstr "イタリア語"
-
-#: app/scripts/basement/controllers/menu_controller.js:29
-msgid "Japanese"
-msgstr "日本語"
 
 #: app/scripts/basement/filters/timesince.js:45
 msgid "less than a"
@@ -92,37 +56,9 @@ msgstr "1 ヶ月"
 msgid "months"
 msgstr "ヶ月"
 
-#: app/scripts/basement/controllers/menu_controller.js:25
-msgid "Persian"
-msgstr "ペルシャ語"
-
-#: app/scripts/basement/controllers/menu_controller.js:30
-msgid "Portuguese"
-msgstr "ポルトガル語"
-
-#: app/scripts/basement/controllers/menu_controller.js:31
-msgid "Russian"
-msgstr "ロシア語"
-
-#: app/scripts/basement/controllers/menu_controller.js:32
-msgid "Swedish"
-msgstr "スウェーデン語"
-
-#: app/scripts/basement/controllers/menu_controller.js:33
-msgid "Thai"
-msgstr "タイ語"
-
 #: app/scripts/basement/services/toast_service.js:34
 msgid "There was a problem..."
 msgstr "問題があった."
-
-#: app/scripts/basement/controllers/menu_controller.js:34
-msgid "Turkish"
-msgstr "トルコ語"
-
-#: app/scripts/basement/controllers/menu_controller.js:35
-msgid "Urdu"
-msgstr "ウルドゥ語"
 
 #: app/scripts/basement/filters/timesince.js:14
 msgid "year"

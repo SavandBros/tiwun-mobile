@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Tiwun Mobile\n"
-"PO-Revision-Date: 2015-05-20 23:23+0000\n"
+"PO-Revision-Date: 2015-05-21 15:57+0000\n"
 "Last-Translator: Alireza Savand <alireza.savand@gmail.com>\n"
 "Language-Team: French (http://www.transifex.com/projects/p/tiwun-mobile/language/fr/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,18 +20,6 @@ msgstr "un"
 msgid "an"
 msgstr "un"
 
-#: app/scripts/basement/controllers/menu_controller.js:20
-msgid "Arabic"
-msgstr "Arabe"
-
-#: app/scripts/basement/controllers/menu_controller.js:21
-msgid "Catalan"
-msgstr "Catalan"
-
-#: app/scripts/basement/controllers/menu_controller.js:22
-msgid "Danish"
-msgstr "Danois"
-
 #: app/scripts/basement/filters/timesince.js:24
 msgid "day"
 msgstr "Journée"
@@ -40,22 +28,6 @@ msgstr "Journée"
 msgid "days"
 msgstr "jours"
 
-#: app/scripts/basement/controllers/menu_controller.js:24
-msgid "English"
-msgstr "Anglais"
-
-#: app/scripts/basement/controllers/menu_controller.js:26
-msgid "French"
-msgstr "Français"
-
-#: app/scripts/basement/controllers/menu_controller.js:23
-msgid "German"
-msgstr "Allemand"
-
-#: app/scripts/basement/controllers/menu_controller.js:27
-msgid "Hindi"
-msgstr "Hindi"
-
 #: app/scripts/basement/filters/timesince.js:29
 msgid "hour"
 msgstr "heure"
@@ -63,14 +35,6 @@ msgstr "heure"
 #: app/scripts/basement/filters/timesince.js:30
 msgid "hours"
 msgstr "heures"
-
-#: app/scripts/basement/controllers/menu_controller.js:28
-msgid "Italian"
-msgstr "Italien"
-
-#: app/scripts/basement/controllers/menu_controller.js:29
-msgid "Japanese"
-msgstr "Japonais"
 
 #: app/scripts/basement/filters/timesince.js:45
 msgid "less than a"
@@ -92,37 +56,9 @@ msgstr "mois"
 msgid "months"
 msgstr "mois"
 
-#: app/scripts/basement/controllers/menu_controller.js:25
-msgid "Persian"
-msgstr "Perse"
-
-#: app/scripts/basement/controllers/menu_controller.js:30
-msgid "Portuguese"
-msgstr "Portugais"
-
-#: app/scripts/basement/controllers/menu_controller.js:31
-msgid "Russian"
-msgstr "Russe"
-
-#: app/scripts/basement/controllers/menu_controller.js:32
-msgid "Swedish"
-msgstr "Suédois"
-
-#: app/scripts/basement/controllers/menu_controller.js:33
-msgid "Thai"
-msgstr "Thaï"
-
 #: app/scripts/basement/services/toast_service.js:34
 msgid "There was a problem..."
 msgstr "Il y avait un problème..."
-
-#: app/scripts/basement/controllers/menu_controller.js:34
-msgid "Turkish"
-msgstr "Turc"
-
-#: app/scripts/basement/controllers/menu_controller.js:35
-msgid "Urdu"
-msgstr "Urdu"
 
 #: app/scripts/basement/filters/timesince.js:14
 msgid "year"
