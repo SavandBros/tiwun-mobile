@@ -13,6 +13,7 @@
  * @param {Object} $state
  * @param {Object} $ionicScrollDelegate
  * @param {Object} $log
+ * @param {Object} $ionicSlideBoxDelegate
  * @param {Object} gettextCatalog
  * @param {ToastService} ToastService
  * @param {ItemService} ItemService
@@ -22,7 +23,7 @@
  *
  **/
 function SingleItemController($scope, $stateParams, $ionicHistory, $state, $ionicScrollDelegate,
-    $log, gettextCatalog, ToastService, ItemService, CommentService, VoteService, AuthenticationService) {
+    $log, $ionicSlideBoxDelegate, gettextCatalog, ToastService, ItemService, CommentService, VoteService, AuthenticationService) {
     $scope.auth = AuthenticationService;
     $scope.user = $scope.auth.getAuthenticatedUser();
 
@@ -101,6 +102,8 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, $ioni
                 }
             );
         }
+
+        $ionicSlideBoxDelegate.$getByHandle('image-viewer').update();
     });
 
     /**
@@ -186,7 +189,7 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, $ioni
         if (!AuthenticationService.isAuthenticated()) {
             $state.go('app.login');
         }
-    }
+    };
 }
 
 
@@ -206,6 +209,7 @@ SingleItemController.$inject = [
     '$state',
     '$ionicScrollDelegate',
     '$log',
+    '$ionicSlideBoxDelegate',
     'gettextCatalog',
     'ToastService',
     'ItemService',
