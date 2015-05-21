@@ -11,10 +11,11 @@ function ItemDirective() {
         restrict: 'E',
         scope: {
             item: '=',
-            image: '='
+            image: '=',
+            upVote: '&',
+            downVote: '&'
         },
         templateUrl: 'templates/item/directives/item_directive.html'
-
     }
 }
 
