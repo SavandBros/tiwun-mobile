@@ -1,27 +1,3 @@
-.ng-valid {
-}
-
-.ng-invalid {
-    background: red;
-    color: white;
-}
-
-.ng-pristine {
-}
-
-.ng-dirty {
-}
-
-/* really specific css rules applied by angular */
-.ng-invalid-required {
-}
-
-.ng-invalid-minlength {
-}
-
-.ng-valid-max-length {
-}
-
 a {
     text-decoration: none !important;
 }
