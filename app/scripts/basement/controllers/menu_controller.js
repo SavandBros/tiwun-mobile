@@ -11,28 +11,28 @@
  * @param {Object} gettextCatalog
  * @param {AuthenticationService} AuthenticationService
  */
-function MenuController($window, $scope, gettextCatalog, AuthenticationService) {
+function MenuController($window, $scope, gettext, gettextCatalog, AuthenticationService) {
     $scope.auth = AuthenticationService;
     $scope.user = AuthenticationService.getAuthenticatedUser();
     $scope.defaultTranslation = $window.localStorage.getItem('translation');
 
     $scope.translations = {
-        ar: gettextCatalog.getString('Arabic'),
-        ca: gettextCatalog.getString('Catalan'),
-        da: gettextCatalog.getString('Danish'),
-        de: gettextCatalog.getString('German'),
-        en: gettextCatalog.getString('English'),
-        fa: gettextCatalog.getString('Persian'),
-        fr: gettextCatalog.getString('French'),
-        hi: gettextCatalog.getString('Hindi'),
-        it: gettextCatalog.getString('Italian'),
-        ja: gettextCatalog.getString('Japanese'),
-        pt: gettextCatalog.getString('Portuguese'),
-        ru: gettextCatalog.getString('Russian'),
-        sv: gettextCatalog.getString('Swedish'),
-        th: gettextCatalog.getString('Thai'),
-        tr: gettextCatalog.getString('Turkish'),
-        ur: gettextCatalog.getString('Urdu')
+        ar: 'العربية',
+        ca: 'Català',
+        da: 'dansk',
+        de: 'Deutsch',
+        en: 'English',
+        fa: 'فارسی',
+        fr: 'Français',
+        hi: 'हिंदी',
+        it: 'Italiano',
+        ja: '日本語',
+        pt: 'Português',
+        ru: 'русский',
+        sv: 'Svenska',
+        th: 'ไทย',
+        tr: 'Türkçe',
+        ur: 'اردو'
     };
 
     $scope.$on('tiwun.account.service.AuthenticationService:SignedOut', function() {
@@ -52,4 +52,4 @@ angular.module('tiwun.basement.controllers.MenuController', [
     ])
     .controller('MenuController', MenuController);
 
-MenuController.$inject = ['$window', '$scope', 'gettextCatalog', 'AuthenticationService'];
+MenuController.$inject = ['$window', '$scope', 'gettext', 'gettextCatalog', 'AuthenticationService'];
