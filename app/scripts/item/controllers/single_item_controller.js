@@ -38,9 +38,11 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, $ioni
             function(data, status, headers, config) {
                 $scope.context = data.data;
                 $scope.item = $scope.context.item;
-
+                $scope.item.userVote = {
+                    upVote: false,
+                    downVote: false
+                };
                 $scope.$broadcast('itemLoaded');
-
             },
             function(data, status, headers, config) {
                 $log.error('Error on receiving item');
@@ -62,13 +64,9 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, $ioni
      */
     function updateItemVote(data) {
         if (data.vote_type === VoteService.voteTypes.up) {
-            $scope.item.userVote = {
-                upVote: true
-            }
-        } else {
-            $scope.item.userVote = {
-                downVote: true
-            };
+            $scope.item.userVote.upVote = true;
+        } else if (data.vote_type === VoteService.voteTypes.down) {
+            $scope.item.userVote.downVote = true;
         }
     }
 

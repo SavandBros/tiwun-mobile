@@ -22,14 +22,11 @@ function IndexController($scope, $state, $log, ToastService, AuthenticationServi
      * @memberOf tiwun.item.controllers.SingleItemController
      */
     function updateItemVote(data, item) {
+        item.userVote = {};
         if (data.vote_type === VoteService.voteTypes.up) {
-            item.userVote = {
-                upVote: true
-            }
-        } else {
-            item.userVote = {
-                downVote: true
-            };
+            item.userVote.upVote = true;
+        } else if (data.vote_type === VoteService.voteTypes.down) {
+            item.userVote.downVote = true;
         }
     }
 
