@@ -5,15 +5,16 @@
  * Search Controller
  *
  * @class SearchController
- * @param {SearchService} SearchService
  * @param $scope
  * @param $log
+ * @param {SearchService} SearchService
  * @namespace tiwun.search.controllers.SearchController
  */
 function SearchController($scope, $log, SearchService) {
     var pageHasNext = true;
     var pageNumber = 0;
     var searchQuery;
+    $scope.shouldSpin = false;
     $scope.items = [];
 
     /**
@@ -27,17 +28,20 @@ function SearchController($scope, $log, SearchService) {
     $scope.search = function(form, query) {
         pageNumber = 1;
         searchQuery = query;
+        $scope.shouldSpin = true;
 
         SearchService.search(query, pageNumber).then(
             function(data, status, headers, config) {
                 $scope.items = data.data.classifies;
                 $scope.pageHasNext = data.data.page_has_next;
+                $scope.shouldSpin = false;
             },
             function(data, status, headers, config) {
                 $log.error("Error in search: " + data.data.error);
             }
         );
     };
+
 
     /**
      * Load More

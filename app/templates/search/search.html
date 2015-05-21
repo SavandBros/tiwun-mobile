@@ -7,6 +7,7 @@
                 </label>
             </div>
         </form>
+        <center><ion-spinner icon="lines" ng-show="shouldSpin"></ion-spinner></center>
 
         <div class="list card" ng-repeat="item in items">
             <item item="item" image="'single'"></item>
