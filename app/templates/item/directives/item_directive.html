@@ -3,7 +3,7 @@
 
     <h2><a href="#!/app/items/{{ item.pk }}/">{{ item.title }}</a></h2>
 
-    <p>{{ item.created | timesince }} <translate>by</translate>: <a href="#!/app/account/user-profile/{{ item.user_id }}/">{{ item.user_name }}</a></p>
+    <p>{{ item.created | date }} &nbsp;<translate>by</translate>: <a href="#!/app/account/user-profile/{{ item.user_id }}/">{{ item.user_name }}</a></p>
 </div>
 
 <div class="item" style="padding: 8px 15px">
