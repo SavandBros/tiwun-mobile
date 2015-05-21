@@ -16,7 +16,7 @@
 
     <ion-slide-box on-slide-changed="slideHasChanged($index)" ng-if="image === 'multi'">
         <ion-slide ng-repeat="img in item.images">
-            <img ng-dblclick="upVote()" class="full-image" ng-src="{{ img.standard }}" />
+            <img ng-dblclick="upVote(item)" ng-src="{{ img.standard }}" />
         </ion-slide>
     </ion-slide-box>
 
@@ -27,10 +27,10 @@
 </div>
 
 <div class="item tabs tabs-secondary tabs-icon-left bg-e">
-    <div class="tab-item" ng-class="{'assertive': item.userVote.upVote}" ng-click="upVote()">
+    <div class="tab-item" ng-class="{'assertive': item.userVote.upVote}" ng-click="upVote(item)">
         <i class="icon ion-chevron-up"></i>
     </div>
-    <div class="tab-item" ng-class="{'assertive': item.userVote.downVote}" ng-click="downVote()">
+    <div class="tab-item" ng-class="{'assertive': item.userVote.downVote}" ng-click="downVote(item)">
         <i class="icon ion-chevron-down"></i>
     </div>
     <div class="tab-item">

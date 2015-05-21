@@ -133,16 +133,17 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, $ioni
     /**
      * Up vote for the current item in the single item page.
      *
+     * @param {Object} item
      * @method upVote
      * @memberOf tiwun.item.controllers.SingleItemController
      */
-    $scope.upVote = function() {
+    $scope.upVote = function(item) {
         if (!AuthenticationService.isAuthenticated()) {
             $state.go('app.login');
             return;
         }
 
-        VoteService.upVote(VoteService.objectTypes.item, $scope.item.pk, $scope.user.pk).then(
+        VoteService.upVote(VoteService.objectTypes.item, item.pk, $scope.user.pk).then(
             function(data, status, headers, config) {
                 updateItemVote(data.data.vote);
             },
@@ -154,17 +155,17 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, $ioni
 
     /**
      * Down vote for the current item in the single item page.
-     *
+     * @param {Object} item
      * @method downVote
      * @memberOf tiwun.item.controllers.SingleItemController
      */
-    $scope.downVote = function() {
+    $scope.downVote = function(item) {
         if (!AuthenticationService.isAuthenticated()) {
             $state.go('app.login');
             return;
         }
 
-        VoteService.downVote(VoteService.objectTypes.item, $scope.item.pk, $scope.user.pk).then(
+        VoteService.downVote(VoteService.objectTypes.item, item.pk, $scope.user.pk).then(
             function(data, status, headers, config) {
                 updateItemVote(data.data.vote);
             },
