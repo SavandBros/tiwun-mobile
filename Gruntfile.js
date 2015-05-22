@@ -50,6 +50,12 @@ module.exports = function(grunt) {
                     '-storepass <%= yeoman.keyStorePass %>',
                     'adb install -r <%= yeoman.androidPkgRelease %>'
                 ].join('&&')
+            },
+            gitPush: {
+                command: 'git push origin master'
+            },
+            gitPull: {
+                command: 'git pull origin master'
             }
         },
 
