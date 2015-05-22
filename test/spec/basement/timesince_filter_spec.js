@@ -1,9 +1,9 @@
 'use strict';
 
-describe('Test time since filter', function () {
+describe('tiwun.basement.filters.TimeSinceFilter', function () {
     var filter;
 
-    beforeEach(module('tiwun.basement.filters.timesinceFilter'));
+    beforeEach(module('tiwun.basement.filters.TimeSinceFilter', 'gettext'));
 
     beforeEach(inject(function ($filter) {
         filter = $filter('timesince');

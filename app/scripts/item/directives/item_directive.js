@@ -19,5 +19,5 @@ function ItemDirective() {
     }
 }
 
-angular.module('tiwun.item.directives.ItemDirective')
+angular.module('tiwun.item.directives.ItemDirective', [])
     .directive('item', ItemDirective);
