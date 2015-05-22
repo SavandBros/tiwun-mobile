@@ -31,7 +31,26 @@ module.exports = function(grunt) {
             styles: 'styles',
             images: 'images',
             test: 'test',
-            dist: 'www'
+            dist: 'www',
+            keyStorePath: process.env.TIWUN_MOBILE_KEY_STORE_PATH,
+            keyStoreAlias: process.env.TIWUN_MOBILE_KEY_STORE_ALIAS,
+            keyStorePass: process.env.TIWUN_MOBILE_KEY_STORE_PASS,
+            androidPkgRelease: './platforms/android/build/outputs/apk/android-release-unsigned.apk'
+        },
+
+        shell: {
+            deployDevice: {
+                command: [
+                    'grunt compress',
+                    'cordova build --release',
+                    'jarsigner -digestalg SHA1 ' +
+                    '-keystore <%= yeoman.keyStorePath %> ' +
+                    '<%= yeoman.androidPkgRelease %> ' +
+                    '<%= yeoman.keyStoreAlias %> ' +
+                    '-storepass <%= yeoman.keyStorePass %>',
+                    'adb install -r <%= yeoman.androidPkgRelease %>'
+                ].join('&&')
+            }
         },
 
         nggettext_extract: {
