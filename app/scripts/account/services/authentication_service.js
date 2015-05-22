@@ -108,19 +108,7 @@ function AuthenticationService($rootScope, $http, $log, $window, ENV) {
         return $http.post(ENV.apiEndpoint + 'users/login/', {
             email: email,
             password: password
-        }).then(
-            // Set the authenticated account and redirect to index
-            function(data, status, headers, config) {
-                setAuthenticatedUser(data.data.user);
-                setToken(data.data.token);
-
-                $rootScope.$broadcast('tiwun.account.service.AuthenticationService:Authenticated');
-            },
-            // Log "Epic failure!" to the console
-            function(data, status, headers, config) {
-                $log.error(data.error);
-            }
-        );
+        });
     }
 
     /**

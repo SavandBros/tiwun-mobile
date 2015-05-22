@@ -7,7 +7,8 @@
  * @class LoginController
  * @namespace tiwun.account.controllers.LoginController
  */
-function LoginController($window, $state, $scope, AuthenticationService) {
+function LoginController($window, $log, $state, $rootScope, $scope, AuthenticationService) {
+    $scope.formSubmitted = false;
     /**
      * Actions to be performed when this controller is instantiated
      *
@@ -37,7 +38,27 @@ function LoginController($window, $state, $scope, AuthenticationService) {
      * @memberOf tiwun.account.controllers.LoginController
      */
     $scope.login = function(form, user) {
-        AuthenticationService.login(user.email, user.password);
+        $scope.formSubmitted = true;
+
+        if (form.$valid) {
+            AuthenticationService.login(user.email, user.password).then(
+                function(data, status, headers, config) {
+                    $log.info('Success login');
+
+                    AuthenticationService.setAuthenticatedUser(data.data.user);
+                    AuthenticationService.setToken(data.data.token);
+
+                    $rootScope.$broadcast('tiwun.account.service.AuthenticationService:Authenticated');
+                },
+                function(data, status, headers, config) {
+                    $log.error('Authentication Failure.');
+                    if (data.data.error_code === 0) {
+                        $log.debug('Wrong Credentials.');
+                        $scope.wrongCredentials = true;
+                    }
+                }
+            );
+        }
     };
 }
 
@@ -46,4 +67,4 @@ angular.module('tiwun.account.controllers.LoginController', [
     ])
     .controller('LoginController', LoginController);
 
-LoginController.$inject = ['$window', '$state', '$scope', 'AuthenticationService'];
+LoginController.$inject = ['$window', '$log', '$state', '$rootScope', '$scope', 'AuthenticationService'];

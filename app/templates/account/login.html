@@ -2,14 +2,36 @@
     <ion-content>
         <form name="form" ng-submit="login(form, user)">
             <div class="list">
-                <label class="item item-input item-floating-label">
+                <label class="item item-input
+                    item-floating-label"
+                       ng-class="{ 'has-error' : form.email.$invalid && !form.email.$pristine  && formSubmitted }" >
                     <span class="input-label" translate>Email</span>
-                    <input type="email" placeholder="{{ 'Email'|translate }}" name="email" ng-model="user.email" required/>
+                    <input type="email"
+                           placeholder="{{ 'Email'|translate }}"
+                           name="email"
+                           ng-model="user.email"
+                           ng-required="true"
+                           required/>
                 </label>
-                <label class="item item-input item-floating-label">
+                <label class="item item-input item-floating-label"
+                       ng-class="{ 'has-error' : form.password.$invalid && !form.password.$pristine  && formSubmitted }" >
                     <span class="input-label" translate>Password</span>
-                    <input type="password" placeholder="{{ 'Password'|translate }}" name="password" ng-model="user.password" required/>
+                    <input type="password"
+                           placeholder="{{ 'Password'|translate }}"
+                           name="password"
+                           ng-model="user.password"
+                           ng-required="true"
+                           required/>
                 </label>
+
+                <div class="list faded-light">
+                    <br>
+                    <p class="item item-error bar bar-assertive"
+                       ng-show="wrongCredentials && formSubmitted">
+                        <i class="icon icon-error-bg ion-information-circled"></i> <translate>Email or Password is wrong.</translate>
+                    </p>
+
+                </div>
 
             </div>
             <button type="submit" class="button button-full button-positive">
