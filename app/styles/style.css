@@ -112,3 +112,7 @@ b {
     font-weight: bold;
     display: block;
 }
+
+.bold {
+    font-weight: bold;
+}
