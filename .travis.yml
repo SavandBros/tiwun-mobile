@@ -5,9 +5,9 @@ node_js:
   - '0.10'
 
 install:
-    - npm install -g bower grunt grunt-cli
+    - npm install -g bower grunt grunt-cli ionic cordova
     - npm install
     - bower install
 
-scripts:
+script:
     grunt karma
