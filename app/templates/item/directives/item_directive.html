@@ -6,9 +6,9 @@
     <p>{{ item.created | date }} &nbsp;<translate>by</translate>: <a href="#!/app/account/user-profile/{{ item.user_id }}/">{{ item.user_name }}</a></p>
 </div>
 
-<div class="item" style="padding: 8px 15px">
-    <b class="offer">{{ item.discount_percentage }}% <small translate>OFF</small></b>
-    <s class="small faded-light"><translate>was</translate> {{ item.get_compare_at_price_display }}</s>
+<div class="item" style="padding: 8px 15px" ng-if="item.has_price">
+    <b class="offer" ng-if="item.has_compare_price">{{ item.discount_percentage }}% <small translate>OFF</small></b>
+    <s class="small faded-light" ng-if="item.has_compare_price"><translate>was</translate> {{ item.get_compare_at_price_display }}</s>
     <b class="right assertive">{{ item.get_price_display }}</b>
 </div>
 
@@ -23,7 +23,6 @@
     <img class="full-image" ng-src="{{ item.get_primary_image.standard }}" ng-if="image === 'single'">
 
     <p>{{ item.description | markdown | stripTags }}</p>
-
 </div>
 
 <div class="item tabs tabs-secondary tabs-icon-left bg-e">
@@ -33,7 +32,7 @@
     <div class="tab-item" ng-class="{'assertive': item.userVote.downVote}" ng-click="downVote(item)">
         <i class="icon ion-chevron-down"></i>
     </div>
-    <div class="tab-item">
-        <i class="icon ion-android-share-alt"></i>
-    </div>
+    <a class="tab-item positive bold" href="{{ item.external_url }}" ng-if="image === 'multi' && item.external_url.length > 0">
+        <i class="icon ion-eye"></i> Visit
+    </a>
 </div>

@@ -1,5 +1,6 @@
 <ion-view view-title="{{ 'Search'|translate }}">
     <ion-content>
+
         <form name="form" ng-submit="search(form, query)">
             <div class="bar item-input-inset">
                 <label class="item-input-stacked">
@@ -7,10 +8,24 @@
                 </label>
             </div>
         </form>
+
         <center><ion-spinner icon="lines" ng-show="shouldSpin"></ion-spinner></center>
 
         <div class="list card" ng-repeat="item in items">
-            <item item="item" image="'single'"></item>
+            <div class="item item-divider">
+                <h2>{{ item.title }}</h2>
+            </div>
+            <div class="item item-text-wrap">
+                <a class="item item-thumbnail-left" href="#!/app/items/{{ item.pk }}/">
+                    <img ng-src="{{ item.get_primary_image.thumbnail }}">
+                    <p>{{ item.description | markdown | stripTags | truncate: 140: '...': true }}</p>
+                </a>
+            </div>
+            <div class="item item-divider" ng-if="item.has_price">
+                <b class="offer" ng-if="item.has_compare_price">{{ item.discount_percentage }}% <small translate>OFF</small></b>
+                <s class="small faded-light" ng-if="item.has_compare_price"><translate>was</translate> {{ item.get_compare_at_price_display }}</s>
+                <b class="right assertive">{{ item.get_price_display }}</b>
+            </div>
         </div>
 
         <ion-infinite-scroll
