@@ -76,6 +76,6 @@ function TimeSinceFilter(gettextCatalog) {
 }
 
 angular.module('tiwun.basement.filters.TimeSinceFilter', [])
-    .filter('timesince',  TimeSinceFilter);
+    .filter('timesince', TimeSinceFilter);
 
 TimeSinceFilter.$inject = ['gettextCatalog'];
