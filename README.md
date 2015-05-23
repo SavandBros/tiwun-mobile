@@ -1,5 +1,7 @@
 # Tiwun Mobile Application
 
+[![Build Status](https://travis-ci.org/SavandBros/tiwun-mobile.svg?branch=master)](https://travis-ci.org/SavandBros/tiwun-mobile)
+
 ## Overview
 
 Tiwun.com mobile application written in ionic & AngularJS.
