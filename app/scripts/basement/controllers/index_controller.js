@@ -2,10 +2,38 @@
 'use strict';
 
 /**
+ * Index Controller
+ *
+ * @param $scope
+ * @param $state
+ * @param $log
+ * @param gettext
+ * @param AuthenticationService
+ * @param ItemService
+ * @param VoteService
  * @class IndexController
  * @namespace tiwun.basement.controllers.IndexController
  */
-function IndexController($scope, $state, $log, ToastService, AuthenticationService, ItemService, VoteService) {
+function IndexController($scope, $state, $log, gettext, AuthenticationService, ItemService, VoteService) {
+    $scope.itemKinds = {
+        itemKindHottest: {
+            text: gettext('Hottest'),
+            icon: 'fireball',
+            apiPostfix: 'index/'
+        },
+        itemKindNewest: {
+            text: gettext('Newest'),
+            icon: 'stats-bars',
+            apiPostfix: 'free-items/'
+        },
+        itemKindFree: {
+            text: gettext('Free'),
+            icon: 'social-usd-outline',
+            apiPostfix: 'newest-items/'
+        }
+    };
+    $scope.currentItemKind = $scope.itemKinds.itemKindHottest;
+
     $scope.isAuthenticated = AuthenticationService.isAuthenticated();
     $scope.items = [];
     $scope.pageHasNext = true;
@@ -37,7 +65,7 @@ function IndexController($scope, $state, $log, ToastService, AuthenticationServi
      * @memberOf tiwun.basement.controllers.IndexController
      */
     $scope.loadMore = function() {
-        ItemService.all(++$scope.pageCounter).then(
+        ItemService.all(++$scope.pageCounter, null, $scope.currentItemKind.apiPostfix).then(
             function(data, status, headers, config) {
                 $scope.items = $scope.items.concat(data.data.classifies);
                 $scope.pageHasNext = data.data.page_has_next;
@@ -119,6 +147,25 @@ function IndexController($scope, $state, $log, ToastService, AuthenticationServi
             }
         )
     };
+
+    /**
+     * setItemKind
+     * Set Item Kind ;)
+     *
+     * @method setItemKind
+     * @param {String|Object} itemKind
+     * @memberOf tiwun.item.controllers.SingleItemController
+     */
+    $scope.setItemKind = function(itemKind) {
+        if ($scope.itemKinds[itemKind] === $scope.currentItemKind) {
+            return;
+        }
+
+        $scope.currentItemKind = $scope.itemKinds[itemKind];
+        $scope.pageHasNext = false;
+        $scope.items = [];
+        $scope.loadMore();
+    }
 }
 
 angular.module('tiwun.basement.controllers.IndexController', [
@@ -129,4 +176,12 @@ angular.module('tiwun.basement.controllers.IndexController', [
     ])
     .controller('IndexController', IndexController);
 
-IndexController.$inject = ['$scope', '$state', '$log', 'ToastService', 'AuthenticationService', 'ItemService', 'VoteService'];
+IndexController.$inject = [
+    '$scope',
+    '$state',
+    '$log',
+    'gettext',
+    'AuthenticationService',
+    'ItemService',
+    'VoteService'
+];

@@ -2,6 +2,7 @@
 ==============
 * Feature #28: Add `ChangeLog.md` file.
 * Feature #27: Remove splash screen, people gonna hate it.
+* Feature #26: Newest, free items should be added to Explore as tabs.
 
 
 0.0.1 - 2015-05-23

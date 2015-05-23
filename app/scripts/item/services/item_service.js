@@ -24,18 +24,26 @@ function ItemService($http, gettext, ENV) {
      * @desc Get all Items
      * @param {Number} pageNumber
      * @param {Number} queryFilter
+     * @param {Object} itemKind
      * @returns {Promise}
      * @memberOf tiwun.item.services.ItemService
      */
-    function all(pageNumber, queryFilter) {
-        return $http.get(
-            ENV.apiEndpoint + 'index/', {
-                params: {
-                    page: pageNumber,
-                    filter: queryFilter
-                }
-            }
-        );
+    function all(pageNumber, queryFilter, itemKind) {
+        itemKind = itemKind || '';
+        var params = {};
+
+        if (queryFilter) {
+            params.filter = queryFilter;
+        }
+
+        if (pageNumber) {
+            params.page = pageNumber;
+        }
+        console.log(params);
+
+        return $http.get(ENV.apiEndpoint + itemKind, {
+            params: params
+        });
     }
 
 
@@ -89,7 +97,7 @@ function ItemService($http, gettext, ENV) {
         return $http.get(ENV.apiEndpoint + 'items/' + id + '/');
     }
 
-    return  {
+    return {
         all: all,
         get: get,
         create: create,
@@ -101,4 +109,4 @@ function ItemService($http, gettext, ENV) {
 angular.module('tiwun.item.services.ItemService', [])
     .factory('ItemService', ItemService);
 
-ItemService.$inject = ['$http', 'ENV'];
+ItemService.$inject = ['$http', 'gettext', 'ENV'];
