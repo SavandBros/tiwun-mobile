@@ -17,7 +17,7 @@ msgstr ""
 msgid "Account"
 msgstr ""
 
-#: app/templates/item/single_item.html:31
+#: app/templates/item/single_item.html:32
 msgid "ago"
 msgstr ""
 
@@ -29,14 +29,17 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
-#: app/templates/item/single_item.html:11
-#: app/templates/item/single_item.html:13
+#: app/templates/item/single_item.html:15
 msgid "Comment..."
 msgstr ""
 
 #: app/templates/account/register.html:14
 #: app/templates/account/register.html:15
 msgid "Confirm Password"
+msgstr ""
+
+#: app/templates/item/item_post.html:1
+msgid "Create Item"
 msgstr ""
 
 #: app/templates/item/item_post.html:88
@@ -56,11 +59,15 @@ msgstr ""
 msgid "Description is too short."
 msgstr ""
 
-#: app/templates/account/login.html:6
-#: app/templates/account/login.html:7
+#: app/templates/account/login.html:10
+#: app/templates/account/login.html:8
 #: app/templates/account/register.html:6
 #: app/templates/account/register.html:7
 msgid "Email"
+msgstr ""
+
+#: app/templates/account/login.html:31
+msgid "Email or Password is wrong."
 msgstr ""
 
 #: app/templates/explore.html:1
@@ -80,7 +87,8 @@ msgstr ""
 msgid "Location"
 msgstr ""
 
-#: app/templates/account/login.html:16
+#: app/templates/account/login.html:1
+#: app/templates/account/login.html:38
 msgid "Login"
 msgstr ""
 
@@ -88,12 +96,17 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
+#: app/templates/search/search.html:35
+msgid "No result has been found :("
+msgstr ""
+
 #: app/templates/item/directives/item_directive.html:10
+#: app/templates/search/search.html:25
 msgid "OFF"
 msgstr ""
 
-#: app/templates/account/login.html:10
-#: app/templates/account/login.html:11
+#: app/templates/account/login.html:18
+#: app/templates/account/login.html:20
 #: app/templates/account/register.html:10
 #: app/templates/account/register.html:11
 msgid "Password"
@@ -115,6 +128,10 @@ msgstr ""
 msgid "Real Name"
 msgstr ""
 
+#: app/templates/account/register.html:1
+msgid "Register"
+msgstr ""
+
 #: app/templates/account/register.html:31
 #: app/templates/menu.html:61
 msgid "Register &amp; Join"
@@ -125,8 +142,12 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: app/templates/search/search.html:6
+#: app/templates/search/search.html:7
 msgid "Search..."
+msgstr ""
+
+#: app/templates/account/user_settings.html:1
+msgid "Settings"
 msgstr ""
 
 #: app/templates/menu.html:24
@@ -180,7 +201,12 @@ msgstr ""
 msgid "Tiwun"
 msgstr ""
 
+#: app/templates/item/directives/item_directive.html:36
+msgid "Visit"
+msgstr ""
+
 #: app/templates/item/directives/item_directive.html:11
+#: app/templates/search/search.html:26
 msgid "was"
 msgstr ""
 

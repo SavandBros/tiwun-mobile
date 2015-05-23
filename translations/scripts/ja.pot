@@ -12,47 +12,47 @@ msgstr ""
 "Language: ja\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: app/scripts/basement/filters/timesince.js:51
+#: app/scripts/basement/filters/timesince.js:63
 msgid "a"
 msgstr "、"
 
-#: app/scripts/basement/filters/timesince.js:50
+#: app/scripts/basement/filters/timesince.js:62
 msgid "an"
 msgstr "、"
 
-#: app/scripts/basement/filters/timesince.js:24
+#: app/scripts/basement/filters/timesince.js:36
 msgid "day"
 msgstr "日"
 
-#: app/scripts/basement/filters/timesince.js:25
+#: app/scripts/basement/filters/timesince.js:37
 msgid "days"
 msgstr "日"
 
-#: app/scripts/basement/filters/timesince.js:29
+#: app/scripts/basement/filters/timesince.js:41
 msgid "hour"
 msgstr "時間"
 
-#: app/scripts/basement/filters/timesince.js:30
+#: app/scripts/basement/filters/timesince.js:42
 msgid "hours"
 msgstr "時間"
 
-#: app/scripts/basement/filters/timesince.js:45
+#: app/scripts/basement/filters/timesince.js:57
 msgid "less than a"
 msgstr "未満"
 
-#: app/scripts/basement/filters/timesince.js:34
+#: app/scripts/basement/filters/timesince.js:46
 msgid "minute"
 msgstr "分"
 
-#: app/scripts/basement/filters/timesince.js:35
+#: app/scripts/basement/filters/timesince.js:47
 msgid "minutes"
 msgstr "分"
 
-#: app/scripts/basement/filters/timesince.js:19
+#: app/scripts/basement/filters/timesince.js:31
 msgid "month"
 msgstr "1 ヶ月"
 
-#: app/scripts/basement/filters/timesince.js:20
+#: app/scripts/basement/filters/timesince.js:32
 msgid "months"
 msgstr "ヶ月"
 
@@ -60,11 +60,11 @@ msgstr "ヶ月"
 msgid "There was a problem..."
 msgstr "問題があった."
 
-#: app/scripts/basement/filters/timesince.js:14
+#: app/scripts/basement/filters/timesince.js:26
 msgid "year"
 msgstr "年"
 
-#: app/scripts/basement/filters/timesince.js:15
+#: app/scripts/basement/filters/timesince.js:27
 msgid "years"
 msgstr "年"
 
@@ -72,6 +72,6 @@ msgstr "年"
 msgid "You are not authorized to access this page."
 msgstr "このページにアクセスする権限がありません。"
 
-#: app/scripts/item/controllers/single_item_controller.js:122
+#: app/scripts/item/controllers/single_item_controller.js:123
 msgid "Your comment has been posted successfully."
 msgstr "あなたのコメントを正常に掲載されています。"

@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Tiwun Mobile\n"
-"PO-Revision-Date: 2015-05-21 15:57+0000\n"
+"PO-Revision-Date: 2015-05-23 02:42+0000\n"
 "Last-Translator: Alireza Savand <alireza.savand@gmail.com>\n"
 "Language-Team: French (http://www.transifex.com/projects/p/tiwun-mobile/language/fr/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -16,7 +16,7 @@ msgstr ""
 msgid "Account"
 msgstr "Compte"
 
-#: app/templates/item/single_item.html:31
+#: app/templates/item/single_item.html:32
 msgid "ago"
 msgstr "Il y a"
 
@@ -28,8 +28,7 @@ msgstr "par"
 msgid "Cancel"
 msgstr "Annuler"
 
-#: app/templates/item/single_item.html:11
-#: app/templates/item/single_item.html:13
+#: app/templates/item/single_item.html:15
 msgid "Comment..."
 msgstr "Commentaire..."
 
@@ -37,6 +36,10 @@ msgstr "Commentaire..."
 #: app/templates/account/register.html:15
 msgid "Confirm Password"
 msgstr "Confirmer mot de passe"
+
+#: app/templates/item/item_post.html:1
+msgid "Create Item"
+msgstr "Créer point"
 
 #: app/templates/item/item_post.html:88
 msgid "Create Post"
@@ -54,10 +57,14 @@ msgstr "Description est requise."
 msgid "Description is too short."
 msgstr "Description est trop courte."
 
-#: app/templates/account/login.html:6 app/templates/account/login.html:7
+#: app/templates/account/login.html:10 app/templates/account/login.html:8
 #: app/templates/account/register.html:6 app/templates/account/register.html:7
 msgid "Email"
 msgstr "Messagerie"
+
+#: app/templates/account/login.html:31
+msgid "Email or Password is wrong."
+msgstr "Courriel ou mot de passe est erroné."
 
 #: app/templates/explore.html:1 app/templates/menu.html:39
 msgid "Explore"
@@ -75,7 +82,7 @@ msgstr "Langue"
 msgid "Location"
 msgstr "Emplacement"
 
-#: app/templates/account/login.html:16
+#: app/templates/account/login.html:1 app/templates/account/login.html:38
 msgid "Login"
 msgstr "Login"
 
@@ -83,11 +90,16 @@ msgstr "Login"
 msgid "Menu"
 msgstr "Menu"
 
+#: app/templates/search/search.html:35
+msgid "No result has been found :("
+msgstr "Aucun résultat n'a été trouvé:("
+
 #: app/templates/item/directives/item_directive.html:10
+#: app/templates/search/search.html:25
 msgid "OFF"
 msgstr "HORS"
 
-#: app/templates/account/login.html:10 app/templates/account/login.html:11
+#: app/templates/account/login.html:18 app/templates/account/login.html:20
 #: app/templates/account/register.html:10
 #: app/templates/account/register.html:11
 msgid "Password"
@@ -109,6 +121,10 @@ msgstr "Publier"
 msgid "Real Name"
 msgstr "De son vrai nom"
 
+#: app/templates/account/register.html:1
+msgid "Register"
+msgstr "S'inscrire"
+
 #: app/templates/account/register.html:31 app/templates/menu.html:61
 msgid "Register &amp; Join"
 msgstr "Registre &amp; Join"
@@ -117,9 +133,13 @@ msgstr "Registre &amp; Join"
 msgid "Search"
 msgstr "Rechercher"
 
-#: app/templates/search/search.html:6
+#: app/templates/search/search.html:7
 msgid "Search..."
 msgstr "Rechercher..."
+
+#: app/templates/account/user_settings.html:1
+msgid "Settings"
+msgstr "Paramètres"
 
 #: app/templates/menu.html:24 app/templates/menu.html:57
 msgid "Sign in"
@@ -169,7 +189,12 @@ msgstr "Le titre est trop court."
 msgid "Tiwun"
 msgstr "Tiwun"
 
+#: app/templates/item/directives/item_directive.html:36
+msgid "Visit"
+msgstr "Visite"
+
 #: app/templates/item/directives/item_directive.html:11
+#: app/templates/search/search.html:26
 msgid "was"
 msgstr "a été"
 

@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Tiwun Mobile\n"
-"PO-Revision-Date: 2015-05-21 15:57+0000\n"
+"PO-Revision-Date: 2015-05-23 02:44+0000\n"
 "Last-Translator: Alireza Savand <alireza.savand@gmail.com>\n"
 "Language-Team: Russian (http://www.transifex.com/projects/p/tiwun-mobile/language/ru/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -16,7 +16,7 @@ msgstr ""
 msgid "Account"
 msgstr "Учетная запись"
 
-#: app/templates/item/single_item.html:31
+#: app/templates/item/single_item.html:32
 msgid "ago"
 msgstr "назад"
 
@@ -28,8 +28,7 @@ msgstr "по"
 msgid "Cancel"
 msgstr "Отмена"
 
-#: app/templates/item/single_item.html:11
-#: app/templates/item/single_item.html:13
+#: app/templates/item/single_item.html:15
 msgid "Comment..."
 msgstr "Комментарий..."
 
@@ -37,6 +36,10 @@ msgstr "Комментарий..."
 #: app/templates/account/register.html:15
 msgid "Confirm Password"
 msgstr "Подтверждение пароля"
+
+#: app/templates/item/item_post.html:1
+msgid "Create Item"
+msgstr "Создать элемент"
 
 #: app/templates/item/item_post.html:88
 msgid "Create Post"
@@ -54,10 +57,14 @@ msgstr "Требуется описание."
 msgid "Description is too short."
 msgstr "Описание является слишком коротким."
 
-#: app/templates/account/login.html:6 app/templates/account/login.html:7
+#: app/templates/account/login.html:10 app/templates/account/login.html:8
 #: app/templates/account/register.html:6 app/templates/account/register.html:7
 msgid "Email"
 msgstr "Отправить по электронной почте"
+
+#: app/templates/account/login.html:31
+msgid "Email or Password is wrong."
+msgstr "Неверный email или пароль."
 
 #: app/templates/explore.html:1 app/templates/menu.html:39
 msgid "Explore"
@@ -75,7 +82,7 @@ msgstr "Язык"
 msgid "Location"
 msgstr "Местоположение"
 
-#: app/templates/account/login.html:16
+#: app/templates/account/login.html:1 app/templates/account/login.html:38
 msgid "Login"
 msgstr "Вход"
 
@@ -83,11 +90,16 @@ msgstr "Вход"
 msgid "Menu"
 msgstr "Меню"
 
+#: app/templates/search/search.html:35
+msgid "No result has been found :("
+msgstr "Результат не был найден :("
+
 #: app/templates/item/directives/item_directive.html:10
+#: app/templates/search/search.html:25
 msgid "OFF"
 msgstr "ВЫКЛ"
 
-#: app/templates/account/login.html:10 app/templates/account/login.html:11
+#: app/templates/account/login.html:18 app/templates/account/login.html:20
 #: app/templates/account/register.html:10
 #: app/templates/account/register.html:11
 msgid "Password"
@@ -109,6 +121,10 @@ msgstr "Поместить"
 msgid "Real Name"
 msgstr "Настоящее имя"
 
+#: app/templates/account/register.html:1
+msgid "Register"
+msgstr "Зарегистрироваться"
+
 #: app/templates/account/register.html:31 app/templates/menu.html:61
 msgid "Register &amp; Join"
 msgstr "Зарегистрируйтесь и присоединяйтесь"
@@ -117,9 +133,13 @@ msgstr "Зарегистрируйтесь и присоединяйтесь"
 msgid "Search"
 msgstr "Поиск"
 
-#: app/templates/search/search.html:6
+#: app/templates/search/search.html:7
 msgid "Search..."
 msgstr "Поиск..."
+
+#: app/templates/account/user_settings.html:1
+msgid "Settings"
+msgstr "Параметры"
 
 #: app/templates/menu.html:24 app/templates/menu.html:57
 msgid "Sign in"
@@ -169,7 +189,12 @@ msgstr "Название является слишком коротким."
 msgid "Tiwun"
 msgstr "Tiwun"
 
+#: app/templates/item/directives/item_directive.html:36
+msgid "Visit"
+msgstr "Визит"
+
 #: app/templates/item/directives/item_directive.html:11
+#: app/templates/search/search.html:26
 msgid "was"
 msgstr "был"
 

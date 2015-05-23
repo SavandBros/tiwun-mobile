@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Tiwun Mobile\n"
-"PO-Revision-Date: 2015-05-21 15:57+0000\n"
+"PO-Revision-Date: 2015-05-23 02:42+0000\n"
 "Last-Translator: Alireza Savand <alireza.savand@gmail.com>\n"
 "Language-Team: Catalan (http://www.transifex.com/projects/p/tiwun-mobile/language/ca/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -16,7 +16,7 @@ msgstr ""
 msgid "Account"
 msgstr "Compte"
 
-#: app/templates/item/single_item.html:31
+#: app/templates/item/single_item.html:32
 msgid "ago"
 msgstr "fa"
 
@@ -28,8 +28,7 @@ msgstr "per"
 msgid "Cancel"
 msgstr "Cancel·la"
 
-#: app/templates/item/single_item.html:11
-#: app/templates/item/single_item.html:13
+#: app/templates/item/single_item.html:15
 msgid "Comment..."
 msgstr "Comentari..."
 
@@ -37,6 +36,10 @@ msgstr "Comentari..."
 #: app/templates/account/register.html:15
 msgid "Confirm Password"
 msgstr "Confirmar contrasenya"
+
+#: app/templates/item/item_post.html:1
+msgid "Create Item"
+msgstr "Crear l'element"
 
 #: app/templates/item/item_post.html:88
 msgid "Create Post"
@@ -54,10 +57,14 @@ msgstr "Descripció s'exigeix."
 msgid "Description is too short."
 msgstr "Descripció és massa curt."
 
-#: app/templates/account/login.html:6 app/templates/account/login.html:7
+#: app/templates/account/login.html:10 app/templates/account/login.html:8
 #: app/templates/account/register.html:6 app/templates/account/register.html:7
 msgid "Email"
 msgstr "Correu electrònic"
+
+#: app/templates/account/login.html:31
+msgid "Email or Password is wrong."
+msgstr "Correu electrònic o la contrasenya està malament."
 
 #: app/templates/explore.html:1 app/templates/menu.html:39
 msgid "Explore"
@@ -75,7 +82,7 @@ msgstr "Llengua"
 msgid "Location"
 msgstr "Localització"
 
-#: app/templates/account/login.html:16
+#: app/templates/account/login.html:1 app/templates/account/login.html:38
 msgid "Login"
 msgstr "Connecti's"
 
@@ -83,11 +90,16 @@ msgstr "Connecti's"
 msgid "Menu"
 msgstr "Menú"
 
+#: app/templates/search/search.html:35
+msgid "No result has been found :("
+msgstr "Ha trobat cap resultat :("
+
 #: app/templates/item/directives/item_directive.html:10
+#: app/templates/search/search.html:25
 msgid "OFF"
 msgstr "FORA"
 
-#: app/templates/account/login.html:10 app/templates/account/login.html:11
+#: app/templates/account/login.html:18 app/templates/account/login.html:20
 #: app/templates/account/register.html:10
 #: app/templates/account/register.html:11
 msgid "Password"
@@ -109,6 +121,10 @@ msgstr "Correu"
 msgid "Real Name"
 msgstr "Nom real"
 
+#: app/templates/account/register.html:1
+msgid "Register"
+msgstr "Registrar-se"
+
 #: app/templates/account/register.html:31 app/templates/menu.html:61
 msgid "Register &amp; Join"
 msgstr "Registre i unir-se a"
@@ -117,9 +133,13 @@ msgstr "Registre i unir-se a"
 msgid "Search"
 msgstr "Cerca"
 
-#: app/templates/search/search.html:6
+#: app/templates/search/search.html:7
 msgid "Search..."
 msgstr "Cerca..."
+
+#: app/templates/account/user_settings.html:1
+msgid "Settings"
+msgstr "Configuració"
 
 #: app/templates/menu.html:24 app/templates/menu.html:57
 msgid "Sign in"
@@ -169,7 +189,12 @@ msgstr "Títol és massa curt."
 msgid "Tiwun"
 msgstr "Tiwun"
 
+#: app/templates/item/directives/item_directive.html:36
+msgid "Visit"
+msgstr "Visita"
+
 #: app/templates/item/directives/item_directive.html:11
+#: app/templates/search/search.html:26
 msgid "was"
 msgstr "va ser"
 

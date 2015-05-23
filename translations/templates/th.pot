@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Tiwun Mobile\n"
-"PO-Revision-Date: 2015-05-21 15:57+0000\n"
+"PO-Revision-Date: 2015-05-23 02:44+0000\n"
 "Last-Translator: Alireza Savand <alireza.savand@gmail.com>\n"
 "Language-Team: Thai (http://www.transifex.com/projects/p/tiwun-mobile/language/th/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -16,7 +16,7 @@ msgstr ""
 msgid "Account"
 msgstr "บัญชี"
 
-#: app/templates/item/single_item.html:31
+#: app/templates/item/single_item.html:32
 msgid "ago"
 msgstr "ผ่านมา"
 
@@ -28,8 +28,7 @@ msgstr "โดย"
 msgid "Cancel"
 msgstr "ยกเลิก"
 
-#: app/templates/item/single_item.html:11
-#: app/templates/item/single_item.html:13
+#: app/templates/item/single_item.html:15
 msgid "Comment..."
 msgstr "ความคิดเห็น..."
 
@@ -37,6 +36,10 @@ msgstr "ความคิดเห็น..."
 #: app/templates/account/register.html:15
 msgid "Confirm Password"
 msgstr "ยืนยันรหัสผ่าน"
+
+#: app/templates/item/item_post.html:1
+msgid "Create Item"
+msgstr "สร้างสินค้า"
 
 #: app/templates/item/item_post.html:88
 msgid "Create Post"
@@ -54,10 +57,14 @@ msgstr "คำอธิบายที่ถูกต้อง"
 msgid "Description is too short."
 msgstr "คำอธิบายสั้นเกินไปได้"
 
-#: app/templates/account/login.html:6 app/templates/account/login.html:7
+#: app/templates/account/login.html:10 app/templates/account/login.html:8
 #: app/templates/account/register.html:6 app/templates/account/register.html:7
 msgid "Email"
 msgstr "อีเมล"
+
+#: app/templates/account/login.html:31
+msgid "Email or Password is wrong."
+msgstr "อีเมล์หรือรหัสผ่านไม่ถูกต้อง"
 
 #: app/templates/explore.html:1 app/templates/menu.html:39
 msgid "Explore"
@@ -75,7 +82,7 @@ msgstr "ภาษา"
 msgid "Location"
 msgstr "สถานที่ตั้ง"
 
-#: app/templates/account/login.html:16
+#: app/templates/account/login.html:1 app/templates/account/login.html:38
 msgid "Login"
 msgstr "เข้าสู่ระบบ"
 
@@ -83,11 +90,16 @@ msgstr "เข้าสู่ระบบ"
 msgid "Menu"
 msgstr "เมนู"
 
+#: app/templates/search/search.html:35
+msgid "No result has been found :("
+msgstr "ผลไม่พบ:("
+
 #: app/templates/item/directives/item_directive.html:10
+#: app/templates/search/search.html:25
 msgid "OFF"
 msgstr "ปิด"
 
-#: app/templates/account/login.html:10 app/templates/account/login.html:11
+#: app/templates/account/login.html:18 app/templates/account/login.html:20
 #: app/templates/account/register.html:10
 #: app/templates/account/register.html:11
 msgid "Password"
@@ -109,6 +121,10 @@ msgstr "ประกาศ"
 msgid "Real Name"
 msgstr "ชื่อจริง"
 
+#: app/templates/account/register.html:1
+msgid "Register"
+msgstr "ลงทะเบียน"
+
 #: app/templates/account/register.html:31 app/templates/menu.html:61
 msgid "Register &amp; Join"
 msgstr "ลงทะเบียนและเข้าร่วม"
@@ -117,9 +133,13 @@ msgstr "ลงทะเบียนและเข้าร่วม"
 msgid "Search"
 msgstr "ค้นหา"
 
-#: app/templates/search/search.html:6
+#: app/templates/search/search.html:7
 msgid "Search..."
 msgstr "ค้นหา..."
+
+#: app/templates/account/user_settings.html:1
+msgid "Settings"
+msgstr "การตั้งค่า"
 
 #: app/templates/menu.html:24 app/templates/menu.html:57
 msgid "Sign in"
@@ -169,7 +189,12 @@ msgstr "ชื่อเรื่องจะสั้นเกินไป"
 msgid "Tiwun"
 msgstr "Tiwun"
 
+#: app/templates/item/directives/item_directive.html:36
+msgid "Visit"
+msgstr "เข้าเยี่ยมชม"
+
 #: app/templates/item/directives/item_directive.html:11
+#: app/templates/search/search.html:26
 msgid "was"
 msgstr "ถูก"
 

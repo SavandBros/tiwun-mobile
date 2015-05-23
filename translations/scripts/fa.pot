@@ -12,47 +12,47 @@ msgstr ""
 "Language: fa\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: app/scripts/basement/filters/timesince.js:51
+#: app/scripts/basement/filters/timesince.js:63
 msgid "a"
 msgstr "یک"
 
-#: app/scripts/basement/filters/timesince.js:50
+#: app/scripts/basement/filters/timesince.js:62
 msgid "an"
 msgstr "یک"
 
-#: app/scripts/basement/filters/timesince.js:24
+#: app/scripts/basement/filters/timesince.js:36
 msgid "day"
 msgstr "روز"
 
-#: app/scripts/basement/filters/timesince.js:25
+#: app/scripts/basement/filters/timesince.js:37
 msgid "days"
 msgstr "روز"
 
-#: app/scripts/basement/filters/timesince.js:29
+#: app/scripts/basement/filters/timesince.js:41
 msgid "hour"
 msgstr "ساعت"
 
-#: app/scripts/basement/filters/timesince.js:30
+#: app/scripts/basement/filters/timesince.js:42
 msgid "hours"
 msgstr "ساعت"
 
-#: app/scripts/basement/filters/timesince.js:45
+#: app/scripts/basement/filters/timesince.js:57
 msgid "less than a"
 msgstr "کمتر از یک"
 
-#: app/scripts/basement/filters/timesince.js:34
+#: app/scripts/basement/filters/timesince.js:46
 msgid "minute"
 msgstr "دقیقه"
 
-#: app/scripts/basement/filters/timesince.js:35
+#: app/scripts/basement/filters/timesince.js:47
 msgid "minutes"
 msgstr "دقیقه"
 
-#: app/scripts/basement/filters/timesince.js:19
+#: app/scripts/basement/filters/timesince.js:31
 msgid "month"
 msgstr "ماه"
 
-#: app/scripts/basement/filters/timesince.js:20
+#: app/scripts/basement/filters/timesince.js:32
 msgid "months"
 msgstr "ماه"
 
@@ -60,11 +60,11 @@ msgstr "ماه"
 msgid "There was a problem..."
 msgstr "یک مشکل وجود داشت..."
 
-#: app/scripts/basement/filters/timesince.js:14
+#: app/scripts/basement/filters/timesince.js:26
 msgid "year"
 msgstr "سال"
 
-#: app/scripts/basement/filters/timesince.js:15
+#: app/scripts/basement/filters/timesince.js:27
 msgid "years"
 msgstr "سال"
 
@@ -72,6 +72,6 @@ msgstr "سال"
 msgid "You are not authorized to access this page."
 msgstr "شما مجاز به دسترسی به این صفحه."
 
-#: app/scripts/item/controllers/single_item_controller.js:122
+#: app/scripts/item/controllers/single_item_controller.js:123
 msgid "Your comment has been posted successfully."
 msgstr "نظر شما با موفقیت ارسال شده."

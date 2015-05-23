@@ -12,47 +12,47 @@ msgstr ""
 "Language: tr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: app/scripts/basement/filters/timesince.js:51
+#: app/scripts/basement/filters/timesince.js:63
 msgid "a"
 msgstr "bir"
 
-#: app/scripts/basement/filters/timesince.js:50
+#: app/scripts/basement/filters/timesince.js:62
 msgid "an"
 msgstr "bir"
 
-#: app/scripts/basement/filters/timesince.js:24
+#: app/scripts/basement/filters/timesince.js:36
 msgid "day"
 msgstr "gün"
 
-#: app/scripts/basement/filters/timesince.js:25
+#: app/scripts/basement/filters/timesince.js:37
 msgid "days"
 msgstr "gün"
 
-#: app/scripts/basement/filters/timesince.js:29
+#: app/scripts/basement/filters/timesince.js:41
 msgid "hour"
 msgstr "Saat"
 
-#: app/scripts/basement/filters/timesince.js:30
+#: app/scripts/basement/filters/timesince.js:42
 msgid "hours"
 msgstr "Saat"
 
-#: app/scripts/basement/filters/timesince.js:45
+#: app/scripts/basement/filters/timesince.js:57
 msgid "less than a"
 msgstr "bir"
 
-#: app/scripts/basement/filters/timesince.js:34
+#: app/scripts/basement/filters/timesince.js:46
 msgid "minute"
 msgstr "dakika"
 
-#: app/scripts/basement/filters/timesince.js:35
+#: app/scripts/basement/filters/timesince.js:47
 msgid "minutes"
 msgstr "dakika"
 
-#: app/scripts/basement/filters/timesince.js:19
+#: app/scripts/basement/filters/timesince.js:31
 msgid "month"
 msgstr "ay"
 
-#: app/scripts/basement/filters/timesince.js:20
+#: app/scripts/basement/filters/timesince.js:32
 msgid "months"
 msgstr "ay"
 
@@ -60,11 +60,11 @@ msgstr "ay"
 msgid "There was a problem..."
 msgstr "Bir sorun vardı..."
 
-#: app/scripts/basement/filters/timesince.js:14
+#: app/scripts/basement/filters/timesince.js:26
 msgid "year"
 msgstr "yıl"
 
-#: app/scripts/basement/filters/timesince.js:15
+#: app/scripts/basement/filters/timesince.js:27
 msgid "years"
 msgstr "yıl"
 
@@ -72,6 +72,6 @@ msgstr "yıl"
 msgid "You are not authorized to access this page."
 msgstr "Bu sayfaya erişmek için yetkiniz yok."
 
-#: app/scripts/item/controllers/single_item_controller.js:122
+#: app/scripts/item/controllers/single_item_controller.js:123
 msgid "Your comment has been posted successfully."
 msgstr "Yorumunuz başarıyla gönderildi."

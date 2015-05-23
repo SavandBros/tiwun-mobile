@@ -12,47 +12,47 @@ msgstr ""
 "Language: it\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: app/scripts/basement/filters/timesince.js:51
+#: app/scripts/basement/filters/timesince.js:63
 msgid "a"
 msgstr "un"
 
-#: app/scripts/basement/filters/timesince.js:50
+#: app/scripts/basement/filters/timesince.js:62
 msgid "an"
 msgstr "un"
 
-#: app/scripts/basement/filters/timesince.js:24
+#: app/scripts/basement/filters/timesince.js:36
 msgid "day"
 msgstr "giorno"
 
-#: app/scripts/basement/filters/timesince.js:25
+#: app/scripts/basement/filters/timesince.js:37
 msgid "days"
 msgstr "giorni"
 
-#: app/scripts/basement/filters/timesince.js:29
+#: app/scripts/basement/filters/timesince.js:41
 msgid "hour"
 msgstr "ora"
 
-#: app/scripts/basement/filters/timesince.js:30
+#: app/scripts/basement/filters/timesince.js:42
 msgid "hours"
 msgstr "ore"
 
-#: app/scripts/basement/filters/timesince.js:45
+#: app/scripts/basement/filters/timesince.js:57
 msgid "less than a"
 msgstr "meno di un"
 
-#: app/scripts/basement/filters/timesince.js:34
+#: app/scripts/basement/filters/timesince.js:46
 msgid "minute"
 msgstr "minuto"
 
-#: app/scripts/basement/filters/timesince.js:35
+#: app/scripts/basement/filters/timesince.js:47
 msgid "minutes"
 msgstr "minuti"
 
-#: app/scripts/basement/filters/timesince.js:19
+#: app/scripts/basement/filters/timesince.js:31
 msgid "month"
 msgstr "mese"
 
-#: app/scripts/basement/filters/timesince.js:20
+#: app/scripts/basement/filters/timesince.js:32
 msgid "months"
 msgstr "mesi"
 
@@ -60,11 +60,11 @@ msgstr "mesi"
 msgid "There was a problem..."
 msgstr "C'era un problema..."
 
-#: app/scripts/basement/filters/timesince.js:14
+#: app/scripts/basement/filters/timesince.js:26
 msgid "year"
 msgstr "anno"
 
-#: app/scripts/basement/filters/timesince.js:15
+#: app/scripts/basement/filters/timesince.js:27
 msgid "years"
 msgstr "anni"
 
@@ -72,6 +72,6 @@ msgstr "anni"
 msgid "You are not authorized to access this page."
 msgstr "Non siete autorizzati ad accedere a questa pagina."
 
-#: app/scripts/item/controllers/single_item_controller.js:122
+#: app/scripts/item/controllers/single_item_controller.js:123
 msgid "Your comment has been posted successfully."
 msgstr "Il tuo commento è stato inviato con successo."

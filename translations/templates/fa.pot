@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Tiwun Mobile\n"
-"PO-Revision-Date: 2015-05-21 15:57+0000\n"
+"PO-Revision-Date: 2015-05-23 02:43+0000\n"
 "Last-Translator: Alireza Savand <alireza.savand@gmail.com>\n"
 "Language-Team: Persian (http://www.transifex.com/projects/p/tiwun-mobile/language/fa/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -16,7 +16,7 @@ msgstr ""
 msgid "Account"
 msgstr "حساب"
 
-#: app/templates/item/single_item.html:31
+#: app/templates/item/single_item.html:32
 msgid "ago"
 msgstr "پیش"
 
@@ -28,8 +28,7 @@ msgstr "توسط"
 msgid "Cancel"
 msgstr "\"لغو\""
 
-#: app/templates/item/single_item.html:11
-#: app/templates/item/single_item.html:13
+#: app/templates/item/single_item.html:15
 msgid "Comment..."
 msgstr "نظر..."
 
@@ -37,6 +36,10 @@ msgstr "نظر..."
 #: app/templates/account/register.html:15
 msgid "Confirm Password"
 msgstr "تکرار رمز عبور"
+
+#: app/templates/item/item_post.html:1
+msgid "Create Item"
+msgstr "ایجاد آیتم"
 
 #: app/templates/item/item_post.html:88
 msgid "Create Post"
@@ -54,10 +57,14 @@ msgstr "توضیحات مورد نیاز است."
 msgid "Description is too short."
 msgstr "توضیحات خیلی کوتاه است."
 
-#: app/templates/account/login.html:6 app/templates/account/login.html:7
+#: app/templates/account/login.html:10 app/templates/account/login.html:8
 #: app/templates/account/register.html:6 app/templates/account/register.html:7
 msgid "Email"
 msgstr "ایمیل"
+
+#: app/templates/account/login.html:31
+msgid "Email or Password is wrong."
+msgstr "ایمیل یا رمز عبور اشتباه است."
 
 #: app/templates/explore.html:1 app/templates/menu.html:39
 msgid "Explore"
@@ -75,7 +82,7 @@ msgstr "زبان"
 msgid "Location"
 msgstr "محل"
 
-#: app/templates/account/login.html:16
+#: app/templates/account/login.html:1 app/templates/account/login.html:38
 msgid "Login"
 msgstr "ورود به سیستم"
 
@@ -83,11 +90,16 @@ msgstr "ورود به سیستم"
 msgid "Menu"
 msgstr "منو"
 
+#: app/templates/search/search.html:35
+msgid "No result has been found :("
+msgstr "هیچ نتیجه ای یافت شده است :("
+
 #: app/templates/item/directives/item_directive.html:10
+#: app/templates/search/search.html:25
 msgid "OFF"
 msgstr "تخفیف"
 
-#: app/templates/account/login.html:10 app/templates/account/login.html:11
+#: app/templates/account/login.html:18 app/templates/account/login.html:20
 #: app/templates/account/register.html:10
 #: app/templates/account/register.html:11
 msgid "Password"
@@ -109,6 +121,10 @@ msgstr "پست"
 msgid "Real Name"
 msgstr "نام واقعی"
 
+#: app/templates/account/register.html:1
+msgid "Register"
+msgstr "ثبت"
+
 #: app/templates/account/register.html:31 app/templates/menu.html:61
 msgid "Register &amp; Join"
 msgstr "ثبت نام و عضویت"
@@ -117,9 +133,13 @@ msgstr "ثبت نام و عضویت"
 msgid "Search"
 msgstr "جستجو"
 
-#: app/templates/search/search.html:6
+#: app/templates/search/search.html:7
 msgid "Search..."
 msgstr "جستجو..."
+
+#: app/templates/account/user_settings.html:1
+msgid "Settings"
+msgstr "تنظیمات"
 
 #: app/templates/menu.html:24 app/templates/menu.html:57
 msgid "Sign in"
@@ -169,7 +189,12 @@ msgstr "عنوان بیش از حد کوتاه است."
 msgid "Tiwun"
 msgstr "تیوون"
 
+#: app/templates/item/directives/item_directive.html:36
+msgid "Visit"
+msgstr "بازدید"
+
 #: app/templates/item/directives/item_directive.html:11
+#: app/templates/search/search.html:26
 msgid "was"
 msgstr "بود"
 
