@@ -1,6 +1,7 @@
 0.2 0000-00-00
 ==============
 * Feature #28: Add `ChangeLog.md` file.
+* Feature #27: Remove splash screen, people gonna hate it.
 
 
 0.0.1 - 2015-05-23

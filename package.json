@@ -62,7 +62,6 @@
         "com.ionic.keyboard",
         "nl.x-services.plugins.socialsharing",
         "nl.x-services.plugins.toast",
-        "cordova-plugin-splashscreen",
         "cordova-plugin-whitelist"
     ]
 }
