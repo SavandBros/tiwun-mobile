@@ -28,6 +28,14 @@
             </div>
         </div>
 
+        <div class="list faded-light">
+            <br>
+
+            <p class="item item-error bar bar-assertive center" ng-show="noResult">
+                <i class="icon icon-error-bg ion-information-circled"></i> <translate>No result has been found :(</translate>
+            </p>
+        </div>
+
         <ion-infinite-scroll
             immediate-check="true"
             on-infinite="loadMore()"

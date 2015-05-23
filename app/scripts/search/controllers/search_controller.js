@@ -35,6 +35,7 @@ function SearchController($scope, $log, SearchService) {
                 $scope.items = data.data.classifies;
                 $scope.pageHasNext = data.data.page_has_next;
                 $scope.shouldSpin = false;
+                $scope.noResult = $scope.items.length === 0;
             },
             function(data, status, headers, config) {
                 $log.error("Error in search: " + data.data.error);
