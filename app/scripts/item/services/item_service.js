@@ -20,6 +20,12 @@
             get: get,
             create: create,
             update: update
+        var ItemQueryFilters = {
+            1: 'Newest',
+            2: 'Comments',
+            3: 'Up Votes',
+            4: 'Down Votes',
+            5: 'Rate'
         };
 
         return ItemService;
@@ -28,15 +34,17 @@
         /**
          * @name all
          * @desc Get all Items
-         * @param {number} page_number
+         * @param {Number} pageNumber
+         * @param {Number} queryFilter
          * @returns {Promise}
          * @memberOf tiwun.item.services.ItemService
          */
-        function all(page_number) {
+        function all(pageNumber, queryFilter) {
             return $http.get(
                 ENV.apiEndpoint + 'index/', {
                     params: {
-                        page: page_number
+                        page: pageNumber,
+                        filter: queryFilter
                     }
                 }
             );
