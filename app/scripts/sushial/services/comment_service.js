@@ -23,7 +23,7 @@ function CommentService($http, ENV) {
      */
     function create(objectType, objectPk, userId, commentText) {
         return $http.post(
-            ENV.apiEndpoint + 'sushial/comment/add/', {
+            ENV.apiEndpoint + 'sushial/comment/', {
                 object_type: objectType,
                 object_pk: objectPk,
                 user_id: userId,
@@ -33,18 +33,19 @@ function CommentService($http, ENV) {
     }
 
     /**
-     * @name remove: Remove a comment from an object.
-     * @param {number} objectType Object type that is being commented on.
-     * @param {string} objectId  Object PK!
-     * @param {string} userId User Id that commenting on the the object.
+     * remove
+     * Remove comment by given ID.
+     *
+     * @method remove: Remove a comment from an object.
+     * @param {number} commentId Object type that is being commented on.
      * @memberOf tiwun.sushial.services.CommentService
      */
-    function remove(objectType, objectId, userId) {
-        return $http.post(
-            ENV.apiEndpoint + 'sushial/comment/remove', {
-                object_type: objectType,
-                object_id: objectId,
-                user_id: userId
+    function remove(commentId) {
+        return $http.delete(
+            ENV.apiEndpoint + 'sushial/comment/', {
+                params: {
+                    comment_id: commentId
+                }
             }
         );
     }
@@ -57,7 +58,7 @@ function CommentService($http, ENV) {
      */
     function filterByObject(objectType, ObjectPk) {
         return $http.get(
-            ENV.apiEndpoint + 'sushial/comment/', {
+            ENV.apiEndpoint + 'sushial/comments/', {
                 params: {
                     object_type: objectType,
                     object_pk: ObjectPk

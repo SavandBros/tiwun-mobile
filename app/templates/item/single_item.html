@@ -20,20 +20,22 @@
             </div>
         </form>
 
-        <div class="list">
-
-            <div class="item item-avatar" ng-repeat="comment in item.comments">
+        <ion-list>
+            <ion-item class="item item-avatar" ng-repeat="comment in item.comments">
                 <img ng-src="{{ comment.user.get_gravatar[64] }}">
                 <h2><a href="#!/app/account/user-profile/{{ comment.user.pk }}/">{{ comment.user.get_short_name }}</a></h2>
-
                 <p>
                     {{ comment.comment }}
                     <br/>
                     {{ comment.created | timesince }} <translate>ago</translate>
                 </p>
-            </div>
-
-        </div>
+                <ion-option-button
+                    ng-if="comment.user.id === user.id"
+                    class="button-assertive ion-trash-a"
+                    ng-click="deleteComment(comment)">
+                </ion-option-button>
+            </ion-item>
+        </ion-list>
 
     </ion-content>
 </ion-view>

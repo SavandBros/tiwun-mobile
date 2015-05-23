@@ -188,6 +188,26 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, $ioni
             $state.go('app.login');
         }
     };
+
+    /**
+     * Delete Comment
+     *
+     * @method deleteComment
+     * @param {Object} comment
+     * @memberOf tiwun.item.controllers.SingleItemController
+     */
+    $scope.deleteComment = function(comment) {
+        if (comment.user.id === $scope.user.id) {
+            CommentService.remove(comment.id).then(
+                function(data, status, headers, config) {
+                    $scope.item.comments.splice($scope.item.comments.indexOf(comment), 1);
+                },
+                function(data, status, headers, config) {
+                    $log.error(data.error);
+                }
+            )
+        }
+    }
 }
 
 
