@@ -15,11 +15,6 @@
      * @returns {Factory}
      */
     function ItemService($http, ENV) {
-        var ItemService = {
-            all: all,
-            get: get,
-            create: create,
-            update: update
         var ItemQueryFilters = {
             1: 'Newest',
             2: 'Comments',
@@ -27,9 +22,6 @@
             4: 'Down Votes',
             5: 'Rate'
         };
-
-        return ItemService;
-
 
         /**
          * @name all
@@ -92,5 +84,12 @@
             return $http.get(ENV.apiEndpoint + 'items/' + id + '/');
         }
 
+        return  {
+            all: all,
+            get: get,
+            create: create,
+            update: update,
+            ItemQueryFilters: ItemQueryFilters
+        }
     }
 })();
