@@ -12,7 +12,9 @@
                         name="comment"
                         ng-model="comment.text"
                         placeholder="{{ 'Comment...'|translate }}"
-                        ng-change="checkAuth()">
+                        ng-change="checkAuth()"
+                        ng-required="true"
+                        required>
                 </label>
             </div>
         </form>
