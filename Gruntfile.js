@@ -35,20 +35,41 @@ module.exports = function(grunt) {
             keyStorePath: process.env.TIWUN_MOBILE_KEY_STORE_PATH,
             keyStoreAlias: process.env.TIWUN_MOBILE_KEY_STORE_ALIAS,
             keyStorePass: process.env.TIWUN_MOBILE_KEY_STORE_PASS,
+            androidPkgOutputDir: './platforms/android/build/outputs/apk',
+            androidPkgName: 'TiwunMobile.apk',
             androidPkgRelease: './platforms/android/build/outputs/apk/android-release-unsigned.apk'
         },
 
         shell: {
+            androidPkgbuild: {
+                command: 'grunt compress && cordova build --release'
+            },
+            androidPkgSign: {
+                command: 'jarsigner -digestalg SHA1 ' +
+                '-keystore <%= yeoman.keyStorePath %> ' +
+                '<%= yeoman.androidPkgRelease %> ' +
+                '<%= yeoman.keyStoreAlias %> ' +
+                '-storepass <%= yeoman.keyStorePass %>'
+            },
+            androidPkgInstall: {
+                command: 'adb install -r <%= yeoman.androidPkgRelease %>'
+            },
+            androidPkgZipalign: {
+                command: 'zipalign -v 4 <%= yeoman.androidPkgRelease %> ' +
+                '<%= yeoman.androidPkgOutputDir %>/<%= yeoman.androidPkgName %> '
+            },
             deployDevice: {
                 command: [
-                    'grunt compress',
-                    'cordova build --release',
-                    'jarsigner -digestalg SHA1 ' +
-                    '-keystore <%= yeoman.keyStorePath %> ' +
-                    '<%= yeoman.androidPkgRelease %> ' +
-                    '<%= yeoman.keyStoreAlias %> ' +
-                    '-storepass <%= yeoman.keyStorePass %>',
-                    'adb install -r <%= yeoman.androidPkgRelease %>'
+                    'grunt shell:androidPkgbuild',
+                    'grunt shell:androidPkgSign',
+                    'grunt shell:androidPkgInstall'
+                ].join('&&')
+            },
+            androidPkgProd: {
+                command: [
+                    'grunt platform:remove:android',
+                    'grunt platform:add:android',
+                    'grunt shell:androidPkgbuild shell:androidPkgSign shell:androidPkgZipalign'
                 ].join('&&')
             },
             gitPush: {
@@ -56,6 +77,12 @@ module.exports = function(grunt) {
             },
             gitPull: {
                 command: 'git pull origin master'
+            },
+            txPush: {
+                command: 'tx push -t'
+            },
+            txPull: {
+                command: 'tx pull -a'
             }
         },
 
