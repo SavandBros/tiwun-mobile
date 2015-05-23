@@ -46,17 +46,17 @@ module.exports = function(grunt) {
             },
             androidPkgSign: {
                 command: 'jarsigner -digestalg SHA1 ' +
-                '-keystore <%= yeoman.keyStorePath %> ' +
-                '<%= yeoman.androidPkgRelease %> ' +
-                '<%= yeoman.keyStoreAlias %> ' +
-                '-storepass <%= yeoman.keyStorePass %>'
+                    '-keystore <%= yeoman.keyStorePath %> ' +
+                    '<%= yeoman.androidPkgRelease %> ' +
+                    '<%= yeoman.keyStoreAlias %> ' +
+                    '-storepass <%= yeoman.keyStorePass %>'
             },
             androidPkgInstall: {
                 command: 'adb install -r <%= yeoman.androidPkgRelease %>'
             },
             androidPkgZipalign: {
                 command: 'zipalign -v 4 <%= yeoman.androidPkgRelease %> ' +
-                '<%= yeoman.androidPkgOutputDir %>/<%= yeoman.androidPkgName %> '
+                    '<%= yeoman.androidPkgOutputDir %>/<%= yeoman.androidPkgName %> '
             },
             deployDevice: {
                 command: [
