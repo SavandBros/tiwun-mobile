@@ -16,6 +16,8 @@
     <preference name="SplashScreen" value="screen"/>
     <preference name="SplashScreenDelay" value="3000"/>
     <preference name="SplashMaintainAspectRatio" value="true|false"/>
+    <preference name="android-minSdkVersion" value="10"/>
+    <preference name="android-targetSdkVersion" value="19"/>
     <platform name="android">
         <feature name="SocialSharing">
             <param name="android-package" value="nl.xservices.plugins.SocialSharing"/>
@@ -40,7 +42,4 @@
         <splash src="resources/android/splash/drawable-port-xxxhdpi-screen.png" density="port-xxxhdpi"/>
     </platform>
     <icon src="resources/android/icon/drawable-xhdpi-icon.png"/>
-
-    <preference name="android-minSdkVersion" value="10" />
-    <preference name="android-targetSdkVersion" value="19" />
 </widget>
