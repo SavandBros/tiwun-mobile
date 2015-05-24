@@ -1,4 +1,4 @@
-<div class="item item-avatar">
+<div class="item item-avatar bg-e"> 
     <img ng-src="{{ item.get_primary_image.thumbnail }}">
 
     <h2><a href="#!/app/items/{{ item.pk }}/">{{ item.title }}</a></h2>
@@ -12,17 +12,11 @@
     <b class="right assertive">{{ item.get_price_display }}</b>
 </div>
 
-<div class="item item-body">
-
-    <ion-slide-box ng-if="image === 'multi'"  on-slide-changed="slideChanged(index)" delegate-handle="image-viewer">
-        <ion-slide ng-repeat="img in item.images">
-            <img class="full-image" ng-dblclick="upVote(item)" ng-src="{{ img.standard }}" />
-        </ion-slide>
-    </ion-slide-box>
-
-    <img class="full-image" ng-src="{{ item.get_primary_image.standard }}" ng-if="image === 'single'">
-
-    <p>{{ item.description | markdown | stripTags }}</p>
+<div class="item item-text-wrap">
+    <a class="item item-thumbnail-left" href="#!/app/items/{{ item.pk }}/">
+        <img ng-src="{{ item.get_primary_image.thumbnail }}">
+        <p>{{ item.description | markdown | stripTags | truncate: 140: '...': true }}</p>
+    </a>
 </div>
 
 <div class="item tabs tabs-secondary tabs-icon-left bg-e">
