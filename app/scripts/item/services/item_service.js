@@ -39,7 +39,7 @@ function ItemService($http, gettext, ENV) {
         if (pageNumber) {
             params.page = pageNumber;
         }
-        console.log(params);
+        if (queryFilter) params.filter = queryFilter;
 
         return $http.get(ENV.apiEndpoint + itemKind, {
             params: params
