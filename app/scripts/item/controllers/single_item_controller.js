@@ -16,7 +16,7 @@
  * @param {Object} $ionicSlideBoxDelegate
  * @param {Object} gettextCatalog
  * @param {ToastService} ToastService
- * @param {ItemService} ItemService
+ * @param {tiwun.item.services.ItemService} ItemService
  * @param {CommentService} CommentService
  * @param {VoteService} VoteService
  * @param {AuthenticationService} AuthenticationService
