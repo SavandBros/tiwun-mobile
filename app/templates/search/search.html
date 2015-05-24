@@ -3,8 +3,8 @@
 
         <form name="form" ng-submit="search(form, query)">
             <div class="bar item-input-inset">
-                <label class="item-input-stacked">
-                    <input type="search" name="search" ng-model="query.text" placeholder="{{ 'Search...'|translate }}">
+                <label class="item-input-wrap full">
+                    <input class="full" type="search" name="search" ng-model="query.text" placeholder="{{ 'Search...'|translate }}">
                 </label>
             </div>
         </form>

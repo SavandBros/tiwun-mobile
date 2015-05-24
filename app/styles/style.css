@@ -116,3 +116,7 @@ b {
 .bold {
     font-weight: bold;
 }
+
+.full {
+    width: 100%;
+}
