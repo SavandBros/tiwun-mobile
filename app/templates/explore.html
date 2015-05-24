@@ -1,14 +1,14 @@
-
 <ion-view view-title="{{ 'Explore'|translate }}">
-    <ion-content>
-        <div class="button-bar">
-            <a class="button"
-               ng-repeat="(k, v) in itemKinds" ng-click="setItemKind(k)"
-               ng-class="{'active': itemKinds[k] === currentItemKind}">
+    <div class="tabs-striped tabs-top tabs-background-dark tabs-color-light">
+        <div class="tabs">
+            <a class="tab-item" ng-click="setItemKind(k)" ng-repeat="(k, v) in itemKinds" ng-class="{'active': itemKinds[k] === currentItemKind}">
                 <i class="ion-{{ v.icon }}"></i> <translate>{{ v.text }}</translate>
             </a>
         </div>
+    </div>
 
+    <ion-content>
+        <br><br>
         <div class="list card" ng-repeat="item in items">
             <item item="item" image="'single'" up-vote="upVote(item)" down-vote="downVote(item)"></item>
         </div>
