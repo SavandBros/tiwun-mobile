@@ -24,22 +24,18 @@ function ItemService($http, gettext, ENV) {
      * @desc Get all Items
      * @param {Number} pageNumber
      * @param {Number} queryFilter
-     * @param {Object} itemKind
+     * @param {String} itemKind
+     * @param {String} userId
      * @returns {Promise}
      * @memberOf tiwun.item.services.ItemService
      */
-    function all(pageNumber, queryFilter, itemKind) {
+    function all(pageNumber, queryFilter, itemKind, userId) {
         itemKind = itemKind || '';
         var params = {};
 
-        if (queryFilter) {
-            params.filter = queryFilter;
-        }
-
-        if (pageNumber) {
-            params.page = pageNumber;
-        }
         if (queryFilter) params.filter = queryFilter;
+        if (pageNumber) params.page = pageNumber;
+        if (userId) params.user_d = userId;
 
         return $http.get(ENV.apiEndpoint + itemKind, {
             params: params
