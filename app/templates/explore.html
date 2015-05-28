@@ -1,23 +1,23 @@
 <ion-view view-title="{{ 'Explore'|translate }}">
-    <div class="tabs-striped tabs-top tabs-background-dark tabs-color-light">
-        <div class="tabs">
-            <a class="tab-item" ng-click="setItemKind(k)" ng-repeat="(k, v) in itemKinds" ng-class="{'active': itemKinds[k] === currentItemKind}">
-                <i class="ion-{{ v.icon }}"></i> <translate>{{ v.text }}</translate>
-            </a>
-        </div>
-    </div>
 
     <ion-content>
+        <div class="tabs-striped tabs-top tabs-background-dark tabs-color-light">
+            <div class="tabs" style="top: 0">
+                <a class="tab-item" ng-click="setItemKind(k)" ng-repeat="(k, v) in itemKinds" ng-class="{'active': itemKinds[k] === currentItemKind}">
+                    <i class="ion-{{ v.icon }}"></i> <translate>{{ v.text }}</translate>
+                </a>
+            </div>
+        </div>
         <br><br>
         <div class="list card" ng-repeat="item in items">
             <item item="item" image="'single'" up-vote="upVote(item)" down-vote="downVote(item)"></item>
         </div>
 
         <ion-infinite-scroll
-            immediate-check="true"
-            on-infinite="loadMore()"
-            ng-if="pageHasNext"
-            distance="5%">
+                immediate-check="true"
+                on-infinite="loadMore()"
+                ng-if="pageHasNext"
+                distance="5%">
         </ion-infinite-scroll>
 
     </ion-content>
