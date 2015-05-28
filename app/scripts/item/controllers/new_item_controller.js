@@ -45,7 +45,7 @@
                 ItemService.create(item).then(
                     function(data, status, headers, config) {
                         $state.go('app.singleItem', {
-                            itemId: data.data.pk
+                            itemId: data.data.id
                         });
                     },
                     function(data, status, headers, config) {

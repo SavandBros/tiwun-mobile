@@ -51,9 +51,9 @@ function IndexController($scope, $state, $log, gettext, AuthenticationService, I
      */
     function updateItemVote(data, item) {
         item.userVote = {};
-        if (data.vote_type === VoteService.voteTypes.up) {
+        if (data.votes.vote_type === VoteService.voteTypes.up) {
             item.userVote.upVote = true;
-        } else if (data.vote_type === VoteService.voteTypes.down) {
+        } else if (data.votes.vote_type === VoteService.voteTypes.down) {
             item.userVote.downVote = true;
         }
     }
@@ -88,8 +88,8 @@ function IndexController($scope, $state, $log, gettext, AuthenticationService, I
             angular.forEach($scope.items.slice($scope.items.length - 5), function(item, v) {
                 VoteService.userVotedForObject(
                     VoteService.objectTypes.item,
-                    item.pk,
-                    AuthenticationService.getAuthenticatedUser().pk
+                    item.id,
+                    AuthenticationService.getAuthenticatedUser().id
                 ).then(
                     function(data, status, headers, config) {
                         updateItemVote(data.data, item);
@@ -165,6 +165,7 @@ function IndexController($scope, $state, $log, gettext, AuthenticationService, I
         $scope.pageHasNext = false;
         $scope.items = [];
         $scope.loadMore();
+        $scope.pageCounter = 0;
     }
 }
 

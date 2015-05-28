@@ -58,10 +58,11 @@ function CommentService($http, ENV) {
      */
     function filterByObject(objectType, ObjectPk) {
         return $http.get(
-            ENV.apiEndpoint + 'sushial/comments/', {
+            ENV.apiEndpoint + 'sushial/comment/', {
                 params: {
                     object_type: objectType,
-                    object_pk: ObjectPk
+                    object_pk: ObjectPk,
+                    type: ENV.resourceType.list
                 }
             }
         );

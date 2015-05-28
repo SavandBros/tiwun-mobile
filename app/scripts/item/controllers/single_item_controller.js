@@ -59,13 +59,13 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, $ioni
      * Based on the vote type from server, the associated vote button will be highlighted.
      *
      * @method updateItemVote
-     * @param {Object} data
+     * @param {Object} votes
      * @memberOf tiwun.item.controllers.SingleItemController
      */
-    function updateItemVote(data) {
-        if (data.vote_type === VoteService.voteTypes.up) {
+    function updateItemVote(votes) {
+        if (votes.vote_type === VoteService.voteTypes.up) {
             $scope.item.userVote.upVote = true;
-        } else if (data.vote_type === VoteService.voteTypes.down) {
+        } else if (votes.vote_type === VoteService.voteTypes.down) {
             $scope.item.userVote.downVote = true;
         }
     }
@@ -75,9 +75,9 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, $ioni
      */
     $scope.$on('itemLoaded', function() {
         // Retrieve item's comment.
-        CommentService.filterByObject(1, $scope.item.pk).then(
+        CommentService.filterByObject(1, $scope.item.id).then(
             function(data, status, headers, config) {
-                $scope.item.comments = data.data;
+                $scope.item.comments = data.data.comments;
             },
             function(data, status, headers, config) {
                 $log.error("[error] on getting comments!");
@@ -89,11 +89,11 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, $ioni
             // Check if user voted the item.
             VoteService.userVotedForObject(
                 VoteService.objectTypes.item,
-                $scope.item.pk,
-                AuthenticationService.getAuthenticatedUser().pk
+                $scope.item.id,
+                AuthenticationService.getAuthenticatedUser().id
             ).then(
                 function(data, status, headers, config) {
-                    updateItemVote(data.data);
+                    updateItemVote(data.data.votes);
                 },
                 function(data, status, headers, config) {
                     $log.error(data.data.error);
@@ -115,7 +115,7 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, $ioni
     $scope.addComment = function(form, comment) {
         if ($scope.auth.isAuthenticated()) {
             console.log(form, comment);
-            CommentService.create(1, $scope.item.pk, $scope.user.pk, comment.text).then(
+            CommentService.create(1, $scope.item.id, $scope.user.id, comment.text).then(
                 function(data, status, headers, config) {
                     $scope.item.comments = $scope.item.comments.concat(data.data);
                     comment.text = '';
@@ -144,9 +144,9 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, $ioni
             return;
         }
 
-        VoteService.upVote(VoteService.objectTypes.item, item.pk, $scope.user.pk).then(
+        VoteService.upVote(VoteService.objectTypes.item, item.id, $scope.user.id).then(
             function(data, status, headers, config) {
-                updateItemVote(data.data.vote);
+                updateItemVote(data.votes);
             },
             function(data, status, headers, config) {
                 $log.error(data.error);
@@ -166,9 +166,9 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, $ioni
             return;
         }
 
-        VoteService.downVote(VoteService.objectTypes.item, item.pk, $scope.user.pk).then(
+        VoteService.downVote(VoteService.objectTypes.item, item.id, $scope.user.id).then(
             function(data, status, headers, config) {
-                updateItemVote(data.data.vote);
+                updateItemVote(data.votes);
             },
             function(data, status, headers, config) {
                 $log.error(data.error);

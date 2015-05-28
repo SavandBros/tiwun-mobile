@@ -8,7 +8,7 @@
  * @namespace tiwun.sushial.services.VoteService
  */
 function VoteService($http, ENV) {
-    var voteTypes, objectTypes, voteUtils = {};
+    var voteTypes, objectTypes = {};
     voteTypes = {
         up: 1,
         down: -1
@@ -17,9 +17,6 @@ function VoteService($http, ENV) {
         item: 1,
         comment: 2,
         tag: 3
-    };
-    voteUtils = {
-        userVotedForObject: 1
     };
 
     /**
@@ -74,12 +71,12 @@ function VoteService($http, ENV) {
      */
     function userVotedForObject(objectType, objectId, userId) {
         return $http.get(
-            ENV.apiEndpoint + 'sushial/vote/utils/', {
+            ENV.apiEndpoint + 'sushial/vote/', {
                 params: {
-                    utils_type: voteUtils.userVotedForObject,
                     object_type: objectType,
                     object_pk: objectId,
-                    user_id: userId
+                    user_id: userId,
+                    type: ENV.resourceType.single
                 }
             }
         );
@@ -90,8 +87,7 @@ function VoteService($http, ENV) {
         downVote: downVote,
         userVotedForObject: userVotedForObject,
         voteTypes: voteTypes,
-        objectTypes: objectTypes,
-        voteUtils: voteUtils
+        objectTypes: objectTypes
     };
 }
 

@@ -90,7 +90,11 @@ function ItemService($http, gettext, ENV) {
      * @memberOf tiwun.item.services.ItemService
      */
     function get(id) {
-        return $http.get(ENV.apiEndpoint + 'items/' + id + '/');
+        return $http.get(ENV.apiEndpoint + 'items/', {
+            params: {
+                id: id
+            }
+        });
     }
 
     return {

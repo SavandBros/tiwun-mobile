@@ -1,5 +1,5 @@
-<div class="item bg-e"> 
-    <h2><a href="#!/app/items/{{ item.pk }}/">{{ item.title }}</a></h2>
+<div class="item bg-e">
+    <h2><a href="#!/app/items/{{ item.id }}/">{{ item.title }}</a></h2>
 
     <p>{{ item.created | date }} &nbsp;<translate>by</translate>: <a href="#!/app/account/user-profile/{{ item.user_id }}/">{{ item.user_name }}</a></p>
 </div>
@@ -11,7 +11,7 @@
 </div>
 
 <div class="item item-text-wrap" ng-if="image === 'single'">
-    <a class="item item-thumbnail-left" href="#!/app/items/{{ item.pk }}/">
+    <a class="item item-thumbnail-left" href="#!/app/items/{{ item.id }}/">
         <img ng-src="{{ item.get_primary_image.thumbnail }}">
         <p>{{ item.description | markdown | stripTags | truncate: 140: '...': true }}</p>
     </a>
