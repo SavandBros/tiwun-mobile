@@ -139,6 +139,10 @@ module.exports = function(grunt) {
                 constants: {
                     ENV: {
                         name: 'development',
+                        resourceType: {
+                            single: '1',
+                            list: '2'
+                        },
                         apiEndpoint: 'https://127.0.0.1:8000/api/'
                     }
                 }
@@ -147,6 +151,10 @@ module.exports = function(grunt) {
                 constants: {
                     ENV: {
                         name: 'production',
+                        resourceType: {
+                            single: '1',
+                            list: '2'
+                        },
                         apiEndpoint: 'https://www.tiwun.com/api/'
                     }
                 }
