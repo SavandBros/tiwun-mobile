@@ -27,7 +27,7 @@
 
     <img class="full-image" ng-src="{{ item.get_primary_image.standard }}" ng-if="image === 'single'">
 
-    <p>{{ item.description | markdown | stripTags }}</p>
+    <p ng-bind-html="item.description | markdown"></p>
 </div>
 
 <div class="item tabs tabs-secondary tabs-icon-left bg-e">
