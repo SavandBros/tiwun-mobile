@@ -1,4 +1,4 @@
-2015.05.23
+2015.05.29
 ===========
 
 * Feature #28: Add `ChangeLog.md` file.
