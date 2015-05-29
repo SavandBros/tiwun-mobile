@@ -20,6 +20,7 @@
         constructor();
 
         $scope.auth = AuthenticationService;
+        $scope.IsPostPage = true;
 
         function constructor() {
             if (!AuthenticationService.isAuthenticated()) {

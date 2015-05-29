@@ -153,3 +153,16 @@ b {
     line-height: 0 !important;
     font-size: 1.8em !important;
 }
+
+.menu-list > .list > .item {
+    border-color: whitesmoke;
+}
+
+.tabs-subheader > .tab-item {
+    border-color: #eee !important;
+}
+
+.tabs-subheader > .tab-item > i {
+    font-size: 1.3em !important;
+    padding-right: 5px !important;
+}

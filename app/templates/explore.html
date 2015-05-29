@@ -2,7 +2,7 @@
 
     <ion-content class="bg-e">
         <div class="tabs-striped tabs-top tabs-background-dark tabs-color-light">
-            <div class="tabs" style="top: 0">
+            <div class="tabs tabs-subheader" style="top: 0">
                 <a class="tab-item" ng-click="setItemKind(k)" ng-repeat="(k, v) in itemKinds" ng-class="{'active': itemKinds[k] === currentItemKind}">
                     <i class="ion-{{ v.icon }}"></i> <translate>{{ v.text }}</translate>
                 </a>
