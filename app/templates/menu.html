@@ -19,8 +19,10 @@
         </ion-header-bar>
 
         <ion-content>
-            <ion-list>
+            <ion-list class="menu-list">
                 <div class="item item-banner" menu-close>
+                    <br><br><br>
+
                     <a class="button button-positive button-small col-33" href="#!/app/account/login" ng-hide="{{ auth.isAuthenticated() }}"><translate>Sign in</translate></a>
 
                     <a class="item item-avatar" href="#!/app/account/user-profile/{{ user.pk }}/" ng-show="auth.isAuthenticated()">
@@ -83,7 +85,7 @@
         </ion-content>
     </ion-side-menu>
 
-    <a class="button button-corner button-assertive anime">
+    <a class="button button-corner button-assertive anime" href="#!/app/items/new/" ng-hide="IsPostPage">
         <i class="icon ion-ios-plus-outline"></i>
     </a>
 </ion-side-menus>
