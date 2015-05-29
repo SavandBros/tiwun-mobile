@@ -55,6 +55,11 @@ _.each(platforms, function (platform) {
   var base = path.resolve('platforms', platform, BASES[platform]);
   glob(base + '/**/*.png', function (err, files) {
     _.each(files, function (cordovaFile) {
+
+        if (cordovaFile.indexOf('screen.png') > -1) {
+            return;
+        }
+
       var orchestrator = new Orchestrator();
       var parts = cordovaFile.split('/');
       var fileName = parts.pop();
