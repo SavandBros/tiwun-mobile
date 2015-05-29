@@ -10,10 +10,10 @@
 
     angular.module('tiwun', [
         'ionic',
-        'ngCookies',
         'angular.filter',
         'markdown',
         'gettext',
+        'ngSanitize',
         'tiwun.ngkonstant',
         'tiwun.konfig.Konfig',
         'tiwun.basement',
