@@ -1,10 +1,10 @@
-# 
+# Translators:
 # Translators:
 # Alireza Savand <alireza.savand@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Tiwun Mobile\n"
-"PO-Revision-Date: 2015-05-23 02:41+0000\n"
+"PO-Revision-Date: 2015-05-29 17:34+0000\n"
 "Last-Translator: Alireza Savand <alireza.savand@gmail.com>\n"
 "Language-Team: Arabic (http://www.transifex.com/projects/p/tiwun-mobile/language/ar/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -12,15 +12,15 @@ msgstr ""
 "Language: ar\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
-#: app/templates/menu.html:54
+#: app/templates/menu.html:57 app/templates/menu.html:57
 msgid "Account"
 msgstr "حساب"
 
-#: app/templates/item/single_item.html:32
+#: app/templates/item/single_item.html:31
 msgid "ago"
 msgstr "وقبل"
 
-#: app/templates/item/directives/item_directive.html:6
+#: app/templates/item/directives/item_directive.html:4
 msgid "by"
 msgstr "قبل"
 
@@ -28,7 +28,7 @@ msgstr "قبل"
 msgid "Cancel"
 msgstr "إلغاء الأمر"
 
-#: app/templates/item/single_item.html:15
+#: app/templates/item/single_item.html:16
 msgid "Comment..."
 msgstr "التعليق..."
 
@@ -66,19 +66,19 @@ msgstr "البريد الإلكتروني"
 msgid "Email or Password is wrong."
 msgstr "البريد الإلكتروني أو كلمة المرور غير صحيح."
 
-#: app/templates/explore.html:1 app/templates/menu.html:39
+#: app/templates/explore.html:1 app/templates/menu.html:42
 msgid "Explore"
 msgstr "استكشاف"
 
-#: app/templates/account/user_profile.html:44
+#: app/templates/account/user_profile.html:45
 msgid "Joined Date"
 msgstr "انضم حتى الآن"
 
-#: app/templates/menu.html:71
+#: app/templates/menu.html:74
 msgid "Language"
 msgstr "اللغة"
 
-#: app/templates/account/user_profile.html:37
+#: app/templates/account/user_profile.html:38
 msgid "Location"
 msgstr "موقع"
 
@@ -94,7 +94,7 @@ msgstr "القائمة"
 msgid "No result has been found :("
 msgstr "وقد تم العثور على أي نتيجة:("
 
-#: app/templates/item/directives/item_directive.html:10
+#: app/templates/item/directives/item_directive.html:8
 #: app/templates/search/search.html:25
 msgid "OFF"
 msgstr "قبالة"
@@ -113,11 +113,11 @@ msgstr "لا تطابق كلمة المرور!"
 msgid "Popular Tags"
 msgstr "شعبية العلامات"
 
-#: app/templates/menu.html:43
+#: app/templates/menu.html:46
 msgid "Post"
 msgstr "وظيفة"
 
-#: app/templates/account/user_profile.html:29
+#: app/templates/account/user_profile.html:30
 msgid "Real Name"
 msgstr "الاسم الحقيقي"
 
@@ -125,11 +125,11 @@ msgstr "الاسم الحقيقي"
 msgid "Register"
 msgstr "سجل"
 
-#: app/templates/account/register.html:31 app/templates/menu.html:61
+#: app/templates/account/register.html:31 app/templates/menu.html:64
 msgid "Register &amp; Join"
 msgstr "سجل &amp; التسجيل"
 
-#: app/templates/menu.html:47 app/templates/search/search.html:1
+#: app/templates/menu.html:50 app/templates/search/search.html:1
 msgid "Search"
 msgstr "البحث"
 
@@ -141,15 +141,15 @@ msgstr "البحث..."
 msgid "Settings"
 msgstr "إعدادات"
 
-#: app/templates/menu.html:24 app/templates/menu.html:57
+#: app/templates/menu.html:26 app/templates/menu.html:60
 msgid "Sign in"
 msgstr "تسجيل الدخول"
 
-#: app/templates/menu.html:65
+#: app/templates/menu.html:68
 msgid "Sign out"
 msgstr "قم بتسجيل الخروج"
 
-#: app/templates/item/item_post.html:37 app/templates/menu.html:51
+#: app/templates/item/item_post.html:37 app/templates/menu.html:54
 msgid "Tags"
 msgstr "العلامات"
 
@@ -185,20 +185,20 @@ msgstr "العنوان طويل جداً."
 msgid "Title is too short."
 msgstr "العنوان قصيرة جداً."
 
-#: app/templates/menu.html:35
+#: app/templates/menu.html:38
 msgid "Tiwun"
 msgstr "تیوون"
 
-#: app/templates/item/directives/item_directive.html:36
+#: app/templates/item/directives/item_directive.html:41
 msgid "Visit"
 msgstr "قم بزيارة"
 
-#: app/templates/item/directives/item_directive.html:11
+#: app/templates/item/directives/item_directive.html:9
 #: app/templates/search/search.html:26
 msgid "was"
 msgstr "وكان"
 
-#: app/templates/account/user_profile.html:33
+#: app/templates/account/user_profile.html:34
 msgid "Website"
 msgstr "موقع على شبكة الإنترنت"
 

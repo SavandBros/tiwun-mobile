@@ -1,10 +1,10 @@
-# 
+# Translators:
 # Translators:
 # Alireza Savand <alireza.savand@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Tiwun Mobile\n"
-"PO-Revision-Date: 2015-05-23 02:42+0000\n"
+"PO-Revision-Date: 2015-05-29 17:34+0000\n"
 "Last-Translator: Alireza Savand <alireza.savand@gmail.com>\n"
 "Language-Team: French (http://www.transifex.com/projects/p/tiwun-mobile/language/fr/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -12,15 +12,15 @@ msgstr ""
 "Language: fr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: app/templates/menu.html:54
+#: app/templates/menu.html:57 app/templates/menu.html:57
 msgid "Account"
 msgstr "Compte"
 
-#: app/templates/item/single_item.html:32
+#: app/templates/item/single_item.html:31
 msgid "ago"
 msgstr "Il y a"
 
-#: app/templates/item/directives/item_directive.html:6
+#: app/templates/item/directives/item_directive.html:4
 msgid "by"
 msgstr "par"
 
@@ -28,7 +28,7 @@ msgstr "par"
 msgid "Cancel"
 msgstr "Annuler"
 
-#: app/templates/item/single_item.html:15
+#: app/templates/item/single_item.html:16
 msgid "Comment..."
 msgstr "Commentaire..."
 
@@ -66,19 +66,19 @@ msgstr "Messagerie"
 msgid "Email or Password is wrong."
 msgstr "Courriel ou mot de passe est erroné."
 
-#: app/templates/explore.html:1 app/templates/menu.html:39
+#: app/templates/explore.html:1 app/templates/menu.html:42
 msgid "Explore"
 msgstr "Explorez"
 
-#: app/templates/account/user_profile.html:44
+#: app/templates/account/user_profile.html:45
 msgid "Joined Date"
 msgstr "Date de l'arrivée au"
 
-#: app/templates/menu.html:71
+#: app/templates/menu.html:74
 msgid "Language"
 msgstr "Langue"
 
-#: app/templates/account/user_profile.html:37
+#: app/templates/account/user_profile.html:38
 msgid "Location"
 msgstr "Emplacement"
 
@@ -94,7 +94,7 @@ msgstr "Menu"
 msgid "No result has been found :("
 msgstr "Aucun résultat n'a été trouvé:("
 
-#: app/templates/item/directives/item_directive.html:10
+#: app/templates/item/directives/item_directive.html:8
 #: app/templates/search/search.html:25
 msgid "OFF"
 msgstr "HORS"
@@ -113,11 +113,11 @@ msgstr "Mot de passe ne correspond pas !"
 msgid "Popular Tags"
 msgstr "Tags populaires"
 
-#: app/templates/menu.html:43
+#: app/templates/menu.html:46
 msgid "Post"
 msgstr "Publier"
 
-#: app/templates/account/user_profile.html:29
+#: app/templates/account/user_profile.html:30
 msgid "Real Name"
 msgstr "De son vrai nom"
 
@@ -125,11 +125,11 @@ msgstr "De son vrai nom"
 msgid "Register"
 msgstr "S'inscrire"
 
-#: app/templates/account/register.html:31 app/templates/menu.html:61
+#: app/templates/account/register.html:31 app/templates/menu.html:64
 msgid "Register &amp; Join"
 msgstr "Registre &amp; Join"
 
-#: app/templates/menu.html:47 app/templates/search/search.html:1
+#: app/templates/menu.html:50 app/templates/search/search.html:1
 msgid "Search"
 msgstr "Rechercher"
 
@@ -141,15 +141,15 @@ msgstr "Rechercher..."
 msgid "Settings"
 msgstr "Paramètres"
 
-#: app/templates/menu.html:24 app/templates/menu.html:57
+#: app/templates/menu.html:26 app/templates/menu.html:60
 msgid "Sign in"
 msgstr "Connexion"
 
-#: app/templates/menu.html:65
+#: app/templates/menu.html:68
 msgid "Sign out"
 msgstr "Se déconnecter"
 
-#: app/templates/item/item_post.html:37 app/templates/menu.html:51
+#: app/templates/item/item_post.html:37 app/templates/menu.html:54
 msgid "Tags"
 msgstr "Tags"
 
@@ -185,20 +185,20 @@ msgstr "Le titre est trop long."
 msgid "Title is too short."
 msgstr "Le titre est trop court."
 
-#: app/templates/menu.html:35
+#: app/templates/menu.html:38
 msgid "Tiwun"
 msgstr "Tiwun"
 
-#: app/templates/item/directives/item_directive.html:36
+#: app/templates/item/directives/item_directive.html:41
 msgid "Visit"
 msgstr "Visite"
 
-#: app/templates/item/directives/item_directive.html:11
+#: app/templates/item/directives/item_directive.html:9
 #: app/templates/search/search.html:26
 msgid "was"
 msgstr "a été"
 
-#: app/templates/account/user_profile.html:33
+#: app/templates/account/user_profile.html:34
 msgid "Website"
 msgstr "Site Web"
 

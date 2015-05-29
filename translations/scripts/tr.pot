@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Tiwun Mobile\n"
-"PO-Revision-Date: 2015-05-21 15:57+0000\n"
+"PO-Revision-Date: 2015-05-29 17:40+0000\n"
 "Last-Translator: Alireza Savand <alireza.savand@gmail.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/projects/p/tiwun-mobile/language/tr/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,6 +20,10 @@ msgstr "bir"
 msgid "an"
 msgstr "bir"
 
+#: app/scripts/item/services/item_service.js:16
+msgid "Comments"
+msgstr "Yorumlar"
+
 #: app/scripts/basement/filters/timesince.js:36
 msgid "day"
 msgstr "gün"
@@ -27,6 +31,18 @@ msgstr "gün"
 #: app/scripts/basement/filters/timesince.js:37
 msgid "days"
 msgstr "gün"
+
+#: app/scripts/item/services/item_service.js:18
+msgid "Down Votes"
+msgstr "Oy"
+
+#: app/scripts/basement/controllers/index_controller.js:30
+msgid "Free"
+msgstr "Ücretsiz"
+
+#: app/scripts/basement/controllers/index_controller.js:20
+msgid "Hottest"
+msgstr "En sıcak"
 
 #: app/scripts/basement/filters/timesince.js:41
 msgid "hour"
@@ -56,9 +72,22 @@ msgstr "ay"
 msgid "months"
 msgstr "ay"
 
+#: app/scripts/basement/controllers/index_controller.js:25
+#: app/scripts/item/services/item_service.js:15
+msgid "Newest"
+msgstr "En yeni"
+
+#: app/scripts/item/services/item_service.js:19
+msgid "Rate"
+msgstr "Oranı"
+
 #: app/scripts/basement/services/toast_service.js:34
 msgid "There was a problem..."
 msgstr "Bir sorun vardı..."
+
+#: app/scripts/item/services/item_service.js:17
+msgid "Up Votes"
+msgstr "Oy sayısı kadar"
 
 #: app/scripts/basement/filters/timesince.js:26
 msgid "year"
@@ -72,6 +101,6 @@ msgstr "yıl"
 msgid "You are not authorized to access this page."
 msgstr "Bu sayfaya erişmek için yetkiniz yok."
 
-#: app/scripts/item/controllers/single_item_controller.js:123
+#: app/scripts/item/controllers/single_item_controller.js:126
 msgid "Your comment has been posted successfully."
 msgstr "Yorumunuz başarıyla gönderildi."

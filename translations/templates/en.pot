@@ -13,15 +13,15 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 #: app/templates/menu.html:57
 
-#: app/templates/menu.html:54
+#: app/templates/menu.html:57
 msgid "Account"
 msgstr ""
 
-#: app/templates/item/single_item.html:32
+#: app/templates/item/single_item.html:31
 msgid "ago"
 msgstr ""
 
-#: app/templates/item/directives/item_directive.html:6
+#: app/templates/item/directives/item_directive.html:4
 msgid "by"
 msgstr ""
 
@@ -29,7 +29,7 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
-#: app/templates/item/single_item.html:15
+#: app/templates/item/single_item.html:16
 msgid "Comment..."
 msgstr ""
 
@@ -71,19 +71,19 @@ msgid "Email or Password is wrong."
 msgstr ""
 
 #: app/templates/explore.html:1
-#: app/templates/menu.html:39
+#: app/templates/menu.html:42
 msgid "Explore"
 msgstr ""
 
-#: app/templates/account/user_profile.html:44
+#: app/templates/account/user_profile.html:45
 msgid "Joined Date"
 msgstr ""
 
-#: app/templates/menu.html:71
+#: app/templates/menu.html:74
 msgid "Language"
 msgstr ""
 
-#: app/templates/account/user_profile.html:37
+#: app/templates/account/user_profile.html:38
 msgid "Location"
 msgstr ""
 
@@ -100,7 +100,7 @@ msgstr ""
 msgid "No result has been found :("
 msgstr ""
 
-#: app/templates/item/directives/item_directive.html:10
+#: app/templates/item/directives/item_directive.html:8
 #: app/templates/search/search.html:25
 msgid "OFF"
 msgstr ""
@@ -120,11 +120,11 @@ msgstr ""
 msgid "Popular Tags"
 msgstr ""
 
-#: app/templates/menu.html:43
+#: app/templates/menu.html:46
 msgid "Post"
 msgstr ""
 
-#: app/templates/account/user_profile.html:29
+#: app/templates/account/user_profile.html:30
 msgid "Real Name"
 msgstr ""
 
@@ -133,11 +133,11 @@ msgid "Register"
 msgstr ""
 
 #: app/templates/account/register.html:31
-#: app/templates/menu.html:61
+#: app/templates/menu.html:64
 msgid "Register &amp; Join"
 msgstr ""
 
-#: app/templates/menu.html:47
+#: app/templates/menu.html:50
 #: app/templates/search/search.html:1
 msgid "Search"
 msgstr ""
@@ -150,17 +150,17 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: app/templates/menu.html:24
-#: app/templates/menu.html:57
+#: app/templates/menu.html:26
+#: app/templates/menu.html:60
 msgid "Sign in"
 msgstr ""
 
-#: app/templates/menu.html:65
+#: app/templates/menu.html:68
 msgid "Sign out"
 msgstr ""
 
 #: app/templates/item/item_post.html:37
-#: app/templates/menu.html:51
+#: app/templates/menu.html:54
 msgid "Tags"
 msgstr ""
 
@@ -197,20 +197,20 @@ msgstr ""
 msgid "Title is too short."
 msgstr ""
 
-#: app/templates/menu.html:35
+#: app/templates/menu.html:38
 msgid "Tiwun"
 msgstr ""
 
-#: app/templates/item/directives/item_directive.html:36
+#: app/templates/item/directives/item_directive.html:41
 msgid "Visit"
 msgstr ""
 
-#: app/templates/item/directives/item_directive.html:11
+#: app/templates/item/directives/item_directive.html:9
 #: app/templates/search/search.html:26
 msgid "was"
 msgstr ""
 
-#: app/templates/account/user_profile.html:33
+#: app/templates/account/user_profile.html:34
 msgid "Website"
 msgstr ""
 

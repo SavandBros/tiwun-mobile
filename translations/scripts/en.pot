@@ -17,12 +17,28 @@ msgstr ""
 msgid "an"
 msgstr ""
 
+#: app/scripts/item/services/item_service.js:16
+msgid "Comments"
+msgstr ""
+
 #: app/scripts/basement/filters/timesince.js:36
 msgid "day"
 msgstr ""
 
 #: app/scripts/basement/filters/timesince.js:37
 msgid "days"
+msgstr ""
+
+#: app/scripts/item/services/item_service.js:18
+msgid "Down Votes"
+msgstr ""
+
+#: app/scripts/basement/controllers/index_controller.js:30
+msgid "Free"
+msgstr ""
+
+#: app/scripts/basement/controllers/index_controller.js:20
+msgid "Hottest"
 msgstr ""
 
 #: app/scripts/basement/filters/timesince.js:41
@@ -53,8 +69,21 @@ msgstr ""
 msgid "months"
 msgstr ""
 
+#: app/scripts/basement/controllers/index_controller.js:25
+#: app/scripts/item/services/item_service.js:15
+msgid "Newest"
+msgstr ""
+
+#: app/scripts/item/services/item_service.js:19
+msgid "Rate"
+msgstr ""
+
 #: app/scripts/basement/services/toast_service.js:34
 msgid "There was a problem..."
+msgstr ""
+
+#: app/scripts/item/services/item_service.js:17
+msgid "Up Votes"
 msgstr ""
 
 #: app/scripts/basement/filters/timesince.js:26
@@ -69,6 +98,6 @@ msgstr ""
 msgid "You are not authorized to access this page."
 msgstr ""
 
-#: app/scripts/item/controllers/single_item_controller.js:123
+#: app/scripts/item/controllers/single_item_controller.js:126
 msgid "Your comment has been posted successfully."
 msgstr ""

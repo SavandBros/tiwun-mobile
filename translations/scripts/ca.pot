@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Tiwun Mobile\n"
-"PO-Revision-Date: 2015-05-21 15:57+0000\n"
+"PO-Revision-Date: 2015-05-29 17:35+0000\n"
 "Last-Translator: Alireza Savand <alireza.savand@gmail.com>\n"
 "Language-Team: Catalan (http://www.transifex.com/projects/p/tiwun-mobile/language/ca/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,6 +20,10 @@ msgstr "un"
 msgid "an"
 msgstr "un"
 
+#: app/scripts/item/services/item_service.js:16
+msgid "Comments"
+msgstr "Comentari"
+
 #: app/scripts/basement/filters/timesince.js:36
 msgid "day"
 msgstr "dia"
@@ -27,6 +31,18 @@ msgstr "dia"
 #: app/scripts/basement/filters/timesince.js:37
 msgid "days"
 msgstr "dies"
+
+#: app/scripts/item/services/item_service.js:18
+msgid "Down Votes"
+msgstr "Avall vots"
+
+#: app/scripts/basement/controllers/index_controller.js:30
+msgid "Free"
+msgstr "Lliure"
+
+#: app/scripts/basement/controllers/index_controller.js:20
+msgid "Hottest"
+msgstr "Més populars"
 
 #: app/scripts/basement/filters/timesince.js:41
 msgid "hour"
@@ -56,9 +72,22 @@ msgstr "mes"
 msgid "months"
 msgstr "mesos"
 
+#: app/scripts/basement/controllers/index_controller.js:25
+#: app/scripts/item/services/item_service.js:15
+msgid "Newest"
+msgstr "Més recent"
+
+#: app/scripts/item/services/item_service.js:19
+msgid "Rate"
+msgstr "Taxa"
+
 #: app/scripts/basement/services/toast_service.js:34
 msgid "There was a problem..."
 msgstr "Hi havia un problema..."
+
+#: app/scripts/item/services/item_service.js:17
+msgid "Up Votes"
+msgstr "Cap amunt de vots"
 
 #: app/scripts/basement/filters/timesince.js:26
 msgid "year"
@@ -72,6 +101,6 @@ msgstr "anys"
 msgid "You are not authorized to access this page."
 msgstr "Vostè no està autoritzat a accedir a aquesta pàgina."
 
-#: app/scripts/item/controllers/single_item_controller.js:123
+#: app/scripts/item/controllers/single_item_controller.js:126
 msgid "Your comment has been posted successfully."
 msgstr "El seu comentari ha estat enviat amb èxit."

@@ -1,10 +1,10 @@
-# 
+# Translators:
 # Translators:
 # Alireza Savand <alireza.savand@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Tiwun Mobile\n"
-"PO-Revision-Date: 2015-05-23 02:44+0000\n"
+"PO-Revision-Date: 2015-05-29 17:34+0000\n"
 "Last-Translator: Alireza Savand <alireza.savand@gmail.com>\n"
 "Language-Team: Thai (http://www.transifex.com/projects/p/tiwun-mobile/language/th/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -12,15 +12,15 @@ msgstr ""
 "Language: th\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: app/templates/menu.html:54
+#: app/templates/menu.html:57 app/templates/menu.html:57
 msgid "Account"
 msgstr "บัญชี"
 
-#: app/templates/item/single_item.html:32
+#: app/templates/item/single_item.html:31
 msgid "ago"
 msgstr "ผ่านมา"
 
-#: app/templates/item/directives/item_directive.html:6
+#: app/templates/item/directives/item_directive.html:4
 msgid "by"
 msgstr "โดย"
 
@@ -28,7 +28,7 @@ msgstr "โดย"
 msgid "Cancel"
 msgstr "ยกเลิก"
 
-#: app/templates/item/single_item.html:15
+#: app/templates/item/single_item.html:16
 msgid "Comment..."
 msgstr "ความคิดเห็น..."
 
@@ -66,19 +66,19 @@ msgstr "อีเมล"
 msgid "Email or Password is wrong."
 msgstr "อีเมล์หรือรหัสผ่านไม่ถูกต้อง"
 
-#: app/templates/explore.html:1 app/templates/menu.html:39
+#: app/templates/explore.html:1 app/templates/menu.html:42
 msgid "Explore"
 msgstr "สำรวจ"
 
-#: app/templates/account/user_profile.html:44
+#: app/templates/account/user_profile.html:45
 msgid "Joined Date"
 msgstr "วันรวม"
 
-#: app/templates/menu.html:71
+#: app/templates/menu.html:74
 msgid "Language"
 msgstr "ภาษา"
 
-#: app/templates/account/user_profile.html:37
+#: app/templates/account/user_profile.html:38
 msgid "Location"
 msgstr "สถานที่ตั้ง"
 
@@ -94,7 +94,7 @@ msgstr "เมนู"
 msgid "No result has been found :("
 msgstr "ผลไม่พบ:("
 
-#: app/templates/item/directives/item_directive.html:10
+#: app/templates/item/directives/item_directive.html:8
 #: app/templates/search/search.html:25
 msgid "OFF"
 msgstr "ปิด"
@@ -113,11 +113,11 @@ msgstr "รหัสผ่านไม่ตรงกัน"
 msgid "Popular Tags"
 msgstr "Tags:นิยม"
 
-#: app/templates/menu.html:43
+#: app/templates/menu.html:46
 msgid "Post"
 msgstr "ประกาศ"
 
-#: app/templates/account/user_profile.html:29
+#: app/templates/account/user_profile.html:30
 msgid "Real Name"
 msgstr "ชื่อจริง"
 
@@ -125,11 +125,11 @@ msgstr "ชื่อจริง"
 msgid "Register"
 msgstr "ลงทะเบียน"
 
-#: app/templates/account/register.html:31 app/templates/menu.html:61
+#: app/templates/account/register.html:31 app/templates/menu.html:64
 msgid "Register &amp; Join"
 msgstr "ลงทะเบียนและเข้าร่วม"
 
-#: app/templates/menu.html:47 app/templates/search/search.html:1
+#: app/templates/menu.html:50 app/templates/search/search.html:1
 msgid "Search"
 msgstr "ค้นหา"
 
@@ -141,15 +141,15 @@ msgstr "ค้นหา..."
 msgid "Settings"
 msgstr "การตั้งค่า"
 
-#: app/templates/menu.html:24 app/templates/menu.html:57
+#: app/templates/menu.html:26 app/templates/menu.html:60
 msgid "Sign in"
 msgstr "เข้าสู่ระบบ"
 
-#: app/templates/menu.html:65
+#: app/templates/menu.html:68
 msgid "Sign out"
 msgstr "ลงชื่อออก"
 
-#: app/templates/item/item_post.html:37 app/templates/menu.html:51
+#: app/templates/item/item_post.html:37 app/templates/menu.html:54
 msgid "Tags"
 msgstr "แท็ก"
 
@@ -185,20 +185,20 @@ msgstr "ชื่อเรื่องยาวเกินไป"
 msgid "Title is too short."
 msgstr "ชื่อเรื่องจะสั้นเกินไป"
 
-#: app/templates/menu.html:35
+#: app/templates/menu.html:38
 msgid "Tiwun"
 msgstr "Tiwun"
 
-#: app/templates/item/directives/item_directive.html:36
+#: app/templates/item/directives/item_directive.html:41
 msgid "Visit"
 msgstr "เข้าเยี่ยมชม"
 
-#: app/templates/item/directives/item_directive.html:11
+#: app/templates/item/directives/item_directive.html:9
 #: app/templates/search/search.html:26
 msgid "was"
 msgstr "ถูก"
 
-#: app/templates/account/user_profile.html:33
+#: app/templates/account/user_profile.html:34
 msgid "Website"
 msgstr "เว็บไซต์"
 

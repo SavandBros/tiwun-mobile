@@ -1,10 +1,10 @@
-# 
+# Translators:
 # Translators:
 # Alireza Savand <alireza.savand@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Tiwun Mobile\n"
-"PO-Revision-Date: 2015-05-23 02:43+0000\n"
+"PO-Revision-Date: 2015-05-29 17:34+0000\n"
 "Last-Translator: Alireza Savand <alireza.savand@gmail.com>\n"
 "Language-Team: Italian (http://www.transifex.com/projects/p/tiwun-mobile/language/it/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -12,15 +12,15 @@ msgstr ""
 "Language: it\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: app/templates/menu.html:54
+#: app/templates/menu.html:57 app/templates/menu.html:57
 msgid "Account"
 msgstr "Conto"
 
-#: app/templates/item/single_item.html:32
+#: app/templates/item/single_item.html:31
 msgid "ago"
 msgstr "fa"
 
-#: app/templates/item/directives/item_directive.html:6
+#: app/templates/item/directives/item_directive.html:4
 msgid "by"
 msgstr "di"
 
@@ -28,7 +28,7 @@ msgstr "di"
 msgid "Cancel"
 msgstr "Annulla"
 
-#: app/templates/item/single_item.html:15
+#: app/templates/item/single_item.html:16
 msgid "Comment..."
 msgstr "Commento..."
 
@@ -66,19 +66,19 @@ msgstr "Posta elettronica"
 msgid "Email or Password is wrong."
 msgstr "E-mail o Password è errato."
 
-#: app/templates/explore.html:1 app/templates/menu.html:39
+#: app/templates/explore.html:1 app/templates/menu.html:42
 msgid "Explore"
 msgstr "Esplorate"
 
-#: app/templates/account/user_profile.html:44
+#: app/templates/account/user_profile.html:45
 msgid "Joined Date"
 msgstr "Riunite data"
 
-#: app/templates/menu.html:71
+#: app/templates/menu.html:74
 msgid "Language"
 msgstr "Lingua"
 
-#: app/templates/account/user_profile.html:37
+#: app/templates/account/user_profile.html:38
 msgid "Location"
 msgstr "Posizione"
 
@@ -94,7 +94,7 @@ msgstr "Menu"
 msgid "No result has been found :("
 msgstr "È stato trovato alcun risultato :("
 
-#: app/templates/item/directives/item_directive.html:10
+#: app/templates/item/directives/item_directive.html:8
 #: app/templates/search/search.html:25
 msgid "OFF"
 msgstr "FUORI"
@@ -113,11 +113,11 @@ msgstr "Password non corrispondono!"
 msgid "Popular Tags"
 msgstr "Tags popolari"
 
-#: app/templates/menu.html:43
+#: app/templates/menu.html:46
 msgid "Post"
 msgstr "Inserisci"
 
-#: app/templates/account/user_profile.html:29
+#: app/templates/account/user_profile.html:30
 msgid "Real Name"
 msgstr "Vero nome"
 
@@ -125,11 +125,11 @@ msgstr "Vero nome"
 msgid "Register"
 msgstr "Registro"
 
-#: app/templates/account/register.html:31 app/templates/menu.html:61
+#: app/templates/account/register.html:31 app/templates/menu.html:64
 msgid "Register &amp; Join"
 msgstr "Registrati &amp; Join"
 
-#: app/templates/menu.html:47 app/templates/search/search.html:1
+#: app/templates/menu.html:50 app/templates/search/search.html:1
 msgid "Search"
 msgstr "Ricerca"
 
@@ -141,15 +141,15 @@ msgstr "Ricerca..."
 msgid "Settings"
 msgstr "Impostazioni"
 
-#: app/templates/menu.html:24 app/templates/menu.html:57
+#: app/templates/menu.html:26 app/templates/menu.html:60
 msgid "Sign in"
 msgstr "Accedi"
 
-#: app/templates/menu.html:65
+#: app/templates/menu.html:68
 msgid "Sign out"
 msgstr "Esci"
 
-#: app/templates/item/item_post.html:37 app/templates/menu.html:51
+#: app/templates/item/item_post.html:37 app/templates/menu.html:54
 msgid "Tags"
 msgstr "Tag"
 
@@ -185,20 +185,20 @@ msgstr "Titolo è troppo lungo."
 msgid "Title is too short."
 msgstr "Titolo è troppo breve."
 
-#: app/templates/menu.html:35
+#: app/templates/menu.html:38
 msgid "Tiwun"
 msgstr "Tiwun"
 
-#: app/templates/item/directives/item_directive.html:36
+#: app/templates/item/directives/item_directive.html:41
 msgid "Visit"
 msgstr "Visita"
 
-#: app/templates/item/directives/item_directive.html:11
+#: app/templates/item/directives/item_directive.html:9
 #: app/templates/search/search.html:26
 msgid "was"
 msgstr "era"
 
-#: app/templates/account/user_profile.html:33
+#: app/templates/account/user_profile.html:34
 msgid "Website"
 msgstr "Sito Web"
 
