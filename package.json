@@ -57,11 +57,11 @@
         "test": "grunt test"
     },
     "cordovaPlugins": [
-        "org.apache.cordova.device",
-        "org.apache.cordova.console",
         "com.ionic.keyboard",
         "nl.x-services.plugins.socialsharing",
         "nl.x-services.plugins.toast",
-        "cordova-plugin-whitelist"
+        "cordova-plugin-whitelist",
+        "cordova-plugin-device",
+        "cordova-plugin-console"
     ]
 }
