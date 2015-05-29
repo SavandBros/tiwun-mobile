@@ -5,6 +5,7 @@
 * Feature #26: Newest, free items should be added to Explore as tabs.
 * Feature #30: Comment delete by comment poster.
 * Feature #32: Match with Tiwun.com new API.
+* Feature #33: Login user after registration.
 
 
 0.0.1 - 2015-05-23

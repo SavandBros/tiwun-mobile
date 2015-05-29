@@ -7,7 +7,8 @@
  * @class RegisterController
  * @namespace tiwun.account.controllers.RegisterController
  */
-function RegisterController($window, $ionicHistory, $state, $scope, AuthenticationService) {
+function RegisterController($window, $ionicHistory, $state, $rootScope, $scope, $log, AuthenticationService) {
+    var email, password;
     constructor();
 
     /**
@@ -24,6 +25,20 @@ function RegisterController($window, $ionicHistory, $state, $scope, Authenticati
     }
 
     $scope.$on('tiwun.account.service.AuthenticationService:Registered', function() {
+        AuthenticationService.login(email, password).then(
+            function(data, status, headers, config) {
+                $log.info('Success login');
+
+                AuthenticationService.setAuthenticatedUser(data.data.user);
+                AuthenticationService.setToken(data.data.token);
+
+                $rootScope.$broadcast('tiwun.account.service.AuthenticationService:Authenticated');
+            },
+            null
+        );
+    });
+
+    $scope.$on('tiwun.account.service.AuthenticationService:Authenticated', function() {
         $state.go('app.explore', {}, {
             reload: true
         });
@@ -45,6 +60,9 @@ function RegisterController($window, $ionicHistory, $state, $scope, Authenticati
             }
         }
 
+        email = user.email;
+        password = user.password;
+
         AuthenticationService.register(user.email, user.password);
     };
 }
@@ -54,4 +72,12 @@ angular.module('tiwun.account.controllers.RegisterController', [
     ])
     .controller('RegisterController', RegisterController);
 
-RegisterController.$inject = ['$window', '$ionicHistory', '$state', '$scope', 'AuthenticationService'];
+RegisterController.$inject = [
+    '$window',
+    '$ionicHistory',
+    '$state',
+    '$rootScope',
+    '$scope',
+    '$log',
+    'AuthenticationService'
+];
