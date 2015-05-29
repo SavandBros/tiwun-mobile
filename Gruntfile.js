@@ -79,7 +79,7 @@ module.exports = function(grunt) {
                 command: 'git pull origin master'
             },
             txPush: {
-                command: 'tx push -t'
+                command: 'tx push -s'
             },
             txPull: {
                 command: 'tx pull -a'
