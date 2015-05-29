@@ -66,8 +66,10 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, $ioni
     function updateItemVote(votes) {
         if (votes.vote_type === VoteService.voteTypes.up) {
             $scope.item.userVote.upVote = true;
+            $scope.item.userVote.downVote = false;
         } else if (votes.vote_type === VoteService.voteTypes.down) {
             $scope.item.userVote.downVote = true;
+            $scope.item.userVote.upVote = false;
         }
     }
 
@@ -147,7 +149,7 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, $ioni
 
         VoteService.upVote(VoteService.objectTypes.item, item.id, $scope.user.id).then(
             function(data, status, headers, config) {
-                updateItemVote(data.votes);
+                updateItemVote(data.data.vote);
             },
             function(data, status, headers, config) {
                 $log.error(data.error);
@@ -169,7 +171,7 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, $ioni
 
         VoteService.downVote(VoteService.objectTypes.item, item.id, $scope.user.id).then(
             function(data, status, headers, config) {
-                updateItemVote(data.votes);
+                updateItemVote(data.data.vote);
             },
             function(data, status, headers, config) {
                 $log.error(data.error);
