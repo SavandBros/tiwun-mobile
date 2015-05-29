@@ -11,7 +11,6 @@
     <content src="index.html"/>
     <access origin="https://www.tiwun.com"/>
     <access origin="https://cdn.shopify.com"/>
-    <access origin="http://placehold.it"/>
     <access origin="https://secure.gravatar.com"/>
     <preference name="android-minSdkVersion" value="10"/>
     <preference name="android-targetSdkVersion" value="19"/>
