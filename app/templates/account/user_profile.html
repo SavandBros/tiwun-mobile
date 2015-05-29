@@ -1,17 +1,17 @@
-<ion-view view-title="{{ user.get_full_name }}">
-    <ion-nav-title>{{ user.get_full_name }}</ion-nav-title>
+<ion-view view-title="{{ profile.get_full_name }}">
+    <ion-nav-title>{{ profile.get_full_name }}</ion-nav-title>
     <ion-content>
         <div class="row">
             <div class="col col-33">
-                <img ng-src="{{ user.get_gravatar[128] }}" class="padding image-box image-circle">
+                <img ng-src="{{ profile.get_gravatar[128] }}" class="padding image-box image-circle">
             </div>
 
             <div class="col col-66">
                 <div class="list card">
-                    <div class="item" ng-show="user.about.length">
-                        {{ user.about }}
+                    <div class="item" ng-show="profile.about.length">
+                        {{ profile.about }}
                     </div>
-                    <div class="item" ng-hide="user.about.length">
+                    <div class="item" ng-hide="profile.about.length">
                         ...
                     </div>
                 </div>
@@ -20,29 +20,29 @@
 
         <div class="list card">
             <div class="item item-divider">
-                <p class="center">{{ user.get_full_name }}</p>
+                <p class="center">{{ profile.get_full_name }}</p>
             </div>
 
             <div class="item item-text-wrap">
                 <ul>
                     <br>
-                    <li ng-show="{{ user.real_name.length }}">
-                        <p> <translate>Real Name</translate>: <b class="right">{{ user.real_name }}</b></p>
+                    <li ng-show="{{ profile.real_name.length }}">
+                        <p> <translate>Real Name</translate>: <b class="right">{{ profile.real_name }}</b></p>
                         <br>
                     </li>
                     <li>
-                        <p> <translate>Website</translate>: <a href="{{ user.website }}" class="right">{{ user.website }}</a></p>
+                        <p> <translate>Website</translate>: <a href="{{ profile.website }}" class="right">{{ profile.website }}</a></p>
                         <br>
                     </li>
-                    <li ng-show="{{ user.location.length }}">
-                        <p><translate>Location</translate>: <span class="right">{{ user.location }}</span></p>
+                    <li ng-show="{{ profile.location.length }}">
+                        <p><translate>Location</translate>: <span class="right">{{ profile.location }}</span></p>
                         <br>
                     </li>
                 </ul>
             </div>
 
             <div class="item item-divider">
-                <p><translate>Joined Date</translate>: <b class="right">{{ user.date_joined | date }}</b></p>
+                <p><translate>Joined Date</translate>: <b class="right">{{ profile.date_joined | date }}</b></p>
             </div>
         </div>
 

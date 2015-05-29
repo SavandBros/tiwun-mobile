@@ -26,7 +26,7 @@
                         <a class="button button-positive button-small col-33" href="#!/app/account/login"><translate>Sign in</translate></a>
                     </span>
 
-                    <a class="item item-avatar" href="#!/app/account/user-profile/{{ user.pk }}/" ng-show="auth.isAuthenticated()">
+                    <a class="item item-avatar" href="#!/app/account/user-profile/{{ user.id }}/" ng-show="auth.isAuthenticated()">
                         <img ng-src="{{ user.get_gravatar[64] }}">
                         <h2>{{ user.get_short_name }}</h2>
                         <p>{{ user.location }}</p>

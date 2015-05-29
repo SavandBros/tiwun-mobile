@@ -17,7 +17,7 @@ function UserProfileController($scope, $stateParams, $log, UserService) {
     function constructor() {
         UserService.get($stateParams['userId']).then(
             function(data, status, headers, config) {
-                $scope.user = data.data;
+                $scope.profile = data.data.user;
             },
             function(data, status, headers, config) {
                 $log.error('Error in getting user: ' + data.error);

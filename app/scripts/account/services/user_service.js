@@ -19,7 +19,11 @@ function UserService($http, ENV) {
      * @memberOf tiwun.account.services.UserService
      */
     function get(userId) {
-        return $http.get(ENV.apiEndpoint + 'users/' + userId + '/');
+        return $http.get(ENV.apiEndpoint + 'users/', {
+            params: {
+                id: userId
+            }
+        });
     }
 
     /**
