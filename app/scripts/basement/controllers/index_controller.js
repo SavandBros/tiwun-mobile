@@ -45,15 +45,15 @@ function IndexController($scope, $state, $log, gettext, AuthenticationService, I
      * Based on the vote type from server, the associated vote button will be highlighted.
      *
      * @method updateItemVote
-     * @param {Object} data
+     * @param {Object} vote
      * @param {Object} item
      * @memberOf tiwun.item.controllers.SingleItemController
      */
-    function updateItemVote(data, item) {
+    function updateItemVote(vote, item) {
         item.userVote = {};
-        if (data.votes.vote_type === VoteService.voteTypes.up) {
+        if (vote.vote_type === VoteService.voteTypes.up) {
             item.userVote.upVote = true;
-        } else if (data.votes.vote_type === VoteService.voteTypes.down) {
+        } else if (vote.vote_type === VoteService.voteTypes.down) {
             item.userVote.downVote = true;
         }
     }
@@ -92,7 +92,7 @@ function IndexController($scope, $state, $log, gettext, AuthenticationService, I
                     AuthenticationService.getAuthenticatedUser().id
                 ).then(
                     function(data, status, headers, config) {
-                        updateItemVote(data.data, item);
+                        updateItemVote(data.data.votes, item);
                     },
                     function(data, status, headers, config) {
                         $log.error(data.data.error);
@@ -115,7 +115,7 @@ function IndexController($scope, $state, $log, gettext, AuthenticationService, I
             return;
         }
 
-        VoteService.upVote(VoteService.objectTypes.item, item.pk, $scope.user.pk).then(
+        VoteService.upVote(VoteService.objectTypes.item, item.id, $scope.user.id).then(
             function(data, status, headers, config) {
                 updateItemVote(data.data.vote, item);
             },
@@ -138,7 +138,7 @@ function IndexController($scope, $state, $log, gettext, AuthenticationService, I
             return;
         }
 
-        VoteService.downVote(VoteService.objectTypes.item, item.pk, $scope.user.pk).then(
+        VoteService.downVote(VoteService.objectTypes.item, item.id, $scope.user.id).then(
             function(data, status, headers, config) {
                 updateItemVote(data.data.vote, item);
             },
