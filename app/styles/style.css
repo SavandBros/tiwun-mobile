@@ -1,14 +1,10 @@
-a {
-    text-decoration: none !important;
-}
+a {text-decoration: none !important}
 
-b {
-    color: #333;
-}
+b {color: #333}
 
 .anime {
     -webkit-transition: all 0.1s ease-out;
-    transition: all 0.1s ease-out;
+            transition: all 0.1s ease-out;
 }
 
 .icon-bg {
@@ -26,28 +22,19 @@ b {
     color: crimson;
 }
 
-.gray {
-    color: #bbb !important;
-}
+.gray {color: #bbb !important;}
 
-.bg-e {
-    background-color: rgb(238, 238, 238) !important;
-}
+.bg-e {background-color: #eee !important}
+.bg-assertive {background: #ef473a !important}
 
-.faded {
-    opacity: 0.5;
-}
-
-.faded-light {
-    opacity: 0.7;
-}
+.faded {opacity: 0.5}
+.faded-light {opacity: 0.7}
 
 .item-tiny {
     padding: 6px;
     font-size: 0.9em;
     -webkit-box-shadow: 0 0 10px #ddd;
-    -moz-box-shadow: 0 0 10px #ddd;
-    box-shadow: 0 0 10px #ddd;
+            box-shadow: 0 0 10px #ddd;
 }
 
 .item-error {
@@ -57,43 +44,30 @@ b {
     margin-bottom: 5px;
 }
 
-.image-box {
-    max-width: 100%;
-}
+.image-box {max-width: 100%}
 
 .image-circle {
     -webkit-border-radius: 100%;
-    -moz-border-radius: 100%;
-    border-radius: 100%;
+            border-radius: 100%;
 }
 
-.right {
-    float: right;
-}
+.right {float: right}
 
-.center {
-    text-align: center;
-}
+.center {text-align: center}
 
-.small {
-    font-size: small;
-}
+.small {font-size: small}
 
 .label {
     border-width: 1px;
     border-style: solid;
     padding: 4px 10px;
     -webkit-box-shadow: 0 2px 2px;
-    -moz-box-shadow: 0 2px 2px;
-    box-shadow: 0 2px 2px;
+            box-shadow: 0 2px 2px;
     -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    border-radius: 2px;
+            border-radius: 2px;
 }
 
-.margin-right {
-    margin-right: 10px;
-}
+.margin-right {margin-right: 10px}
 
 .offer {
     background: rgb(239, 71, 58);
@@ -118,22 +92,18 @@ b {
     display: block;
 }
 
-.bold {
-    font-weight: bold;
-}
+.bold {font-weight: bold}
 
-.full {
-    width: 100%;
-}
+.full {width: 100%}
 
 .button-corner {
-    background: red !important;
+    background: #ef473a !important;
     position: fixed;
     bottom: -42px;
     right: -42px;
     width: 100px;
     height: 100px;
-    opacity: 0.75;
+    opacity: 0.9;
     z-index: 9;
     -webkit-box-shadow: 0 0 13px #333;
             box-shadow: 0 0 13px #333;
@@ -142,7 +112,7 @@ b {
 }
 
 .button-corner:active {
-    opacity: 0.8;
+    opacity: 1;
     bottom: -20px;
     right: -20px;
 }
@@ -154,15 +124,41 @@ b {
     font-size: 1.8em !important;
 }
 
-.menu-list > .list > .item {
-    border-color: whitesmoke;
-}
+.menu-list > .list > .item {border-color: whitesmoke}
 
-.tabs-subheader > .tab-item {
-    border-color: #eee !important;
-}
+.tabs-subheader > .tab-item {border-color: #eee !important}
 
 .tabs-subheader > .tab-item > i {
     font-size: 1.3em !important;
     padding-right: 5px !important;
+}
+
+.bar.bar-dark {border-color: #444}
+
+.toptags-list {text-align: center}
+
+.toptags-list > translate {
+    text-align: left;
+    font-size: 1.8em !important;
+    opacity: 0.4;
+    display: block;
+    line-height: 60px;
+    margin: 15px 30px;
+}
+
+.toptags-list > a {
+    font-size: 1em !important;
+    font-weight: bold;
+    padding: 4px 15px;
+    padding-left: 50px;
+    overflow: hidden;
+    border-radius: 20px 4px 4px 20px ;
+    margin: 5px;
+}
+
+.toptags-list > a > i {
+    position: absolute;
+    font-size: 4em;
+    opacity: 0.5;
+    margin-left: -40px;
 }

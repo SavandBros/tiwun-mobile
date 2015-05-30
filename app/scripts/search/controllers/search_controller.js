@@ -10,12 +10,27 @@
  * @param {SearchService} SearchService
  * @namespace tiwun.search.controllers.SearchController
  */
-function SearchController($scope, $log, SearchService) {
+function SearchController($scope, $log, SearchService, TagService) {
     var pageHasNext = true;
     var pageNumber = 0;
     var searchQuery;
+    $scope.tags = [];
     $scope.shouldSpin = false;
     $scope.items = [];
+    $scope.IsSearchPage = true;
+
+    function constructor() {
+        TagService.all().then(
+            function(data, status, headers, config) {
+                $scope.tags = data.data.tags;
+            },
+            function(data, status, headers, config) {
+                $log.error(data.error);
+            }
+        );
+    }
+
+    constructor();
 
     /**
      * Search all over the place!
@@ -67,8 +82,9 @@ function SearchController($scope, $log, SearchService) {
 }
 
 angular.module('tiwun.search.controllers.SearchController', [
-        'tiwun.search.services.SearchService'
+        'tiwun.search.services.SearchService',
+        'tiwun.tagool.services.TagService'
     ])
     .controller('SearchController', SearchController);
 
-SearchController.$inject = ['$scope', '$log', 'SearchService'];
+SearchController.$inject = ['$scope', '$log', 'SearchService', 'TagService'];

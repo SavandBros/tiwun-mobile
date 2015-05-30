@@ -1,15 +1,24 @@
 <ion-view view-title="{{ 'Search'|translate }}">
     <ion-content class="bg-e">
 
-        <form name="form" ng-submit="search(form, query)">
-            <div class="bar item-input-inset">
-                <label class="item-input-wrap full">
-                    <input class="full" type="search" name="search" ng-model="query.text" placeholder="{{ 'Search...'|translate }}">
+        <div class="bar bar-header item-input-inset" ng-show="IsSearchPage">
+            <form name="form" ng-submit="search(form, query)" class="full">
+                <label class="item-input-wrapper">
+                    <i class="icon ion-ios-search placeholder-icon"></i>
+                    <input type="search" ng-model="query.text" placeholder="{{ 'Search...'|translate }}" ng-focus="!items.length">
                 </label>
-            </div>
-        </form>
+            </form>
+        </div>
 
         <center><ion-spinner icon="lines" ng-show="shouldSpin"></ion-spinner></center>
+
+        <div class="toptags-list" ng-show="!items.length">
+            <translate>Popular Tags</translate>
+            <a class="button button-assertive button-small" ng-repeat="tag in tags" href="#!/app/tags/{{ tag.slug }}/">
+                <i class="ion-pricetags"></i>
+                {{ tag.slug }}
+            </a>
+        </div>
 
         <div class="list card" ng-repeat="item in items">
             <div class="item item-divider">
