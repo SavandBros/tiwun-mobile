@@ -2,6 +2,7 @@
 ==========
 
 * Fixed #39: Item null id/pk in search page.
+* Feature #40: Add popular tags to search page.
 
 
 2015.05.29
