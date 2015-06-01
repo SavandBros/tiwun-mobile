@@ -1,3 +1,9 @@
+2015.06.01
+==========
+
+* Fixed #39: Item null id/pk in search page.
+
+
 2015.05.29
 ===========
 
