@@ -162,3 +162,22 @@ b {color: #333}
     opacity: 0.5;
     margin-left: -40px;
 }
+
+.amir-dialog {
+    width: 100%;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.4);
+    left: 0;
+    z-index: 99;
+    bottom: 10px;
+    padding: 50px 20px;
+    border-top: 2px solid #888;
+    border-bottom: 2px solid #888;
+    -webkit-box-shadow: 0 0 20px #999;
+            box-shadow: 0 0 20px #999;
+}
+
+.amir-dialog > div {
+    -webkit-border-radius: 4px;
+            border-radius: 4px;
+}

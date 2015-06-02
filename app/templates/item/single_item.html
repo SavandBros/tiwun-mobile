@@ -30,13 +30,33 @@
                     <br/>
                     {{ comment.created | timesince }} <translate>ago</translate>
                 </p>
+
                 <ion-option-button
                     ng-if="comment.user.id === user.id"
                     class="button-assertive ion-trash-a"
                     ng-click="deleteComment(comment)">
                 </ion-option-button>
+
+                <ion-option-button
+                    ng-if="comment.user.id === user.id"
+                    class="button-dark ion-edit"
+                    ng-click="editComment(comment)">
+                </ion-option-button>
             </ion-item>
         </ion-list>
+
+        <div class="amir-dialog anime" ng-show="isEditing">
+            <div class="item item-input-inset">
+                <label class="item-input-wrapper">
+                    <input type="text" ng-model="editInput" placeholder="Edit comment..." style="width: 100%">
+                </label>
+                <button class="button button-outline button-positive" ng-click="editComment(comment)">
+                    <i class="ion-checkmark-round"></i>
+                </button>
+            </div>
+        </div>
+
+        <br><br>
 
     </ion-content>
 </ion-view>
