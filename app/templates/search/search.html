@@ -12,6 +12,14 @@
 
         <center><ion-spinner icon="lines" ng-show="shouldSpin"></ion-spinner></center>
 
+        <div class="list faded-light">
+            <br>
+
+            <p class="item item-error bar bar-assertive center" ng-show="noResult">
+                <i class="icon icon-error-bg ion-information-circled"></i> <translate>No result has been found :(</translate>
+            </p>
+        </div>
+
         <div class="toptags-list" ng-show="!items.length">
             <translate>Popular Tags</translate>
             <a class="button button-assertive button-small" ng-repeat="tag in tags" href="#!/app/tags/{{ tag.slug }}/">
@@ -21,35 +29,14 @@
         </div>
 
         <div class="list card" ng-repeat="item in items">
-            <div class="item item-divider">
-                <h2>{{ item.title }}</h2>
-            </div>
-            <div class="item item-text-wrap">
-                <a class="item item-thumbnail-left" href="#!/app/items/{{ item.id }}/">
-                    <img ng-src="{{ item.get_primary_image.thumbnail }}">
-                    <p>{{ item.description | markdown | stripTags | truncate: 140: '...': true }}</p>
-                </a>
-            </div>
-            <div class="item item-divider" ng-if="item.has_price">
-                <b class="offer" ng-if="item.has_compare_price">{{ item.discount_percentage }}% <small translate>OFF</small></b>
-                <s class="small faded-light" ng-if="item.has_compare_price"><translate>was</translate> {{ item.get_compare_at_price_display }}</s>
-                <b class="right assertive">{{ item.get_price_display }}</b>
-            </div>
-        </div>
-
-        <div class="list faded-light">
-            <br>
-
-            <p class="item item-error bar bar-assertive center" ng-show="noResult">
-                <i class="icon icon-error-bg ion-information-circled"></i> <translate>No result has been found :(</translate>
-            </p>
+            <item item="item" type="'search'" image="'single'" up-vote="upVote(item)" down-vote="downVote(item)"></item>
         </div>
 
         <ion-infinite-scroll
-            immediate-check="true"
-            on-infinite="loadMore()"
-            ng-if="pageHasNext"
-            distance="5%">
+                immediate-check="true"
+                on-infinite="loadMore()"
+                ng-if="pageHasNext"
+                distance="5%">
         </ion-infinite-scroll>
 
     </ion-content>

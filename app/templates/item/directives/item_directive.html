@@ -30,7 +30,7 @@
     <p ng-bind-html="item.description | markdown"></p>
 </div>
 
-<div class="item tabs tabs-secondary tabs-icon-left bg-e">
+<div class="item tabs tabs-secondary tabs-icon-left bg-e" ng-if="type != 'search'">
     <div class="tab-item" ng-class="{'assertive': item.userVote.upVote}" ng-click="upVote(item)">
         <i class="icon ion-chevron-up"></i>
     </div>

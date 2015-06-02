@@ -13,7 +13,8 @@ function ItemDirective() {
             item: '=',
             image: '=',
             upVote: '&',
-            downVote: '&'
+            downVote: '&',
+            type: '='
         },
         templateUrl: 'templates/item/directives/item_directive.html'
     }
