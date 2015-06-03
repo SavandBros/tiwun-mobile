@@ -17,9 +17,11 @@ function NewItemController($rootScope, $scope, $state, $ionicHistory, $log, Auth
     }
 
     constructor();
+
     /**
-     * @name create
-     * @desc Create a new Item
+     * create
+     * Create a new Item
+     *
      * @memberOf tiwun.item.controllers.NewItemController
      */
     $scope.create = function(form) {
@@ -46,9 +48,9 @@ function NewItemController($rootScope, $scope, $state, $ionicHistory, $log, Auth
     };
 
     /**
-     * Cancel
-     * @name cancel
-     * @desc Cancel creation of new item and go back!
+     * cancel
+     * Cancel creation of new item and go back!
+     *
      * @memberOf tiwun.item.controllers.NewItemController
      */
     $scope.cancel = function() {
