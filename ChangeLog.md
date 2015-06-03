@@ -1,3 +1,9 @@
+0000.00.00
+==========
+
+* Feature #41: Team up the money currencies.
+
+
 2015.06.01
 ==========
 
