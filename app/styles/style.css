@@ -22,6 +22,15 @@ b {color: #333}
     color: crimson;
 }
 
+.icon-margin {
+    margin-right: 10px;
+}
+
+.icon-lefty {
+    position: absolute;
+    left: 30px;
+}
+
 .gray {color: #bbb !important;}
 
 .bg-e {background-color: #eee !important}
