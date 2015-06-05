@@ -7,8 +7,9 @@
  * @class NewItemController
  * @namespace tiwun.item.controllers.NewItemController
  */
-function NewItemController($rootScope, $scope, $state, $ionicHistory, $log, AuthenticationService, ItemService) {
+function NewItemController($scope, $state, $ionicHistory, $log, AuthenticationService, ItemService, MoneyCurrencyService) {
     $scope.auth = AuthenticationService;
+    $scope.moneyCurrencies = MoneyCurrencyService.currencyFormats();
 
     function constructor() {
         if (!AuthenticationService.isAuthenticated()) {
@@ -24,15 +25,22 @@ function NewItemController($rootScope, $scope, $state, $ionicHistory, $log, Auth
      *
      * @memberOf tiwun.item.controllers.NewItemController
      */
-    $scope.create = function(form) {
+    $scope.create = function(form, item) {
         $scope.formSubmitted = true;
 
         if (form.$valid) {
-            var item = {
-                title: form.title.$modelValue,
-                description: form.description.$modelValue,
-                tags: form.tags.$modelValue
+            var payload = {
+                title: item.title,
+                description: item.description,
+                tags: item.tags
             };
+
+            if (!item.isFree) {
+                payload.min_price = item.minPrice;
+                payload.max_price = item.maxPrice;
+                payload.compare_at_price = item.discountedPrice;
+                payload.currency = item.moneyCurrency;
+            }
 
             ItemService.create(item).then(
                 function(data, status, headers, config) {
@@ -60,9 +68,17 @@ function NewItemController($rootScope, $scope, $state, $ionicHistory, $log, Auth
 
 
 angular.module('tiwun.item.controllers.NewItemController', [
-        'tiwun.item.services.ItemService',
-        'tiwun.account.services.AuthenticationService'
-    ])
-    .controller('NewItemController', NewItemController);
+    'tiwun.item.services.ItemService',
+    'tiwun.account.services.AuthenticationService',
+    'tiwun.basement.services.MoneyCurrencyService'
+]).controller('NewItemController', NewItemController);
 
-NewItemController.$inject = ['$rootScope', '$scope', '$state', '$ionicHistory', '$log', 'AuthenticationService', 'ItemService'];
+NewItemController.$inject = [
+    '$scope',
+    '$state',
+    '$ionicHistory',
+    '$log',
+    'AuthenticationService',
+    'ItemService',
+    'MoneyCurrencyService'
+];
