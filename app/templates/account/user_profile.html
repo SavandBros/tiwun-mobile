@@ -30,7 +30,7 @@
                         <p> <translate>Real Name</translate>: <b class="right">{{ profile.real_name }}</b></p>
                         <br>
                     </li>
-                    <li>
+                    <li ng-show="{{ profile.website.length }}">
                         <p> <translate>Website</translate>: <a href="{{ profile.website }}" class="right">{{ profile.website }}</a></p>
                         <br>
                     </li>

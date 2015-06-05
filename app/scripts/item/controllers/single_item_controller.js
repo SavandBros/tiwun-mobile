@@ -27,6 +27,8 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, $ioni
     $scope.auth = AuthenticationService;
     $scope.user = $scope.auth.getAuthenticatedUser();
 
+    $scope.isEditing = false;
+
     /**
      * Actions to be performed when this controller is instantiated.
      *
@@ -209,6 +211,20 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, $ioni
                     $log.error(data.error);
                 }
             )
+        }
+    }
+
+    $scope.editComment = function(comment) {
+        console.log(comment);
+        console.log(comment.user.id);
+        console.log($scope.user.id);
+        if (comment.user.id === $scope.user.id) {
+            if ($scope.isEditing) {
+                $scope.isEditing = false;
+            } else {
+                $scope.isEditing = true;
+                $scope.editInput = comment.comment;
+            }
         }
     }
 }
