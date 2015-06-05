@@ -1,89 +1,185 @@
 <ion-view view-title="{{ 'Create Item'|translate }}">
     <ion-content>
-        <form name="form" ng-submit="create(form)">
+        <form name="form" ng-submit="create(form, item)">
 
             <div class="list">
-                <label class="item item-input item-floating-label"
+                <!-- Title -->
+                <label class="item item-input"
                        ng-class="{ 'has-error' : form.title.$invalid && !form.title.$pristine  && formSubmitted }">
-                    <span class="input-label"><translate>Title</translate></span>
-                    <input
-                        type="text"
-                        placeholder="{{ 'Title'|translate }}"
-                        name="title"
-                        ng-model="item.title"
-                        required
-                        ng-required="true"
-                        ng-minlength="5"
-                        ng-maxlength="155">
+                    <input type="text"
+                            placeholder="{{ 'Title'|translate }}"
+                            name="title"
+                            ng-model="item.title"
+                            required
+                            ng-required="true"
+                            ng-minlength="5"
+                            ng-maxlength="155">
                 </label>
 
-                <label class="item item-input item-floating-label"
+                <!-- Description -->
+                <label class="item item-input"
                        ng-class="{ 'has-error' : form.description.$invalid && !form.description.$pristine && formSubmitted  }">
-                    <span class="input-label"><translate>Description</translate></span>
-                    <textarea
-                        placeholder="{{ 'Description'|translate }}"
-                        name="description"
-                        cols="30"
-                        rows="10"
-                        ng-model="item.description"
-                        ng-required="true"
-                        ng-minlength="15"
-                        required>
+                    <textarea placeholder="{{ 'Description'|translate }}"
+                            name="description"
+                            cols="30"
+                            rows="10"
+                            ng-model="item.description"
+                            ng-required="true"
+                            ng-minlength="15"
+                            required>
                     </textarea>
                 </label>
 
-                <label class="item item-input item-floating-label"
-                       ng-class="{ 'has-error' : form.tags.$invalid && !form.tags.$pristine && formSubmitted }">
-                    <span class="input-label"><translate>Tags</translate></span>
-                    <input
-                        type="text"
-                        placeholder="{{ 'Tags separated by space'|translate }}"
-                        name="tags"
-                        ng-model="item.tags"
-                        ng-required="true"
-                        ng-minlength="3"
-                        ng-maxlength="50"
-                        required>
+                <!-- Is Free ? -->
+                <ul class="list">
+                    <li class="item item-toggle">
+                        <translate>Is it free ?</translate>
+                        <label class="toggle toggle-assertive">
+                            <input name="isFree" ng-model="item.isFree" type="checkbox">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
+                    </li>
+                </ul>
+
+                <label class="item item-input item-select" ng-if="!item.isFree">
+                    <div class="input-label">
+                        <translate>Money Currency</translate>
+                    </div>
+                    <select name="moneyCurrency"
+                            ng-model="item.moneyCurrency"
+                            ng-required="!item.isFree"
+                            ng-options="k for k in moneyCurrencies">
+                    </select>
                 </label>
 
-                <!-- ERRORS HERE -->
-                <div class="list faded-light">
-                    <br>
-                    <!-- TITL ERRORS -->
-                    <p class="item item-error bar bar-assertive" ng-show="form.title.$invalid && !form.title.$pristine && formSubmitted">
-                        <i class="icon icon-error-bg ion-information-circled"></i> <translate>Title is required.</translate>
-                    </p>
-
-                    <p class="item item-error bar bar-assertive" ng-show="form.title.$error.minlength && formSubmitted">
-                        <i class="icon icon-error-bg ion-information-circled"></i> <translate>Title is too short.</translate>
-                    </p>
-
-                    <p class="item item-error bar bar-assertive" ng-show="form.title.$error.maxlength && formSubmitted">
-                        <i class="icon icon-error-bg ion-information-circled"></i> <translate>Title is too long.</translate>
-                    </p>
-
-                    <!-- DESC ERRORS -->
-                    <p class="item item-error bar bar-assertive" ng-show="form.description.$invalid && !form.description.$pristine && formSubmitted">
-                        <i class="icon icon-error-bg ion-information-circled"></i> <translate>Description is required.</translate>
-                    </p>
-
-                    <p class="item item-error bar bar-assertive" ng-show="form.description.$error.minlength && formSubmitted">
-                        <i class="icon icon-error-bg ion-information-circled"></i> <translate>Description is too short.</translate>
-                    </p>
-
-                    <!-- TAGS ERRORS -->
-                    <p class="item item-error bar bar-assertive" ng-show="form.tags.$invalid && !form.tags.$pristine && formSubmitted">
-                        <i class="icon icon-error-bg ion-information-circled"></i> <translate>Tags are required.</translate>
-                    </p>
-                    <p class="item item-error bar bar-assertive"ng-show="form.tags.$error.minlength && formSubmitted">
-                        <i class="icon icon-error-bg ion-information-circled"></i> <translate>Tags are too short.</translate>
-                    </p>
-                    <p class="item item-error bar bar-assertive" ng-show="form.tags.$error.maxlength && formSubmitted">
-                        <i class="icon icon-error-bg ion-information-circled"></i> <translate>Tags are too long.</translate>
-                    </p>
+                <div class="row" ng-if="!item.isFree">
+                    <div class="col">
+                        <!-- Minimum Price -->
+                        <label class="item item-input"
+                               ng-class="{ 'has-error' : form.minPrice.$invalid && !form.minPrice.$pristine  && formSubmitted }">
+                            <input type="number"
+                                   placeholder="{{ 'Minimum Price'|translate }}"
+                                   name="minPrice"
+                                   ng-model="item.minPrice"
+                                   ng-required="!item.isFree"
+                                   ng-min="0">
+                        </label>
+                    </div>
+                    <div class="col">
+                        <!-- Maximum Price -->
+                        <label class="item item-input"
+                               ng-class="{ 'has-error' : form.maxPrice.$invalid && !form.maxPrice.$pristine  && formSubmitted }">
+                            <input type="number"
+                                   placeholder="{{ 'Maximum Price'|translate }}"
+                                   name="maxPrice"
+                                   ng-model="item.maxPrice"
+                                   ng-required="!item.isFree"
+                                   ng-min="item.minPrice">
+                        </label>
+                    </div>
+                    <div class="col">
+                        <!-- Discounted Price -->
+                        <label class="item item-input"
+                               ng-class="{ 'has-error' : form.discountedPrice.$invalid && !form.discountedPrice.$pristine  && formSubmitted }">
+                            <input type="number"
+                                   placeholder="{{ 'Discounted Price'|translate }}"
+                                   name="discountedPrice"
+                                   ng-model="item.discountedPrice"
+                                   ng-max="item.maxPrice"
+                                   ng-required="false">
+                        </label>
+                    </div>
                 </div>
 
-                <!-- BUTTONS -->
+
+                <label class="item item-input"
+                       ng-class="{ 'has-error' : form.tags.$invalid && !form.tags.$pristine && formSubmitted }">
+                    <input type="text"
+                            placeholder="{{ 'Tags separated by space'|translate }}"
+                            name="tags"
+                            ng-model="item.tags"
+                            ng-required="true"
+                            ng-minlength="3"
+                            ng-maxlength="50"
+                            required>
+                </label>
+
+                <!-- Errors -->
+                <div class="list faded-light">
+                    <br>
+                    <!-- Title Errors -->
+                    <div id="titleErrors">
+                        <p class="item item-error bar bar-assertive" ng-show="form.title.$invalid && !form.title.$pristine && formSubmitted">
+                            <i class="icon icon-error-bg ion-information-circled"></i> <translate>Title is required.</translate>
+                        </p>
+
+                        <p class="item item-error bar bar-assertive" ng-show="form.title.$error.minlength && formSubmitted">
+                            <i class="icon icon-error-bg ion-information-circled"></i> <translate>Title is too short.</translate>
+                        </p>
+
+                        <p class="item item-error bar bar-assertive" ng-show="form.title.$error.maxlength && formSubmitted">
+                            <i class="icon icon-error-bg ion-information-circled"></i> <translate>Title is too long.</translate>
+                        </p>
+                    </div>
+                    <!-- Descriptions Errors -->
+                    <div id="descriptionErrors">
+                        <p class="item item-error bar bar-assertive" ng-show="form.description.$invalid && !form.description.$pristine && formSubmitted">
+                            <i class="icon icon-error-bg ion-information-circled"></i> <translate>Description is required.</translate>
+                        </p>
+
+                        <p class="item item-error bar bar-assertive" ng-show="form.description.$error.minlength && formSubmitted">
+                            <i class="icon icon-error-bg ion-information-circled"></i> <translate>Description is too short.</translate>
+                        </p>
+                    </div>
+                    <!-- Money Currency Errors -->
+                    <div id="moneyCurrencyErrors">
+                        <p class="item item-error bar bar-assertive" ng-show="form.moneyCurrency.$invalid && !form.moneyCurrency.$pristine && formSubmitted">
+                            <i class="icon icon-error-bg ion-information-circled"></i> <translate>You need to specify the Money Currency.</translate>
+                        </p>
+                    </div>
+                    <!-- Minimum Price Errors -->
+                    <div id="minPriceErrors">
+                        <p class="item item-error bar bar-assertive" ng-show="form.minPrice.$invalid && !form.minPrice.$pristine && formSubmitted">
+                            <i class="icon icon-error-bg ion-information-circled"></i> <translate>Minimum Price is required if item is not free.</translate>
+                        </p>
+
+                        <p class="item item-error bar bar-assertive" ng-show="form.minPrice.$error.min && !form.minPrice.$pristine && formSubmitted">
+                            <i class="icon icon-error-bg ion-information-circled"></i> <translate>Minimum price at least should be 0 or higher but not less that 0.</translate>
+                        </p>
+                    </div>
+                    <!-- Maximum Price Errors -->
+                    <div id="maxPriceErrors">
+                        <p class="item item-error bar bar-assertive" ng-show="form.maxPrice.$invalid && !form.maxPrice.$pristine && formSubmitted">
+                            <i class="icon icon-error-bg ion-information-circled"></i> <translate>Maximum Price is required if item is not free.</translate>
+                        </p>
+
+                        <p class="item item-error bar bar-assertive" ng-show="form.maxPrice.$error.min && !form.maxPrice.$pristine && formSubmitted">
+                            <i class="icon icon-error-bg ion-information-circled"></i> <translate>Maximum Price should be higher than equal or higher than Minimum Price.</translate>
+                        </p>
+                    </div>
+                    <!-- Discounted Price Errors -->
+                    <div id="discountedPriceErrors">
+                        <p class="item item-error bar bar-assertive" ng-show="form.discountedPrice.$error.max && !form.discountedPrice.$pristine && formSubmitted">
+                            <i class="icon icon-error-bg ion-information-circled"></i> <translate>Discounted Price should not be higher than Maximum Price.</translate>
+                        </p>
+                    </div>
+                    <!-- Tags Errors -->
+                    <div id="tagsErrors">
+                        <p class="item item-error bar bar-assertive" ng-show="form.tags.$invalid && !form.tags.$pristine && formSubmitted">
+                            <i class="icon icon-error-bg ion-information-circled"></i> <translate>Tags are required.</translate>
+                        </p>
+                        <p class="item item-error bar bar-assertive"ng-show="form.tags.$error.minlength && formSubmitted">
+                            <i class="icon icon-error-bg ion-information-circled"></i> <translate>Tags are too short.</translate>
+                        </p>
+                        <p class="item item-error bar bar-assertive" ng-show="form.tags.$error.maxlength && formSubmitted">
+                            <i class="icon icon-error-bg ion-information-circled"></i> <translate>Tags are too long.</translate>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Buttons -->
                 <button class="button button-full button-positive" type="submit">
                     <i class="ion-android-checkmark-circle"></i> <translate>Create Post</translate>
                 </button>
