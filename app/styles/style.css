@@ -190,3 +190,105 @@ b {color: #333}
     -webkit-border-radius: 4px;
             border-radius: 4px;
 }
+
+/*=============================
+    User Profile Uniqe Style
+  =============================*/
+
+.profile {
+    background: crimson;
+}
+
+.profile-container {
+    padding: 10px;
+    padding-bottom: 20px;
+}
+
+.profile-image {
+    text-align: center;
+}
+
+.profile-image > p {
+    color: #fff;
+    margin-top: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    -webkit-text-shadow: 0 0 6px;
+            text-shadow: 0 0 6px;
+}
+
+.profile-image > img {
+    width: 132px;
+    height: 132px;
+    padding: 4px;
+    -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+.profile-about {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+    padding: 10px 0;
+    color: #FFF;
+    min-height: 40px;
+    border-bottom: 20px solid rgba(0, 0, 0, 0.03);
+}
+
+.profile-about > p {
+    margin-bottom: -20px;
+}
+
+.profile-badges > span {
+    font-weight: bold;
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    text-align: center;
+    padding-top: 16px;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.3);
+}
+
+.profile-tabs {
+    position: relative;
+    margin-top: -44px;
+}
+
+.profile-tabs > div > a.active {
+    background: rgba(0, 0, 0, 0.1) !important;
+    margin-top: 0px !important;
+    border: 0 !important;
+    -webkit-text-shadow: 0 0 20px;
+            text-shadow: 0 0 20px;
+}
+
+.profile-tabs > div > a:ACTIVE {
+    border: 0 !important;
+}
+
+.profile-content {
+    background: #fff;
+    margin-top: 90px;
+}
+
+.profile-item {
+    padding: 30px 15px;
+    border: 0;
+    padding-left: 90px;
+}
+
+.profile-icon {
+    background: gold;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 70px;
+    font-size: 30px;
+    color: #fff !important;
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 26px;
+}

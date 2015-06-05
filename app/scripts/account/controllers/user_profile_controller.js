@@ -8,6 +8,8 @@
  * @namespace tiwun.account.controllers.UserProfileController
  */
 function UserProfileController($scope, $stateParams, $log, UserService) {
+    $scope.activeTab = "about";
+
     /**
      * Actions to be performed when this controller is instantiated
      *
@@ -23,6 +25,12 @@ function UserProfileController($scope, $stateParams, $log, UserService) {
                 $log.error('Error in getting user: ' + data.error);
             }
         );
+    }
+
+    $scope.activateTab = function(tab) {
+        if (tab != $scope.activeTab) {
+            $scope.activeTab = tab;
+        }
     }
 
     constructor();

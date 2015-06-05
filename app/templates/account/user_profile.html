@@ -1,48 +1,87 @@
 <ion-view view-title="{{ profile.get_full_name }}">
     <ion-nav-title>{{ profile.get_full_name }}</ion-nav-title>
-    <ion-content>
-        <div class="row">
-            <div class="col col-33">
-                <img ng-src="{{ profile.get_gravatar[128] }}" class="padding image-box image-circle">
-            </div>
+    
+    <ion-content class="profile">
 
-            <div class="col col-66">
-                <div class="list card">
-                    <div class="item" ng-show="profile.about.length">
-                        {{ profile.about }}
-                    </div>
-                    <div class="item" ng-hide="profile.about.length">
-                        ...
-                    </div>
+        <div class="profile-info">
+            <div class="profile-container">
+                <div class="profile-badges">
+                    <span class="image-circle">{{ profile.reputation }}</span>
+                </div>
+                <div class="profile-image">
+                    <img ng-src="{{ profile.get_gravatar[128] }}" class="image-circle">
+                    <p>{{ profile.get_full_name }}</p>
+                </div>
+                <div class="profile-about">
+                    <p ng-if="profile.about.length">{{ profile.about }}</p>
+                    <p ng-if="!profile.about.length">...</p>
                 </div>
             </div>
         </div>
 
-        <div class="list card">
-            <div class="item item-divider">
-                <p class="center">{{ profile.get_full_name }}</p>
+        <div class="profile-tabs tabs-striped tabs-top tabs-background-assertive tabs-color-light" style="background: none !important">
+            <div class="tabs">
+                <a class="tab-item" ng-class="{'active': activeTab === 'about'}" ng-click="activateTab('about')">
+                    <i class="icon ion-person"></i>
+                </a>
+<!-- NOT AVAILABLE
+                <a class="tab-item" ng-class="{'active': activeTab === 'items'}" ng-click="activateTab('items')">
+                    <i class="icon ion-ios-paper"></i>
+                </a>
+                <a class="tab-item" ng-class="{'active': activeTab === 'comments'}" ng-click="activateTab('comments')">
+                    <i class="icon ion-chatboxes"></i>
+                </a>
+                <a class="tab-item" ng-class="{'active': activeTab === 'votes'}" ng-click="activateTab('votes')">
+                    <i class="icon ion-chevron-up"></i>
+                </a>
+-->
+            </div>
+        </div>
+
+        <div class="profile-content">
+            <div ng-if="activeTab === 'about'">
+                <div class="list">
+                    <div class="profile-item item">
+                        <p>
+                            <i class="profile-icon ion-calendar"></i>
+                            <translate>Joined Date</translate>: <b>{{ profile.date_joined | date }}</b>
+                        </p>
+                    </div>
+                    <div class="profile-item item" ng-show="profile.website.length">
+                        <p>
+                            <i class="profile-icon ion-link" style="background: darkcyan"></i>
+                            <translate>Website</translate>: <b><a href="{{ profile.website }}">{{ profile.website }}</a></b>
+                        </p>
+                    </div>
+                    <div class="profile-item item" ng-if="profile.location.length">
+                        <p>
+                            <i class="profile-icon ion-ios-location" style="background: green"></i>
+                            <translate>Location</translate>: <b>{{ profile.location }}</b>
+                        </p>
+                    </div>
+                    <div class="profile-item item" ng-if="profile.real_name.length">
+                        <p>
+                            <i class="profile-icon ion-ios-book" style="background: crimson"></i>
+                            <translate>Real Name</translate>: <b>{{ profile.real_name }}</b>
+                        </p>
+                    </div>
+                </div>
             </div>
 
-            <div class="item item-text-wrap">
-                <ul>
-                    <br>
-                    <li ng-show="{{ profile.real_name.length }}">
-                        <p> <translate>Real Name</translate>: <b class="right">{{ profile.real_name }}</b></p>
-                        <br>
-                    </li>
-                    <li ng-show="{{ profile.website.length }}">
-                        <p> <translate>Website</translate>: <a href="{{ profile.website }}" class="right">{{ profile.website }}</a></p>
-                        <br>
-                    </li>
-                    <li ng-show="{{ profile.location.length }}">
-                        <p><translate>Location</translate>: <span class="right">{{ profile.location }}</span></p>
-                        <br>
-                    </li>
-                </ul>
+            <div ng-if="activeTab === 'items'">
+                Content items
             </div>
-
-            <div class="item item-divider">
-                <p><translate>Joined Date</translate>: <b class="right">{{ profile.date_joined | date }}</b></p>
+            
+            <div ng-if="activeTab === 'comments'">
+                Content comments
+            </div>
+            
+            <div ng-if="activeTab === 'responses'">
+                Content responses
+            </div>
+            
+            <div ng-if="activeTab === 'votes'">
+                Content votes
             </div>
         </div>
 
