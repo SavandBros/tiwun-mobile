@@ -67,17 +67,19 @@
             </div>
 
             <div ng-if="activeTab === 'items'">
-                Content items
+                <div class="list card" ng-repeat="item in profileItems">
+                    <item item="item" image="'single'"></item>
+                </div>
             </div>
-            
+
             <div ng-if="activeTab === 'comments'">
                 Content comments
             </div>
-            
+
             <div ng-if="activeTab === 'responses'">
                 Content responses
             </div>
-            
+
             <div ng-if="activeTab === 'votes'">
                 Content votes
             </div>
