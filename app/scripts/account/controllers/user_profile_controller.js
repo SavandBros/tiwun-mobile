@@ -8,8 +8,8 @@
  * @namespace tiwun.account.controllers.UserProfileController
  */
 function UserProfileController($scope, $stateParams, $log, UserService, ItemService) {
-    $scope.activeTab = "items";
-
+    $scope.profileItems = [];
+    $scope.pageCounter = 0;
     /**
      * Actions to be performed when this controller is instantiated
      *
@@ -20,6 +20,7 @@ function UserProfileController($scope, $stateParams, $log, UserService, ItemServ
         UserService.get($stateParams['userId']).then(
             function(data, status, headers, config) {
                 $scope.profile = data.data.user;
+                $scope.activateTab('items');
             },
             function(data, status, headers, config) {
                 $log.error('Error in getting user: ' + data.error);
@@ -32,8 +33,9 @@ function UserProfileController($scope, $stateParams, $log, UserService, ItemServ
             $scope.activeTab = tab;
 
             if (tab === 'items') {
-                ItemService.items(1, {
-                    user_id: $scope.profile.id
+                ItemService.items({
+                    user_id: $scope.profile.id,
+                    page: 1
                 }).then(
                     function(data, status, headers, config) {
                         $scope.profileItems = data.data.items
@@ -46,7 +48,28 @@ function UserProfileController($scope, $stateParams, $log, UserService, ItemServ
         }
     };
 
+    $scope.loadMore = function(tab) {
+        if (tab === 'items') {
+            ItemService.items({
+                user_id: $stateParams['userId'],
+                page: ++$scope.pageCounter,
+                page: 1
+            }).then(
+                function(data, status, headers, config) {
+                    $scope.profileItems = $scope.profileItems.concat(data.data.items);
+                    $scope.pageHasNext = data.data.page_has_next;
+
+                    $scope.$broadcast('scroll.infiniteScrollComplete');
+                },
+                function(data, status, headers, config) {
+                    $log.error(data.error);
+                }
+            );
+        }
+    };
+
     constructor();
+    $scope.loadMore('items');
 }
 
 

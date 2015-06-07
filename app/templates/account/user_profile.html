@@ -1,7 +1,7 @@
 <ion-view view-title="{{ profile.get_full_name }}">
     <ion-nav-title>{{ profile.get_full_name }}</ion-nav-title>
 
-    <ion-content class="profile">
+    <ion-content class="bg-e">
 
         <div class="profile-info">
             <div class="profile-container">
@@ -27,24 +27,20 @@
                 <a class="tab-item" ng-class="{'active': activeTab === 'items'}" ng-click="activateTab('items')">
                     <i class="icon ion-ios-paper"></i>
                 </a>
+<!-- NOT DONE YET
                 <a class="tab-item" ng-class="{'active': activeTab === 'comments'}" ng-click="activateTab('comments')">
                     <i class="icon ion-chatboxes"></i>
                 </a>
                 <a class="tab-item" ng-class="{'active': activeTab === 'votes'}" ng-click="activateTab('votes')">
                     <i class="icon ion-chevron-up"></i>
                 </a>
+-->
             </div>
         </div>
 
         <div class="profile-content">
             <div ng-if="activeTab === 'about'">
                 <div class="list">
-                    <div class="profile-item item">
-                        <p>
-                            <i class="profile-icon ion-calendar"></i>
-                            <translate>Joined Date</translate>: <b>{{ profile.date_joined | date }}</b>
-                        </p>
-                    </div>
                     <div class="profile-item item" ng-show="profile.website.length">
                         <p>
                             <i class="profile-icon ion-link" style="background: darkcyan"></i>
@@ -63,26 +59,39 @@
                             <translate>Real Name</translate>: <b>{{ profile.real_name }}</b>
                         </p>
                     </div>
+                    <div class="profile-item item">
+                        <p>
+                            <i class="profile-icon ion-calendar"></i>
+                            <translate>Joined Date</translate>: <b>{{ profile.date_joined | date }}</b>
+                        </p>
+                    </div>
                 </div>
             </div>
 
-            <div ng-if="activeTab === 'items'">
+            <div ng-if="activeTab === 'items'" style="padding-top: 1px">
+                <div class="list card padding center" ng-if="!profileItems.length">
+                    {{ profile.get_full_name }} <translate>has no items</translate>...
+                </div>
+
                 <div class="list card" ng-repeat="item in profileItems">
-                    <item item="item" image="'single'"></item>
+                    <item item="item" image="'single'" type="'profile'"></item>
                 </div>
             </div>
 
-            <div ng-if="activeTab === 'comments'">
+            <div ng-if="activeTab === 'comments'" style="background: #eee !important">
                 Content comments
-            </div>
-
-            <div ng-if="activeTab === 'responses'">
-                Content responses
             </div>
 
             <div ng-if="activeTab === 'votes'">
                 Content votes
             </div>
+
+            <ion-infinite-scroll
+                immediate-check="false"
+                on-infinite="loadMore(activeTab)"
+                ng-if="pageHasNext && activeTab != 'about'"
+                distance="5%">
+            </ion-infinite-scroll>
         </div>
 
     </ion-content>

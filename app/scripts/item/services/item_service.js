@@ -26,14 +26,13 @@ function ItemService($http, gettext, ENV) {
      * Retrieve items in list
      *
      * @method items
-     * @param {Number} pageNumber
      * @param {Object} params
      * @returns {Promise}
      * @memberOf tiwun.item.services.ItemService
      */
-    function items(pageNumber, params) {
+    function items(params) {
         params = params || {};
-        params.type = ENV.resourceType.list;
+        params.resource_type = ENV.resourceType.list;
 
         return $http.get(ENV.apiEndpoint + 'items/', {
             params: params
