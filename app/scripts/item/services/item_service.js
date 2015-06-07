@@ -19,6 +19,27 @@ function ItemService($http, gettext, ENV) {
         5: gettext('Rate')
     };
 
+
+    /**
+     * Items
+     *
+     * Retrieve items in list
+     *
+     * @method items
+     * @param {Number} pageNumber
+     * @param {Object} params
+     * @returns {Promise}
+     * @memberOf tiwun.item.services.ItemService
+     */
+    function items(pageNumber, params) {
+        params = params || {};
+        params.type = ENV.resourceType.list;
+
+        return $http.get(ENV.apiEndpoint + 'items/', {
+            params: params
+        });
+    }
+
     /**
      * @name all
      * @desc Get all Items
@@ -99,6 +120,7 @@ function ItemService($http, gettext, ENV) {
     }
 
     return {
+        items: items,
         all: all,
         get: get,
         create: create,
