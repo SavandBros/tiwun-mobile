@@ -1,6 +1,6 @@
 <ion-view view-title="{{ profile.get_full_name }}">
     <ion-nav-title>{{ profile.get_full_name }}</ion-nav-title>
-    
+
     <ion-content class="profile">
 
         <div class="profile-info">
@@ -24,7 +24,6 @@
                 <a class="tab-item" ng-class="{'active': activeTab === 'about'}" ng-click="activateTab('about')">
                     <i class="icon ion-person"></i>
                 </a>
-<!-- NOT AVAILABLE
                 <a class="tab-item" ng-class="{'active': activeTab === 'items'}" ng-click="activateTab('items')">
                     <i class="icon ion-ios-paper"></i>
                 </a>
@@ -34,7 +33,6 @@
                 <a class="tab-item" ng-class="{'active': activeTab === 'votes'}" ng-click="activateTab('votes')">
                     <i class="icon ion-chevron-up"></i>
                 </a>
--->
             </div>
         </div>
 
