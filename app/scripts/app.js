@@ -26,15 +26,17 @@
     angular.module('tiwun')
         .run(RunForrestRun);
 
-    RunForrestRun.$inject = ['$window', '$ionicPlatform', 'gettextCatalog'];
+    RunForrestRun.$inject = ['$window', '$ionicPlatform', 'gettextCatalog', 'AnalyticsProvider'];
 
-    function RunForrestRun($window, $ionicPlatform, gettextCatalog) {
+    function RunForrestRun($window, $ionicPlatform, gettextCatalog, AnalyticsProvider) {
         var translation = $window.localStorage.getItem('translation');
 
         if (!translation) {
             translation = 'en';
             $window.localStorage.setItem('translation', translation)
         }
+
+        AnalyticsProvider.init();
 
         gettextCatalog.setCurrentLanguage(translation);
 
