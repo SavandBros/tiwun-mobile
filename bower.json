@@ -19,6 +19,7 @@
   },
   "resolutions": {
     "angular": "~1.4.0",
-    "angular-sanitize": "~1.4.0"
+    "angular-sanitize": "~1.4.0",
+    "angular-animate": "~1.4.0"
   }
 }
