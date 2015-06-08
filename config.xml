@@ -18,6 +18,9 @@
         <feature name="SocialSharing">
             <param name="android-package" value="nl.xservices.plugins.SocialSharing"/>
         </feature>
+        <feature name="UniversalAnalytics">
+            <param name="android-package" value="com.danielcwilson.plugins.analytics.UniversalAnalyticsPlugin" />
+        </feature>
         <icon src="resources/android/icon/drawable-ldpi-icon.png" density="ldpi"/>
         <icon src="resources/android/icon/drawable-mdpi-icon.png" density="mdpi"/>
         <icon src="resources/android/icon/drawable-hdpi-icon.png" density="hdpi"/>
