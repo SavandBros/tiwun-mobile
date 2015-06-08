@@ -76,7 +76,7 @@ function VoteService($http, ENV) {
                     object_type: objectType,
                     object_pk: objectId,
                     user_id: userId,
-                    type: ENV.resourceType.single
+                    resource_type: ENV.resourceType.single
                 }
             }
         );

@@ -62,7 +62,7 @@ function CommentService($http, ENV) {
                 params: {
                     object_type: objectType,
                     object_pk: ObjectPk,
-                    type: ENV.resourceType.list
+                    resource_type: ENV.resourceType.list
                 }
             }
         );
