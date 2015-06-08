@@ -2,6 +2,7 @@
 ==========
 
 * Feature #41: Team up the money currencies.
+* Feature #10: Add Google/* Analytics.
 
 
 2015.06.01
