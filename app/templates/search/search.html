@@ -12,10 +12,10 @@
 
         <center><ion-spinner icon="lines" ng-show="shouldSpin"></ion-spinner></center>
 
-        <div class="list faded-light">
+        <div class="list faded-light" ng-show="noResult">
             <br>
 
-            <p class="item item-error bar bar-assertive center" ng-show="noResult">
+            <p class="item item-error bar bar-assertive center">
                 <i class="icon icon-error-bg ion-information-circled"></i> <translate>No result has been found :(</translate>
             </p>
         </div>
