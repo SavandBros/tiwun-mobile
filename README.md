@@ -1,6 +1,8 @@
 # Tiwun Mobile Application
 
 [![Build Status](https://travis-ci.org/SavandBros/tiwun-mobile.svg?branch=master)](https://travis-ci.org/SavandBros/tiwun-mobile)
+[![Dependency Status](https://gemnasium.com/SavandBros/tiwun-mobile.svg)](https://gemnasium.com/SavandBros/tiwun-mobile)
+
 
 ## Overview
 
