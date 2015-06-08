@@ -7,7 +7,10 @@
  * @class CordovaGoogleAnalyticsFactory
  * @namespace tiwun.basement.factories.CordovaGoogleAnalyticsFactory
  */
-function CordovaGoogleAnalyticsFactory($cordovaGoogleAnalytics) {
+function CordovaGoogleAnalyticsFactory($cordovaGoogleAnalytics, ENV) {
+    if (!!window.codova) {
+        $cordovaGoogleAnalytics.startTrackerWithId(ENV.googleAnalyticsID);
+    }
     /**
      * trackPageView
      *
@@ -29,4 +32,4 @@ function CordovaGoogleAnalyticsFactory($cordovaGoogleAnalytics) {
 angular.module('tiwun.basement.factories.CordovaGoogleAnalyticsFactory', [])
     .factory('CordovaGoogleAnalyticsFactory', CordovaGoogleAnalyticsFactory);
 
-CordovaGoogleAnalyticsFactory.$inject = ['$cordovaGoogleAnalytics'];
+CordovaGoogleAnalyticsFactory.$inject = ['$cordovaGoogleAnalytics', 'ENV'];

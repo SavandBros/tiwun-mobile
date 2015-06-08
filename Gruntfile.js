@@ -133,7 +133,12 @@ module.exports = function(grunt) {
                 space: '  ',
                 wrap: '"use strict";\n\n {%= __ngModule %}',
                 name: 'tiwun.ngkonstant',
-                dest: '<%= yeoman.app %>/<%= yeoman.scripts %>/configuration.js'
+                dest: '<%= yeoman.app %>/<%= yeoman.scripts %>/configuration.js',
+                constants: {
+                    ENV: {
+                        googleAnalyticsID: 'UA-47857090-4'
+                    }
+                }
             },
             development: {
                 constants: {
