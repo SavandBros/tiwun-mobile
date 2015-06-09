@@ -25,15 +25,13 @@ function VoteService($http, ENV) {
      * @method upVote
      * @param {number} objectType Object type that is being voted.
      * @param {string} objectPk Object PK!
-     * @param {string} userId User Id that up voting the object.
      * @memberOf tiwun.sushial.services.VoteService
      */
-    function upVote(objectType, objectPk, userId) {
+    function upVote(objectType, objectPk) {
         return $http.post(
             ENV.apiEndpoint + 'sushial/vote/', {
                 object_type: objectType,
                 object_pk: objectPk,
-                user_id: userId,
                 vote_type: voteTypes.up
             }
         );
@@ -45,37 +43,35 @@ function VoteService($http, ENV) {
      * @method downVote
      * @param {number} objectType Object type that is being voted.
      * @param {string} objectId Object PK!
-     * @param {string} userId User Id that down voting the object.
      * @memberOf tiwun.sushial.services.VoteService
      */
-    function downVote(objectType, objectId, userId) {
+    function downVote(objectType, objectId) {
         return $http.post(
             ENV.apiEndpoint + 'sushial/vote/', {
                 object_type: objectType,
                 object_pk: objectId,
-                user_id: userId,
                 vote_type: voteTypes.down
             }
         );
     }
 
     /**
+     * userVotedForObject
+     *
      * Is user liked the object? Who knows!
      *
      * @method userVotedForObject
      * @param {Number} objectType
      * @param {String} objectId
-     * @param {String} userId
      * @returns {Promise}
      * @memberOf tiwun.sushial.services.VoteService
      */
-    function userVotedForObject(objectType, objectId, userId) {
+    function userVotedForObject(objectType, objectId) {
         return $http.get(
             ENV.apiEndpoint + 'sushial/vote/', {
                 params: {
                     object_type: objectType,
                     object_pk: objectId,
-                    user_id: userId,
                     resource_type: ENV.resourceType.single
                 }
             }

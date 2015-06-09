@@ -115,7 +115,7 @@ function IndexController($scope, $state, $log, gettext, AuthenticationService, I
             return;
         }
 
-        VoteService.upVote(VoteService.objectTypes.item, item.id, $scope.user.id).then(
+        VoteService.upVote(VoteService.objectTypes.item, item.id).then(
             function(data, status, headers, config) {
                 updateItemVote(data.data.vote, item);
             },
@@ -138,7 +138,7 @@ function IndexController($scope, $state, $log, gettext, AuthenticationService, I
             return;
         }
 
-        VoteService.downVote(VoteService.objectTypes.item, item.id, $scope.user.id).then(
+        VoteService.downVote(VoteService.objectTypes.item, item.id).then(
             function(data, status, headers, config) {
                 updateItemVote(data.data.vote, item);
             },

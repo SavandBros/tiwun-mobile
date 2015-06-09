@@ -14,19 +14,21 @@ function CommentService($http, ENV) {
     };
 
     /**
-     * @name create: Creating a comment for an object.
+     * create
+     *
+     * Creating a comment for an object.
+     *
+     * @method create
      * @param {number} objectType Object type that is being commented on.
      * @param {string} objectPk  Object PK!
-     * @param {string} userId User Id that commenting on the the object.
      * @param {string} commentText Comment text that is being posted on the object.
      * @memberOf tiwun.sushial.services.CommentService
      */
-    function create(objectType, objectPk, userId, commentText) {
+    function create(objectType, objectPk, commentText) {
         return $http.post(
             ENV.apiEndpoint + 'sushial/comment/', {
                 object_type: objectType,
                 object_pk: objectPk,
-                user_id: userId,
                 comment: commentText
             }
         );
