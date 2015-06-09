@@ -94,7 +94,8 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, $ioni
             // Check if user voted the item.
             VoteService.userVotedForObject(
                 VoteService.objectTypes.item,
-                $scope.item.id
+                $scope.item.id,
+                $scope.user.id
             ).then(
                 function(data, status, headers, config) {
                     updateItemVote(data.data.votes);
