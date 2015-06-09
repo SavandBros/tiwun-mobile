@@ -94,8 +94,7 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, $ioni
             // Check if user voted the item.
             VoteService.userVotedForObject(
                 VoteService.objectTypes.item,
-                $scope.item.id,
-                AuthenticationService.getAuthenticatedUser().id
+                $scope.item.id
             ).then(
                 function(data, status, headers, config) {
                     updateItemVote(data.data.votes);
@@ -120,7 +119,7 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, $ioni
     $scope.addComment = function(form, comment) {
         if ($scope.auth.isAuthenticated()) {
             console.log(form, comment);
-            CommentService.create(1, $scope.item.id, $scope.user.id, comment.text).then(
+            CommentService.create(1, $scope.item.id, comment.text).then(
                 function(data, status, headers, config) {
                     $scope.item.comments = $scope.item.comments.concat(data.data);
                     comment.text = '';
@@ -149,7 +148,7 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, $ioni
             return;
         }
 
-        VoteService.upVote(VoteService.objectTypes.item, item.id, $scope.user.id).then(
+        VoteService.upVote(VoteService.objectTypes.item, item.id).then(
             function(data, status, headers, config) {
                 updateItemVote(data.data.vote);
             },
@@ -171,7 +170,7 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, $ioni
             return;
         }
 
-        VoteService.downVote(VoteService.objectTypes.item, item.id, $scope.user.id).then(
+        VoteService.downVote(VoteService.objectTypes.item, item.id).then(
             function(data, status, headers, config) {
                 updateItemVote(data.data.vote);
             },
@@ -212,7 +211,7 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, $ioni
                 }
             )
         }
-    }
+    };
 
     $scope.editComment = function(comment) {
         console.log(comment);
