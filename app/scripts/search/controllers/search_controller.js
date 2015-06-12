@@ -36,12 +36,34 @@ function SearchController($scope, $log, $sce, SearchService, TagService, SearchI
 
     constructor();
 
+    /**
+     * highlight
+     *
+     * Highlight the current text from the searching term
+     *
+     * @method highlight
+     * @param {String} str
+     * @param {String} term
+     * @returns {XML|*|void|string}
+     * @memberOf tiwun.search.controllers.SearchController
+     */
     function highlight(str, term) {
         var highlightRegex = new RegExp('(' + term + ')', 'gi');
 
         return str.replace(highlightRegex, '<strong>$1</strong>')
     }
 
+
+    /**
+     * term
+     *
+     * Suggest and find search terms for auto complete.
+     *
+     * @method term
+     * @param {String} term
+     * @returns {Array}
+     * @memberOf tiwun.search.controllers.SearchController
+     */
     function suggestKeywords(term) {
         var q = term.toLowerCase().trim();
         var results = [];
