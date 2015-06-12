@@ -50,11 +50,7 @@ function UserProfileController($scope, $stateParams, $log, UserService, ItemServ
 
     $scope.loadMore = function(tab) {
         if (tab === 'items') {
-            ItemService.items({
-                user_id: $stateParams['userId'],
-                page: ++$scope.pageCounter,
-                page: 1
-            }).then(
+            ItemService.items({user_id: $stateParams['userId'], page: ++$scope.pageCounter}).then(
                 function(data, status, headers, config) {
                     $scope.profileItems = $scope.profileItems.concat(data.data.items);
                     $scope.pageHasNext = data.data.page_has_next;
