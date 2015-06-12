@@ -14,6 +14,7 @@
         'markdown',
         'gettext',
         'ngSanitize',
+        'MassAutoComplete',
         'tiwun.ngkonstant',
         'tiwun.konfig.Konfig',
         'tiwun.basement',
