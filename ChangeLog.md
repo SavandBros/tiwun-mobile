@@ -3,6 +3,7 @@
 
 * Feature #41: Team up the money currencies.
 * Feature #35: Add Google/* Analytics.
+* Feature #37: add auto complete to search.
 
 
 2015.06.01

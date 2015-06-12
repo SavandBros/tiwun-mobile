@@ -14,13 +14,15 @@
         'markdown',
         'gettext',
         'ngSanitize',
+        'MassAutoComplete',
         'tiwun.ngkonstant',
         'tiwun.konfig.Konfig',
         'tiwun.basement',
         'tiwun.account',
         'tiwun.item',
         'tiwun.search',
-        'tiwun.tagool'
+        'tiwun.tagool',
+        'tiwun.analytics'
     ]);
 
     angular.module('tiwun')

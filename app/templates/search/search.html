@@ -1,14 +1,20 @@
 <ion-view view-title="{{ 'Search'|translate }}">
     <ion-content class="bg-e">
 
-        <div class="bar bar-header item-input-inset" ng-show="IsSearchPage">
-            <form name="form" ng-submit="search(form, query)" class="full">
-                <label class="item-input-wrapper">
-                    <i class="icon ion-ios-search placeholder-icon"></i>
-                    <input type="search" ng-model="query.text" placeholder="{{ 'Search...'|translate }}" ng-focus="!items.length">
-                </label>
+            <form name="form" ng-submit="search(form, query)" ng-show="IsSearchPage">
+                <div mass-autocomplete>
+                    <input type="search"
+                           name="query"
+                           style="padding: 10px;"
+                           class="full"
+                           mass-autocomplete-item="ac_option_highlight"
+                           placeholder="{{ 'Search...'|translate }}"
+                           ng-model="query.text"
+                           autocomplete="off"
+                           ng-change="onKeywordChange(query.text)">
+                </div>
             </form>
-        </div>
+
 
         <center><ion-spinner icon="lines" ng-show="shouldSpin"></ion-spinner></center>
 

@@ -11,7 +11,8 @@
     "angular-touch": "~1.4.0",
     "angular-gettext": "~2.1.0",
     "angular-animate": "~1.4.0",
-    "angular-sanitize": "~1.4.0"
+    "angular-sanitize": "~1.4.0",
+    "angular-mass-autocomplete": "~0.2.3"
   },
   "devDependencies": {
     "angular-mocks": "~1.4.0",
