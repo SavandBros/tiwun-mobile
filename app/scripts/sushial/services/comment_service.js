@@ -70,6 +70,31 @@ function CommentService($http, ENV) {
         );
     }
 
+    /**
+     * userComments
+     *
+     * Get user comments by given user id.
+     *
+     * @method userComments
+     * @param {String} userId
+     * @param {Number} pageNumber
+     * @returns {Promise}
+     * @memberOf tiwun.sushial.services.CommentService
+     */
+    function userComments(userId, pageNumber) {
+        pageNumber = pageNumber || 1;
+
+        return $http.get(
+            ENV.apiEndpoint + 'sushial/comment/', {
+                params: {
+                    user_id: userId,
+                    page: pageNumber,
+                    resource_type: ENV.resourceType.list
+                }
+            }
+        );
+    }
+
     return {
         create: create,
         remove: remove,
