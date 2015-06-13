@@ -17,7 +17,7 @@ function UserProfileController($scope, $stateParams, $log, UserService, ItemServ
      * @memberOf UserProfileController
      */
     function constructor() {
-        UserService.get($stateParams['userId']).then(
+        UserService.get($stateParams.userId).then(
             function(data, status, headers, config) {
                 $scope.profile = data.data.user;
                 $scope.activateTab('items');
@@ -50,7 +50,10 @@ function UserProfileController($scope, $stateParams, $log, UserService, ItemServ
 
     $scope.loadMore = function(tab) {
         if (tab === 'items') {
-            ItemService.items({user_id: $stateParams['userId'], page: ++$scope.pageCounter}).then(
+            ItemService.items({
+                user_id: $stateParams.userId,
+                page: ++$scope.pageCounter
+            }).then(
                 function(data, status, headers, config) {
                     $scope.profileItems = $scope.profileItems.concat(data.data.items);
                     $scope.pageHasNext = data.data.page_has_next;
