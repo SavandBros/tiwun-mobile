@@ -99,6 +99,7 @@ function CommentService($http, ENV) {
         create: create,
         remove: remove,
         filterByObject: filterByObject,
+        userComments: userComments,
         ObjectTypes: ObjectTypes
     };
 }

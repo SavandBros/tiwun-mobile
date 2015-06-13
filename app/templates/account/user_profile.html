@@ -27,10 +27,10 @@
                 <a class="tab-item" ng-class="{'active': activeTab === 'items'}" ng-click="activateTab('items')">
                     <i class="icon ion-ios-paper"></i>
                 </a>
-<!-- NOT DONE YET
                 <a class="tab-item" ng-class="{'active': activeTab === 'comments'}" ng-click="activateTab('comments')">
                     <i class="icon ion-chatboxes"></i>
                 </a>
+<!-- NOT DONE YET
                 <a class="tab-item" ng-class="{'active': activeTab === 'votes'}" ng-click="activateTab('votes')">
                     <i class="icon ion-chevron-up"></i>
                 </a>
@@ -84,8 +84,20 @@
                 </div>
             </div>
 
-            <div ng-if="activeTab === 'comments'" style="background: #eee !important">
-                Content comments
+            <div ng-if="activeTab === 'comments'" style="padding-top: 1px">
+                <div class="list card padding center" ng-if="!profileComments.length">
+                    {{ profile.get_full_name }} <translate>has no comments</translate>...
+                </div>
+
+                <div class="list card" ng-repeat="comment in profileComments">
+                    <div class="item item-divider">
+                        <small>
+                            <a href="#!/app/items/{{ comment.object_pk }}/">Replied to post</a>
+                            <small class="right"> {{ comment.get_created_since }}</small>
+                        </small>
+                    </div>
+                    <div class="item"><small>{{ comment.comment }}</small></div>
+                </div>
             </div>
 
             <div ng-if="activeTab === 'votes'">
