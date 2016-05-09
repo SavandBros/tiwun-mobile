@@ -24,9 +24,9 @@
          * @name loadMore
          */
         $scope.loadMore = function() {
-            TagService.tagDetail(++$scope.pageCounter, $stateParams.tagSlug).then(
+            TagService.tagDetail($stateParams.tagSlug, ++$scope.pageCounter).then(
                 function(data, status, headers, config) {
-                    $scope.items = $scope.items.concat(data.data.tagged_classifies);
+                    $scope.items = $scope.items.concat(data.data.results);
 
                     $scope.pageHasNext = data.data.page_has_next;
 
