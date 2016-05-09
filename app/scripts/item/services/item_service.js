@@ -34,7 +34,7 @@ function ItemService($http, gettext, ENV) {
         params = params || {};
         params.resource_type = ENV.resourceType.list;
 
-        return $http.get(ENV.apiEndpoint + 'items/', {
+        return $http.get(ENV.apiEndpoint + 'item/items/', {
             params: params
         });
     }
@@ -50,7 +50,7 @@ function ItemService($http, gettext, ENV) {
      * @returns {Promise}
      * @memberOf tiwun.item.services.ItemService
      */
-    function all(pageNumber, queryFilter, itemKind, userId, params) {
+    function all(pageNumber, queryFilter, itemKind, userId, params) { // TODO: Remove this function
         itemKind = itemKind || '';
         params = params || {};
 
@@ -63,6 +63,14 @@ function ItemService($http, gettext, ENV) {
         });
     }
 
+    /**
+     * Items by User
+     */
+    function userItems(user_id, page_number) {
+        return $http.get(ENV.apiEndpoint + 'item/items/user/' + user_id + '/', {
+            page_number: page_number,
+        });
+    }
 
     /**
      * create
@@ -75,7 +83,7 @@ function ItemService($http, gettext, ENV) {
      * @memberOf tiwun.item.services.ItemService
      */
     function create(item) {
-        return $http.post(ENV.apiEndpoint + 'items/', {
+        return $http.post(ENV.apiEndpoint + 'item/create/', {
             title: item.title,
             description: item.description,
             tags: item.tags
@@ -93,7 +101,7 @@ function ItemService($http, gettext, ENV) {
      * @memberOf tiwun.item.services.ItemService
      */
     function update(item) {
-        return $http.put(ENV.apiEndpoint + 'items/', {
+        return $http.put(ENV.apiEndpoint + 'item/update/', {
             title: item.title,
             description: item.description,
             tags: item.tags
@@ -111,16 +119,13 @@ function ItemService($http, gettext, ENV) {
      * @memberOf tiwun.item.services.ItemService
      */
     function get(id) {
-        return $http.get(ENV.apiEndpoint + 'items/', {
-            params: {
-                id: id
-            }
-        });
+        return $http.get(ENV.apiEndpoint + 'item/item/' + id + '/');
     }
 
     return {
         items: items,
         all: all,
+        userItems,
         get: get,
         create: create,
         update: update,
