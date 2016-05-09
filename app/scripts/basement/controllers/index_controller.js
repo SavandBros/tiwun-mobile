@@ -19,17 +19,17 @@ function IndexController($scope, $state, $log, gettext, AuthenticationService, I
         itemKindHottest: {
             text: gettext('Hottest'),
             icon: 'fireball',
-            apiPostfix: 'index/'
+            apiPostfix: 'item/items/'
         },
         itemKindNewest: {
             text: gettext('Newest'),
             icon: 'stats-bars',
-            apiPostfix: 'free-items/'
+            apiPostfix: 'item/items/'
         },
         itemKindFree: {
             text: gettext('Free'),
             icon: 'social-usd-outline',
-            apiPostfix: 'newest-items/'
+            apiPostfix: 'item/items/'
         }
     };
     $scope.currentItemKind = $scope.itemKinds.itemKindHottest;
@@ -67,7 +67,7 @@ function IndexController($scope, $state, $log, gettext, AuthenticationService, I
     $scope.loadMore = function() {
         ItemService.all(++$scope.pageCounter, null, $scope.currentItemKind.apiPostfix).then(
             function(data, status, headers, config) {
-                $scope.items = $scope.items.concat(data.data.classifies);
+                $scope.items = $scope.items.concat(data.data.results);
                 $scope.pageHasNext = data.data.page_has_next;
 
                 $scope.$broadcast('scroll.infiniteScrollComplete');
