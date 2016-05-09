@@ -12,30 +12,16 @@
 function UserService($http, ENV) {
     /**
      * Gets the account with username `username`
-     *
-     * @method get
-     * @param {string} userId The user's ID to get.
-     * @returns {Promise}
-     * @memberOf tiwun.account.services.UserService
      */
     function get(userId) {
-        return $http.get(ENV.apiEndpoint + 'users/', {
-            params: {
-                id: userId
-            }
-        });
+        return $http.get(ENV.apiEndpoint + 'account/user/' + userId + '/');
     }
 
     /**
      * Update the account with username `username`
-     *
-     * @method update
-     * @param {Object} user The updated account model
-     * @returns {Promise}
-     * @memberOf tiwun.account.services.UserService
      */
     function update(user) {
-        return $http.put(ENV.apiEndpoint + 'users/' + user.pk + '/', user);
+        return $http.put(ENV.apiEndpoint + 'account/update-profile/' + user.pk + '/', user);
     }
 
     return {
