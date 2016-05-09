@@ -20,7 +20,7 @@ function UserProfileController($scope, $stateParams, $log, UserService, ItemServ
     function constructor() {
         UserService.get($stateParams['userId']).then(
             function(data, status, headers, config) {
-                $scope.profile = data.data.user;
+                $scope.profile = data.data;
                 $scope.activateTab('items');
             },
             function(data, status, headers, config) {
@@ -35,12 +35,9 @@ function UserProfileController($scope, $stateParams, $log, UserService, ItemServ
             $scope.pageCounter = 0;
 
             if (tab === 'items') {
-                ItemService.items({
-                    user_id: $scope.profile.id,
-                    page: 1
-                }).then(
+                ItemService.userItems($scope.profile.id, 1).then(
                     function(data, status, headers, config) {
-                        $scope.profileItems = data.data.items;
+                        $scope.profileItems = data.data.results;
                     },
                     function(data, status, headers, config) {
                         $log.error('Error in getting user items: ' + data.error);
@@ -51,7 +48,7 @@ function UserProfileController($scope, $stateParams, $log, UserService, ItemServ
                     $scope.profile.id
                 ).then(
                     function(data, status, headers, config) {
-                        $scope.profileComments = data.data.comments;
+                        $scope.profileComments = data.data.results;
                         $scope.pageHasNext = data.data.page_has_next;
                     },
                     function(data, status, headers, config) {
@@ -63,14 +60,12 @@ function UserProfileController($scope, $stateParams, $log, UserService, ItemServ
     };
 
     $scope.loadMore = function(tab) {
-        console.log('called');
+
         if (tab === 'items') {
-            ItemService.items({
-                user_id: $stateParams['userId'],
-                page: ++$scope.pageCounter
-            }).then(
+
+            ItemService.userItems($stateParams.userId, ++$scope.pageCounter).then(
                 function(data, status, headers, config) {
-                    $scope.profileItems = $scope.profileItems.concat(data.data.items);
+                    $scope.profileItems = $scope.profileItems.concat(data.data.results);
                     $scope.pageHasNext = data.data.page_has_next;
 
                     $scope.$broadcast('scroll.infiniteScrollComplete');
