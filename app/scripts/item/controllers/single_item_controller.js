@@ -39,7 +39,7 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, $ioni
         ItemService.get($stateParams.itemId).then(
             function(data, status, headers, config) {
                 $scope.context = data.data;
-                $scope.item = $scope.context.item;
+                $scope.item = $scope.context;
                 $scope.item.description = $scope.item.description.replace(/\n/g, "<br />");
                 $scope.item.userVote = {
                     upVote: false,
