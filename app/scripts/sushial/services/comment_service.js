@@ -44,11 +44,7 @@ function CommentService($http, ENV) {
      */
     function remove(commentId) {
         return $http.delete(
-            ENV.apiEndpoint + 'sushial/comment/', {
-                params: {
-                    comment_id: commentId
-                }
-            }
+            ENV.apiEndpoint + 'sushial/comment/delete/' + commentId + '/'
         );
     }
 
@@ -74,32 +70,30 @@ function CommentService($http, ENV) {
      * userComments
      *
      * Get user comments by given user id.
-     *
-     * @method userComments
-     * @param {String} userId
-     * @param {Number} pageNumber
-     * @returns {Promise}
-     * @memberOf tiwun.sushial.services.CommentService
      */
     function userComments(userId, pageNumber) {
-        pageNumber = pageNumber || 1;
-
         return $http.get(
-            ENV.apiEndpoint + 'sushial/comment/', {
-                params: {
-                    user_id: userId,
-                    page: pageNumber,
-                    resource_type: ENV.resourceType.list
-                }
-            }
+            ENV.apiEndpoint + 'sushial/comments/user/' + userId + '/'
         );
     }
+
+    /**
+     * itemComments
+     *
+     * Get item comments by given item id.
+     */
+    function itemComments(itemId, pageNumber) {
+        return $http.get(
+            ENV.apiEndpoint + 'sushial/comments/item/' + itemId + '/'
+        );
+    };
 
     return {
         create: create,
         remove: remove,
         filterByObject: filterByObject,
         userComments: userComments,
+        itemComments: itemComments,
         ObjectTypes: ObjectTypes
     };
 }
