@@ -25,7 +25,7 @@ function TagsController($scope, $log, TagService) {
     $scope.loadMore = function() {
         TagService.all(++$scope.pageCounter).then(
             function(data, status, headers, config) {
-                $scope.tags = $scope.tags.concat(data.data.tags);
+                $scope.tags = $scope.tags.concat(data.data.results);
 
                 $scope.pageHasNext = data.data.page_has_next;
 
