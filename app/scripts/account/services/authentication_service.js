@@ -105,7 +105,7 @@ function AuthenticationService($rootScope, $http, $log, $window, ENV) {
      * @memberOf tiwun.account.services.AuthenticationService
      */
     function login(email, password) {
-        return $http.post(ENV.apiEndpoint + 'users/login/', {
+        return $http.post(ENV.apiEndpoint + 'account/login/', {
             email: email,
             password: password
         });
@@ -119,7 +119,7 @@ function AuthenticationService($rootScope, $http, $log, $window, ENV) {
      * @memberOf tiwun.account.services.AuthenticationService
      */
     function logout() {
-        return $http.post(ENV.apiEndpoint + 'users/logout/').then(
+        return $http.post(ENV.apiEndpoint + 'account/logout/').then(
             function(data, status, headers, config) {
                 unAuthenticate();
                 $rootScope.$broadcast('tiwun.account.service.AuthenticationService:SignedOut');
@@ -140,7 +140,7 @@ function AuthenticationService($rootScope, $http, $log, $window, ENV) {
      * @memberOf tiwun.account.services.AuthenticationService
      */
     function register(email, password) {
-        return $http.post(ENV.apiEndpoint + 'users/', {
+        return $http.post(ENV.apiEndpoint + 'account/register/', {
             email: email,
             password: password
         }).then(
