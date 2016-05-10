@@ -119,15 +119,8 @@ function AuthenticationService($rootScope, $http, $log, $window, ENV) {
      * @memberOf tiwun.account.services.AuthenticationService
      */
     function logout() {
-        return $http.post(ENV.apiEndpoint + 'account/logout/').then(
-            function(data, status, headers, config) {
-                unAuthenticate();
-                $rootScope.$broadcast('tiwun.account.service.AuthenticationService:SignedOut');
-            },
-            function(data, status, headers, config) {
-                $log.error('Epic failure on logout :|');
-            }
-        );
+        unAuthenticate();
+        $rootScope.$broadcast('tiwun.account.service.AuthenticationService:SignedOut');
     }
 
     /**

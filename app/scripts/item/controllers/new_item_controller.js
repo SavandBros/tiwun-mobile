@@ -10,8 +10,8 @@
 function NewItemController($scope, $state, $ionicHistory, $log, AuthenticationService, ItemService, MoneyCurrencyService) {
     $scope.auth = AuthenticationService;
     $scope.moneyCurrencies = MoneyCurrencyService.currencyFormats();
-    a /*global angular*/
-        'use strict';
+    /*global angular*/
+    'use strict';
 
     /**
      * NewItemController
@@ -44,17 +44,29 @@ function NewItemController($scope, $state, $ionicHistory, $log, AuthenticationSe
                 var payload = {
                     title: item.title,
                     description: item.description,
-                    tags: item.tags
                 };
 
+                // Slice tags
+                payload.tags = ['hello', 'wtf', 'fuck'];
+
                 if (!item.isFree) {
+
                     payload.min_price = item.minPrice;
                     payload.max_price = item.maxPrice;
                     payload.compare_at_price = item.discountedPrice;
                     payload.currency = item.moneyCurrency;
+
+                } else {
+
+                    payload.min_price = 0;
+                    payload.max_price = 0;
+                    payload.compare_at_price = 0;
+                    payload.currency = " ";
                 }
 
-                ItemService.create(item).then(
+                alert(payload.tags[0]);
+
+                ItemService.create(payload).then(
                     function(data, status, headers, config) {
                         $state.go('app.singleItem', {
                             itemId: data.data.id

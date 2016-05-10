@@ -72,7 +72,7 @@ function VoteService($http, ENV) {
                 params: {
                     object_type: objectType,
                     object_pk: objectId,
-                    resource_type: ENV.resourceType.single
+                    vote_type: ENV.resourceType.single
                 }
             }
         );

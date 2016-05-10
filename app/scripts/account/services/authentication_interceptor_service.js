@@ -23,8 +23,11 @@ function AuthenticationInterceptorService($window, ENV) {
     function request(config) {
         var token = $window.localStorage['jwtToken'];
 
-        if (config.url.indexOf(ENV.apiEndPoint === 0 && token)) {
-            config.headers.Authorization = 'Bearer ' + token;
+        if (token) {
+
+            if (config.url.indexOf(ENV.apiEndPoint === 0 && token)) {
+                config.headers.Authorization = 'JWT ' + token;
+            }
         }
 
         return config;

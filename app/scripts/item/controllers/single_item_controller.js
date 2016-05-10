@@ -82,7 +82,7 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, $ioni
         // Retrieve item's comment.
         CommentService.filterByObject(1, $scope.item.id).then(
             function(data, status, headers, config) {
-                $scope.item.comments = data.data.comments;
+                $scope.item.comments = data.data.results;
             },
             function(data, status, headers, config) {
                 $log.error("[error] on getting comments!");

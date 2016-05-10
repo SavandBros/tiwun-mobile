@@ -27,7 +27,7 @@ function TagsController($scope, $log, TagService) {
             function(data, status, headers, config) {
                 $scope.tags = $scope.tags.concat(data.data.results);
 
-                $scope.pageHasNext = data.data.page_has_next;
+                $scope.pageHasNext = data.data.next;
 
                 $scope.$broadcast('scroll.infiniteScrollComplete');
             },
