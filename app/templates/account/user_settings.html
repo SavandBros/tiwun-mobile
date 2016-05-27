@@ -1,5 +1,36 @@
-<ion-view view-title="{{ 'Settings'|translate }}">
+<ion-view view-title="{{ 'Settings' | translate }}">
     <ion-content>
-<!-- TODO: Add user settings form! -->
+        <form name="form" ng-submit="updateAccount(form, setting)">
+            <div class="list">
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Name</span>
+                    <input type="text" placeholder="Name" ng-model="setting.name">
+                </label>
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Real Name</span>
+                    <input type="text" placeholder="Real Name" ng-model="setting.real_name">
+                </label>
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Website</span>
+                    <input type="text" placeholder="Website" ng-model="setting.website">
+                </label>
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Location</span>
+                    <input type="text" placeholder="Location" ng-model="setting.location">
+                </label>
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">About</span>
+                    <textarea type="text" rows="6" placeholder="About Me" ng-model="setting.about"></textarea>
+                </label>
+            </div>
+            <!-- Buttons -->
+            <button class="button button-full button-positive" type="submit">
+                <i class="ion-android-checkmark-circle"></i>
+                <translate>Update Changes</translate>
+            </button>
+            <a href="#!/app/explor" class="button button-full button-small button-assertive button-outline">
+                <translate>Cancel</translate>
+            </a>
+        </form>
     </ion-content>
 </ion-view>

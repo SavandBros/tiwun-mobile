@@ -55,7 +55,9 @@
                 </a>
 
                 <div class="item item-divider"> <translate>Account</translate></div>
-
+                <a menu-close class="item item-icon-left" href="#!/app/account/user-profile/settings/{{ user.id }}/" ng-show="{{ auth.isAuthenticated() }}">
+                    <i class="icon icon-menu-bg ion-gear-a gray"></i> <translate>Settings</translate>
+                </a>
                 <a menu-close class="item item-icon-left" href="#!/app/account/login" ng-hide="{{ auth.isAuthenticated() }}">
                     <i class="icon icon-menu-bg ion-log-in royal"></i> <translate>Sign in</translate>
                 </a>
