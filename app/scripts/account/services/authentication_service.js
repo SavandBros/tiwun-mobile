@@ -132,10 +132,12 @@ function AuthenticationService($rootScope, $http, $log, $window, ENV) {
      * @returns {Promise}
      * @memberOf tiwun.account.services.AuthenticationService
      */
-    function register(email, password) {
+    function register(email, name, password) {
         return $http.post(ENV.apiEndpoint + 'account/register/', {
             email: email,
-            password: password
+            name: name,
+            password1: password,
+            password2: password
         }).then(
             function(data, status, headers, config) {
                 $rootScope.$broadcast('tiwun.account.service.AuthenticationService:Registered');

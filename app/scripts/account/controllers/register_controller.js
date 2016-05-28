@@ -63,7 +63,7 @@ function RegisterController($window, $ionicHistory, $state, $rootScope, $scope, 
         email = user.email;
         password = user.password;
 
-        AuthenticationService.register(user.email, user.password);
+        AuthenticationService.register(user.email, user.name, user.password);
     };
 }
 
