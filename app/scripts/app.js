@@ -15,6 +15,8 @@
         'gettext',
         'ngSanitize',
         'MassAutoComplete',
+        'ngMessages',
+        'ngPassword',
         'tiwun.ngkonstant',
         'tiwun.konfig.Konfig',
         'tiwun.basement',
