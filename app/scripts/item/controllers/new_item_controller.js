@@ -34,20 +34,32 @@ function NewItemController($scope, $state, $ionicHistory, $log, AuthenticationSe
             var payload = {
                 title: item.title,
                 description: item.description,
-                tags: item.tags
             };
 
+            // Turn tags to a list
+            payload.tags = item.tags.split(' ');
+
             if (!item.isFree) {
+
                 payload.min_price = item.minPrice;
                 payload.max_price = item.maxPrice;
                 payload.compare_at_price = item.discountedPrice;
                 payload.currency = item.moneyCurrency;
+
+            } else {
+
+                payload.min_price = 0;
+                payload.max_price = 0;
+                payload.compare_at_price = 0;
+                payload.currency = " ";
             }
 
-            ItemService.create(item).then(
+            $log.debug(payload);
+
+            ItemService.create(payload).then(
                 function(data, status, headers, config) {
                     $state.go('app.singleItem', {
-                        itemId: data.data.id
+                        itemId: data.data.data.id
                     });
                 },
                 function(data, status, headers, config) {
