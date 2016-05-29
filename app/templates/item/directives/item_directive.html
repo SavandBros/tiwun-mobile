@@ -5,7 +5,7 @@
 </div>
 
 <div class="item" style="padding: 8px 15px" ng-if="item.has_price">
-    <b class="offer" ng-if="item.has_compare_price">{{ item.discount_percentage }}% <small translate>OFF</small></b>
+    <b class="offer" ng-if="item.has_compare_price && item.discount_percentage">{{ item.discount_percentage }}% <small translate>OFF</small></b>
     <s class="small faded-light" ng-if="item.has_compare_price"><translate>was</translate> {{ item.get_compare_at_price_display }}</s>
     <b class="right assertive">{{ item.get_price_display }}</b>
 </div>

@@ -83,11 +83,7 @@ function ItemService($http, gettext, ENV) {
      * @memberOf tiwun.item.services.ItemService
      */
     function create(item) {
-        return $http.post(ENV.apiEndpoint + 'item/create/', {
-            title: item.title,
-            description: item.description,
-            tags: item.tags
-        });
+        return $http.post(ENV.apiEndpoint + 'item/create/', item);
     }
 
     /**
