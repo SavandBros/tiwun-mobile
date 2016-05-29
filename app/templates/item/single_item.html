@@ -28,7 +28,7 @@
                 <p>
                     {{ comment.comment }}
                     <br/>
-                    {{ comment.created | timesince }} <translate>ago</translate>
+                    {{ comment.get_created_since }} ago
                 </p>
 
                 <ion-option-button
