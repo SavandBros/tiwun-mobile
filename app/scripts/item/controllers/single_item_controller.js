@@ -124,7 +124,7 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, $ioni
                     $scope.item.comments = $scope.item.comments.concat(data.data);
                     comment.text = '';
                     $ionicScrollDelegate.scrollBottom(true);
-                    ToastService.show(gettextCatalog.getString('Your comment has been posted successfully.'));
+                    ToastService.show(gettextCatalog.getString(data.data.message));
 
                 },
                 function(data, status, headers, config) {
