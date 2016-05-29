@@ -1,24 +1,25 @@
-<ion-view view-title="{{ item.title }}">
+<ion-view view-title="{{ item.title }}" class="bg-e">
     <ion-nav-title>{{ item.title }}</ion-nav-title>
+
     <ion-content>
         <div class="list card">
             <item item="item" image="'multi'" up-vote="upVote(item)" down-vote="downVote(item)" add-comment="addComment"></item>
         </div>
 
         <form name="form" ng-submit="addComment(form, comment)">
-            <div class="bar item-input-inset">
-                <label class="item-input-wrap full">
-                    <input
-                        class="full"
-                        type="text"
-                        name="comment"
-                        ng-model="comment.text"
-                        placeholder="{{ 'Comment...'|translate }}"
-                        ng-change="checkAuth()"
-                        ng-required="true"
-                        required>
-                </label>
-            </div>
+            <label class="item item-input">
+                <input
+                    style="padding: 20px"
+                    class="full"
+                    type="text"
+                    name="comment"
+                    ng-model="comment.text"
+                    placeholder="{{ 'Comment...' | translate }}"
+                    ng-change="checkAuth()"
+                    ng-required="true"
+                    autocomplete="off"
+                    required>
+            </label>
         </form>
 
         <ion-list>
