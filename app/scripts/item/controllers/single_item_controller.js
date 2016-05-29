@@ -125,11 +125,11 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, $ioni
 
                 function(data, status, headers, config) {
                     $scope.item.comments = $scope.item.comments.concat(data.data.data);
+                    $scope.item.comments.unshift(data.data.data);
                     comment.text = '';
-                    $ionicScrollDelegate.scrollBottom(true);
-
                 },
                 function(data, status, headers, config) {
+
                     $log.error('commenting error');
                     $log.error(data.error)
                 }
