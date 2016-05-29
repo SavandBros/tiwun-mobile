@@ -4,7 +4,8 @@
             <div class="list">
                 <label class="item item-input item-floating-label">
                     <span class="input-label" translate>Name</span>
-                    <input type="text" placeholder="{{ 'name'|translate }}" name="name" ng-model="user.name" ng-minlength="3" ng-maxlength="15" required/>
+                    <input type="text" placeholder="{{ 'Name'|translate }}" name="name" ng-model="user.name" ng-minlength="3" ng-maxlength="150" required/>
+
                     <p ng-show="form.$submitted && form.name.$error.minlength">Username is too short.</p>
                     <p ng-show="form.$submitted && form.name.$error.maxlength">Username is too long.</p>
                     <p ng-show="form.$submitted && form.name.$error.required">This field is required.</p>
@@ -12,21 +13,32 @@
                 <label class="item item-input item-floating-label">
                     <span class="input-label" translate>Email</span>
                     <input type="email" placeholder="{{ 'Email'|translate }}" name="email" ng-model="user.email" required/>
+
                     <p ng-show="form.$submitted && form.email.$error.required">This field is required.</p>
                 </label>
                 <label class="item item-input item-floating-label">
                     <span class="input-label" translate>Password</span>
                     <input type="password" placeholder="{{ 'Password'|translate }}" name="password" ng-model="user.password" ng-minlength="8" required/>
-                    <p ng-show="form.$submitted && form.name.$error.minlength">Password is too short.</p>
-                    <p ng-show="form.$submitted && form.name.$error.required">This field is required.</p>
+                    
+                    <p ng-repeat="(fieldName, errors) in registerErrors">
+                        <span ng-repeat="error in errors">{{error}}</span>
+                    </p>
+                    
+                    <p ng-show="form.$submitted && form.password.$error.minlength">Password is too short.</p>
+                    <p ng-show="form.$submitted && form.password.$error.required">This field is required.</p>
                 </label>
                 <label class="item item-input item-floating-label">
                     <span class="input-label" translate>Confirm Password</span>
-                    <input type="password" placeholder="{{ 'Confirm Password'|translate }}" name="confirmPassword" ng-model="user.confirmPassword" match-password="password" required/>
-                    <div ng-messaages="form.confirmPassword.$error" ng-if="form.$submitted || profileForm.confirmPassword.$dirty" ng-messages-multiple="ng-messages-multiple" class="error-messages slide-right">
-                        <div ng-messages="passwordMatch" class="message slide-left">Password does not match</div>
-                    </div>
+                    <input type="password" placeholder="{{ 'Confirm Password'|translate }}" name="confirmPassword" ng-model="user.confirmPassword" required/>
+
+                    <p ng-show="form.$submitted && form.confirmPassword.$error.required">This field is required.</p>
                 </label>
+                <div class="item" ng-show="form.$submitted">
+                    <span class="assertive" ng-show="form.confirmPassword.$error.not_match">
+                        <i class="ion-information-circled"></i>
+                        <translate>Password does not match!</translate>
+                    </span>
+                </div>
                 <!--<div class="item " ng-show="form.$submitted && !form.$invalid">
                     <span class="balanced">
                         <i class="ion-information-circled"></i>

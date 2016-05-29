@@ -138,16 +138,7 @@ function AuthenticationService($rootScope, $http, $log, $window, ENV) {
             name: name,
             password1: password,
             password2: password
-        }).then(
-            function(data, status, headers, config) {
-                $rootScope.$broadcast('tiwun.account.service.AuthenticationService:Registered');
-                login(email, password);
-
-            },
-            function(data, status, headers, config) {
-                $log.error('Epic failure in registering user!. Let me just pretend I\'m doing a good job at logging!');
-            }
-        );
+        });
     }
 
     /**
