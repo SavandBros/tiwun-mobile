@@ -119,7 +119,6 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, $ioni
      */
     $scope.addComment = function(form, comment) {
         if ($scope.auth.isAuthenticated()) {
-            console.log(form, comment);
             CommentService.create(1, $scope.item.id, comment.text).then(
                 function(data, status, headers, config) {
                     $scope.item.comments = $scope.item.comments.concat(data.data);
