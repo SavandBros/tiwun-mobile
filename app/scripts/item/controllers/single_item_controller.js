@@ -124,7 +124,10 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, $ioni
             CommentService.create(1, $scope.item.id, comment.text).then(
 
                 function(data, status, headers, config) {
-                    $scope.item.comments = $scope.item.comments.concat(data.data.data);
+
+                    var new_comment = data.data.data;
+                    new_comment.user = $scope.user;
+
                     $scope.item.comments.unshift(data.data.data);
                     comment.text = '';
                 },
