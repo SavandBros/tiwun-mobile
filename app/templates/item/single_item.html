@@ -24,7 +24,7 @@
         <ion-list>
             <ion-item class="item item-avatar" ng-repeat="comment in item.comments">
                 <img ng-src="{{ comment.user.get_gravatar[64] }}">
-                <h2><a href="#!/app/account/user-profile/{{ comment.user.id }}/">{{ comment.user.get_short_name }}</a></h2>
+                <h2><a href="#!/app/account/user-profile/{{ comment.user.id }}/">{{ comment.user.name }}</a></h2>
                 <p>
                     {{ comment.comment }}
                     <br/>
