@@ -8,7 +8,8 @@
  * @namespace tiwun.account.controllers.RegisterController
  */
 function RegisterController($window, $ionicHistory, $state, $rootScope, $scope, $log, AuthenticationService) {
-    var email, password;
+    $scope.registerErrors = {};
+
     constructor();
 
     /**
@@ -53,17 +54,27 @@ function RegisterController($window, $ionicHistory, $state, $rootScope, $scope, 
      */
     $scope.register = function register(form, user) {
         if (form) {
-            if (user.password !== user.confirmPassword) {
+            if (user.password != user.confirmPassword) {
                 form.confirmPassword.$error.not_match = true;
                 form.$invalid = true;
                 return;
+            } else {
+                form.confirmPassword.$error.not_match = false;
             }
         }
 
-        email = user.email;
-        password = user.password;
+        AuthenticationService.register(user.email, user.name, user.password).then(
+            function(data, status, headers, config) {
+                $rootScope.$broadcast('tiwun.account.service.AuthenticationService:Registered');
+                login(email, password);
 
-        AuthenticationService.register(user.email, user.name, user.password);
+            },
+            function(data, status, headers, config) {
+                console.log(data.data);
+                $scope.registerErrors = data.data;
+                $log.error('Epic failure in registering user!. Let me just pretend I\'m doing a good job at logging!');
+            }
+        );;
     };
 }
 
