@@ -1,6 +1,6 @@
 <ion-view view-title="{{ 'Login'|translate }}">
     <ion-content>
-        <form name="form" ng-submit="login(form, user)">
+        <form name="form" ng-submit="login(form, user)" novalidate>
             <div class="list">
                 <label class="item item-input
                     item-floating-label"
@@ -10,8 +10,9 @@
                            placeholder="{{ 'Email'|translate }}"
                            name="email"
                            ng-model="user.email"
-                           ng-required="true"
                            required/>
+
+                    <p ng-show="form.$submitted && form.email.$error.required">This field is required</p>
                 </label>
                 <label class="item item-input item-floating-label"
                        ng-class="{ 'has-error' : form.password.$invalid && !form.password.$pristine  && formSubmitted }" >
@@ -22,13 +23,15 @@
                            ng-model="user.password"
                            ng-required="true"
                            required/>
+
+                    <p ng-show="form.$submitted && form.password.$error.required">This field is required.</p>       
                 </label>
 
                 <div class="list faded-light">
                     <br>
                     <p class="item item-error bar bar-assertive"
-                       ng-show="wrongCredentials && formSubmitted">
-                        <i class="icon icon-error-bg ion-information-circled"></i> <translate>Email or Password is wrong.</translate>
+                       ng-show="loginError && formSubmitted">
+                        <i class="icon icon-error-bg ion-information-circled"></i> <translate>Email or Password is incorrect.</translate>
                     </p>
 
                 </div>

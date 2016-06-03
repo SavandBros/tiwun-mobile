@@ -51,11 +51,7 @@ function LoginController($window, $log, $state, $rootScope, $scope, Authenticati
                     $rootScope.$broadcast('tiwun.account.service.AuthenticationService:Authenticated');
                 },
                 function(data, status, headers, config) {
-                    $log.error('Authentication Failure.');
-                    if (data.data.error_code === 0) {
-                        $log.debug('Wrong Credentials.');
-                        $scope.wrongCredentials = true;
-                    }
+                    $scope.loginError = true;
                 }
             );
         }
