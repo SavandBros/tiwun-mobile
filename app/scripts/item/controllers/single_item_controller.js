@@ -124,13 +124,15 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, $ioni
             CommentService.create(1, $scope.item.id, comment.text).then(
 
                 function(data, status, headers, config) {
-                    $scope.item.comments = $scope.item.comments.concat(data.data.data);
-                    comment.text = '';
-                    $ionicScrollDelegate.scrollBottom(true);
-                    ToastService.show(gettextCatalog.getString(data.data.message));
 
+                    var new_comment = data.data.data;
+                    new_comment.user = $scope.user;
+
+                    $scope.item.comments.unshift(data.data.data);
+                    comment.text = '';
                 },
                 function(data, status, headers, config) {
+
                     $log.error('commenting error');
                     $log.error(data.error)
                 }

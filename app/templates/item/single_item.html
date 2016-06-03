@@ -1,34 +1,35 @@
-<ion-view view-title="{{ item.title }}">
+<ion-view view-title="{{ item.title }}" class="bg-e">
     <ion-nav-title>{{ item.title }}</ion-nav-title>
+
     <ion-content>
         <div class="list card">
             <item item="item" image="'multi'" up-vote="upVote(item)" down-vote="downVote(item)" add-comment="addComment"></item>
         </div>
 
         <form name="form" ng-submit="addComment(form, comment)">
-            <div class="bar item-input-inset">
-                <label class="item-input-wrap full">
-                    <input
-                        class="full"
-                        type="text"
-                        name="comment"
-                        ng-model="comment.text"
-                        placeholder="{{ 'Comment...'|translate }}"
-                        ng-change="checkAuth()"
-                        ng-required="true"
-                        required>
-                </label>
-            </div>
+            <label class="item item-input">
+                <input
+                    style="padding: 20px"
+                    class="full"
+                    type="text"
+                    name="comment"
+                    ng-model="comment.text"
+                    placeholder="{{ 'Comment...' | translate }}"
+                    ng-change="checkAuth()"
+                    ng-required="true"
+                    autocomplete="off"
+                    required>
+            </label>
         </form>
 
-        <ion-list>
+        <ion-list ng-show="item.comments.length">
             <ion-item class="item item-avatar" ng-repeat="comment in item.comments">
                 <img ng-src="{{ comment.user.get_gravatar[64] }}">
-                <h2><a href="#!/app/account/user-profile/{{ comment.user.id }}/">{{ comment.user.get_short_name }}</a></h2>
+                <h2><a href="#!/app/account/user-profile/{{ comment.user.id }}/">{{ comment.user.name }}</a></h2>
                 <p>
                     {{ comment.comment }}
                     <br/>
-                    {{ comment.created | timesince }} <translate>ago</translate>
+                    {{ comment.get_created_since }} ago
                 </p>
 
                 <ion-option-button
@@ -45,7 +46,14 @@
             </ion-item>
         </ion-list>
 
-        <div class="amir-dialog anime" ng-show="isEditing">
+        <div class="bar bar-light" ng-hide="item.comments.length" style="margin-top: 20px;opacity: 0.5">
+            <h1 class="title">
+                <i class="ion-information-circled"></i>
+                <translate> No comments here...</translate>
+            </h1>
+        </div>
+
+        <div class="amir-dialog anime" ng-show="isEditing && item.comments.length">
             <div class="item item-input-inset">
                 <label class="item-input-wrapper">
                     <input type="text" ng-model="editInput" placeholder="Edit comment..." style="width: 100%">
