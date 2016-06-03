@@ -66,7 +66,6 @@ function RegisterController($window, $ionicHistory, $state, $rootScope, $scope, 
         AuthenticationService.register(user.email, user.name, user.password).then(
             function(data, status, headers, config) {
                 $rootScope.$broadcast('tiwun.account.service.AuthenticationService:Registered');
-                login(email, password);
 
             },
             function(data, status, headers, config) {
