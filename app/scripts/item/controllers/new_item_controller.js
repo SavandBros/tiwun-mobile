@@ -67,7 +67,13 @@ function NewItemController($scope, $state, $ionicHistory, $log, AuthenticationSe
                     });
                 },
                 function(data, status, headers, config) {
-                    $log.error('Error happened on creating new item: ' + data.error);
+
+                    // Alert errors
+                    var msgs = [];
+                    angular.forEach(data.data, function(value, key) {
+                        this.push(key + ': ' + value);
+                    }, msgs);
+                    ToastService.show(msgs);
                 }
             )
         }
