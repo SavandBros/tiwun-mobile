@@ -143,8 +143,8 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, $ioni
     /**
      * Up vote for the current item in the single item page.
      *
-     * @param {Object} item
      * @method upVote
+     * @param {Object} item
      * @memberOf tiwun.item.controllers.SingleItemController
      */
     $scope.upVote = function(item) {
@@ -154,10 +154,20 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, $ioni
         }
 
         VoteService.upVote(VoteService.objectTypes.item, item.id).then(
+
             function(data, status, headers, config) {
-                updateItemVote(data.data.vote);
+
+                var new_vote_type = 0
+                if (item.userVote == 1) {
+                    new_vote_type = 0;
+                } else {
+                    new_vote_type = 1;
+                }
+                updateItemVote(new_vote_type, item);
             },
             function(data, status, headers, config) {
+
+                $log.error('Error on voting item:');
                 $log.error(data.error);
             }
         )
@@ -165,8 +175,9 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, $ioni
 
     /**
      * Down vote for the current item in the single item page.
-     * @param {Object} item
+     *
      * @method downVote
+     * @param {Object} item
      * @memberOf tiwun.item.controllers.SingleItemController
      */
     $scope.downVote = function(item) {
@@ -176,8 +187,16 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, $ioni
         }
 
         VoteService.downVote(VoteService.objectTypes.item, item.id).then(
+
             function(data, status, headers, config) {
-                updateItemVote(data.data.vote);
+
+                var new_vote_type = 0
+                if (item.userVote == -1) {
+                    new_vote_type = 0;
+                } else {
+                    new_vote_type = -1;
+                }
+                updateItemVote(new_vote_type, item);
             },
             function(data, status, headers, config) {
                 $log.error(data.error);

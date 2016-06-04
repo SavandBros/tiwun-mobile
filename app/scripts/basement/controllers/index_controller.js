@@ -116,10 +116,20 @@ function IndexController($scope, $state, $log, gettext, AuthenticationService, I
         }
 
         VoteService.upVote(VoteService.objectTypes.item, item.id).then(
+
             function(data, status, headers, config) {
-                updateItemVote(data.data.vote, item);
+
+                var new_vote_type = 0
+                if (item.userVote == 1) {
+                    new_vote_type = 0;
+                } else {
+                    new_vote_type = 1;
+                }
+                updateItemVote(new_vote_type, item);
             },
             function(data, status, headers, config) {
+
+                $log.error('Error on voting item:');
                 $log.error(data.error);
             }
         )
@@ -139,10 +149,19 @@ function IndexController($scope, $state, $log, gettext, AuthenticationService, I
         }
 
         VoteService.downVote(VoteService.objectTypes.item, item.id).then(
+
             function(data, status, headers, config) {
-                updateItemVote(data.data.vote, item);
+
+                var new_vote_type = 0
+                if (item.userVote == -1) {
+                    new_vote_type = 0;
+                } else {
+                    new_vote_type = -1;
+                }
+                updateItemVote(new_vote_type, item);
             },
             function(data, status, headers, config) {
+
                 $log.error(data.error);
             }
         )
