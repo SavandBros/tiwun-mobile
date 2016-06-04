@@ -70,9 +70,14 @@ function UserSettingsController($scope, $state, $log, $stateParams, gettextCatal
             user.location = "";
 
         UserService.update(user).then(
-            function(data, status, headers, config) {},
             function(data, status, headers, config) {
-                $log.error('Error in updating user account settings: ' + data.error);
+
+                // Alert and redirect user
+                ToastService.show(gettextCatalog.getString(data.data.message));
+                $state.go('app.userProfile', {
+                    'userId': $scope.user.id
+                });
+            },
             }
         );
     };
