@@ -65,14 +65,8 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, $ioni
      * @param {Object} votes
      * @memberOf tiwun.item.controllers.SingleItemController
      */
-    function updateItemVote(votes) {
-        if (votes.vote_type === VoteService.voteTypes.up) {
-            $scope.item.userVote.upVote = true;
-            $scope.item.userVote.downVote = false;
-        } else if (votes.vote_type === VoteService.voteTypes.down) {
-            $scope.item.userVote.downVote = true;
-            $scope.item.userVote.upVote = false;
-        }
+    function updateItemVote(vote_type) {
+        $scope.item.userVote = vote_type;
     }
 
     /**
@@ -92,13 +86,9 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, $ioni
 
         if ($scope.user) {
             // Check if user voted the item.
-            VoteService.userVotedForObject(
-                VoteService.objectTypes.item,
-                $scope.item.id,
-                $scope.user.id
-            ).then(
+            VoteService.userVotedForObject($scope.item.id).then(
                 function(data, status, headers, config) {
-                    updateItemVote(data.data.votes);
+                    updateItemVote(data.data.vote_type);
                 },
                 function(data, status, headers, config) {
                     $log.error(data.data.error);
@@ -199,6 +189,7 @@ function SingleItemController($scope, $stateParams, $ionicHistory, $state, $ioni
                 updateItemVote(new_vote_type, item);
             },
             function(data, status, headers, config) {
+
                 $log.error(data.error);
             }
         )
