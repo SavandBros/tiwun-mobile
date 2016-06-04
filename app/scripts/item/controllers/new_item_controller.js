@@ -7,7 +7,7 @@
  * @class NewItemController
  * @namespace tiwun.item.controllers.NewItemController
  */
-function NewItemController($scope, $state, $ionicHistory, $log, AuthenticationService, ItemService, MoneyCurrencyService) {
+function NewItemController($scope, $state, $ionicHistory, $log, AuthenticationService, ItemService, MoneyCurrencyService, ToastService) {
     $scope.auth = AuthenticationService;
     $scope.moneyCurrencies = MoneyCurrencyService.currencyFormats();
     /*global angular*/
@@ -84,7 +84,8 @@ function NewItemController($scope, $state, $ionicHistory, $log, AuthenticationSe
 angular.module('tiwun.item.controllers.NewItemController', [
     'tiwun.item.services.ItemService',
     'tiwun.account.services.AuthenticationService',
-    'tiwun.basement.services.MoneyCurrencyService'
+    'tiwun.basement.services.MoneyCurrencyService',
+    'tiwun.basement.services.ToastService'
 ]).controller('NewItemController', NewItemController);
 
 NewItemController.$inject = [
@@ -94,5 +95,6 @@ NewItemController.$inject = [
     '$log',
     'AuthenticationService',
     'ItemService',
-    'MoneyCurrencyService'
+    'MoneyCurrencyService',
+    'ToastService'
 ];
