@@ -56,6 +56,13 @@ function UserSettingsController($scope, $state, $log, $stateParams, gettextCatal
      * @param {Object} user The user model from angular that need to be passed to `UserService` to get updated.
      */
     $scope.updateAccount = function(form, user) {
+
+        // Should not send null values
+        if (user.website === null)
+            user.website = "";
+        if (user.location === null)
+            user.location = "";
+
         UserService.update(user).then(
             function(data, status, headers, config) {},
             function(data, status, headers, config) {
