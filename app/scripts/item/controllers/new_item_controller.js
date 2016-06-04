@@ -12,6 +12,11 @@ function NewItemController($scope, $state, $ionicHistory, $log, AuthenticationSe
     $scope.moneyCurrencies = MoneyCurrencyService.currencyFormats();
     /*global angular*/
     'use strict';
+    $scope.item = {
+        minPrice: 0,
+        maxPrice: 0,
+        discountedPrice: 0
+    };
 
     function constructor() {
         if (!AuthenticationService.isAuthenticated()) {
