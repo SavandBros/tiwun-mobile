@@ -21,7 +21,7 @@ function UserService($http, ENV) {
      * Update the account with username `username`
      */
     function update(user) {
-        return $http.put(ENV.apiEndpoint + 'account/update-profile/' + user.pk + '/', user);
+        return $http.put(ENV.apiEndpoint + 'account/update-profile/', user);
     }
 
     return {
