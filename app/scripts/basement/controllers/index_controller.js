@@ -49,13 +49,8 @@ function IndexController($scope, $state, $log, gettext, AuthenticationService, I
      * @param {Object} item
      * @memberOf tiwun.item.controllers.SingleItemController
      */
-    function updateItemVote(vote, item) {
-        item.userVote = {};
-        if (vote.vote_type === VoteService.voteTypes.up) {
-            item.userVote.upVote = true;
-        } else if (vote.vote_type === VoteService.voteTypes.down) {
-            item.userVote.downVote = true;
-        }
+    function updateItemVote(vote_type, item) {
+        item.userVote = vote_type;
     }
 
     /**
@@ -79,22 +74,24 @@ function IndexController($scope, $state, $log, gettext, AuthenticationService, I
     };
 
     /**
-     * Check if item has been liked by the current logged in user.
+     * Check if item has been voted by the current logged in user.
      *
      * If the user is not logged in, then check will be skipped.
      */
     $scope.$on('scroll.infiniteScrollComplete', function() {
-        if ($scope.user) {
-            angular.forEach($scope.items.slice($scope.items.length - 5), function(item, v) {
-                VoteService.userVotedForObject(
-                    VoteService.objectTypes.item,
-                    item.id,
-                    AuthenticationService.getAuthenticatedUser().id
-                ).then(
+
+        if (AuthenticationService.isAuthenticated()) {
+
+            angular.forEach($scope.items, function(item, v) {
+
+                VoteService.userVotedForObject(item.id).then(
+
                     function(data, status, headers, config) {
-                        updateItemVote(data.data.votes, item);
+
+                        updateItemVote(data.data.vote_type, item);
                     },
                     function(data, status, headers, config) {
+
                         $log.error(data.data.error);
                     }
                 );
