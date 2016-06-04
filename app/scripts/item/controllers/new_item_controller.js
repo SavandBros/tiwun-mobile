@@ -57,8 +57,6 @@ function NewItemController($scope, $state, $ionicHistory, $log, AuthenticationSe
                 payload.currency = " ";
             }
 
-            $log.debug(payload);
-
             ItemService.create(payload).then(
                 function(data, status, headers, config) {
 
