@@ -61,6 +61,9 @@ function NewItemController($scope, $state, $ionicHistory, $log, AuthenticationSe
 
             ItemService.create(payload).then(
                 function(data, status, headers, config) {
+
+                    // Alert and redirect to created item
+                    ToastService.show(data.data.message);
                     $state.go('app.singleItem', {
                         itemId: data.data.data.id
                     });
