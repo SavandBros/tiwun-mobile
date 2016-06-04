@@ -78,6 +78,12 @@ function UserSettingsController($scope, $state, $log, $stateParams, gettextCatal
                     'userId': $scope.user.id
                 });
             },
+            function(data, status, headers, config) {
+                var msgs = [];
+                angular.forEach(data.data, function(value, key) {
+                    this.push(key + ': ' + value);
+                }, msgs);
+                ToastService.show(gettextCatalog.getString(msgs));
             }
         );
     };
