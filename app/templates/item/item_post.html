@@ -14,12 +14,20 @@
                             ng-minlength="5"
                             ng-maxlength="155"
                             required>
-
-                    <p ng-show="form.$submitted && form.title.$error.minlength">Title is too short</p>
-                    <p ng-show="form.$submitted && form.title.$error.maxlength">Title is too long</p>
-                    <p ng-show="form.$submitted && form.title.$error.required">This field is required</p>
                 </label>
 
+                <!-- Error -->
+                <span ng-show="form.$submitted">
+                    <p class="item item-error bar bar-assertive" ng-show="form.title.$error.minlength">
+                        <i class="icon icon-error-bg ion-information-circled"></i> <translate>Title is too short</translate>
+                    </p>
+                    <p class="item item-error bar bar-assertive" ng-show="form.title.$error.maxlength">
+                        <i class="icon icon-error-bg ion-information-circled"></i> <translate>Title too long</translate>
+                    </p>
+                    <p class="item item-error bar bar-assertive" ng-show="form.title.$error.required">
+                        <i class="icon icon-error-bg ion-information-circled"></i> <translate>Title is required</translate>
+                    </p>
+                </span>
                 <!-- Description -->
                 <label class="item item-input item-floating-label"
                        ng-class="{ 'has-error' : form.description.$invalid && !form.description.$pristine && formSubmitted  }">
@@ -99,6 +107,15 @@
                 </div>
 
 
+                <!-- Error -->
+                <span ng-show="form.$submitted">
+                    <p class="item item-error bar bar-assertive" ng-show="form.description.$error.minlength">
+                        <i class="icon icon-error-bg ion-information-circled"></i> <translate>Description is too short</translate>
+                    </p>
+                    <p class="item item-error bar bar-assertive" ng-show="form.description.$error.required">
+                        <i class="icon icon-error-bg ion-information-circled"></i> <translate>Description is required</translate>
+                    </p>
+                </span>
                 <label class="item item-input item-floating-label"
                        ng-class="{ 'has-error' : form.tags.$invalid && !form.tags.$pristine && formSubmitted }">
                     <input type="text"
@@ -112,6 +129,20 @@
                     <p ng-show="form.$submitted && form.tags.$error.required">This field is required</p>        
                 </label>
 
+                <!-- Error -->
+                <span ng-show="form.$submitted">
+                    <p class="item item-error bar bar-assertive" ng-show="form.tags.$error.required">
+                        <i class="icon icon-error-bg ion-information-circled"></i> <translate>Tags are required</translate>
+                    </p>
+                </span>
+
+
+                <!-- Error -->
+                <span ng-show="form.$submitted">
+                    <p class="item item-error bar bar-assertive" ng-show="form.moneyCurrency.$error.required">
+                        <i class="icon icon-error-bg ion-information-circled"></i> <translate>Currency is required</translate>
+                    </p>
+                </span>
                 <!-- Buttons -->
                 <button class="button button-full button-positive" type="submit">
                     <i class="ion-android-checkmark-circle"></i> <translate>Create Post</translate>
