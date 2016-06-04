@@ -1,7 +1,6 @@
 <ion-view view-title="{{ 'Create Item'|translate }}">
     <ion-content>
         <form name="form" ng-submit="create(form, item)" novalidate>
-
             <div class="list">
                 <!-- Title -->
                 <label class="item item-input item-floating-label"
@@ -28,6 +27,7 @@
                         <i class="icon icon-error-bg ion-information-circled"></i> <translate>Title is required</translate>
                     </p>
                 </span>
+
                 <!-- Description -->
                 <label class="item item-input item-floating-label"
                        ng-class="{ 'has-error' : form.description.$invalid && !form.description.$pristine && formSubmitted  }">
@@ -40,72 +40,7 @@
                             ng-minlength="15"
                             required>
                     </textarea>
-
-                    <p ng-show="form.$submitted && form.description.$error.minlength">Description is too short</p>
-                    <p ng-show="form.$submitted && form.description.$error.required">This field is required</p>
                 </label>
-
-                <!-- Is Free ? -->
-                <ul class="list">
-                    <li class="item item-toggle">
-                        <translate>Is it free ?</translate>
-                        <label class="toggle toggle-assertive">
-                            <input name="isFree" ng-model="item.isFree" type="checkbox">
-                            <div class="track">
-                                <div class="handle"></div>
-                            </div>
-                        </label>
-                    </li>
-                </ul>
-
-                <label class="item item-input item-select" ng-if="!item.isFree">
-                    <div class="input-label">
-                        <translate>Money Currency</translate>
-                    </div>
-                    <select name="moneyCurrency"
-                            ng-model="item.moneyCurrency"
-                            ng-options="k for k in moneyCurrencies">
-                    </select>
-                </label>
-
-                <div class="row" ng-if="!item.isFree">
-                    <div class="col">
-                        <!-- Minimum Price -->
-                        <label class="item item-input"
-                               ng-class="{ 'has-error' : form.minPrice.$invalid && !form.minPrice.$pristine  && formSubmitted }">
-                            <input type="number"
-                                   placeholder="{{ 'Minimum Price'|translate }}"
-                                   name="minPrice"
-                                   ng-model="item.minPrice"
-                                   ng-min="0"
-                                   required>
-                        </label>
-                    </div>
-                    <div class="col">
-                        <!-- Maximum Price -->
-                        <label class="item item-input"
-                               ng-class="{ 'has-error' : form.maxPrice.$invalid && !form.maxPrice.$pristine  && formSubmitted }">
-                            <input type="number"
-                                   placeholder="{{ 'Maximum Price'|translate }}"
-                                   name="maxPrice"
-                                   ng-model="item.maxPrice"
-                                   ng-min="item.minPrice"
-                                   required>
-                        </label>
-                    </div>
-                    <div class="col">
-                        <!-- Discounted Price -->
-                        <label class="item item-input"
-                               ng-class="{ 'has-error' : form.discountedPrice.$invalid && !form.discountedPrice.$pristine  && formSubmitted }">
-                            <input type="number"
-                                   placeholder="{{ 'Discounted Price'|translate }}"
-                                   name="discountedPrice"
-                                   ng-model="item.discountedPrice"
-                                   ng-max="item.maxPrice">
-                        </label>
-                    </div>
-                </div>
-
 
                 <!-- Error -->
                 <span ng-show="form.$submitted">
@@ -116,6 +51,8 @@
                         <i class="icon icon-error-bg ion-information-circled"></i> <translate>Description is required</translate>
                     </p>
                 </span>
+
+                <!-- Tags -->
                 <label class="item item-input item-floating-label"
                        ng-class="{ 'has-error' : form.tags.$invalid && !form.tags.$pristine && formSubmitted }">
                     <input type="text"
@@ -125,8 +62,6 @@
                             ng-minlength="3"
                             ng-maxlength="50"
                             required>
-
-                    <p ng-show="form.$submitted && form.tags.$error.required">This field is required</p>        
                 </label>
 
                 <!-- Error -->
@@ -136,6 +71,9 @@
                     </p>
                 </span>
 
+                <!-- Is Free ? -->
+                <ion-checkbox ng-model="item.isFree">It's a Free Item</ion-checkbox>
+
 
                 <!-- Error -->
                 <span ng-show="form.$submitted">
@@ -143,6 +81,41 @@
                         <i class="icon icon-error-bg ion-information-circled"></i> <translate>Currency is required</translate>
                     </p>
                 </span>
+
+                <!-- Min/Max/Dis Price -->
+                <div class="list" ng-if="!item.isFree">
+                    <label class="item item-input item-select">
+                        <div class="input-label t-small">Money Currency</div>
+                        <select name="moneyCurrency"
+                            ng-model="item.moneyCurrency"
+                            ng-options="k for k in moneyCurrencies">
+                        </select>
+                    </label>
+                    <label class="item item-input">
+                        <span class="input-label t-small">Minimum Price</span>
+                        <input type="number"
+                               name="minPrice"
+                               ng-model="item.minPrice"
+                               ng-min="0"
+                               required>
+                    </label>
+                    <label class="item item-input">
+                        <span class="input-label t-small">Maximum Price</span>
+                        <input type="number"
+                               name="maxPrice"
+                               ng-model="item.maxPrice"
+                               ng-min="item.minPrice"
+                               required>
+                    </label>
+                    <label class="item item-input">
+                        <span class="input-label t-small">Discounted Price</span>
+                        <input type="number"
+                               name="discountedPrice"
+                               ng-model="item.discountedPrice"
+                               ng-max="item.maxPrice">
+                    </label>
+                </div>
+
                 <!-- Buttons -->
                 <button class="button button-full button-positive" type="submit">
                     <i class="ion-android-checkmark-circle"></i> <translate>Create Post</translate>
