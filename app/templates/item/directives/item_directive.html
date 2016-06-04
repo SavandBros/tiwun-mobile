@@ -34,10 +34,10 @@
 </div>
 
 <div class="item tabs tabs-secondary tabs-icon-left bg-e" ng-if="type != 'search'">
-    <div class="tab-item" ng-class="{'active': item.userVote.upVote}" ng-click="upVote(item)">
+    <div class="tab-item" ng-class="{'active': item.userVote == 1 }" ng-click="upVote(item)">
         <i class="icon ion-chevron-up"></i>
     </div>
-    <div class="tab-item" ng-class="{'active': item.userVote.downVote}" ng-click="downVote(item)">
+    <div class="tab-item" ng-class="{'active': item.userVote == -1 }" ng-click="downVote(item)">
         <i class="icon ion-chevron-down"></i>
     </div>
     <a class="tab-item positive bold" href="http://{{ item.external_url }}" ng-if="image === 'multi' && item.external_url.length > 0">
