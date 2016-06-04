@@ -348,3 +348,17 @@ b {color: #333}
 .ac-container {
   margin-top: -45px;
 }
+
+/* Shorties */
+
+.t-tomato {
+    color: tomato !important;
+}
+
+.t-orange {
+    color: orange !important;
+}
+
+.t-small {
+    font-size: small !important;
+}
