@@ -66,15 +66,9 @@ function VoteService($http, ENV) {
      * @returns {Promise}
      * @memberOf tiwun.sushial.services.VoteService
      */
-    function userVotedForObject(objectType, objectId) {
+    function userVotedForObject(objectId) {
         return $http.get(
-            ENV.apiEndpoint + 'sushial/vote/', {
-                params: {
-                    object_type: objectType,
-                    object_pk: objectId,
-                    vote_type: ENV.resourceType.single
-                }
-            }
+            ENV.apiEndpoint + 'sushial/vote/item/' + objectId + '/'
         );
     }
 
