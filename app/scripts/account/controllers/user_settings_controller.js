@@ -37,7 +37,13 @@ function UserSettingsController($scope, $state, $log, $stateParams, gettextCatal
                     $scope.user = data.data;
 
                     // Load current user data to settings data
-                    $scope.setting = $scope.user;
+                    $scope.setting = {
+                        name: $scope.user.name,
+                        real_name: $scope.user.real_name,
+                        website: $scope.user.website,
+                        location: $scope.user.location,
+                        about: $scope.user.about,
+                    }
                 },
                 function(data, status, headers, config) {
                     ToastService.show('Error in getting user: ' + data.data.error);
