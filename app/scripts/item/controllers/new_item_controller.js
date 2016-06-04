@@ -10,8 +10,6 @@
 function NewItemController($scope, $state, $ionicHistory, $log, AuthenticationService, ItemService, MoneyCurrencyService, ToastService) {
     $scope.auth = AuthenticationService;
     $scope.moneyCurrencies = MoneyCurrencyService.currencyFormats();
-    /*global angular*/
-    'use strict';
     $scope.item = {
         minPrice: 0,
         maxPrice: 0,
