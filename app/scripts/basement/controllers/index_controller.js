@@ -49,8 +49,8 @@ function IndexController($scope, $state, $log, gettext, AuthenticationService, I
      * @param {Object} item
      * @memberOf tiwun.item.controllers.SingleItemController
      */
-    function updateItemVote(vote_type, item) {
-        item.userVote = vote_type;
+    function updateItemVote(voteType, item) {
+        item.userVote = voteType;
     }
 
     /**
@@ -88,7 +88,7 @@ function IndexController($scope, $state, $log, gettext, AuthenticationService, I
 
                     function(data, status, headers, config) {
 
-                        updateItemVote(data.data.vote_type, item);
+                        updateItemVote(data.data.voteType, item);
                     },
                     function(data, status, headers, config) {
 
@@ -116,20 +116,20 @@ function IndexController($scope, $state, $log, gettext, AuthenticationService, I
 
             function(data, status, headers, config) {
 
-                var new_vote_type = 0
-                if (item.userVote == 1) {
-                    new_vote_type = 0;
+                var newVoteType = 0;
+                if (item.userVote === 1) {
+                    newVoteType = 0;
                 } else {
-                    new_vote_type = 1;
+                    newVoteType = 1;
                 }
-                updateItemVote(new_vote_type, item);
+                updateItemVote(newVoteType, item);
             },
             function(data, status, headers, config) {
 
                 $log.error('Error on voting item:');
                 $log.error(data.error);
             }
-        )
+        );
     };
 
     /**
@@ -149,19 +149,19 @@ function IndexController($scope, $state, $log, gettext, AuthenticationService, I
 
             function(data, status, headers, config) {
 
-                var new_vote_type = 0
-                if (item.userVote == -1) {
-                    new_vote_type = 0;
+                var newVoteType = 0;
+                if (item.userVote === -1) {
+                    newVoteType = 0;
                 } else {
-                    new_vote_type = -1;
+                    newVoteType = -1;
                 }
-                updateItemVote(new_vote_type, item);
+                updateItemVote(newVoteType, item);
             },
             function(data, status, headers, config) {
 
                 $log.error(data.error);
             }
-        )
+        );
     };
 
     /**
@@ -182,7 +182,7 @@ function IndexController($scope, $state, $log, gettext, AuthenticationService, I
         $scope.items = [];
         $scope.loadMore();
         $scope.pageCounter = 0;
-    }
+    };
 }
 
 angular.module('tiwun.basement.controllers.IndexController', [
